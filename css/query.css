@@ -1,0 +1,62 @@
+@media only screen and (max-width: 1426px) {
+    .error { padding-left: 80px; }
+    
+    .message { padding-left: 40px; }
+    
+    .message h3 { width: 90%; }
+    
+    .message p { width: 50%; }
+}
+/* Big tablet to desktops */
+@media only screen and (max-width: 1200px) {
+    .scarecrow img { width: 480px; }
+}
+
+/* Small tablet to big tablet: from 768 to 1023 px */
+@media only screen and (max-width: 1023px) {
+    .container { 
+        flex-flow: column; 
+        margin-top: 100px;
+    }
+
+    .scarecrow { width: 100%;}
+
+    .scarecrow img { 
+        width: 550px; 
+        margin-bottom: 80px;
+    }
+
+    .message { 
+        width: 100%; 
+        padding-left: 80px;
+    }
+
+    footer { 
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Small phones to small tablet: from 481 to 767 px */
+@media only screen and (max-width: 767px) {
+    .error { padding-left: 40px; }
+
+    .scarecrow img { 
+        width: 430px; 
+        margin-bottom: 80px;
+    }
+
+    .message { padding-left: 40px; }
+
+    .message h3 { font-size: 48px; }
+    
+    .message p { width: 60%; }
+}
+
+/* Small phones: from 0 to 480 px */
+@media only screen and (max-width: 480px) {
+    .scarecrow img { 
+        width: 360px; 
+        margin-bottom: 50px;
+    }
+}
