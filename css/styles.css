@@ -1,9 +1,10 @@
-#main { 
+* {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;  
 }
+
+#main { font-family: 'Raleway', sans-serif; }
 
 .error {
     font-family: 'Inconsolata', monospace; 
@@ -24,20 +25,17 @@
 
 .scarecrow img {
     height: auto;
-    width: 550px;
+    width: 530px;
     display: block;
     margin: auto;
 }
 
-.message { 
-    width: 50%;
-    margin-top: 40px;
-}
+.message { width: 50%; }
 
 .message h3 {
     font-size: 64px;
     width: 60%;
-    margin-bottom: 48px;
+    margin-bottom: 54px;
     color: #313131;
     word-spacing: 8px;
 }
@@ -48,7 +46,7 @@
     word-spacing: 4px;
     line-height: 1.5;
     color: #313131;
-    margin-bottom: 48px;
+    margin-bottom: 54px;
 }
 
 .btn {
