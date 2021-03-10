@@ -37,9 +37,7 @@
 ![desktop_screenshot](https://github.com/kgalejandrino/DevChallenges---404NotFound/blob/main/images/screenshot1.PNG)
 ![mobile_screenshot](https://github.com/kgalejandrino/DevChallenges---404NotFound/blob/main/images/screenshot2.PNG)
 
-I always believed that to be a good programmer, learning the basics  
-is very important. With great interest in front end development, I  
-decided to take the challenge to practice my CSS & HTML skills. 
+I always believed that to be a good programmer, learning the basics is very important. With great interest in front end development, I decided to take the challenge to practice my CSS & HTML skills. 
 
 ### Built With
 
@@ -66,4 +64,4 @@ This application/site was created as a submission to a [DevChallenges](https://d
 ## Contact
 
 - Website (In Progress)
-- GitHub [@your-username](https://github.com/kgalejandrino)
+- GitHub [@kgalejandrino](https://github.com/kgalejandrino)
