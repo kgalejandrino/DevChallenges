@@ -34,8 +34,7 @@
 
 ## Overview
 
-![desktop_screenshot](https://github.com/kgalejandrino/DevChallenges---404NotFound/blob/main/images/screenshot1.PNG)
-![mobile_screenshot](https://github.com/kgalejandrino/DevChallenges---404NotFound/blob/main/images/screenshot2.PNG)
+![desktop_screenshot](https://github.com/kgalejandrino/DevChallenges---404NotFound/blob/main/images/screenshot.PNG)
 
 I always believed that to be a good programmer, learning the basics is very important. With great interest in front end development, I decided to take the challenge to practice my CSS & HTML skills. 
 
