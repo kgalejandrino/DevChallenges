@@ -20,6 +20,7 @@
 .left-text {
     font-size: 28px;
     font-weight: 700;
+    margin-left: 25px;
 }
 
 .right-text {
@@ -36,7 +37,7 @@
 .crew { 
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
