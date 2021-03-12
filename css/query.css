@@ -1,0 +1,33 @@
+@media only screen and (max-width: 802px) {
+    .card {
+        width: 250px;
+        bottom: -20px;
+    }
+
+    #credits {
+        font-size: 12px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .section-modern-interior {
+        flex-flow: column;
+        margin-top: 20px;
+    }
+
+    #title {
+        font-size: 32px;
+    }
+
+    #description { 
+        font-size: 18px;
+    }
+    .col1 {
+        width: 100%;
+    }
+
+    .col2 { width: 100%;}
+
+    .main-nav { visibility: hidden; }
+}
