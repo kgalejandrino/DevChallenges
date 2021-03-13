@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+/* REUSABLE COMPONENTS */
+
+/* HEADINGS */
+h1, h2 { font-family: 'Playfair Display', serif; }
+
+/* ICONS */
+.material-icons.md-36 { font-size: 36px; }
+
+/* MAIN */
+#main {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    /* border: 1px solid gold; */
+}
+
+/* HEADER */
+header { margin-top: 40px;}
+
+.title {
+    color: #000;
+    font-size: 48px;
+}
+
+.title-container {
+    position: relative;
+    margin-top: 8px;
+}
+
+.title-container span {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: -4px;
+    color: #C4C4C4;
+}
+
+.title-container p {
+    display: inline-block;
+    width: 50%;
+    font-style: italic;
+    font-size: 14px;
+    text-align: justify;
+    margin-left: 28px;
+}
+
+/* SECTION: Cheesecake */
+.section-cheesecake {
+    margin-top: 40px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.section-cheesecake img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* SECTION: Ingredients */
+.section-ingredients {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    width: 100%;
+    display: flex;
+}
+
+.ingredients {
+    width: 70%;
+    /* border: 1px solid red; */
+}
+
+.ingredient p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.ingredient-container { 
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.ingredient-container:last-child { margin-bottom: 0;}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+}
+
+label { 
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    width: 70%;
+}
+
+.time { width: 30%; }
+
+.time-wrapper {
+    display: flex;
+    flex-flow: column;
+    min-height: 420px;
+    width: 100%;
+    float: right;
+    max-width: 220px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px #0e0e0e1a;
+    border-radius: 12px;
+}
+
+.prep-container {
+    max-width: 140px;
+    width: 100%;
+    display: flex;
+    margin: 25px 0;
+}
+
+.icon-servings { color: #F2994A; }
+
+.left-prep { width: 30%;}
+.right-prep { width: 70%;}
+
+.prep-title {
+    color: #bdbdbd;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+
+

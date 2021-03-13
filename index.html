@@ -3,9 +3,118 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/query.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>Recipe Page</title>
 </head>
 <body>
-    
+    <main id="main">
+        <header>
+            <h1 class="title">Classic Cheesecake Recipe</h1>
+            <div class="title-container">
+                <span class="material-icons md-24">drag_indicator</span>
+                <p>Look no further for a creamy and ultra smooth classic cheesecake recipe! Paired with a buttery graham cracker crust, no one can deny its simple decadence. For the best results, bake in a water bath.</p>
+            </div>
+        </header>
+        <section class="section-cheesecake">
+            <img src="images/photo1.png" alt="Cheesecake">
+        </section>
+        <section class="section-ingredients">
+            <div class="ingredients">
+                <h2>Ingredients</h2>
+                <div class="ingredient">
+                    <p>Graham Cracker Crust</p>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step1" name="step1" value="crumbs">
+                        <label for="step1">1 and 1/2 cups (150g) <b>graham cracker</b>
+                        </b> crums (about 10 full sheet graham crackers)</label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step2" name="step2" value="butter">
+                        <label for="step2">5 Tablespoons (70g) <b>unsalted butter</b>
+                        </b>, melted</label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step3" name="step3" value="granulated-sugar">
+                        <label for="step3">1/4 cup (50g) <b>granulated sugar</b>
+                        </b>, melted</label>
+                    </div>
+
+                <p>Cheesecake</p>  
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step1" name="step1" value="cream-cheese">
+                        <label for="step1">four 8-ounce-blocks (904g) full-fat <b>cream cheese</b>, softened to room temperature</label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step2" name="step2" value="granulated-sugar">
+                        <label for="step2">1 cup (200g) <b>granulated sugar</b></label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step3" name="step3" value="sour-cream">
+                        <label for="step3">1 cup (240g) full-fat <b>sour cream</b>, at room temperature</label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step4" name="step4" value="vanilla">
+                        <label for="step4">1 teaspoon <b>pure vanilla extract</b></label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step5" name="step5" value="lemon-juice">
+                        <label for="step5">2 teaspoon <b>fresh lemon juice</b>(optional, but recommended)</label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step6" name="step6" value="eggs">
+                        <label for="step6">3 large <b>eggs</b>, at room temperature</label>
+                    </div>
+                    <div class="ingredient-container">
+                        <input type="checkbox" id="step7" name="step7" value="toppings">
+                        <label for="step7">topping suggestions: <i>salted caramel, lemon curd, strawberry topping, chocolate ganache, red wine chocolate ganache, fresh fruit, whipped cream, or raspberry sauce (recipe in notes)</i></label>
+                    </div>          
+                </div>
+            </div>
+            <div class="time">
+                <div class="time-wrapper">
+                    <div class="prep-container">
+                        <div class="left-prep">
+                            <span class="material-icons md-36 icon-servings">local_dining</span>
+                        </div>
+                        <div class="right-prep">
+                            <p class="prep-title">Yields</p>
+                            <p class="prep-time">12 servings</p>
+                        </div>
+                    </div>
+                    <div class="prep-container">
+                        <div class="left-prep">
+                            <span class="material-icons md-36 icon-builder">query_builder</span>
+                        </div>
+                        <div class="right-prep">
+                            <p class="prep-title">Prep Time</p>
+                            <p class="prep-time">45 minutes</p>
+                        </div>
+                    </div>
+                    <div class="prep-container">
+                        <div class="left-prep">
+                            <span class="material-icons md-36 icon-builder">query_builder</span>
+                        </div>
+                        <div class="right-prep">
+                            <p class="prep-title">Cooking</p>
+                            <p class="prep-time">1 hour</p>
+                        </div>
+                    </div>
+                    <div class="prep-container">
+                        <div class="left-prep">
+                            <span class="material-icons md-36 icon-builder">query_builder</span>
+                        </div>
+                        <div class="right-prep">
+                            <p class="prep-title">Total Time</p>
+                            <p class="prep-time">7,75 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
