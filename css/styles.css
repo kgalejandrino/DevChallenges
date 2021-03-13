@@ -11,7 +11,7 @@ body {
 }
 
 /* MAIN */
-main { z-index: 1; }
+main { z-index: 1; ;}
 /**********************/
 /*----- REUSABLE -----*/
 /**********************/
@@ -213,10 +213,12 @@ header {
 footer {
     color: #A9A9A9;
     font-size: 14px;
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 30px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    margin-top: 120px;
+    text-align: center;
 }
 
 footer span { color: #fff;}
