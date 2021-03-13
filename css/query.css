@@ -1,11 +1,23 @@
 @media only screen and (max-width: 802px) {
     .card {
         width: 250px;
-        bottom: -20px;
+        height: 90px;
+        bottom: -40px;
     }
 
+    .card-designer {
+        padding: 14px;
+    }
+    #title { font-size: 42px; }
+
+    #description { 
+        font-size: 18px;
+        width: 300px;
+    }
+    
     #credits {
         font-size: 12px;
+        margin-top: 10px;
         width: 100%;
     }
 }
@@ -23,11 +35,36 @@
     #description { 
         font-size: 18px;
     }
+
     .col1 {
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .col2 { width: 100%;}
 
-    .main-nav { visibility: hidden; }
+    .card { 
+        width: 260px; 
+        height: 130px;
+        bottom: -65px;
+    } 
+
+    .card-designer {
+        padding: 18px;
+    }
+
+    #credits {
+        font-size: 16px;
+        margin-top: 18px;
+        width: 80%;
+    }
+
+    .main-nav {  display: none; }
+    
+    #icon-menu { display: inline-block; }
+
+    footer {
+        width: 100%; 
+        text-align: center;
+    }
 }
