@@ -11,12 +11,18 @@ body {
 }
 
 /* REUSABLE COMPONENTS */
+.section-text { 
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    width: 70%;
+    text-align: justify;
+}
+
+.material-icons.md-36 { font-size: 36px; }
 
 /* HEADINGS */
 h1, h2 { font-family: 'Playfair Display', serif; }
-
-/* ICONS */
-.material-icons.md-36 { font-size: 36px; }
 
 /* MAIN */
 #main {
@@ -36,7 +42,7 @@ header { margin-top: 40px;}
 
 .title-container {
     position: relative;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .title-container span {
@@ -75,10 +81,7 @@ header { margin-top: 40px;}
     display: flex;
 }
 
-.ingredients {
-    width: 70%;
-    /* border: 1px solid red; */
-}
+.col-1 { width: 70%; }
 
 .ingredient p {
     font-family: 'Playfair Display', serif;
@@ -99,47 +102,92 @@ input[type="checkbox"] {
     width: 20px;
 }
 
-label { 
-    margin-left: 12px;
-    font-size: 14px;
-    line-height: 24px;
-    width: 70%;
-}
+.col-2 { width: 30%; }
 
-.time { width: 30%; }
-
-.time-wrapper {
-    display: flex;
-    flex-flow: column;
-    min-height: 420px;
+.time-basis {
+    height: 100%;
+    max-height: 400px;
     width: 100%;
+    max-width: 230px;
     float: right;
-    max-width: 220px;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0px 0px 20px #0e0e0e1a;
     border-radius: 12px;
+    display:  flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.prep-container {
-    max-width: 140px;
-    width: 100%;
+.flex-container { width: 100%; }
+
+.flex-box {
     display: flex;
-    margin: 25px 0;
+    width: 70%;
+    margin: 25px auto;
 }
+
+.item1 { margin-right: 12px;}
 
 .icon-servings { color: #F2994A; }
-
-.left-prep { width: 30%;}
-.right-prep { width: 70%;}
 
 .prep-title {
     color: #bdbdbd;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 700;
+    margin-bottom: 6px;
 }
 
+/* SECTION: Instructions */
+.section-instructions { 
+    width: 100%;
+}
+.instruction { 
+    width: 70%;
+    display: flex;
+    margin: 20px 0;
+}
 
+.ins-steps {
+    background-color: #F2994A;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* SOURCE */
+#source { 
+    margin-top: 40px;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+#source a {
+    text-decoration: none;
+    color: inherit;
+    font-style: italic;
+}
+
+/* FOOTER */
+footer {
+    margin: 80px 0 20px 0;
+    text-align: center;
+    color: #828282;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#username {
+    color: #000;
+}
 
 
