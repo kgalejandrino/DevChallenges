@@ -4,8 +4,10 @@
     box-sizing: border-box;  
 }
 
+/* MAIN */
 #main { font-family: 'Raleway', sans-serif; }
 
+/* HEADINGS */
 .error {
     font-family: 'Inconsolata', monospace; 
     text-transform: uppercase;
