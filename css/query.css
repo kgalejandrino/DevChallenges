@@ -4,7 +4,9 @@
 
     .title-container p { width: 70%; }
 
+    /* SECTION: Ingredients */
     .section-text { width: 100%;}
+
     .section-ingredients {
         flex-direction: column-reverse;
     }
@@ -29,6 +31,7 @@
     .flex-container:nth-of-type(4) {
         width: 30%;
     }
+
     .flex-box {
         margin: 0;
         width: 100%;
@@ -36,6 +39,7 @@
 }
 
 @media only screen and (max-width: 535px) {
+    /* SECTION: Ingredients */
     .col-1 { width: 100%; }
 
     .instruction { width: 100%; }
@@ -51,9 +55,10 @@
 }
 
 @media only screen and (max-width: 455px) {
+    /* HEADER */
     .title { font-size: 28px; }
-
-    
+ 
+    /* SECTION: Ingredients */
     .flex-container:nth-of-type(1),
     .flex-container:nth-of-type(2),
     .flex-container:nth-of-type(3),
