@@ -4,3 +4,89 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* SECTION: Checkout */
+.checkout-section {
+    width: 90%;
+    max-width: 1150px;
+    margin: 60px auto;
+}
+
+.checkout-section__title {
+    font-size: 32px;
+    color: #4e5150;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-box, .right-box { width: 50%; border: 1px solid red;}
+
+/* FORM */
+.form { 
+    display: flex;
+    flex-flow: column;
+}
+
+.form__flex {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    margin-top: 12px;
+}
+
+.form__flex:last-child { display: block;}
+.form__title {
+    margin-top: 40px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    outline: none;
+    border: 1px solid #828282;
+    border-radius: 4px;
+    max-width: 420px;
+    height: 45px;
+    margin-top: 8px;
+}
+
+label {
+    color: #4f4f4f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+input[type="checkbox"] { 
+    width: 22px;
+    height: 22px;
+}
+
+label:last-child { 
+    vertical-align: 6px;
+    padding-left: 8px;
+}
+
+.input-icons {
+    color: #828282;
+    position: absolute;
+    top: 32px;
+    left: 10px;
+}
+
+::placeholder {
+    font-size: 16px;
+    padding-left: 48px;
+    font-weight: 700;
+}
+
+/* option { padding-left: 48px;} */
+option[value=""][disabled] {
+    display: none;
+}
