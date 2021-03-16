@@ -92,14 +92,14 @@
 
 .grid-item img {
     max-width: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
     border-radius: 12px;
 }
 
 /* FOOTER */
 footer {
     color: #b9bdcf;
-    font-size: 22px;
+    font-size: 18px;
     margin-bottom: 30px;
     text-align: center;
 }
