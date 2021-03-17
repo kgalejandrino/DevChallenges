@@ -42,6 +42,13 @@ body {
     margin-top: 14px;
 }
 
+.form__last-flex { 
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__country, .form__postal { width: 45%;}
+
 .form__title { margin-top: 40px; }
 
 .form__save { display: block;}
@@ -95,15 +102,14 @@ label:last-child {
     color: #333; 
     font-weight: 700;
 }
+
 ::placeholder, #country {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: #828282;
 }
 
-option[value=""][disabled] {
-    display: none;
-}
+option[value=""][disabled] { display: none; }
 
 /* RIGHT-BOX */
 .orders { 
