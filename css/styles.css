@@ -65,6 +65,16 @@ select {
     padding-left: 48px;
 }
 
+select {   
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../images/arrow-dropdown.png');
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 95%;
+}
+
 label {
     color: #4f4f4f;
     font-size: 12px;
