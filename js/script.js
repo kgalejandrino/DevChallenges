@@ -6,7 +6,7 @@ let input2 = document.querySelector('#input2');
 const increment_btn = document.querySelectorAll('.btn-inc');
 const decrement_btn = document.querySelectorAll('.btn-dec');
 
-/* Event: Increment Item No. */
+/* Click Event: Increment Item No. */
 increment_btn.forEach(btn => {
     btn.addEventListener('click', (evt) => {
         if(btn.parentNode.id === 'js--value1') {
@@ -19,7 +19,7 @@ increment_btn.forEach(btn => {
     })
 });
 
-/* Event: Decrement Item No. */
+/* Click Event: Decrement Item No. */
 decrement_btn.forEach(btn => {
     btn.addEventListener('click', () => {
         if(btn.parentNode.id === 'js--value1' && input1.value > 1) {
@@ -31,4 +31,18 @@ decrement_btn.forEach(btn => {
         }
     })
 });
+
+/* Input Event: Item user input > 1 */ 
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('change', e => {
+        let value = e.target.value;
+        if(input.parentNode.id === 'js--value1') {
+            if(value < 1) input.value = 1;
+        }
+    })
+});
+
+
+
+
 
