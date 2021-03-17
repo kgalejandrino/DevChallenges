@@ -25,7 +25,7 @@
                     </div>
                     <div class="form__flex form__phone">
                         <label for="phone-num" >Phone</label>
-                        <input type="number" id="phone_no" name="phone-num" placeholder="Enter your phone...">
+                        <input type="tel" id="phone_no" name="phone-num" placeholder="Enter your phone...">
                         <span class="material-icons md-18 input-icons">email</span>
                     </div>
 
@@ -48,7 +48,7 @@
                     <div class="form__flex form__country">
                         <label for="country">Country</label>
                         <select name="country" id="country">
-                            <option value="" disabled selected>Your country..</option>
+                            <option value="" disabled selected>Your country...</option>
                             <option value="afghanistan">Afghanistan</option>
                             <option value="albania">Albania</option>
                             <option value="afghanistan">Afghanistan</option>
@@ -64,41 +64,61 @@
                         <input type="checkbox" id="save" name="save">
                         <label for="save">Save this information for next time</label>
                     </div>
+                    <div class="form__flex flex__button">
+                        <button type="submit" value="Continue" class="btn btn-continue">Continue</button>
+                    </div>
                 </form>
             </div>
             <div class="right-box">
-                <div class="item1">
-                    <div class="item1_img">
-                        <img src="images/photo1.png" alt="bag">
-                    </div>
-                    <div class="item1_details">
-                        <p class="name">Vintage Bag</p>
-                        <span class="sale-price">$54.99</span>
-                        <span class="price">$94.99</span>
-                        <div class="btn">
-                            <button class="btn btn-dec">-</button>
-                            <span class="btn-value">1</span>
-                            <button class="btn btn-inc">+</button>
+                <div class="orders">
+                    <div class="orders_item">
+                        <div class="item_image">
+                            <img src="images/photo1.png" alt="bag">
+                        </div>
+                        <div class="item_details">
+                            <div class="details_prices">
+                                <p class="item_name">Vintage Bag</p>
+                                <span class="item_sale_price">$54.99</span>
+                                <span class="item_price"><del>$94.99</del></span>
+                            </div>
+                            <div class="details_btn">
+                                <button class="btn btn-dec">-</button>
+                                <span class="btn-value">1</span>
+                                <button class="btn btn-inc">+</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item2">
-                    <div class="item2_img">
-                        <img src="images/photo2.png" alt="shoes">
+                    <div class="orders_item">
+                        <div class="item_image">
+                            <img src="images/photo2.png" alt="shoes">
+                        </div>
+                        <div class="item_details">
+                            <div class="details_prices">
+                                <p class="item_name">Levi Shoes</p>
+                                <span class="item_sale_price">$74.99</span>
+                                <span class="item_price"><del>$124.99</del></span>
+                            </div>
+                            <div class="details_btn">
+                                <button class="btn btn-dec">-</button>
+                                <span class="btn-value">1</span>
+                                <button class="btn btn-inc">+</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item2_details">
-                        <p class="name">Levi Shoes</p>
-                        <span class="sale-price">$74.99</span>
-                        <span class="price">$124.99</span>
-                        <div class="btn">
-                            <button class="btn btn-dec">-</button>
-                            <span class="btn-value">1</span>
-                            <button class="btn btn-inc">+</button>
+                    <div class="orders_summary">
+                        <div class="shipping">
+                            <span>Shipping</span>
+                            <span>$19</span>
+                        </div>
+                        <div class="total">
+                            <span>Total</span>
+                            <span>$148.98</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <footer>created by <a href="https://github.com/kgalejandrino" id="username">Kevin Alejandrino</a>- <a href="https://devchallenges.io/">devChallenges.io</a></footer>
 </body>
 </html>
