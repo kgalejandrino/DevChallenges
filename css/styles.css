@@ -12,7 +12,7 @@ body {
 .checkout-section {
     width: 90%;
     max-width: 1150px;
-    margin: 50px auto;
+    margin: 50px auto 80px auto;
 }
 
 .checkout-section__title {
@@ -25,14 +25,14 @@ body {
     justify-content: space-between;
 }
 
-.left-box, .right-box { width: 45%;}
+.left-box, .right-box { width: 45%; }
 
 /*-- FORM --*/
 /* LEFT-BOX */
 .form { 
     display: flex;
     flex-flow: column;
-    max-width: 420px;
+    width: 90%;
 }
 
 .form__flex {
@@ -42,9 +42,8 @@ body {
     margin-top: 14px;
 }
 
-.form__save { display: block;}
-
 .form__title { margin-top: 40px; }
+.form__save { display: block;}
 
 input[type="text"],
 input[type="email"],
@@ -104,9 +103,7 @@ option[value=""][disabled] {
 /* RIGHT-BOX */
 .orders { 
     background-color: #f2f2f2;
-    width: 100%;
     max-width: 380px;
-    height: 520px;
     border-radius: 12px;
     position: relative;
 }
@@ -115,7 +112,7 @@ option[value=""][disabled] {
     display: flex;
     padding-top: 32px;
     width: 90%;
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
 }
 
 .item_image { max-width: 140px; }
@@ -163,9 +160,9 @@ option[value=""][disabled] {
 
 /* Order Summary */
 .orders_summary {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    display: block;
+    width: 90%;
+    margin: 40px auto;
     width: 90%;
     color: #333;
     font-weight: 700;
@@ -181,6 +178,7 @@ option[value=""][disabled] {
 
 .total {
     padding-top: 12px;
+    padding-bottom: 24px;
     display: flex;
     justify-content: space-between;
 }
@@ -191,7 +189,7 @@ option[value=""][disabled] {
 /* BUTTONS */
 .btn {
     border: none;
-    border-radius: 10px;
+    border-radius: 6px;
     outline: none;
     cursor: pointer;
 }
