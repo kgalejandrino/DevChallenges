@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-}
+body { font-family: 'Montserrat', sans-serif; }
 
 /* SECTION: Checkout */
 .checkout-section {
@@ -63,6 +61,9 @@ select {
     height: 45px;
     margin-top: 8px;
     padding-left: 48px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333; 
+    font-size: 16px;
 }
 
 select {   
@@ -111,12 +112,6 @@ label:last-child {
 #fname::placeholder { 
     color: #333; 
     font-weight: 700;
-}
-
-::placeholder, #country {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #828282;
 }
 
 option[value=""][disabled] { display: none; }
@@ -246,4 +241,17 @@ input[type=number] {
   border: none;
   text-align: center;
   background-color: #f2f2f2;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    -webkit-text-fill-color: #333;
+    font-weight: 700;
 }
