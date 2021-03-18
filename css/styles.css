@@ -1,9 +1,128 @@
+/* ------------------------------------------------- */
+/* BASIC SETUP */
+/* ------------------------------------------------- */
 * { 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
+html {
     font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-rendering: optimizeLegibility;
 }
+
+/* ------------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ------------------------------------------------- */
+
+/* HEADINGS */
+h1 { 
+    font-size: 36px;
+    font-weight: 400;
+}
+
+/* INPUT */
+.input {
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.input_container { position: relative;}
+
+.input_paragraph { margin-bottom: 6px;}
+
+/* ----- HEADER ----- */
+header {
+    max-width: 1450px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/* LOGO */
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* MAIN-NAV */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    list-style-type: none;
+    font-size: 18px;
+    padding-right: 36px;
+}
+
+.main-nav li:last-child { padding-right: 0;}
+
+.main-nav li a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.hero-text-box { margin-left: 210px; }
+
+.hero-text-box p { font-size: 14px;}
+
+.box1 {
+    margin-top: 80px;
+    max-width: 410px;
+}
+
+.box1 p { 
+    color: #2d9cdb; 
+    margin-bottom: 12px;
+}
+
+.box2 { max-width: 300px; }
+
+.box2 p { 
+    text-align: justify;
+    margin-top: 28px;
+}
+
+.box2 p:nth-of-type(2) { color: #828282;}
+
+.input--email {
+    background-color: #f2f2f2;
+    width: 300px;
+}
+
+.input--join {
+    width: 80px;
+    background-color: #2d9cdb;
+    color: #fff;
+    position: absolute;
+    right: 0;
+}
+
+.input--email::placeholder {
+    font-family: 'Poppins', sans-serif; 
+    padding-left: 12px;
+}
+
+.hero-image-box {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.hero-image-box img {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
