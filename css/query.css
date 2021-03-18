@@ -1,7 +1,27 @@
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 1080px) {
     .flexbox { flex-flow: column-reverse;}
 
     .left-box, .right-box, .form { width: 100%;}
 
     .orders { max-width: 100%;}
+}
+
+@media only screen and (max-width: 465px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select { padding-left: 34px; }
+
+    ::placeholder, #country { font-size: 12px;}
+
+    .input-icons { left: 6px;}
+}    
+
+@media only screen and (max-width: 390px) {
+    .form__last-flex { 
+        display: flex;
+        flex-flow: column;
+    }
+
+    .form__country, .form__postal { width: 100%;}
 }

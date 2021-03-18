@@ -20,35 +20,35 @@
                     <h4 class="form__title">Contact Information</h4>
                     <div class="form__flex form__email">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email...">
+                        <input type="email" id="email" name="email" placeholder="Enter your email..." required>
                         <span class="material-icons md-18 input-icons">email</span>
                     </div>
                     <div class="form__flex form__phone">
                         <label for="phone-num" >Phone</label>
-                        <input type="tel" id="phone_no" name="phone-num" placeholder="Enter your phone...">
+                        <input type="tel" id="phone_no" name="phone-num" placeholder="Enter your phone..." required>
                         <span class="material-icons md-18 input-icons">call</span>
                     </div>
 
                     <h4 class="form__title">Shipping Address</h4>
                     <div class="form__flex form__fname">
                         <label for="fname">Full name</label>
-                        <input type="text" id="fname" name="fname" placeholder="Rodney Cotton">
+                        <input type="text" id="fname" name="fname" placeholder="Rodney Cotton" required>
                         <span class="material-icons md-18 input-icons">account_circle</span>
                     </div>
                     <div class="form__flex form__address">
                         <label for="address">Address</label>
-                        <input type="text" id="address" name="address" placeholder="Your address...">
+                        <input type="text" id="address" name="address" placeholder="Your address..." required>
                         <span class="material-icons md-18 input-icons">home</span>
                     </div>
                     <div class="form__flex form__city">
                         <label for="city">City</label>
-                        <input type="text" id="city" name="city" placeholder="Your city...">
+                        <input type="text" id="city" name="city" placeholder="Your city..." required>
                         <span class="material-icons md-18 input-icons">location_city</span>
                     </div>
                     <div class="form__last-flex">
                         <div class="form__flex form__country">
                             <label for="country">Country</label>
-                            <select name="country" id="country">
+                            <select name="country" id="country" required>
                                 <option value="" disabled selected>Your country...</option>
                                 <option value="afghanistan">Afghanistan</option>
                                 <option value="albania">Albania</option>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form__flex form__postal">
                             <label for="postal">Postal code</label>
-                            <input type="text" id="postal" name="postal" placeholder="Your postal code...">
+                            <input type="text" id="postal" name="postal" placeholder="Your postal code..." required>
                             <span class="material-icons md-18 input-icons">markunread_mailbox</span>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                         <label for="save">Save this information for next time</label>
                     </div>
                     <div class="form__flex flex__button">
-                        <button type="submit" value="Continue" class="btn btn-continue">Continue</button>
+                        <input type="submit" value="Continue" class="btn btn-continue"></input>
                     </div>
                 </form>
             </div>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="details__btns" id="js--value1">
                                 <button class="btn btn-dec">-</button>
-                                <input type="number" value="1" min="1" id="input1">
+                                <input type="number" value="1" min="1" id="item1_value">
                                 <button class="btn btn-inc">+</button>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="details__btns" id="js--value2">
                                 <button class="btn btn-dec">-</button>
-                                <input type="number" value="1" min="1" id="input2">
+                                <input type="number" value="1" min="1" id="item2_value">
                                 <button class="btn btn-inc">+</button>
                             </div>
                         </div>
