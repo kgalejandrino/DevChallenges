@@ -16,6 +16,7 @@ html {
 /* ------------------------------------------------- */
 /* REUSABLE COMPONENTS */
 /* ------------------------------------------------- */
+/* HEADINGS */
 
 /* SECTION */
 .section {
@@ -23,6 +24,8 @@ html {
     max-width: 1250px;
     margin: 110px auto 110px auto;
 }
+
+.title { font-size: 28px; }
 
 /* INPUT & BUTTONS */
 .input, .btn {
@@ -39,6 +42,7 @@ html {
 
 /* ICONS */
 .material-icons.md-36 { font-size: 36px; }
+.material-icons.md-18 { font-size: 18px; }
 
 /* ----- HEADER ----- */
 header {
@@ -137,15 +141,12 @@ header {
 }
 
 /* SECTION: Services */
-.section-services h2 { 
-    font-size: 28px;
-    max-width: 280px;
-}
+.section-services-title { width: 260px;}
 
 .services_container {
+    margin: 24px auto;
     display: flex;
     justify-content: space-around;
-    margin: 24px auto;
 }
 
 .services_card { 
@@ -183,3 +184,46 @@ header {
 .front_end span { background-color: #27ae60;}
 
 .back_end span { background-color: #eb5757;}
+
+/* SECTION: WORKS */
+.section-works-title { width: 300px;}
+
+.works_gallery {
+    position: relative;
+    margin: 24px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+.gallery_images { width: 49%; }
+
+.gallery_images img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.gallery_images:nth-of-type(odd) { margin-top: 200px; }
+
+.gallery_images p { margin-top: 8px;}
+
+.gallery_images p:first-of-type { 
+    font-size: 12px;
+    color: #828282;
+}
+
+.gallery_images p:last-of-type { font-weight: 700;}
+
+.see-more-text { 
+    font-size: 18px;
+    color: #2d9cdb;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.icon-arrow { 
+    vertical-align: -4px;
+    padding-left: 8px;
+}

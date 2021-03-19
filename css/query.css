@@ -2,6 +2,7 @@
     /* HEADER */
     .hero-text-box { margin-left: 150px; }
 
+    .gallery_images:nth-of-type(odd) { margin-top: 160px; }
 }
 
 @media only screen and (max-width: 735px) {
@@ -12,13 +13,25 @@
     .services_container { flex-flow: column; }
 
     .services_card { width: 100%;}
+
+    .gallery_images:nth-of-type(odd) { margin-top: 90px; }
 }
 
 @media only screen and (max-width: 510px) {
     /* HEADER */
     .hero-text-box h1 { font-size: 24px;}
 
-    .box1, .box2 { max-width: 280px; border: 1px solid red; }
+    .box1, .box2 { max-width: 280px; }
 
+    /* SECTION: Works */
+    .works_gallery { flex-flow: column; }
+    .gallery_images { width: 100%; }
+
+    .gallery_images:nth-of-type(odd) { margin-top: 0; }
+
+    .see-more-text { 
+        position: relative;
+        margin-top: 24px;
+    }
 }
 
