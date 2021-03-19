@@ -47,7 +47,10 @@
     /* SECTION: Works */
     .works_gallery { flex-flow: column; }
 
-    .gallery_images { width: 100%; }
+    .gallery_images { 
+        width: 100%; 
+        margin-bottom: 28px;
+    }
 
     .gallery_images:nth-of-type(odd) { margin-top: 0; }
 
