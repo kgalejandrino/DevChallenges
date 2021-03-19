@@ -255,7 +255,7 @@ header {
 
 .photos img {
     height: auto;
-    width: 250px;
+    width: 100%;
     border-radius: 12px;
 }
 
@@ -271,3 +271,34 @@ header {
 }
 
 .col2 img:first-of-type { margin-bottom: 18px;}
+
+/* SECTION: Quote */
+.quote-section-message {
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+
+.author-container { display: flex;}
+
+.author-container img {
+    height: auto;
+    width: 80px;
+    border-radius: 12px;
+}
+
+.author {
+    display: flex;
+    flex-flow: column;
+    margin-left: 24px;
+}
+
+.name { 
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.description { 
+    font-size: 14px;
+    color: #828282;
+}
+
