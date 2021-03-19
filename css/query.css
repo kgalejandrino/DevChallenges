@@ -28,6 +28,8 @@
 
 @media only screen and (max-width: 510px) {
     /* HEADER */
+    .hero-text-box { margin-left: 60px; }
+
     .hero-text-box h1 { font-size: 24px;}
 
     .box1, .box2 { max-width: 280px; }
@@ -43,5 +45,10 @@
         position: relative;
         margin-top: 24px;
     }
+}
+
+@media only screen and (max-width: 420px) {
+    /* HEADER */
+    .hero-text-box { margin-left: 30px; }
 }
 
