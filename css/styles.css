@@ -17,26 +17,32 @@ html {
 /* REUSABLE COMPONENTS */
 /* ------------------------------------------------- */
 
-/* HEADINGS */
-h1 { 
-    font-size: 36px;
-    font-weight: 400;
+/* SECTION */
+.section {
+    width: 90%;
+    max-width: 1250px;
+    margin: 110px auto 110px auto;
 }
 
-/* INPUT */
-.input {
+/* INPUT & BUTTONS */
+.input, .btn {
     font-family: 'Poppins', sans-serif;
     border: none;
     height: 40px;
     border-radius: 10px;
+    outline: none;
 }
 
 .input_container { position: relative;}
 
 .input_paragraph { margin-bottom: 6px;}
 
+/* ICONS */
+.material-icons.md-36 { font-size: 36px; }
+
 /* ----- HEADER ----- */
 header {
+    width: 90%;
     max-width: 1450px;
     margin: 0 auto;
     margin-bottom: 50px;
@@ -44,7 +50,7 @@ header {
 
 /* LOGO */
 .logo {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
 }
 
@@ -52,11 +58,12 @@ header {
 .main-nav {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .main-nav ul {
     display: flex;
+    padding-top: 10px;
 }
 
 .main-nav li {
@@ -79,7 +86,7 @@ header {
 
 .box1 {
     margin-top: 80px;
-    max-width: 410px;
+    max-width: 380px;
 }
 
 .box1 p { 
@@ -98,8 +105,12 @@ header {
 
 .input--email {
     background-color: #f2f2f2;
-    width: 300px;
+    width: 100%;
+    cursor: text;
+    padding-left: 12px;
 }
+
+.input--email::placeholder { font-family: 'Poppins', sans-serif; }
 
 .input--join {
     width: 80px;
@@ -107,11 +118,11 @@ header {
     color: #fff;
     position: absolute;
     right: 0;
+    cursor: pointer;
 }
 
-.input--email::placeholder {
-    font-family: 'Poppins', sans-serif; 
-    padding-left: 12px;
+.input--join:hover { 
+    border: 1px solid #333;    
 }
 
 .hero-image-box {
@@ -125,4 +136,50 @@ header {
     border-radius: 10px;
 }
 
+/* SECTION: Services */
+.section-services h2 { 
+    font-size: 28px;
+    max-width: 280px;
+}
 
+.services_container {
+    display: flex;
+    justify-content: space-around;
+    margin: 24px auto;
+}
+
+.services_card { 
+    width: 25%; 
+    padding: 18px;
+}
+
+.services_card:hover {
+    box-shadow: 0px 10px 30px rgba(51, 51, 51, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.services_card:hover .btn-started { 
+    background-color: #2d9cdb;
+    color: #fff;
+}
+
+.services_icon { 
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.btn-started {
+    margin: 24px 0;
+    color: #828282;
+    width: 120px;
+}
+
+.services_title { margin: 24px 0; }
+
+.ux_design span { background-color: #2d9cdb; }
+
+.front_end span { background-color: #27ae60;}
+
+.back_end span { background-color: #eb5757;}
