@@ -16,14 +16,20 @@ html {
 /* ------------------------------------------------- */
 /* REUSABLE COMPONENTS */
 /* ------------------------------------------------- */
-/* HEADINGS */
-
-/* SECTION */
-.section {
+.row {
     width: 90%;
     max-width: 1250px;
     margin: 110px auto 110px auto;
 }
+
+/* NAVIGATION */
+nav li a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+nav li { list-style-type: none;}
 
 .title { font-size: 28px; }
 
@@ -31,10 +37,30 @@ html {
 .input, .btn {
     font-family: 'Poppins', sans-serif;
     border: none;
-    height: 40px;
+    height: 45px;
     border-radius: 10px;
     outline: none;
 }
+
+.input--email {
+    background-color: #f2f2f2;
+    width: 100%;
+    cursor: text;
+    padding-left: 12px;
+}
+
+.input--email::placeholder { font-family: 'Poppins', sans-serif; }
+
+.input--join {
+    width: 80px;
+    background-color: #2d9cdb;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.input--join:hover {  border: 1px solid #f2f2f2; }
 
 .input_container { position: relative;}
 
@@ -78,12 +104,6 @@ header {
 
 .main-nav li:last-child { padding-right: 0;}
 
-.main-nav li a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
 .hero-text-box { margin-left: 210px; }
 
 .hero-text-box p { font-size: 14px;}
@@ -106,26 +126,6 @@ header {
 }
 
 .box2 p:nth-of-type(2) { color: #828282;}
-
-.input--email {
-    background-color: #f2f2f2;
-    width: 100%;
-    cursor: text;
-    padding-left: 12px;
-}
-
-.input--email::placeholder { font-family: 'Poppins', sans-serif; }
-
-.input--join {
-    width: 80px;
-    background-color: #2d9cdb;
-    color: #fff;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-}
-
-.input--join:hover {  border: 1px solid #f2f2f2; }
 
 .hero-image-box {
     width: 100%;
@@ -302,3 +302,52 @@ header {
     color: #828282;
 }
 
+/* FOOTER */
+footer { 
+    position: relative;
+    min-height: 320px;
+    background-color: #100e1d;
+    color: #fff;
+}
+
+.footer-container { 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;   
+}
+
+.footer-nav li { padding-bottom: 12px; }
+
+.footer-nav li:last-child { padding-bottom: 0; }
+
+.social-links {
+    display: flex;
+    flex-flow: column;
+}
+
+.social-icon {
+    font-size: 32px;
+    margin-right: 8px;
+}
+
+.footer-input { width: 320px; }
+
+.footer-input p { font-size: 14px;}
+
+.created-by {
+    display: flex;
+    justify-content: center;
+    margin-top: 95px;
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+
+.created-by a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.created-by a:first-of-type { 
+    font-weight: 700;
+    text-decoration: underline;
+}
