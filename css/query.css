@@ -10,7 +10,7 @@
     .hero-text-box { margin-left: 80px; }
 
     .main-nav ul { display: none; }
-    
+
     /* SECTION: Services */
     .services_container { flex-flow: column; }
 
@@ -23,10 +23,7 @@
 
     .col1, .col2 { width: 100%;}
 
-}
-
-@media only screen and (max-width: 615px) {
-    .photos img { width: 180px; }
+    .photos img { width: 100%;}
 }
 
 @media only screen and (max-width: 510px) {
