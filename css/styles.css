@@ -11,6 +11,7 @@ html {
     font-family: 'Poppins', sans-serif;
     color: #333;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
 }
 
 /* ------------------------------------------------- */

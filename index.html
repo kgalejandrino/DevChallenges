@@ -12,15 +12,15 @@
     <title>Edie Homepage</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav class="main-nav">
             <span class="logo">Edie</span>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Our Works</a></li>
-                <li><a href="#">Clients</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#header" class="btn--scroll-to">Home</a></li>
+                <li><a href="#services" class="btn--scroll-to btn-services">Services</a></li>
+                <li><a href="#works" class="btn--scroll-to">Our Works</a></li>
+                <li><a href="#team" class="btn--scroll-to">Clients</a></li>
+                <li><a href="#footer" class="btn--scroll-to">Contact</a></li>
             </ul>
         </nav>
         <div class="hero-text-box box1">
@@ -40,7 +40,7 @@
             </div>
         </div>
     </header>
-    <section class="services-section row">
+    <section class="services-section row" id="services">
         <p class="services-section-title title">We offer high demand services</p>
         <div class="services_container">
             <div class="ux_design services_card">
@@ -63,7 +63,7 @@
             </div>
         </div>
     </section>
-    <section class="works-section row">
+    <section class="works-section row" id="works">
         <p class="works-section-title title">Good designs means good business</p>
         <div class="works_gallery">
             <div class="gallery_images">
@@ -89,7 +89,7 @@
             <p class="see-more-text">see more<span class="material-icons md-18 icon-arrow">arrow_right_alt</span></p>
         </div>
     </section>
-    <section class="team-section row">
+    <section class="team-section row" id="team">
         <div class="team-container">
             <div class="team_text-box">
                 <p>Meet the team</p>
@@ -122,11 +122,11 @@
         <div class="footer-container row">
             <nav class="footer-nav">
                 <ul>
-                    <li>Home</li>
-                    <li>Services</li>
-                    <li>Our Works</li>
-                    <li>Clients</li>
-                    <li>Contact</li>
+                    <li><a href="#header" class="btn--scroll-to">Home</a></li>
+                    <li><a href="#services" class="btn--scroll-to btn-services">Services</a></li>
+                    <li><a href="#works" class="btn--scroll-to">Our Works</a></li>
+                    <li><a href="#team" class="btn--scroll-to">Clients</a></li>
+                    <li><a href="#contact" class="btn--scroll-to">Contact</a></li>
                 </ul>
             </nav>
             <div class="social-links">
@@ -139,7 +139,7 @@
             </div>
             <div class="footer-input input_container">
                 <p class="input_paragraph">Want us to contact you?</p>
-                <input type="text" placeholder="Email" class="input input--email">
+                <input type="text" placeholder="Email" class="input input--email" id="contact">
                 <input type="submit" value="Join" class="input input--join">
             </div>
         </div>
@@ -147,5 +147,7 @@
             <p>created by <a href="https://github.com/kgalejandrino" id="username">Kevin Alejandrino</a>- <a href="https://devchallenges.io/">devChallenges.io</a></p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
