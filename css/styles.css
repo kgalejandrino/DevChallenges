@@ -228,7 +228,10 @@ header {
 }
 
 /* SECTION: Team */
-.team-section-title {  width: 240px; }
+.team-section-title {  
+    width: 240px; 
+    padding: 18px 0;
+}
 
 .team-container {
     display: flex;
