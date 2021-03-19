@@ -9,6 +9,8 @@
     /* HEADER */
     .hero-text-box { margin-left: 80px; }
 
+    .main-nav ul { display: none; }
+    
     /* SECTION: Services */
     .services_container { flex-flow: column; }
 
