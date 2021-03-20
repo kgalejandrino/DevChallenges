@@ -55,6 +55,8 @@
 
     .footer-nav, .social-links{ margin-bottom: 50px;}
 
+    #footer-logo { margin-left: 0;}
+
 }
 
 @media only screen and (max-width: 510px) {
