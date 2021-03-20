@@ -1,5 +1,5 @@
 @media only screen and (max-width: 1100px) {
-    /* HEADER */
+    /* ----- HEADER ----- */
     .hero-text-box { margin-left: 150px; }
 
     .gallery_images:nth-of-type(odd) { margin-top: 160px; }
@@ -7,10 +7,31 @@
 
 
 @media only screen and (max-width: 735px) {
-    /* HEADER */
+    /* ----- HEADER ----- */
     .hero-text-box { margin-left: 80px; }
+  
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 12px 0;
+        width: 100%;
+        background-color: #fffffffa;
+        box-shadow: 0 4px 4px #e0e0e0;
+        z-index: 9999;
+    }
+    
+    .nav-ul { display: none; }
 
-    .main-nav ul { display: none; }
+    .js--mobile-ul li { padding-top: 10px; }
+
+    /* Mobile Nav */
+    #hamburger-menu { 
+        display:block; 
+        margin-right: 40px;
+    }
+
+    .logo { margin-left: 40px;}
 
     /* SECTION: Services */
     .services_container { flex-flow: column; }
@@ -37,7 +58,7 @@
 }
 
 @media only screen and (max-width: 510px) {
-    /* HEADER */
+    /* ----- HEADER ----- */
     .hero-text-box { margin-left: 60px; }
 
     .hero-text-box h1 { font-size: 24px;}
@@ -64,7 +85,7 @@
 }
 
 @media only screen and (max-width: 420px) {
-    /* HEADER */
+    /* ----- HEADER ----- */
     .hero-text-box { margin-left: 30px; }
 }
 
