@@ -91,3 +91,8 @@
     .hero-text-box { margin-left: 30px; }
 }
 
+@media only screen and (max-width: 320px) {
+    .input--email { width: 90%;}
+    .input--join { right: 30px;}
+}
+
