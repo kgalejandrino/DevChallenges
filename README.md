@@ -35,9 +35,9 @@
 <!-- OVERVIEW -->
 
 ## Overview
-Desktop Preview:
-![desktop_preview](https://github.com/kgalejandrino/DevChallenges--EdieHomepage/blob/main/images/desktop_preview.gif)
-Mobile Preview:
+Desktop Preview:  
+![desktop_preview](https://github.com/kgalejandrino/DevChallenges--EdieHomepage/blob/main/images/desktop_preview.gif)  
+Mobile Preview:  
 ![mobile_preview](https://github.com/kgalejandrino/DevChallenges--EdieHomepage/blob/main/images/mobile_preview.gif)
 
 ### Built With
