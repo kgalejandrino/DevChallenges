@@ -35,6 +35,7 @@
 <!-- OVERVIEW -->
 
 ## Overview
+![desktop_preview](https://github.com/kgalejandrino/DevChallenges--EdieHomepage/blob/main/images/desktop_preview.gif)
 
 - What was your experience?
 - What have you learned/improved?
