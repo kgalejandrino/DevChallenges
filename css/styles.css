@@ -17,6 +17,12 @@ html {
 /* ------------------------------------------------- */
 /* REUSABLE COMPONENTS */
 /* ------------------------------------------------- */
+.flex_container { 
+    display: flex;   
+    flex-flow: column; 
+    width: 100%;
+}
+
 .grid-container {
     display: grid;
     grid-gap: 20px;
@@ -27,7 +33,7 @@ html {
     display: flex;
     background-color: #fff;
     border-radius: 12px;
-    padding: 24px;
+    padding: 18px;
 }
 
 .grid-item:nth-child(1) { grid-column: 1 / span 3;}
@@ -67,11 +73,7 @@ html {
     margin-right: 24px;
 }
 
-.details_container { 
-    display: flex;    
-    flex-flow: column;
-    width: 100%;
-}
+.details { flex-flow: column; }
 
 .contact_container {
     display: flex;
@@ -111,5 +113,35 @@ html {
 }
 
 .skills_container {
+    width: 100%;
     margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.language { 
+    width: 30%;
+    font-size: 14px;
+}
+
+.bar { 
+    width: 65%;
+    height: 10px;
+    background-color: #c4c4c4;
+    border-radius: 12px;
+    margin-top: 3px;
+    /* border: 1px solid blue; */
+}
+
+.bar_percentage {
+    border-radius: 12px;
+    height: 100%;
+    background-color: #2f80ed;
+}
+
+.react, .vue { width: 70%;}
+
+.javascript, .redux { width: 80%;}
+
+.css, .react_native { width: 90%;}
+
