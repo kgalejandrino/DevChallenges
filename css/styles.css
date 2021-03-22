@@ -130,7 +130,6 @@ html {
     background-color: #c4c4c4;
     border-radius: 12px;
     margin-top: 3px;
-    /* border: 1px solid blue; */
 }
 
 .bar_percentage {
@@ -144,4 +143,7 @@ html {
 .javascript, .redux { width: 80%;}
 
 .css, .react_native { width: 90%;}
+
+/* ARTICLE: BLOG */
+.blog p:first-child { color: #a0a0a0;}
 
