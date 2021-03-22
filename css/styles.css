@@ -27,6 +27,7 @@ html {
     display: flex;
     background-color: #fff;
     border-radius: 12px;
+    padding: 24px;
 }
 
 .grid-item:nth-child(1) { grid-column: 1 / span 3;}
@@ -59,10 +60,6 @@ html {
 }
 
 /*---- ARTICLE: Personal Details ----*/
-.personal-details {
-    padding: 24px;
-}
-
 .personal-details img {
     height: auto;
     width: 210px;
@@ -105,4 +102,14 @@ html {
 
 #email, #phone-no { vertical-align: 4px;}
 
+/*---- ARTICLE: Skills ----*/
+.skills { flex-flow: column; }
 
+.skills_title {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.skills_container {
+    margin-top: 12px;
+}
