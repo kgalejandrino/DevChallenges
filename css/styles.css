@@ -138,12 +138,39 @@ html {
     background-color: #2f80ed;
 }
 
-.react, .vue { width: 70%;}
+.react, .vue { max-width: 70%;}
 
-.javascript, .redux { width: 80%;}
+.javascript, .redux { max-width: 80%;}
 
-.css, .react_native { width: 90%;}
+.css, .react_native { max-width: 90%;}
 
 /* ARTICLE: BLOG */
-.blog p:first-child { color: #a0a0a0;}
+.blog span { color: #a0a0a0;}
 
+.blog_container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.blog_title {
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 18px;
+    max-width: 180px;
+}
+
+.blog_image {
+    width: 380px;
+    height: 350px;
+}
+
+.blog_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.blog .details__text:last-child { margin-bottom: 60px;}
