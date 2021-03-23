@@ -25,7 +25,7 @@ html {
 
 .grid-container {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 28px;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -72,7 +72,8 @@ html {
 }
 
 /* BUTTONS */
-.btn-container { margin-top: 12px;}
+.btn-container { 
+    margin-top: 12px;}
 
 .btn { 
     outline: none;
@@ -99,28 +100,39 @@ html {
 }
 
 /*---- ARTICLE: Personal Details ----*/
-.personal-details img {
-    height: auto;
-    width: 210px;
-    border-radius: 12px;
+.personal-details .flex_container { flex-flow: row; }
+
+.personal_image {
+    max-width: 210px;
+    max-height: 210px;
     margin-right: 24px;
 }
 
-.details { flex-flow: column; }
+.personal_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
 
+.contact_info { 
+    display: flex;
+    justify-content: space-between;
+}
 .contact_container {
     display: flex;
+    flex-flow: column;
     justify-content: space-between;
     margin-bottom: 24px;
 }
 
-.contact__left p:first-child { 
+.left__contact p:first-child { 
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 8px;
 }
 
-.contact__left p:last-child,
+.left__contact p:last-child,
 .details__text { color: #828282; }
 
 .details__text {
@@ -130,7 +142,7 @@ html {
 
 .icon-contact { margin-right: 6px; }
 
-.contact__right { 
+.right__contact { 
     display: flex; 
     flex-flow: column;
 }
@@ -178,7 +190,7 @@ html {
 .css, .react_native { max-width: 90%;}
 
 /* ARTICLE: BLOG */
-.blog span { color: #a0a0a0;}
+.blog > :first-child { color: #a0a0a0;}
 
 .blog_container {
     display: flex;
@@ -292,12 +304,15 @@ html {
 /*---- ARTICLE: Project List ----*/
 .project_image {
     width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .project_image img {
-   height: auto;
-   width: 100%;
-   border-radius: 12px;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .project_hashtag { margin-top: 18px; }
@@ -320,7 +335,7 @@ html {
 }
 
 .btn-link {
-    width: 120px;
+    width: 110px;
     height: 40px;
     border: 1px solid #2f80ed;
     margin-right: 8px;
@@ -330,4 +345,58 @@ html {
     text-decoration: none;
     color: #2f80ed;
     font-size: 16px;
+}
+
+/* ------------------------------------------------- */
+/* PAGINATION */
+/* ------------------------------------------------- */
+.pagination {
+    display: flex;
+    margin-top: 24px;
+    float: right;
+}
+
+.pagination div {
+    border: 1px solid #4f4f4f;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.pagination div:nth-of-type(5) { 
+    border: none; 
+    font-weight: 700;
+}
+
+.pagination div:nth-of-type(5),
+.pagination div:nth-of-type(6) { margin-left: 0; } 
+
+.pagination div:nth-of-type(3) {
+    background-color: #2f80ed; 
+    color: #fff;
+    border: none;
+ }
+
+/* ------------------------------------------------- */
+/* FOOTER */
+/* ------------------------------------------------- */
+/* FOOTER */
+footer {
+    margin: 80px 0 20px 0;
+    text-align: center;
+    color: #828282;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#username {
+    color: #000;
 }
