@@ -36,7 +36,9 @@ html {
     padding: 18px;
 }
 
-.grid-item:nth-child(1) { grid-column: 1 / span 3;}
+.grid-item:nth-child(1) { 
+    grid-column: 1 / span 3;
+}
 
 .grid-item:nth-child(2) { grid-column: 1 / span 1;}
 
@@ -56,8 +58,37 @@ html {
 
 .grid-item:nth-child(6) {
     grid-column: 1 / span 3;
+    grid-row: 6 / span 1;
 }
 
+.grid-item:nth-child(7) { grid-column: 1 / span 1; }
+.grid-item:nth-child(8) { grid-column: 2 / span 1; }
+.grid-item:nth-child(9) { grid-column: 3 / span 1; }
+
+.grid-item:nth-child(7),
+.grid-item:nth-child(8), 
+.grid-item:nth-child(9)  {
+    grid-row: 7 / span 2;
+}
+
+/* BUTTONS */
+.btn-container { margin-top: 12px;}
+
+.btn { 
+    outline: none;
+    background-color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.btn:hover { 
+    background-color: #2f80ed; 
+    color: #fff;
+    border: none;
+}
+
+.btn:hover a{ color: #fff; }
 /* ------------------------------------------------- */
 /* SECTION: Portfolio */
 /* ------------------------------------------------- */
@@ -247,20 +278,56 @@ html {
 /*---- ARTICLE: Project Type ----*/
 .project-type_title { font-size: 18px;}
 
-.project-type_container { margin-top: 12px;}
-
-.btn { 
-    outline: none;
-    background-color: #fff;
+.btn-react, .btn-vue, .btn-responsive {
     height: 32px;
-    border-radius: 12px;
     border: 1px solid #4f4f4f;
     color: #4f4f4f;
-    cursor: pointer;
 }
-
 .btn-react { width: 80px; }
 
 .btn-vue { width: 70px;}
 
 .btn-responsive { width: 110px;}
+
+/*---- ARTICLE: Project List ----*/
+.project_image {
+    width: 100%;
+}
+
+.project_image img {
+   height: auto;
+   width: 100%;
+   border-radius: 12px;
+}
+
+.project_hashtag { margin-top: 18px; }
+
+.project_hashtag span {
+    font-size: 14px;
+    margin-right: 12px;
+}
+
+.project_title { 
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.project_description {
+    font-size: 14px;
+    color: #828282;
+    margin-bottom: 24px;
+}
+
+.btn-link {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #2f80ed;
+    margin-right: 8px;
+}
+
+.btn-link a {
+    text-decoration: none;
+    color: #2f80ed;
+    font-size: 16px;
+}
