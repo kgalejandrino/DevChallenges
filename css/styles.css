@@ -243,3 +243,24 @@ html {
     margin-top: 12px;
     margin-bottom: 18px;
 }
+
+/*---- ARTICLE: Project Type ----*/
+.project-type_title { font-size: 18px;}
+
+.project-type_container { margin-top: 12px;}
+
+.btn { 
+    outline: none;
+    background-color: #fff;
+    height: 32px;
+    border-radius: 12px;
+    border: 1px solid #4f4f4f;
+    color: #4f4f4f;
+    cursor: pointer;
+}
+
+.btn-react { width: 80px; }
+
+.btn-vue { width: 70px;}
+
+.btn-responsive { width: 110px;}
