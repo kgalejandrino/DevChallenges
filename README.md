@@ -36,7 +36,7 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![desktop_screenshot](https://github.com/kgalejandrino/DevChallenges--Portfolio/blob/main/images/desktop_screenshot.png)
 
 - What was your experience?
 - What have you learned/improved?
