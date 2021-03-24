@@ -36,9 +36,9 @@
 
 ## Overview
 
-![desktop-screenshot](https://github.com/kgalejandrino/DevChallenges--CheckoutPage/blob/main/images/desktop-screenshot.PNG)
-![mobile-screenshot1](https://github.com/kgalejandrino/DevChallenges--CheckoutPage/blob/main/images/mobile-screenshot2.PNG)
-![mobile-screenshot2](https://github.com/kgalejandrino/DevChallenges--CheckoutPage/blob/main/images/mobile-screenshot1.PNG)
+![desktop-screenshot](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Checkout_Page/images/desktop-screenshot.PNG)
+![mobile-screenshot1](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Checkout_Page/images/mobile-screenshot1.PNG)
+![mobile-screenshot2](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Checkout_Page/images/mobile-screenshot2.PNG)
 
 
 - What was your experience?
