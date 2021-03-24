@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/devchallenges.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/query.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Checkout Page</title>
+</head>
+<body>
+    <section class="checkout-section">
+        <h1 class="checkout-section__title">Checkout</h1>
+        <div class="flexbox">
+            <div class="left-box">
+                <form action="" class="form">
+                    <h4 class="form__title">Contact Information</h4>
+                    <div class="form__flex form__email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+                        <span class="material-icons md-18 input-icons">email</span>
+                    </div>
+                    <div class="form__flex form__phone">
+                        <label for="phone-num" >Phone</label>
+                        <input type="tel" id="phone_no" name="phone-num" placeholder="Enter your phone..." required>
+                        <span class="material-icons md-18 input-icons">call</span>
+                    </div>
+
+                    <h4 class="form__title">Shipping Address</h4>
+                    <div class="form__flex form__fname">
+                        <label for="fname">Full name</label>
+                        <input type="text" id="fname" name="fname" placeholder="Rodney Cotton" required>
+                        <span class="material-icons md-18 input-icons">account_circle</span>
+                    </div>
+                    <div class="form__flex form__address">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Your address..." required>
+                        <span class="material-icons md-18 input-icons">home</span>
+                    </div>
+                    <div class="form__flex form__city">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Your city..." required>
+                        <span class="material-icons md-18 input-icons">location_city</span>
+                    </div>
+                    <div class="form__last-flex">
+                        <div class="form__flex form__country">
+                            <label for="country">Country</label>
+                            <select name="country" id="country" required>
+                                <option value="" disabled selected>Your country...</option>
+                                <option value="afghanistan">Afghanistan</option>
+                                <option value="albania">Albania</option>
+                                <option value="afghanistan">Afghanistan</option>
+                            </select>
+                            <span class="material-icons md-18 input-icons">public</span>
+                        </div>
+                        <div class="form__flex form__postal">
+                            <label for="postal">Postal code</label>
+                            <input type="text" id="postal" name="postal" placeholder="Your postal code..." required>
+                            <span class="material-icons md-18 input-icons">markunread_mailbox</span>
+                        </div>
+                    </div>
+                    <div class="form__flex form__save">
+                        <input type="checkbox" id="save" name="save">
+                        <label for="save">Save this information for next time</label>
+                    </div>
+                    <div class="form__flex flex__button">
+                        <input type="submit" value="Continue" class="btn btn-continue"></input>
+                    </div>
+                </form>
+            </div>
+            <div class="right-box">
+                <div class="orders">
+                    <div class="orders__item">
+                        <div class="item__image">
+                            <img src="images/photo1.png" alt="bag">
+                        </div>
+                        <div class="item__details">
+                            <div class="details__prices">
+                                <p class="item__name">Vintage Bag</p>
+                                <span class="item__sale-price">$54.99</span>
+                                <span class="item__price"><del>$94.99</del></span>
+                            </div>
+                            <div class="details__btns" id="js--value1">
+                                <button class="btn btn-dec">-</button>
+                                <input type="number" value="1" min="1" id="item1_value">
+                                <button class="btn btn-inc">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orders__item">
+                        <div class="item__image">
+                            <img src="images/photo2.png" alt="shoes">
+                        </div>
+                        <div class="item__details">
+                            <div class="details__prices">
+                                <p class="item__name">Levi Shoes</p>
+                                <span class="item__sale-price">$74.99</span>
+                                <span class="item__price"><del>$124.99</del></span>
+                            </div>
+                            <div class="details__btns" id="js--value2">
+                                <button class="btn btn-dec">-</button>
+                                <input type="number" value="1" min="1" id="item2_value">
+                                <button class="btn btn-inc">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orders__summary">
+                        <div class="shipping">
+                            <span>Shipping</span>
+                            <span>$19</span>
+                        </div>
+                        <div class="total">
+                            <span>Total</span>
+                            <span>$148.98</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>created by <a href="https://github.com/kgalejandrino" id="username">Kevin Alejandrino</a>- <a href="https://devchallenges.io/">devChallenges.io</a></footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
