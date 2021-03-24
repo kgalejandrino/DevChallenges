@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main { font-family: 'Poppins', sans-serif; }
+
+.section-crew {
+    width: 1200px;
+    margin: 60px auto;
+}
+
+.section-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.left-text {
+    font-size: 28px;
+    font-weight: 700;
+    margin-left: 25px;
+}
+
+.right-text {
+    width: 350px;
+    margin-right: 150px;
+}
+
+.title {
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.crew { 
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+figure {
+    width: 30%;
+}
+
+figure:nth-child(2), 
+figure:nth-child(5) {
+    margin-top: 120px;
+}
+
+.job-title {
+    vertical-align: top;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+img {
+    height: auto;
+    width: 250px;
+}
+
+figcaption { font-weight: 700;}
+
+footer{
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(114, 114, 114);
+}
+
+a { 
+    text-decoration: none;
+    color: inherit;
+}
