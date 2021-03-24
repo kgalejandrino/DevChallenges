@@ -36,8 +36,8 @@
 
 ## Overview
 
-![desktop](https://github.com/kgalejandrino/DevChallenges--InteriorConsultant/blob/main/images/screenshot1.PNG)
-![mobile](https://github.com/kgalejandrino/DevChallenges--InteriorConsultant/blob/main/images/screenshot2.PNG)
+![desktop](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Interior_Consultant/images/screenshot1.PNG)
+![mobile](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Interior_Consultant/images/screenshot2.PNG)
 
 - What was your experience?
 - What have you learned/improved?
