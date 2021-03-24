@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+/* REUSABLE COMPONENTS */
+.section-text { 
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    width: 70%;
+    text-align: justify;
+}
+
+.material-icons.md-36 { font-size: 36px; }
+
+/* HEADINGS */
+h1, h2 { font-family: 'Playfair Display', serif; }
+
+/* MAIN */
+#main {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    /* border: 1px solid gold; */
+}
+
+/* HEADER */
+header { margin-top: 40px;}
+
+.title {
+    color: #000;
+    font-size: 48px;
+}
+
+.title-container {
+    position: relative;
+    margin-top: 12px;
+}
+
+.title-container span {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: -4px;
+    color: #C4C4C4;
+}
+
+.title-container p {
+    display: inline-block;
+    width: 50%;
+    font-style: italic;
+    font-size: 14px;
+    text-align: justify;
+    margin-left: 28px;
+}
+
+/* SECTION: Cheesecake */
+.section-cheesecake {
+    margin-top: 40px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.section-cheesecake img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* SECTION: Ingredients */
+.section-ingredients {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    width: 100%;
+    display: flex;
+}
+
+.col-1 { width: 70%; }
+
+.ingredient p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.ingredient-container { 
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.ingredient-container:last-child { margin-bottom: 0;}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+}
+
+.col-2 { width: 30%; }
+
+.time-basis {
+    height: 100%;
+    max-height: 400px;
+    width: 100%;
+    max-width: 230px;
+    float: right;
+    box-shadow: 0px 0px 20px #0e0e0e1a;
+    border-radius: 12px;
+    display:  flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container { width: 100%; }
+
+.flex-box {
+    display: flex;
+    width: 70%;
+    margin: 25px auto;
+}
+
+.item1 { margin-right: 12px;}
+
+.icon-servings { color: #F2994A; }
+
+.prep-title {
+    color: #bdbdbd;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* SECTION: Instructions */
+.section-instructions { 
+    width: 100%;
+}
+.instruction { 
+    width: 70%;
+    display: flex;
+    margin: 20px 0;
+}
+
+.ins-steps {
+    background-color: #F2994A;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* SOURCE */
+#source { 
+    margin-top: 40px;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+#source a {
+    text-decoration: none;
+    color: inherit;
+    font-style: italic;
+}
+
+/* FOOTER */
+footer {
+    margin: 80px 0 20px 0;
+    text-align: center;
+    color: #828282;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#username {
+    color: #000;
+}
+
+
