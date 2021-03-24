@@ -36,9 +36,9 @@
 
 ## Overview
 Desktop Preview:  
-![desktop_preview](https://github.com/kgalejandrino/DevChallenges--EdieHomepage/blob/main/images/desktop_preview.gif)  
+![desktop_preview](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Edie_Homepage/images/desktop_preview.gif)  
 Mobile Preview:  
-![mobile_preview](https://github.com/kgalejandrino/DevChallenges--EdieHomepage/blob/main/images/mobile_preview.gif)
+![mobile_preview](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Edie_Homepage/images/mobile_preview.gif)
 
 ### Built With
 
