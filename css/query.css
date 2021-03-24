@@ -1,0 +1,90 @@
+@media only screen and (max-width: 1000px) {
+    /* ------------------------------------------------- */
+    /* REUSABLE COMPONENTS */
+    /* ------------------------------------------------- */
+    .grid-item:nth-child(2) {
+        grid-column: 1 / span 3;
+    }
+
+    .grid-item:nth-child(3) { 
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 1;
+    }
+
+    .grid-item:nth-child(4) { 
+        grid-column: 1 / span 3;
+        grid-row: 4 / span 1;
+    }
+    
+    .grid-item:nth-child(5) {
+        grid-column: 1 / span 3;
+        grid-row: 5 / span 1;
+    }
+
+    .details__text { width: 100%; }
+    /*---- ARTICLE: Hobbies ----*/
+    .hobbies .flex_container {
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .hobbies_title { width: 100%; }
+
+    .hobbies_container { width: 30%; }
+
+    /*---- ARTICLE: Project List ----*/
+    .btn-link { 
+        margin-top: 12px; 
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    /* ------------------------------------------------- */
+    /* REUSABLE COMPONENTS */
+    /* ------------------------------------------------- */
+    .grid-item:nth-child(7),
+    .grid-item:nth-child(8), 
+    .grid-item:nth-child(9) {
+        grid-column: 1 / span 3;
+    }
+
+    .grid-item:nth-child(7) { grid-row: 7 / span 1; }
+    .grid-item:nth-child(8) { grid-row: 8 / span 1; } 
+    .grid-item:nth-child(9) { grid-row: 9 / span 1; }
+
+    /*---- ARTICLE: Personal Details ----*/
+    .personal-details .flex_container { flex-flow: column; }
+
+    .contact_container { margin-top: 18px; }
+}
+
+@media only screen and (max-width: 650px) { 
+    /*---- ARTICLE: Personal Details ----*/
+    .personal_image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .contact_info { flex-flow: column; }
+
+    .right__contact { margin-top: 24px;}
+
+    /* ARTICLE: BLOG */
+    .blog_container {
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .blog_title {
+        max-width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .blog_image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
