@@ -36,9 +36,9 @@
 
 ## Overview
 
-![desktop](https://github.com/kgalejandrino/DevChallenges--RecipePage/blob/main/images/screenshot1.PNG)
-![desktop2](https://github.com/kgalejandrino/DevChallenges--RecipePage/blob/main/images/screenshot2.PNG)
-![mobile](https://github.com/kgalejandrino/DevChallenges--RecipePage/blob/main/images/screenshot3.PNG)
+![desktop](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Recipe_Page/images/screenshot1.PNG)
+![desktop2](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Recipe_Page/images/screenshot2.PNG)
+![mobile](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Recipe_Page/images/screenshot3.PNG)
 
 - What was your experience?
 - What have you learned/improved?
