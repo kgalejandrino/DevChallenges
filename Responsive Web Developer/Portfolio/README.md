@@ -35,8 +35,8 @@
 <!-- OVERVIEW -->
 
 ## Overview
-
-![desktop_screenshot](https://github.com/kgalejandrino/DevChallenges--Portfolio/blob/main/images/desktop_screenshot.png)
+Desktop Preview:
+![desktop_screenshot](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/Portfolio/images/desktop_screenshot.png)
 
 - What was your experience?
 - What have you learned/improved?
