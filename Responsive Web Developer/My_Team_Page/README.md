@@ -34,7 +34,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/kgalejandrino/DevChallenges--MyTeamPage/blob/main/images/screenshot.png)
+![screenshot](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/My_Team_Page/images/screenshot.png)
 
 ### Built With
 
