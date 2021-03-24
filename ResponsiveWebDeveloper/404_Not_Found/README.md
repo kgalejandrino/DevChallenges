@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# DevChallenges
-=======
 <h1 align="center">404NotFound</h1>
 
 <div align="center">
@@ -67,4 +64,3 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - Website (In Progress)
 - GitHub [@kgalejandrino](https://github.com/kgalejandrino)
->>>>>>> DevChallenges--404NotFound
