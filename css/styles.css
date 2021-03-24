@@ -1,0 +1,230 @@
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #181719;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* MAIN */
+main { z-index: 1; ;}
+/**********************/
+/*----- REUSABLE -----*/
+/**********************/
+.row { 
+    width: 90%;
+    max-width: 1650px;
+    margin: 0 auto;
+}
+
+/********************/
+/*----- HEADER -----*/
+/********************/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    padding: 8px;
+    height: 35px;
+    max-width: 120px;
+    width: 100%;
+}
+
+/************************/
+/*----- NAVIGATION -----*/
+/************************/
+.main-link {
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 64px;
+    font-size: 16px;
+}
+
+.main-link:last-child { padding-right: 0;}
+
+.main-link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-link a:hover {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 6px;
+    border-width: 2px;
+}
+
+.main-link a:active {
+    color: #a9a9a9;
+    border: none;
+}
+
+.active {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 6px;
+    border-width: 2px;  
+}
+/* HAMBURGER MENU */
+.material-icons.md-36 { font-size: 36px; }
+
+#icon-menu {
+    display: none; 
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* Modal: Mobile Nav */
+.js-modal-nav {
+    display: none;
+    background-color: #181719;;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.js-mobile-nav {
+    display: block;
+    z-index: 999;
+    margin: 650px auto 0 auto;
+}
+
+.js-mobile-link {
+    display: block;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+/**************************************/
+/*----- SECTION: MODERN INTERIOR -----*/
+/**************************************/
+.section-modern-interior {
+    width: 100%;
+    /* height: auto; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 90px;
+}
+
+/* Column 1 */
+.col1 {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+#title {
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    margin-bottom: 28px;
+}
+
+#description {
+    width: 350px;
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+#read-more {
+    display: inline-block;
+}
+
+.icon-arrow {
+    vertical-align: -8px;
+    padding-left: 8px;
+}
+
+/* Column 2 */
+.col2 { 
+    width: 50%;
+    position: relative
+}
+
+.img-design {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* Designer Information */
+.card {
+    width: 300px;
+    height: 150px;
+    background-color: #181719;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute; 
+    right: 25px;
+    bottom: -75px;
+}
+
+.card-designer {
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.designer-photo {
+    width: auto;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.designer-details {
+    font-size: 12px;
+    display: flex;
+    flex-flow: column;
+    margin-left: 18px;
+    margin-top: 4px;
+}
+
+#name { font-size: 12px; }
+
+#job-title {
+    font-size: 10px;
+    color: #828282;
+    margin-top: 6px;
+}
+
+#credits {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    margin-top: 25px;
+    width: 60%;
+}
+
+/********************/
+/*----- FOOTER -----*/
+/********************/
+footer {
+    color: #A9A9A9;
+    font-size: 14px;
+    height: 30px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    margin-top: 120px;
+    text-align: center;
+}
+
+footer span { color: #fff;}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
