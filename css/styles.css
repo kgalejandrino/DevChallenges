@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+
+/* MAIN */
+#main { font-family: 'Raleway', sans-serif; }
+
+/* HEADINGS */
+.error {
+    font-family: 'Inconsolata', monospace; 
+    text-transform: uppercase;
+    font-size: 22px;
+    margin-top: 40px;
+    padding-left: 180px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.scarecrow { width: 50%; }
+
+.scarecrow img {
+    height: auto;
+    width: 530px;
+    display: block;
+    margin: auto;
+}
+
+.message { width: 50%; }
+
+.message h3 {
+    font-size: 64px;
+    width: 60%;
+    margin-bottom: 54px;
+    color: #313131;
+    word-spacing: 8px;
+}
+
+.message p {
+    font-size: 20px;
+    width: 32%;
+    word-spacing: 4px;
+    line-height: 1.5;
+    color: #313131;
+    margin-bottom: 54px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    width: 180px;
+    padding: 18px;
+    background-color: #313131;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    box-shadow: 5px 10px #888888;
+}
+
+footer { 
+    color: #969494;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 220px;
+}
