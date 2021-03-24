@@ -1,0 +1,11 @@
+@media only screen and (max-width: 1450px) {
+    .section-images, .section-profile { margin-bottom: 50px;}
+
+    .photo-container { max-width: 140px; }
+
+    .name { font-size: 18px;}
+    .location { font-size: 14px;}
+    .boxes, footer { font-size: 16px; }
+
+    .grid-container { grid-gap: 16px;}
+}
