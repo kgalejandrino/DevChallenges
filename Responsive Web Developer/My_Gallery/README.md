@@ -36,7 +36,8 @@
 
 ## Overview
 
-![screenshot](https://github.com/kgalejandrino/DevChallenges--MyGallery/blob/main/images/screenshot.PNG)![screenshot-mobile](https://github.com/kgalejandrino/DevChallenges--MyGallery/blob/main/images/screenshot1.PNG)
+![screenshot](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/My_Gallery/images/screenshot.PNG)
+![screenshot-mobile](https://github.com/kgalejandrino/DevChallenges/blob/main/Responsive%20Web%20Developer/My_Gallery/images/screenshot1.PNG)
 
 - What was your experience?
 - What have you learned/improved?
