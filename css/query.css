@@ -1,0 +1,98 @@
+@media only screen and (max-width: 1100px) {
+    /* ----- HEADER ----- */
+    .hero-text-box { margin-left: 150px; }
+
+    .gallery_images:nth-of-type(odd) { margin-top: 160px; }
+}
+
+
+@media only screen and (max-width: 735px) {
+    /* ----- HEADER ----- */
+    .hero-text-box { margin-left: 80px; }
+  
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 12px 0;
+        width: 100%;
+        background-color: #fffffffa;
+        box-shadow: 0 4px 4px #e0e0e0;
+        z-index: 9999;
+    }
+    
+    .nav-ul { display: none; }
+
+    .js--mobile-ul li { padding-top: 10px; }
+
+    /* Mobile Nav */
+    #hamburger-menu { 
+        display:block; 
+        margin-right: 40px;
+    }
+
+    .logo { margin-left: 40px;}
+
+    /* SECTION: Services */
+    .services_container { flex-flow: column; }
+
+    .services_card { width: 100%;}
+
+    .gallery_images:nth-of-type(odd) { margin-top: 90px; }
+
+    /* SECTION: Works */
+    .team-container { flex-flow: column; }
+
+    .col1, .col2 { width: 100%;}
+
+    .photos img { width: 100%;}
+
+    /* SECTION: Quote */
+    .quote-section-message { font-size: 24px;}
+
+    /* FOOTER */
+    .footer-container { flex-flow: column; }
+
+    .footer-nav, .social-links{ margin-bottom: 50px;}
+
+    #footer-logo { margin-left: 0;}
+
+}
+
+@media only screen and (max-width: 510px) {
+    /* ----- HEADER ----- */
+    .hero-text-box { margin-left: 60px; }
+
+    .hero-text-box h1 { font-size: 24px;}
+
+    .box1, .box2 { max-width: 280px; }
+
+    /* SECTION: Works */
+    .works_gallery { flex-flow: column; }
+
+    .gallery_images { 
+        width: 100%; 
+        margin-bottom: 28px;
+    }
+
+    .gallery_images:nth-of-type(odd) { margin-top: 0; }
+
+    .see-more-text { 
+        position: relative;
+        margin-top: 24px;
+    }
+
+    /* SECTION: Quote */
+    .quote-section-message { font-size: 20px;}
+}
+
+@media only screen and (max-width: 420px) {
+    /* ----- HEADER ----- */
+    .hero-text-box { margin-left: 30px; }
+}
+
+@media only screen and (max-width: 320px) {
+    .input--email { width: 90%;}
+    .input--join { right: 30px;}
+}
+
