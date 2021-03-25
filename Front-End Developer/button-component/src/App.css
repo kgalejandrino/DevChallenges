@@ -7,8 +7,10 @@
 html {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
+    color: #333;
 }
 
 .App {
+    height: 100vh;
     display: flex;
 }

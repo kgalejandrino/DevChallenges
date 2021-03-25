@@ -8,7 +8,7 @@ const links = ['Colors', 'Typography', 'Spaces', 'Buttons', 'Inputs', 'Grid'];
 const sidebar = () => {
     return (
         <div className="Sidebar">
-            <div className="title">
+            <div className="sidebar-title">
                 <span className="dev"><b>Dev</b></span>
                 <span className="challenges"><b>challenges.io</b></span>
             </div>

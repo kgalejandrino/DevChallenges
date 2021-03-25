@@ -1,0 +1,20 @@
+.Buttons {
+    width: 87%;
+    margin-left: 150px;
+    margin-top: 36px;
+}
+
+.btn-title {
+    font-family: 'Poppins', sans-serif;
+    color: #474747;
+    font-size: 24px;
+}
+
+.row { 
+    display: flex;
+    justify-content: space-between;
+    max-width: 380px;
+    margin-top: 24px;
+}
+
+

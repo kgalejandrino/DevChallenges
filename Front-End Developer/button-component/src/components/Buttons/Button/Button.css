@@ -1,0 +1,41 @@
+.Button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px;
+    width: 90px;
+    border-radius: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #3f3f3f;
+    font-weight: 700;
+}
+
+.btn {
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.light-text { color: #828282; }
+
+#default-hover:hover,
+#default-hover:focus { background-color: #aeaeae;}
+
+#outline {
+    color: #3d5afe;
+    border: 1px solid #3d5afe;
+    background-color: #fff;
+}
+
+#outline-hover {
+    color: #3d5afe;
+    border: 1px solid #3d5afe;
+    background-color: #fff;
+}
+
+#outline-hover:hover,
+#outline:focus {
+    color: #3d5afe;
+    border: 1px solid #3d5afe;
+    background-color:  #2962ff1a;
+}
