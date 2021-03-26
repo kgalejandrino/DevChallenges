@@ -1,0 +1,53 @@
+.btn {
+    padding: 12px;
+    width: 120px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    margin: 24px 0 0 40px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+}
+
+/* Default Button */
+#default {
+    color: #3f3f3f;
+    border: none;
+}
+
+#default:hover, 
+#default:focus {
+    background-color: #aeaeae;
+}
+
+/* Outline Button */
+#outline {
+    color: #3D5AFE;
+    border: 1px solid #3D5AFE;
+    background-color: #fff;
+}
+
+#outline:hover, 
+#outline:focus { background-color: #2962ff1a; }
+
+/* Text Button */
+#text {
+    color: #3D5AFE;
+    border: none;
+    background-color: #fff;
+}
+
+#text:hover, 
+#text:focus { background-color: #2962ff1a; }
+
+/* Left-Icon Button */
+#left-icon { float: left; }
+
+/* Right-Icon Button */
+#right-icon { float: right; }
+
+.default-icon {
+    color: #fff;
+    background-color: #2962ff;
+    border: none;
+}

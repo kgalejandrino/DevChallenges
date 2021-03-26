@@ -1,44 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import './Sidebar.css';
 import ButtonStories from './ButtonStories/ButtonStories';
 
-class Sidebar extends Component {
-    constructor(props) {
-        super(props);
+const Sidebar = (props) => {
+    let [btnStories, toggleBtnStories] = useState(false);
 
-        this.state = {
-            btnStories: false
-        }
+    const showBtnStories = () => {
+        toggleBtnStories(!btnStories);
     }
 
-    showBtnStories = () => {
-        this.setState(prevState => ({
-            btnStories: !prevState.btnStories
-        }));
-    }
-
-    render() {
-        return (
-            <div className="Sidebar">
-                <div className="sidebar-title">
-                    <span className="dev"><b>Dev</b></span>
-                    <span className="challenges"><b>challenges.io</b></span>
-                </div>
-                <nav>
-                    <ul className="main-nav">
-                        <li>Colors</li>
-                        <li>Typography</li>
-                        <li>Spaces</li>
-                        <li onClick={this.showBtnStories}>Buttons</li>
-                        {this.state.btnStories ? <ButtonStories /> : null}
-                        <li>Inputs</li>
-                        <li>Grid</li>
-                    </ul>
-                </nav>
+    return (
+        <div className="Sidebar">
+            <div className="sidebar-title">
+                <span className="dev"><b>Dev</b></span>
+                <span className="challenges"><b>challenges.io</b></span>
             </div>
-        )
-    }
+            <nav>
+                <ul className="main-nav">
+                    <li>Colors</li>
+                    <li>Typography</li>
+                    <li>Spaces</li>
+                    <li onClick={showBtnStories}>Buttons</li>
+                        {btnStories
+                            ? <ButtonStories typeSelected={props.typeSelected} positionSelected={props.positionSelected}/> 
+                            : null
+                        }
+                    <li>Inputs</li>
+                    <li>Grid</li>
+                </ul>
+            </nav>
+        </div>
+    )
 }
 
 export default Sidebar;
