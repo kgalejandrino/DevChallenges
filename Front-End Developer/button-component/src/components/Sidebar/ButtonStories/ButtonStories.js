@@ -15,8 +15,10 @@ const list = [
 
 const ButtonStories = (props) => {
     const [stories, setStories] = useState(list);
+    const [selected, setSelected] = useState('');
 
     const showButton = (id) => {
+        setSelected(id);
         const story = list.filter(item => {
             if(item.id === id) {
                 if(item.type === 'left-icon' || item.type === 'right-icon') {
@@ -31,14 +33,21 @@ const ButtonStories = (props) => {
         return story;
     }
 
+
     return (
         <ul className="ButtonStories">
             {stories.map(story =>
                 <li 
+                    id={selected === story.id ? 'highlighted' : null}
                     key={story.id}
                     onClick={() => showButton(story.id)}>
+                    <span 
+                        className="material-icons md-18 add-icon" 
+                        style={{color: selected === story.id ? '#fff' : '#f7542e'}}>bookmark_border
+                    </span>
                     {story.text}
                 </li>
+                
             )}
         </ul>
     )

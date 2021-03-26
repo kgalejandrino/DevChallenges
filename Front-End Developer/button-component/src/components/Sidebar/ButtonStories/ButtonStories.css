@@ -1,7 +1,16 @@
-.ButtonStories {
-    margin-left: 24px;
+.ButtonStories { 
+    display: flex;
+    flex-flow: column;
+    width: 100%;
 }
 
-.ButtonStories li{
-    font-size: 12px;
+.ButtonStories li{ 
+    padding-left: 76px;
+    font-size: 12px; 
+    width: 100%;
+}
+
+#highlighted {
+    background-color: #f7542e;
+    color: #fff;
 }
