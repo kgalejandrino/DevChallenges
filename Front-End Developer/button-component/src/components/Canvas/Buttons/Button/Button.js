@@ -6,7 +6,7 @@ import Aux from '../../../../hoc/Auxilliary/Auxilliary';
 const button = (props) => {
     let offShadow = null;
 
-    const displayIcon = props.position ? <span className="material-icons md-24" id={props.position}>face</span> : null;
+    const displayIcon = props.position ? <span className="material-icons md-24" id={props.position}>{props.btnIcon}</span> : null;
 
     if(props.isShadowed) {
         offShadow = { boxShadow: "none" }
@@ -18,7 +18,7 @@ const button = (props) => {
         props.btnStyle 
             ? <button 
                 style={offShadow}
-                className={`btn ${props.btnStyle}`} 
+                className={`btn ${props.btnStyle} ${props.btnSize}`} 
                 id={props.btnStyle} 
                 disabled={props.isDisabled}>
                     {displayIcon}

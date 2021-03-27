@@ -38,6 +38,28 @@ const panel = (props) => {
                             </select>
                         </td>
                     </tr>
+                    <tr>
+                        <td><b>Change Icon</b></td>
+                        <td>
+                            <select onChange={props.selectIcon}>
+                                    <option>face</option>
+                                    <option>heart</option>
+                                    <option>leaf</option>
+                                    <option>tool</option>
+                                    <option>star</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Change Size</b></td>
+                        <td>
+                            <select onChange={props.selectSize}>
+                                    <option>small</option>
+                                    <option>medium</option>
+                                    <option>large</option>
+                            </select>
+                        </td>                        
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -50,7 +50,8 @@ textarea:focus { box-shadow: 0px 0px 0px 1px inset #f7542e; }
 select {
     font-family: 'Noto Sans JP', sans-serif;
     outline: none;
-    width: 80px;
+    width: 120px;
+    padding: 0 6px;
     color: #686868; 
     border-color: #c4c4c4;
 }

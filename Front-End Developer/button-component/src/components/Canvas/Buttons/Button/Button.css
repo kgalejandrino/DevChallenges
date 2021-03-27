@@ -1,6 +1,5 @@
 .btn {
     padding: 14px;
-    /* width: 120px; */
     border-radius: 8px;
     outline: none;
     cursor: pointer;
@@ -53,16 +52,10 @@
 }
 
 /* Left-Icon Button */
-#left-icon { 
-    float: left; 
-    margin-right: 8px;
-}
+#left-icon { float: left; }
 
 /* Right-Icon Button */
-#right-icon { 
-    float: right; 
-    margin-left: 8px;
-}
+#right-icon { float: right; }
 
 .icon-btn, #primary, #secondary, #danger {
     color: #fff;
@@ -113,3 +106,10 @@ button[disabled] {
     pointer-events: none;
     opacity: 0.6;
 }
+
+/* Button Sizes */
+.small { width: 140px; }
+
+.medium { width: 180px; }
+
+.large { width: 220px;}
