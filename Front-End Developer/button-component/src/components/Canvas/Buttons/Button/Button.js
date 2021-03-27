@@ -8,7 +8,7 @@ const button = (props) => {
 
     const displayButton = 
         props.btnStyle 
-            ? <button className={`btn ${props.btnStyle}`} id={props.btnStyle}>
+            ? <button className={`btn ${props.btnStyle}`} id={props.btnStyle} disabled={props.isDisabled}>
                 {displayIcon}
                 {props.children}
             </button>

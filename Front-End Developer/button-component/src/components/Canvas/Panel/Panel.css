@@ -1,3 +1,4 @@
+/* Panel */
 .Panel { 
     border-top: 1px solid #cccccc;
     min-height: 400px;
@@ -12,6 +13,7 @@
     font-weight: 700;
 }
 
+/* Table */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -27,4 +29,16 @@ td, th {
 th:first-child,
 td:first-child { width: 30%; }
 
-th { color: #a0a0a0;}
+th { color: #686868;}
+
+/* Select: Disable Option */
+.disabled {
+    font-family: 'Noto Sans JP', sans-serif;
+    outline: none;
+    width: 80px;
+    color: #686868; 
+}
+
+.disabled option { 
+    color: #686868; 
+}

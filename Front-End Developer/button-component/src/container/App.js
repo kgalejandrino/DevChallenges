@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       typeSelected: '',
       iconPosition: '',
-      showButton: false
+      showButton: false,
     }
   }
 

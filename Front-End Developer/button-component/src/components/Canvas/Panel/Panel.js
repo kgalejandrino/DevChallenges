@@ -2,22 +2,28 @@ import React from 'react';
 
 import './Panel.css';
 
-const panel = () => {
+const panel = (props) => {
     return (
         <div className="Panel">
-            <div class="tab"><span>Controls</span></div>
+            <div className="tab"><span>Controls</span></div>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Control</th>
-                </tr>
-                <tr>
-                    <td><b>disabled</b></td>
-                    <td>
-                        <span>True</span>
-                        <span>False</span>
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Control</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>disabled</b></td>
+                        <td>
+                            <select onChange={props.selected} className="disabled">
+                                <option>False</option>
+                                <option>True</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     )

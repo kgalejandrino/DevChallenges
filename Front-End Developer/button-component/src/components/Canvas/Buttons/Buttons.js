@@ -10,7 +10,8 @@ const buttons = (props) => {
             <Button 
                 btnStyle={props.btnStyle}
                 position={props.position}
-                show={props.show}>Default
+                show={props.show}
+                isDisabled={props.isDisabled}>Default
             </Button>
         </div>
     )
