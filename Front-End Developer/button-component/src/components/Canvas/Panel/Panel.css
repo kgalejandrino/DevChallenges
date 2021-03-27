@@ -31,8 +31,8 @@ td:first-child { width: 30%; }
 
 th { color: #686868;}
 
-/* Select: Disable Option */
-.disabled {
+/* Select */
+select {
     font-family: 'Noto Sans JP', sans-serif;
     outline: none;
     width: 80px;

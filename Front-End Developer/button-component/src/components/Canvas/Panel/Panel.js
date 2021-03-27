@@ -15,11 +15,20 @@ const panel = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><b>disabled</b></td>
+                        <td><b>button</b></td>
                         <td>
-                            <select onChange={props.selected} className="disabled">
-                                <option>False</option>
-                                <option>True</option>
+                            <select onChange={props.selectDisable} className="disabled">
+                                <option>Enabled</option>
+                                <option>Disabled</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>box-shadow</b></td>
+                        <td>
+                            <select onChange={props.selectShadow}>
+                                    <option>Enabled</option>
+                                    <option>Disabled</option>
                             </select>
                         </td>
                     </tr>

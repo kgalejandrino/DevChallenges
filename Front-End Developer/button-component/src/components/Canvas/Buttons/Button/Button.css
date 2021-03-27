@@ -12,6 +12,7 @@
 /* Default Button */
 #default {
     color: #3f3f3f;
+    box-shadow: 0 0 2px #efefef;
     border: none;
 }
 
@@ -26,6 +27,7 @@
 #outline {
     color: #3D5AFE;
     border: 1px solid #3D5AFE;
+    box-shadow: 0 0 2px #3D5AFE;
     background-color: #fff;
 }
 
@@ -62,6 +64,8 @@
     border: none;
 }
 
+.icon-btn, #primary { box-shadow: 0 0 4px #2962ff;}
+
 /* Primary Button */
 #primary:hover, 
 #primary:focus,
@@ -73,7 +77,10 @@
 }
 
 /* Secondary Button */
-#secondary { background-color:#455a64; }
+#secondary { 
+    background-color:#455a64; 
+    box-shadow: 0 0 4px #455a64;
+}
 
 #secondary:hover, 
 #secondary:focus { 
@@ -83,7 +90,10 @@
 }
 
 /* Danger Button */
-#danger { background-color: #d32f2f; }
+#danger { 
+    background-color: #d32f2f; 
+    box-shadow: 0 0 4px #d32f2f;
+}
 
 #danger:hover, 
 #danger:focus { 

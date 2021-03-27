@@ -6,10 +6,14 @@ import Panel from './Panel/Panel';
 
 const Canvas = (props) => {
     let [disabled, setDisabled] = useState(false);
+    let [shadowed, setShadow] = useState(false);
 
-    const handleDisableSelection = (e) => {
-        // const value = e.target.value;
+    const handleDisableSelection = () => {
         setDisabled(!disabled);
+    }
+
+    const handleBoxShadowSelection = () => {
+        setShadow(!shadowed);
     }
 
     return (
@@ -19,8 +23,12 @@ const Canvas = (props) => {
                 position={props.position}
                 show={props.show}
                 isDisabled={disabled}
+                isShadowed={shadowed}
             />
-            <Panel selected={handleDisableSelection}/>
+            <Panel 
+                selectDisable={handleDisableSelection}
+                selectShadow={handleBoxShadowSelection}
+            />
         </div>
     )
 }
