@@ -15,7 +15,13 @@ const panel = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><b>button</b></td>
+                        <td><b>Button Text</b></td>
+                        <td>
+                            <textarea onChange={props.changeText}>Default</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Button</b></td>
                         <td>
                             <select onChange={props.selectDisable} className="disabled">
                                 <option>Enabled</option>
@@ -24,7 +30,7 @@ const panel = (props) => {
                         </td>
                     </tr>
                     <tr>
-                        <td><b>box-shadow</b></td>
+                        <td><b>Box-shadow</b></td>
                         <td>
                             <select onChange={props.selectShadow}>
                                     <option>Enabled</option>

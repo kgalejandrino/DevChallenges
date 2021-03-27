@@ -1,6 +1,6 @@
 .btn {
-    padding: 12px;
-    width: 120px;
+    padding: 14px;
+    /* width: 120px; */
     border-radius: 8px;
     outline: none;
     cursor: pointer;
@@ -53,10 +53,16 @@
 }
 
 /* Left-Icon Button */
-#left-icon { float: left; }
+#left-icon { 
+    float: left; 
+    margin-right: 8px;
+}
 
 /* Right-Icon Button */
-#right-icon { float: right; }
+#right-icon { 
+    float: right; 
+    margin-left: 8px;
+}
 
 .icon-btn, #primary, #secondary, #danger {
     color: #fff;

@@ -12,7 +12,7 @@ const buttons = (props) => {
                 position={props.position}
                 show={props.show}
                 isDisabled={props.isDisabled}
-                isShadowed={props.isShadowed}>Default
+                isShadowed={props.isShadowed}>{props.text}
             </Button>
         </div>
     )

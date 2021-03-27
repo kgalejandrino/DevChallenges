@@ -31,12 +31,28 @@ td:first-child { width: 30%; }
 
 th { color: #686868;}
 
+/* Input: Text */
+textarea {
+    outline: none;
+    resize: none;
+    height: 32px;
+    width: 90%;
+    border: 0px none;
+    box-shadow: 0px 0px 0px 1px inset #b8b8b8;
+    font-size: 14px;
+    padding: 8px 10px;
+    overflow: hidden;
+}
+
+textarea:focus { box-shadow: 0px 0px 0px 1px inset #f7542e; }
+
 /* Select */
 select {
     font-family: 'Noto Sans JP', sans-serif;
     outline: none;
     width: 80px;
     color: #686868; 
+    border-color: #c4c4c4;
 }
 
 .disabled option { 
