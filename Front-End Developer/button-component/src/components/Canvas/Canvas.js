@@ -11,6 +11,8 @@ const Canvas = (props) => {
     let [btnText, setBtnText] = useState('Default');
     let [icon, setIcon] = useState('face');
     let [size, setSize] = useState('small');
+    let [bgColor, setBgColor] = useState('')
+    let [tColor, setTextColor] = useState('')
 
     const handleDisableSelection = () => setDisabled(!disabled);
 
@@ -19,6 +21,10 @@ const Canvas = (props) => {
     const handleChangeText = (e) => setBtnText(e.target.value);
 
     const handleSizeSelection = (e) => setSize(e.target.value);
+
+    const handleBackgroundColorSeclection = (e) => setBgColor(e.target.value);
+
+    const handleTextColorSeclection = (e) => setTextColor(e.target.value);
 
     const handleIconSelection = (e) => {
         switch(e.target.value) {
@@ -51,6 +57,8 @@ const Canvas = (props) => {
                 text={btnText}
                 btnIcon={icon}
                 btnSize={size}
+                backgroundColor={bgColor}
+                textColor={tColor}
             />
             <Panel 
                 selectDisable={handleDisableSelection}
@@ -58,6 +66,8 @@ const Canvas = (props) => {
                 changeText={handleChangeText}
                 selectIcon={handleIconSelection}
                 selectSize={handleSizeSelection}
+                selectBgColor={handleBackgroundColorSeclection}
+                selectTextColor={handleTextColorSeclection}
             />
         </div>
     )

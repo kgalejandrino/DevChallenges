@@ -15,9 +15,40 @@ const panel = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><b>Button Text</b></td>
+                        <td><b>Text</b></td>
                         <td>
                             <textarea onChange={props.changeText}>Default</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Color</b></td>
+                        <td>
+                            <div id="td-container">
+                                <div class="td-boxes">
+                                    <div>
+                                        <span>Text</span>
+                                        <input type="color" onChange={props.selectTextColor} id="background-color"/>
+                                    </div>
+                                </div>
+                                <div class="td-boxes">
+                                    <div>
+                                        <span>Background</span>
+                                        <input type="color" onChange={props.selectBgColor} id="text-color"/>
+                                    </div>
+                                </div>
+                                <div class="td-boxes">
+                                    <div>   
+                                        <span>Shadow</span>
+                                        <input type="color" onChange={props.selectBgColor} id="text-color"/>
+                                    </div>
+                                </div>
+                                <div class="td-boxes">
+                                    <div>
+                                        <span>Hover</span>
+                                        <input type="color" onChange={props.selectBgColor} id="text-color"/>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>

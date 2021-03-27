@@ -29,6 +29,10 @@ td, th {
 th:first-child,
 td:first-child { width: 30%; }
 
+
+th:last-child,
+td:last-child { width: 70%; }
+
 th { color: #686868;}
 
 /* Input: Text */
@@ -59,3 +63,21 @@ select {
 .disabled option { 
     color: #686868; 
 }
+
+/* Input: Color */
+#background-color, #text-color { width: 80%;}
+
+#td-container { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.td-boxes { width: 48%; }
+
+.td-boxes div { 
+    display: flex;
+    justify-content: space-between;
+}
+

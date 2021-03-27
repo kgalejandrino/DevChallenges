@@ -14,7 +14,9 @@ const buttons = (props) => {
                 isDisabled={props.isDisabled}
                 isShadowed={props.isShadowed}
                 btnIcon={props.btnIcon}
-                btnSize={props.btnSize}>{props.text}
+                btnSize={props.btnSize}
+                backgroundColor={props.backgroundColor}
+                textColor={props.textColor}>{props.text}
             </Button>
         </div>
     )
