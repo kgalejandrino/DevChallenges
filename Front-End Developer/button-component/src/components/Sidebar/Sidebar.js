@@ -1,16 +1,30 @@
 import React, { useState } from 'react';
 
 import './Sidebar.css';
+import Aux from '../../hoc/Auxilliary/Auxilliary';
+
 import ButtonStories from './ButtonStories/ButtonStories';
 
+const lists = ['Colors', 'Typography', 'Spaces', 'Buttons', 'Inputs', 'Grid'];
+
 const Sidebar = (props) => {
-    let [btnStories, toggleBtnStories] = useState(false);
-    
-    const showBtnStories = () => {
-        toggleBtnStories(!btnStories);
-        props.typeSelected('default');
+    let [btnStories, setBtnStories] = useState(false);
+    let [icon, setIcon] = useState('add_box');
+
+    const showBtnStories = (i) => {
+        const selectedList = lists.forEach((list, idx) => {
+            if(idx === i && list === 'Buttons') {
+                setBtnStories(!btnStories);
+                props.typeSelected('default');
+            }
+        })
+        return selectedList;
     }
 
+    const stories = btnStories 
+        ? <ButtonStories typeSelected={props.typeSelected} positionSelected={props.positionSelected}/> 
+        : null;
+    
     return (
         <div className="Sidebar">
             <div className="sidebar-title">
@@ -19,7 +33,22 @@ const Sidebar = (props) => {
             </div>
             <nav>
                 <ul className="main-nav">
-                    <li>
+                    {lists.map((list, idx) => {
+                        return (
+                            <Aux key={idx}>
+                                <li>
+                                    <span 
+                                        onClick={() => showBtnStories(idx)}
+                                        className="material-icons md-18 add-icon">
+                                        {icon}
+                                    </span>
+                                    {list} 
+                                </li> 
+                                {list === 'Buttons' ? stories : null }
+                            </Aux>  
+                        )
+                    })}
+                    {/* <li>
                         <span className="material-icons md-18 add-icon">add_box</span>Colors
                     </li>
                     <li>
@@ -42,7 +71,7 @@ const Sidebar = (props) => {
                     <li>
                         <span className="material-icons md-18 add-icon">add_box</span>
                         Grid
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
         </div>

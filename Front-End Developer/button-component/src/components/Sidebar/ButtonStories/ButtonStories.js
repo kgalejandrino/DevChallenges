@@ -15,15 +15,15 @@ const list = [
 
 const ButtonStories = (props) => {
     const [stories, setStories] = useState(list);
-    const [selected, setSelected] = useState('');
+    const [selected, setSelected] = useState(1);
 
     const showButton = (id) => {
         setSelected(id);
-        const story = list.filter(item => {
+        const story = list.forEach(item => {
             if(item.id === id) {
                 if(item.type === 'left-icon' || item.type === 'right-icon') {
                     props.positionSelected(item.type);
-                    props.typeSelected('default-icon');
+                    props.typeSelected('icon-btn');
                 } else {
                     props.positionSelected('');
                     props.typeSelected(item.type);

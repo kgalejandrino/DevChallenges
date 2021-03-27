@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Sidebar from './components/Sidebar/Sidebar';
-import Buttons from './components/Buttons/Buttons';
+import Sidebar from '../components/Sidebar/Sidebar';
+import Canvas from '../components/Canvas/Canvas';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class App extends Component {
           typeSelected={this.getTypeSelected}
           positionSelected={this.getIconPosition}
         />
-        <Buttons 
+        <Canvas 
           btnStyle={this.state.typeSelected}
           position={this.state.iconPosition}
           show={this.state.showButton}

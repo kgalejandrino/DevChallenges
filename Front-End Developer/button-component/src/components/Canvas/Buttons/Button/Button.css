@@ -18,6 +18,8 @@
 #default:hover, 
 #default:focus {
     background-color: #aeaeae;
+    border: 4px solid #d6d6d6;
+    box-shadow: 0 0 4px #d6d6d6;
 }
 
 /* Outline Button */
@@ -28,7 +30,11 @@
 }
 
 #outline:hover, 
-#outline:focus { background-color: #2962ff1a; }
+#outline:focus { 
+    background-color: #2962ff1a; 
+    border: 4px solid #3D5AFE;
+    box-shadow: 0 0 4px #3D5AFE;
+}
 
 /* Text Button */
 #text {
@@ -38,7 +44,11 @@
 }
 
 #text:hover, 
-#text:focus { background-color: #2962ff1a; }
+#text:focus { 
+    background-color: #2962ff1a; 
+    border: 4px solid #3D5AFE;
+    box-shadow: 0 0 4px #3D5AFE;
+}
 
 /* Left-Icon Button */
 #left-icon { float: left; }
@@ -46,7 +56,7 @@
 /* Right-Icon Button */
 #right-icon { float: right; }
 
-.default-icon, #primary, #secondary, #danger {
+.icon-btn, #primary, #secondary, #danger {
     color: #fff;
     background-color: #2962ff;
     border: none;
@@ -54,16 +64,36 @@
 
 /* Primary Button */
 #primary:hover, 
-#primary:focus { background-color: #0039cb;}
+#primary:focus,
+.icon-btn:hover,
+.icon-btn:focus { 
+    background-color: #0039Cb;
+    border: 4px solid #4169e1d5;
+    box-shadow: 0 0 3px #4169e1d5;
+}
 
 /* Secondary Button */
 #secondary { background-color:#455a64; }
 
 #secondary:hover, 
-#secondary:focus { background-color: #1c313a; }
+#secondary:focus { 
+    background-color: #1c313a; 
+    border: 4px solid #69acc9;
+    box-shadow: 0 0 3px #69acc9;
+}
 
 /* Danger Button */
 #danger { background-color: #d32f2f; }
 
 #danger:hover, 
-#danger:focus { background-color: #9a0007; }
+#danger:focus { 
+    background-color: #9a0007; 
+    border: 4px solid #e77479;
+    box-shadow: 0 0 3px #e77479;
+}
+
+/* Disabled Button */
+button[disabled] {
+    pointer-events: none;
+    opacity: 0.6;
+}
