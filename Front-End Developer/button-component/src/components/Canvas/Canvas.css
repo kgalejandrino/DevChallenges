@@ -4,9 +4,3 @@
     flex-flow: column;
     justify-content: space-between;
 }
-
-@media only screen and (max-width: 750px) {
-    .Canvas { 
-        /* display: none; */
-    }
-}

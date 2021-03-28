@@ -1,4 +1,7 @@
-.Buttons { margin-left: 40px; }
+.Buttons { 
+    padding-left: 40px; 
+    height: 50%;
+}
 
 .Buttons h2 {
     margin-top: 40px;
@@ -11,5 +14,6 @@
         display: flex;
         flex-flow: column;
         align-items: center;
+        margin-top: 50px;
     }
 }
