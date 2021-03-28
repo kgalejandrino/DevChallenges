@@ -12,7 +12,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/kgalejandrino/DevChallenges/tree/main/Front-End%20Developer/button-component">
       Solution
     </a>
     <span> | </span>
@@ -81,12 +81,10 @@ $ npm start
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+- [Material Icon](https://google.github.io/material-design-icons/)
+- [Radium](https://formidable.com/open-source/radium/)
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- Website (In Progress)
+- GitHub [@kgalejandrino](https://github.com/kgalejandrino)
