@@ -22,11 +22,11 @@ const ButtonStories = (props) => {
         const story = list.forEach(item => {
             if(item.id === id) {
                 if(item.type === 'left-icon' || item.type === 'right-icon') {
-                    props.positionSelected(item.type);
-                    props.typeSelected('icon-btn');
+                    props.posClicked(item.type);
+                    props.typeClicked('icon-btn');
                 } else {
-                    props.positionSelected('');
-                    props.typeSelected(item.type);
+                    props.posClicked('');
+                    props.typeClicked(item.type);
                 }
             }
         });

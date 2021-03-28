@@ -1,6 +1,15 @@
+.Buttons { margin-left: 40px; }
+
 .Buttons h2 {
     margin-top: 40px;
-    margin-left: 40px;
     color: #4f4f4f;
     font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    .Buttons { 
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
 }

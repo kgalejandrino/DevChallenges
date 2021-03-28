@@ -26,11 +26,11 @@ const button = (props) => {
     }
 
     const displayButton = 
-        props.btnStyle 
+        props.type 
             ? <button 
                 style={{...offShadow, ...boxShadow, ...borderHoverColor, ...btnStyles}}
-                className={`btn ${props.btnStyle} ${props.btnSize}`} 
-                id={props.btnStyle} 
+                className={`btn ${props.type} ${props.btnSize}`} 
+                id={props.type} 
                 disabled={props.isDisabled}>
                     {displayIcon}
                     {props.text}

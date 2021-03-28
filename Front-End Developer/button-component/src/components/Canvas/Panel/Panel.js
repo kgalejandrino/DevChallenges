@@ -25,25 +25,25 @@ const panel = (props) => {
                         <td>
                             <div id="td-container">
                                 <div className="td-boxes">
-                                    <div>
+                                    <div className="box">
                                         <span>Text</span>
                                         <input type="color" defaultValue="#efefef" onChange={props.selectTextColor}/>
                                     </div>
                                 </div>
                                 <div className="td-boxes">
-                                    <div>
+                                    <div className="box">
                                         <span>Background</span>
                                         <input type="color" defaultValue="#efefef" onChange={props.selectBgColor}/>
                                     </div>
                                 </div>
                                 <div className="td-boxes">
-                                    <div>   
+                                    <div className="box">   
                                         <span>Shadow</span>
                                         <input type="color" defaultValue="#efefef" onChange={props.selectShadowColor}/>
                                     </div>
                                 </div>
                                 <div className="td-boxes">
-                                    <div>
+                                    <div className="box">
                                         <span>Border Hover</span>
                                         <input type="color" defaultValue="#efefef" onChange={props.selectHoverColor}/>
                                     </div>

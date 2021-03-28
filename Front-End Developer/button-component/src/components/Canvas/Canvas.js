@@ -55,7 +55,7 @@ const Canvas = (props) => {
     return (
         <div className="Canvas">
             <Buttons 
-                btnStyle={props.btnStyle}
+                type={props.type}
                 position={props.position}
                 show={props.show}
                 isDisabled={disabled}

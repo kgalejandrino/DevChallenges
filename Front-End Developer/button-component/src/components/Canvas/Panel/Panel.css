@@ -26,11 +26,11 @@ td, th {
 }
 
 th:first-child,
-td:first-child { width: 30%; }
+td:first-child { width: 25%; }
 
 
 th:last-child,
-td:last-child { width: 70%; }
+td:last-child { width: 75%; }
 
 th { color: #686868;}
 
@@ -41,12 +41,13 @@ textarea {
     outline: none;
     resize: none;
     height: 32px;
-    width: 90%;
+    width: 98%;
     border: 0px none;
     box-shadow: 0px 0px 0px 1px inset #b8b8b8;
     font-size: 14px;
     padding: 8px 10px;
     overflow: hidden;
+    border-radius: 6px;
 }
 
 textarea:focus { box-shadow: 0px 0px 0px 1px inset #f7542e; }
@@ -66,13 +67,15 @@ select {
 }
 
 /* Input: Color */
-input[type='color'] { width: 80%;}
+input[type='color'] { 
+    width: 80%;
+}
 
 #td-container { 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 90%;
+    width: 98%;
 }
 
 .td-boxes { 
@@ -80,8 +83,24 @@ input[type='color'] { width: 80%;}
     padding-top: 8px;
 }
 
-.td-boxes div { 
+.box { 
     display: flex;
     justify-content: space-between;
 }
+
+/* Media Queries */
+@media only screen and (max-width: 1550px) {
+    #td-container { flex-flow: column; }
+
+    .td-boxes { width: 100% };
+}
+
+@media only screen and (max-width: 900px) {
+    input[type='color'] { width: 70%; }
+}
+
+@media only screen and (max-width: 750px) {
+    input[type='color'] { width: 60%; }
+}
+
 

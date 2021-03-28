@@ -8,7 +8,7 @@ const buttons = (props) => {
         <div className="Buttons">
             <h2>Buttons</h2>
             <Button 
-                btnStyle={props.btnStyle}
+                type={props.type}
                 position={props.position}
                 show={props.show}
                 isDisabled={props.isDisabled}

@@ -1,0 +1,24 @@
+.Layout {
+    height: 100vh;
+    display: flex;
+}
+
+.icon-menu { display: none;}
+#menu { left: 18px; }
+
+#close { 
+    right: 48px; 
+    top: 28px
+}
+
+.material-icons.md-36 { font-size: 36px; }
+
+@media only screen and (max-width: 600px) {
+    .icon-menu {
+        display: block;
+        position: absolute;
+        top: 42px;
+        cursor: pointer;
+        z-index: 999;
+    }    
+}

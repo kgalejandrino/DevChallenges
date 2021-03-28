@@ -5,7 +5,6 @@
 }
 
 .sidebar-title { 
-    display: flex;
     margin-top: 36px;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -37,3 +36,23 @@
 }
 
 .material-icons.md-18 { font-size: 18px; }
+
+#slide-right {
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    height: 100%;
+ }
+
+/* Media Queries */
+@media only screen and (max-width: 750px) {
+    .Sidebar { max-width: 220px; }
+
+    .sidebar-title, .main-nav li { padding-left: 32px;}
+}
+
+@media only screen and (max-width: 600px) {
+    .Sidebar { display: none; }
+
+    .sidebar-title, .main-nav li { padding-left: 64px;}
+}
