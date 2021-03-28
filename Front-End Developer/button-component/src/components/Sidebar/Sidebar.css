@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 250px;
     background-color: #fafbfd;
+    overflow: hidden;
 }
 
 .sidebar-title { 
@@ -38,10 +39,13 @@
 .material-icons.md-18 { font-size: 18px; }
 
 #slide-right {
-    display: block;
     position: absolute;
-    max-width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 600px;
     height: 100%;
+    transition: 0.5s;
  }
 
 /* Media Queries */
@@ -52,7 +56,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .Sidebar { display: none; }
+    .Sidebar { width: 0; }
 
     .sidebar-title, .main-nav li { padding-left: 64px;}
 }
