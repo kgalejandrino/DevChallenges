@@ -17,35 +17,35 @@ const panel = (props) => {
                     <tr>
                         <td><b>Text</b></td>
                         <td>
-                            <textarea onChange={props.changeText}>Default</textarea>
+                            <textarea onChange={props.changeText} defaultValue="Default"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td><b>Color</b></td>
                         <td>
                             <div id="td-container">
-                                <div class="td-boxes">
+                                <div className="td-boxes">
                                     <div>
                                         <span>Text</span>
-                                        <input type="color" onChange={props.selectTextColor} id="background-color"/>
+                                        <input type="color" defaultValue="#efefef" onChange={props.selectTextColor}/>
                                     </div>
                                 </div>
-                                <div class="td-boxes">
+                                <div className="td-boxes">
                                     <div>
                                         <span>Background</span>
-                                        <input type="color" onChange={props.selectBgColor} id="text-color"/>
+                                        <input type="color" defaultValue="#efefef" onChange={props.selectBgColor}/>
                                     </div>
                                 </div>
-                                <div class="td-boxes">
+                                <div className="td-boxes">
                                     <div>   
                                         <span>Shadow</span>
-                                        <input type="color" onChange={props.selectBgColor} id="text-color"/>
+                                        <input type="color" defaultValue="#efefef" onChange={props.selectShadowColor}/>
                                     </div>
                                 </div>
-                                <div class="td-boxes">
+                                <div className="td-boxes">
                                     <div>
-                                        <span>Hover</span>
-                                        <input type="color" onChange={props.selectBgColor} id="text-color"/>
+                                        <span>Border Hover</span>
+                                        <input type="color" defaultValue="#efefef" onChange={props.selectHoverColor}/>
                                     </div>
                                 </div>
                             </div>

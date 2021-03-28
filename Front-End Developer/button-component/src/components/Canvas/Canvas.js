@@ -11,8 +11,10 @@ const Canvas = (props) => {
     let [btnText, setBtnText] = useState('Default');
     let [icon, setIcon] = useState('face');
     let [size, setSize] = useState('small');
-    let [bgColor, setBgColor] = useState('')
-    let [tColor, setTextColor] = useState('')
+    let [bgColor, setBgColor] = useState('');
+    let [tColor, setTextColor] = useState('');
+    let [sColor, setShadowColor] = useState('');
+    let [hColor, setHoverColor] = useState('');
 
     const handleDisableSelection = () => setDisabled(!disabled);
 
@@ -22,9 +24,13 @@ const Canvas = (props) => {
 
     const handleSizeSelection = (e) => setSize(e.target.value);
 
-    const handleBackgroundColorSeclection = (e) => setBgColor(e.target.value);
+    const handleBackgroundColorSelection = (e) => setBgColor(e.target.value);
 
-    const handleTextColorSeclection = (e) => setTextColor(e.target.value);
+    const handleTextColorSelection = (e) => setTextColor(e.target.value);
+
+    const handleShadowColorSelection = (e) => setShadowColor(e.target.value);
+
+    const handleHoverColorSelection = (e) => setHoverColor(e.target.value);
 
     const handleIconSelection = (e) => {
         switch(e.target.value) {
@@ -59,6 +65,8 @@ const Canvas = (props) => {
                 btnSize={size}
                 backgroundColor={bgColor}
                 textColor={tColor}
+                shadowColor={sColor}
+                hoverColor={hColor}
             />
             <Panel 
                 selectDisable={handleDisableSelection}
@@ -66,8 +74,10 @@ const Canvas = (props) => {
                 changeText={handleChangeText}
                 selectIcon={handleIconSelection}
                 selectSize={handleSizeSelection}
-                selectBgColor={handleBackgroundColorSeclection}
-                selectTextColor={handleTextColorSeclection}
+                selectBgColor={handleBackgroundColorSelection}
+                selectTextColor={handleTextColorSelection}
+                selectShadowColor={handleShadowColorSelection}
+                selectHoverColor={handleHoverColorSelection}
             />
         </div>
     )

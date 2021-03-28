@@ -6,6 +6,7 @@
     margin: 24px 0 0 40px;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
+    overflow: hidden;
 }
 
 /* Default Button */
@@ -112,4 +113,4 @@ button[disabled] {
 
 .medium { width: 180px; }
 
-.large { width: 220px;}
+.large { width: 220px; }

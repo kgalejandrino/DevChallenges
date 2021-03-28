@@ -1,7 +1,6 @@
 /* Panel */
 .Panel { 
     border-top: 1px solid #cccccc;
-    min-height: 400px;
     font-size: 14px;
 }
 
@@ -20,7 +19,7 @@ table {
 }
 
 td, th {
-    border-top: 1px solid #cccccc;;
+    border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
     text-align: left;
     padding: 12px 0 12px 24px;
@@ -34,6 +33,8 @@ th:last-child,
 td:last-child { width: 70%; }
 
 th { color: #686868;}
+
+tr:last-child td { border-bottom: none;}
 
 /* Input: Text */
 textarea {
@@ -65,7 +66,7 @@ select {
 }
 
 /* Input: Color */
-#background-color, #text-color { width: 80%;}
+input[type='color'] { width: 80%;}
 
 #td-container { 
     display: flex;
@@ -74,7 +75,10 @@ select {
     width: 90%;
 }
 
-.td-boxes { width: 48%; }
+.td-boxes { 
+    width: 48%; 
+    padding-top: 8px;
+}
 
 .td-boxes div { 
     display: flex;

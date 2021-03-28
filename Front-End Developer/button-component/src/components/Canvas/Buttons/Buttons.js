@@ -16,7 +16,10 @@ const buttons = (props) => {
                 btnIcon={props.btnIcon}
                 btnSize={props.btnSize}
                 backgroundColor={props.backgroundColor}
-                textColor={props.textColor}>{props.text}
+                text={props.text}
+                textColor={props.textColor}
+                shadowColor={props.shadowColor}
+                hoverColor={props.hoverColor}>{props.text}
             </Button>
         </div>
     )

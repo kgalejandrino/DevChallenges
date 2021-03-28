@@ -9,13 +9,55 @@ const lists = ['Colors', 'Typography', 'Spaces', 'Buttons', 'Inputs', 'Grid'];
 
 const Sidebar = (props) => {
     let [btnStories, setBtnStories] = useState(false);
-    let [icon, setIcon] = useState('add_box');
+    let [listIcon, setlistIcon] = useState({
+        0: 'add_box',
+        1: 'add_box',
+        2: 'add_box',
+        3: 'add_box',
+        4: 'add_box',
+        5: 'add_box',
+    });
 
     const showBtnStories = (i) => {
+        // console.log(i);
+        // console.log(listIcon[i]);
+
+        // if(listIcon[i] === 'add_box') {
+        //     setlistIcon(prevState => ({
+        //         ...prevState,
+        //         [i]: 'remove'  
+        //     }));
+        //     props.typeSelected('');    
+        // } 
+
+        // if(listIcon[i] === 'remove') {
+        //     setlistIcon(prevState => ({
+        //         ...prevState,
+        //         [i]: 'add_box'  
+        //     }));   
+        // }
+
         const selectedList = lists.forEach((list, idx) => {
-            if(idx === i && list === 'Buttons') {
-                setBtnStories(!btnStories);
-                props.typeSelected('default');
+            if(idx === i && listIcon[i] === 'add_box') {
+                if(list === 'Buttons') {
+                    setBtnStories(!btnStories);
+                    props.typeSelected('default');
+                }
+
+                setlistIcon(prevState => ({
+                    ...prevState,
+                    [i]: 'remove'  
+                }));
+            } else if(idx === i && listIcon[i] === 'remove'){
+                if(list === 'Buttons') {
+                    setBtnStories(!btnStories);
+                    props.typeSelected('');
+                }
+                setlistIcon(prevState => ({
+                    ...prevState,
+                    [i]: 'add_box'  
+                }));
+                props.typeSelected('');
             }
         })
         return selectedList;
@@ -40,7 +82,7 @@ const Sidebar = (props) => {
                                     <span 
                                         onClick={() => showBtnStories(idx)}
                                         className="material-icons md-18 add-icon">
-                                        {icon}
+                                        {listIcon[idx]}
                                     </span>
                                     {list} 
                                 </li> 
@@ -48,30 +90,6 @@ const Sidebar = (props) => {
                             </Aux>  
                         )
                     })}
-                    {/* <li>
-                        <span className="material-icons md-18 add-icon">add_box</span>Colors
-                    </li>
-                    <li>
-                        <span className="material-icons md-18 add-icon">add_box</span>Typography
-                    </li>
-                    <li>
-                        <span className="material-icons md-18 add-icon">add_box</span>Spaces</li>
-                    <li>
-                        <span onClick={showBtnStories} className="material-icons md-18 add-icon">add_box</span>
-                        Buttons
-                    </li>
-                        {btnStories
-                            ? <ButtonStories typeSelected={props.typeSelected} positionSelected={props.positionSelected}/> 
-                            : null
-                        }
-                    <li>
-                        <span className="material-icons md-18 add-icon">add_box</span>
-                        Inputs
-                    </li>
-                    <li>
-                        <span className="material-icons md-18 add-icon">add_box</span>
-                        Grid
-                    </li> */}
                 </ul>
             </nav>
         </div>
