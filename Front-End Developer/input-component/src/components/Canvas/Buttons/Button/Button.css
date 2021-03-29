@@ -1,0 +1,116 @@
+.btn {
+    padding: 14px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 24px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+/* Default Button */
+#default {
+    color: #3f3f3f;
+    box-shadow: 0 0 2px #efefef;
+    border: none;
+}
+
+#default:hover, 
+#default:focus {
+    background-color: #aeaeae;
+    border: 4px solid #d6d6d6;
+    box-shadow: 0 0 4px #d6d6d6;
+}
+
+/* Outline Button */
+#outline {
+    color: #3D5AFE;
+    border: 1px solid #3D5AFE;
+    box-shadow: 0 0 2px #3D5AFE;
+    background-color: #fff;
+}
+
+#outline:hover, 
+#outline:focus { 
+    background-color: #2962ff1a; 
+    border: 4px solid #3D5AFE;
+    box-shadow: 0 0 4px #3D5AFE;
+}
+
+/* Text Button */
+#text {
+    color: #3D5AFE;
+    border: none;
+    background-color: #fff;
+}
+
+#text:hover, 
+#text:focus { 
+    background-color: #2962ff1a; 
+    border: 4px solid #3D5AFE;
+    box-shadow: 0 0 4px #3D5AFE;
+}
+
+/* Left-Icon Button */
+#left-icon { float: left; }
+
+/* Right-Icon Button */
+#right-icon { float: right; }
+
+.icon-btn, #primary, #secondary, #danger {
+    color: #fff;
+    background-color: #2962ff;
+    border: none;
+}
+
+.icon-btn, #primary { box-shadow: 0 0 4px #2962ff;}
+
+/* Primary Button */
+#primary:hover, 
+#primary:focus,
+.icon-btn:hover,
+.icon-btn:focus { 
+    background-color: #0039Cb;
+    border: 4px solid #4169e1d5;
+    box-shadow: 0 0 3px #4169e1d5;
+}
+
+/* Secondary Button */
+#secondary { 
+    background-color:#455a64; 
+    box-shadow: 0 0 4px #455a64;
+}
+
+#secondary:hover, 
+#secondary:focus { 
+    background-color: #1c313a; 
+    border: 4px solid #69acc9;
+    box-shadow: 0 0 3px #69acc9;
+}
+
+/* Danger Button */
+#danger { 
+    background-color: #d32f2f; 
+    box-shadow: 0 0 4px #d32f2f;
+}
+
+#danger:hover, 
+#danger:focus { 
+    background-color: #9a0007; 
+    border: 4px solid #e77479;
+    box-shadow: 0 0 3px #e77479;
+}
+
+/* Disabled Button */
+button[disabled] {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Button Sizes */
+.small { width: 140px; }
+
+.medium { width: 180px; }
+
+.large { width: 220px; }

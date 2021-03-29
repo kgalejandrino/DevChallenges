@@ -1,0 +1,62 @@
+.Sidebar {
+    width: 100%;
+    max-width: 250px;
+    background-color: #fafbfd;
+    overflow: hidden;
+}
+
+.sidebar-title { 
+    margin-top: 36px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 48px;
+}
+
+.dev { color: #f7542e; }
+
+.challenges { color: #090f31; }
+
+.Sidebar nav {
+    display: flex;
+    flex-flow: column;
+    margin-top: 120px;
+    width: 100%;
+}
+
+.main-nav li {
+    list-style-type: none;
+    color: #090f31;
+    cursor: pointer;
+    padding: 12px 0 12px 48px;
+}
+
+.add-icon { 
+    vertical-align: -2px;
+    padding-right: 4px;
+    color: #f7542e;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+
+#slide-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    transition: 0.5s;
+ }
+
+/* Media Queries */
+@media only screen and (max-width: 750px) {
+    .Sidebar { max-width: 220px; }
+
+    .sidebar-title, .main-nav li { padding-left: 32px;}
+}
+
+@media only screen and (max-width: 600px) {
+    .Sidebar { width: 0; }
+
+    .sidebar-title, .main-nav li { padding-left: 64px;}
+}
