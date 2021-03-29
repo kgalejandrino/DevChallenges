@@ -2,12 +2,34 @@ import React, { useState } from 'react';
 
 import './Sidebar.css';
 import Aux from '../../hoc/Auxilliary/Auxilliary';
-import ButtonStories from './ButtonStories/ButtonStories';
+import ButtonStates from './ButtonStates/ButtonStates';
 
-const lists = ['Colors', 'Typography', 'Spaces', 'Buttons', 'Inputs', 'Grid'];
+const test = {
+    'Colors': [],
+    'Typography': [],
+    'Spaces': [],
+    'Buttons': [
+        { id: 1, type: 'default', text: 'Default Button'}, 
+        { id: 2, type: 'outline', text: 'Outline Button' },
+        { id: 3, type: 'text', text: 'Text Button'},
+        { id: 4, type: 'left-icon', text: 'Left Icon Button'},
+        { id: 5, type: 'right-icon', text: 'Right Icon Button'},
+        { id: 6, type: 'primary', text: 'Primary Button' },
+        { id: 7, type: 'secondary', text: 'Secondary Button'}, 
+        { id: 8, type: 'danger', text: 'Danger Button' }
+    ],
+    'Inputs': [
+        { id: 1, type: 'default', text: 'Default Input' },
+        { id: 2, type: 'error', text: 'Error Input' },
+        { id: 3, type: 'validation', text: 'Validation Input' },
+        { id: 4, type: 'left-icon', text: 'Left-Icon Input' },
+        { id: 5, type: 'right-icon', text: 'Right-Icon Input' },
+        { id: 6, type: 'full-width', text: 'Full Width Input' },
+    ] ,
+    'Grid': []
+}
 
 const Sidebar = (props) => {
-    let [btnStates, setBtnStates] = useState(false);
     let [listIcon, setlistIcon] = useState({
         0: 'add_box',
         1: 'add_box',
@@ -16,27 +38,25 @@ const Sidebar = (props) => {
         4: 'add_box',
         5: 'add_box',
     });
-
+    let [btnStates, setBtnStates] = useState('');
 
     /* Toggle button states lists */
     const toggleListBtnStates = (i) => {
-        lists.forEach((list, idx) => {
+        Object.keys(test).forEach((list, idx) => {
             if(idx === i && listIcon[i] === 'add_box') {
-                if(list === 'Buttons') {
-                    setBtnStates(!btnStates);
-                    props.typeClicked('default');
-                }
+                setBtnStates(list);
+                props.typeClicked('default');
+                props.setComponent(list);
 
                 setlistIcon(prevState => ({
                     ...prevState,
                     [i]: 'remove'  
                 }));
             } else if(idx === i && listIcon[i] === 'remove'){
-                if(list === 'Buttons') {
-                    setBtnStates(!btnStates);
-                    props.typeClicked('');
-                }
-                
+                setBtnStates('');
+                props.typeClicked('');
+                props.setComponent(null);
+
                 setlistIcon(prevState => ({
                     ...prevState,
                     [i]: 'add_box'  
@@ -44,12 +64,9 @@ const Sidebar = (props) => {
             }
         })
     }
-
-    const states = btnStates 
-        ? <ButtonStories typeClicked={props.typeClicked} posClicked={props.posClicked}/> 
-        : null;
-    
+ 
     const slideRight = props.menu ? 'slide-right' : null;
+
     return (
         <div className="Sidebar" id={slideRight}>
             <div className="sidebar-title">
@@ -58,7 +75,7 @@ const Sidebar = (props) => {
             </div>
             <nav>
                 <ul className="main-nav">
-                    {lists.map((list, idx) => {
+                    {Object.keys(test).map((list, idx) => {
                         return (
                             <Aux key={idx}>
                                 <li>
@@ -69,7 +86,10 @@ const Sidebar = (props) => {
                                     </span>
                                     {list} 
                                 </li> 
-                                {list === 'Buttons' ? states : null }
+                                {list === btnStates
+                                    ? <ButtonStates typeClicked={props.typeClicked} posClicked={props.posClicked} list={test[list]}/> 
+                                    : null 
+                                }
                             </Aux>  
                         )
                     })}

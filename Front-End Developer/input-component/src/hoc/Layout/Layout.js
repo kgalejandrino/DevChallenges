@@ -10,6 +10,7 @@ class Layout extends Component {
         super(props);
     
         this.state = {
+          component: null,
           btnType: '',
           iconPosition: '',
           showButton: false,
@@ -17,7 +18,10 @@ class Layout extends Component {
           iconMenu: 'menu'
         }
       }
-    
+      
+      /* Function: set the component clicked */
+      getComponent = (com) => this.setState({ component: com });
+
       /* Handle Button states: eg. default/ oultine/ text */
       handleBtnTypeClicked = (type) => this.setState({ btnType: type });
     
@@ -48,10 +52,12 @@ class Layout extends Component {
             <div className="Layout">       
               <Sidebar
                 menu={this.state.slideMenu} 
+                setComponent={this.getComponent}
                 typeClicked={this.handleBtnTypeClicked}
                 posClicked={this.handleIconPosClicked}
               />
-              <Canvas 
+              <Canvas
+                showComponent={this.state.component} 
                 type={this.state.btnType}
                 position={this.state.iconPosition}
                 show={this.state.showButton}

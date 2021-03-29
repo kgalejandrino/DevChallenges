@@ -1,10 +1,10 @@
-.ButtonStories { 
+.ButtonStates { 
     display: flex;
     flex-flow: column;
     width: 100%;
 }
 
-.ButtonStories li{ 
+.ButtonStates li{ 
     padding-left: 64px;
     font-size: 12px; 
     width: 100%;
@@ -17,9 +17,9 @@
 
 /* Media Queries */
 @media only screen and (max-width: 750px) {
-    .ButtonStories li{ padding-left: 56px;}
+    .ButtonStates li{ padding-left: 56px;}
 }
 
 @media only screen and (max-width: 600px) {
-    .ButtonStories li{ padding-left: 84px;}
+    .ButtonStates li{ padding-left: 84px;}
 }
