@@ -44,7 +44,7 @@ const button = (props) => {
                 id={props.type} 
                 disabled={props.isDisabled}>
                     {displayIcon}
-                    {props.text}
+                    {props.componentText}
             </button>
             : null;
 

@@ -16,7 +16,7 @@ const display = (props) => {
                             setIcon={props.setIcon}
                             btnSize={props.btnSize}
                             backgroundColor={props.backgroundColor}
-                            text={props.text}
+                            componentText={props.componentText}
                             textColor={props.textColor}
                             shadowColor={props.shadowColor}
                             hoverColor={props.hoverColor}>{props.text}
@@ -25,7 +25,7 @@ const display = (props) => {
                 return <Inputs 
                             type={props.type}
                             position={props.position}
-                            setIcon={props.setIcon}   
+                            setIcon={props.setIcon} 
                        />
             default:
                 return null;

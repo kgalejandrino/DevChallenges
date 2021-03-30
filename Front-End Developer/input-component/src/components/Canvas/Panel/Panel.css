@@ -38,7 +38,7 @@ th { color: #686868;}
 tr:last-child td { border-bottom: none;}
 
 /* Input: Text */
-textarea {
+.panel-textarea {
     outline: none;
     resize: none;
     height: 32px;
@@ -51,7 +51,7 @@ textarea {
     border-radius: 6px;
 }
 
-textarea:focus { box-shadow: 0px 0px 0px 1px inset #f7542e; }
+.panel-textarea:focus { box-shadow: 0px 0px 0px 1px inset #f7542e; }
 
 /* Select */
 select {

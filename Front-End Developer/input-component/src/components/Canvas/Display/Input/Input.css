@@ -44,3 +44,20 @@
     padding-left: 48px;
 }
 
+/* Validation Input */
+#helper-text {
+    font-size: 12px;
+    padding-top: 4px;
+    color: #d32f2f;
+}
+
+/* Multiline Input */
+#input-multiline {
+    resize: none;
+    border: 1px solid #828282;
+    border-radius: 12px;
+    padding-left: 12px;
+    padding-top: 12px;
+    outline: none;
+}
+

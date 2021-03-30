@@ -15,7 +15,7 @@ const ComponentStates = (props) => {
                 } else if(item.type === 'input-left--icon' || item.type === 'input-right--icon') {
                     props.posClicked(item.type);
                     props.typeClicked('input-icon');
-                } else {
+                }  else {
                     props.posClicked('');
                     props.typeClicked(item.type);
                 }

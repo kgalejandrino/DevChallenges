@@ -21,12 +21,12 @@ class Layout extends Component {
       /* Function: set the component clicked */
       getComponent = (com) => this.setState({ component: com });
 
-      /* Handle Button states: eg. default/ oultine/ text */
+      /* Function: set component state default/ oultine/ text */
       handleBtnTypeClicked = (type) => this.setState({ btnType: type });
     
-      /* Handle Button states w/ icon: left/right icon */
+      /* Function: set component state w/ icon: left/right icon */
       handleIconPosClicked = (pos) => this.setState({ iconPosition: pos });
-    
+
       /* Handle Slide Menu */
       handleMenuClicked = () => {
         this.setState(prevState => ({ 

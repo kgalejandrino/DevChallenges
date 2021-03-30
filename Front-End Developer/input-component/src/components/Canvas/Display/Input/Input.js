@@ -5,11 +5,11 @@ import './Input.css';
 import Aux from '../../../../hoc/Auxilliary/Auxilliary';
 
 const input = (props) => {
-    console.log(props.position);
     const displayIcon = props.position ? <span className={`material-icons md-28 ${props.position}`}id={props.type}>{props.setIcon}</span> : null;
 
-    const displayInput = props.type 
-            ? <div className="input-container">
+    const displayHelperText = props.type === 'input-validation' ? <p id="helper-text">Some interesting text</p> : null;
+
+    const displayInput = <div className="input-container">
                 {displayIcon}
                 <input 
                   type="text"
@@ -17,10 +17,19 @@ const input = (props) => {
                   id={props.type}
                   placeholder="Placeholder">
                 </input>
+                {displayHelperText}
               </div>
-            : null;
 
-    return <Aux>{displayInput}</Aux>
+    const displayTextArea = <textarea rows="4" cols="20"id={props.type} placeholder="Placeholder"/>
+
+    return (
+      <Aux>
+        {props.type === 'input-multiline'
+          ? displayTextArea
+          : displayInput
+        }
+      </Aux>
+    )
 }
 
 export default Radium(input);

@@ -8,7 +8,7 @@ import Panel from './Panel/Panel';
 const Canvas = (props) => {
     let [disabled, setDisabled] = useState(false);
     let [shadowed, setShadow] = useState(false);
-    let [btnText, setBtnText] = useState('Default');
+    let [componentText, setComponentText] = useState('Default');
     let [icon, setIcon] = useState('face');
     let [size, setSize] = useState('small');
     let [bgColor, setBgColor] = useState('');
@@ -20,7 +20,7 @@ const Canvas = (props) => {
 
     const handleBoxShadowSelection = () => setShadow(!shadowed);
 
-    const handleChangeText = (e) => setBtnText(e.target.value);
+    const handleChangeText = (e) => setComponentText(e.target.value);
 
     const handleSizeSelection = (e) => setSize(e.target.value);
 
@@ -62,7 +62,7 @@ const Canvas = (props) => {
                 position={props.position}
                 isDisabled={disabled}
                 isShadowed={shadowed}
-                text={btnText}
+                componentText={componentText}
                 setIcon={icon}
                 btnSize={size}
                 backgroundColor={bgColor}

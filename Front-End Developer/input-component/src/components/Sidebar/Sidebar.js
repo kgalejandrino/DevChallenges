@@ -24,7 +24,7 @@ const componentsList = {
         { id: 3, type: 'input-validation', text: 'Validation Input' },
         { id: 4, type: 'input-left--icon', text: 'Left Icon Input' },
         { id: 5, type: 'input-right--icon', text: 'Right Icon Input' },
-        { id: 6, type: 'input-full--width', text: 'Full Width Input' },
+        { id: 6, type: 'input-multiline', text: 'Multiline Input' },
     ] ,
     'Grid': []
 }
@@ -97,7 +97,11 @@ const Sidebar = (props) => {
                                     {list} 
                                 </li> 
                                 {list === componentStates
-                                    ? <ComponentStates typeClicked={props.typeClicked} posClicked={props.posClicked} list={componentsList[list]}/> 
+                                    ? <ComponentStates 
+                                        typeClicked={props.typeClicked} 
+                                        posClicked={props.posClicked} 
+                                        list={componentsList[list]}
+                                        /> 
                                     : null 
                                 }
                             </Aux>  
