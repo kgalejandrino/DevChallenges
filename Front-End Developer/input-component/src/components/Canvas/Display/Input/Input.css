@@ -2,11 +2,15 @@
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
     padding: 16px;
-    padding-left: 40px;
     border: 1px solid #828282;
     border-radius: 8px;
     width: 210px;
     outline: none;
+}
+
+.input-container { 
+    position: relative; 
+    display: inline-block;
 }
 
 /* Default Input */
@@ -20,15 +24,23 @@
 #input-error:focus { border: 1px solid #d32f2f; }
 
 /* Left-Icon Input */
+.material-icons.md-28 { font-size: 28px; }
+
 .input-left--icon {
     position: absolute;
-    
+    top: 14px;
+    left: -36px;
 }
 
 /* Right-Icon Input */
-.input-right--icon {  }
+.input-right--icon { 
+    position: absolute;
+    top: 14px;
+    right: 12px;
+}
 
 #input-icon {
     color: #828282;
+    padding-left: 48px;
 }
 
