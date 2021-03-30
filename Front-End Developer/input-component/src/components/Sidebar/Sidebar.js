@@ -4,27 +4,27 @@ import './Sidebar.css';
 import Aux from '../../hoc/Auxilliary/Auxilliary';
 import ComponentStates from './ComponentStates/ComponentStates';
 
-const test = {
+const componentsList = {
     'Colors': [],
     'Typography': [],
     'Spaces': [],
     'Buttons': [
-        { id: 1, type: 'default', text: 'Default Button'}, 
-        { id: 2, type: 'outline', text: 'Outline Button' },
-        { id: 3, type: 'text', text: 'Text Button'},
-        { id: 4, type: 'left-icon', text: 'Left Icon Button'},
-        { id: 5, type: 'right-icon', text: 'Right Icon Button'},
-        { id: 6, type: 'primary', text: 'Primary Button' },
-        { id: 7, type: 'secondary', text: 'Secondary Button'}, 
-        { id: 8, type: 'danger', text: 'Danger Button' }
+        { id: 1, type: 'btn-default', text: 'Default Button'}, 
+        { id: 2, type: 'btn-outline', text: 'Outline Button' },
+        { id: 3, type: 'btn-text', text: 'Text Button'},
+        { id: 4, type: 'left--icon', text: 'Left Icon Button'},
+        { id: 5, type: 'right--icon', text: 'Right Icon Button'},
+        { id: 6, type: 'btn-primary', text: 'Primary Button' },
+        { id: 7, type: 'btn-secondary', text: 'Secondary Button'}, 
+        { id: 8, type: 'btn-danger', text: 'Danger Button' }
     ],
     'Inputs': [
-        { id: 1, type: 'default', text: 'Default Input' },
-        { id: 2, type: 'error', text: 'Error Input' },
-        { id: 3, type: 'validation', text: 'Validation Input' },
-        { id: 4, type: 'left-icon', text: 'Left-Icon Input' },
-        { id: 5, type: 'right-icon', text: 'Right-Icon Input' },
-        { id: 6, type: 'full-width', text: 'Full Width Input' },
+        { id: 1, type: 'input-default', text: 'Default Input' },
+        { id: 2, type: 'input-error', text: 'Error Input' },
+        { id: 3, type: 'input-validation', text: 'Validation Input' },
+        { id: 4, type: 'input-left--icon', text: 'Left-Icon Input' },
+        { id: 5, type: 'input-right--icon', text: 'Right-Icon Input' },
+        { id: 6, type: 'input-full--width', text: 'Full Width Input' },
     ] ,
     'Grid': []
 }
@@ -42,10 +42,10 @@ const Sidebar = (props) => {
 
     /* Toggle button states lists */
     const toggleListBtnStates = (i) => {
-        Object.keys(test).forEach((list, idx) => {
+        Object.keys(componentsList).forEach((list, idx) => {
             if(idx === i && listIcon[list] === 'add_box') {
                 setComponentStates(list);
-                props.typeClicked('default');
+                props.typeClicked(componentsList[list][0].type);
                 props.setComponent(list);
 
                 setlistIcon(prevState => ({
@@ -85,7 +85,7 @@ const Sidebar = (props) => {
             </div>
             <nav>
                 <ul className="main-nav">
-                    {Object.keys(test).map((list, idx) => {
+                    {Object.keys(componentsList).map((list, idx) => {
                         return (
                             <Aux key={idx}>
                                 <li>
@@ -97,7 +97,7 @@ const Sidebar = (props) => {
                                     {list} 
                                 </li> 
                                 {list === componentStates
-                                    ? <ComponentStates typeClicked={props.typeClicked} posClicked={props.posClicked} list={test[list]}/> 
+                                    ? <ComponentStates typeClicked={props.typeClicked} posClicked={props.posClicked} list={componentsList[list]}/> 
                                     : null 
                                 }
                             </Aux>  

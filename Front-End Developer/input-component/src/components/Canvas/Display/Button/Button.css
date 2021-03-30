@@ -3,72 +3,71 @@
     border-radius: 8px;
     outline: none;
     cursor: pointer;
-    margin-top: 24px;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
     overflow: hidden;
 }
 
 /* Default Button */
-#default {
+#btn-default {
     color: #3f3f3f;
     box-shadow: 0 0 2px #efefef;
     border: none;
 }
 
-#default:hover, 
-#default:focus {
+#btn-default:hover, 
+#btn-default:focus {
     background-color: #aeaeae;
     border: 4px solid #d6d6d6;
     box-shadow: 0 0 4px #d6d6d6;
 }
 
 /* Outline Button */
-#outline {
+#btn-outline {
     color: #3D5AFE;
     border: 1px solid #3D5AFE;
     box-shadow: 0 0 2px #3D5AFE;
     background-color: #fff;
 }
 
-#outline:hover, 
-#outline:focus { 
+#btn-outline:hover, 
+#btn-outline:focus { 
     background-color: #2962ff1a; 
     border: 4px solid #3D5AFE;
     box-shadow: 0 0 4px #3D5AFE;
 }
 
 /* Text Button */
-#text {
+#btn-text {
     color: #3D5AFE;
     border: none;
     background-color: #fff;
 }
 
-#text:hover, 
-#text:focus { 
+#btn-text:hover, 
+#btn-text:focus { 
     background-color: #2962ff1a; 
     border: 4px solid #3D5AFE;
     box-shadow: 0 0 4px #3D5AFE;
 }
 
 /* Left-Icon Button */
-#left-icon { float: left; }
+#left--icon { float: left; }
 
 /* Right-Icon Button */
-#right-icon { float: right; }
+#right--icon { float: right; }
 
-.icon-btn, #primary, #secondary, #danger {
+.icon-btn, #btn-primary, #btn-secondary, #btn-danger {
     color: #fff;
     background-color: #2962ff;
     border: none;
 }
 
-.icon-btn, #primary { box-shadow: 0 0 4px #2962ff;}
+.icon-btn, #btn-primary { box-shadow: 0 0 4px #2962ff;}
 
 /* Primary Button */
-#primary:hover, 
-#primary:focus,
+#btn-primary:hover, 
+#btn-primary:focus,
 .icon-btn:hover,
 .icon-btn:focus { 
     background-color: #0039Cb;
@@ -77,26 +76,26 @@
 }
 
 /* Secondary Button */
-#secondary { 
+#btn-secondary { 
     background-color:#455a64; 
     box-shadow: 0 0 4px #455a64;
 }
 
-#secondary:hover, 
-#secondary:focus { 
+#btn-secondary:hover, 
+#btn-secondary:focus { 
     background-color: #1c313a; 
     border: 4px solid #69acc9;
     box-shadow: 0 0 3px #69acc9;
 }
 
 /* Danger Button */
-#danger { 
+#btn-danger { 
     background-color: #d32f2f; 
     box-shadow: 0 0 4px #d32f2f;
 }
 
-#danger:hover, 
-#danger:focus { 
+#btn-danger:hover, 
+#btn-danger:focus { 
     background-color: #9a0007; 
     border: 4px solid #e77479;
     box-shadow: 0 0 3px #e77479;
@@ -109,8 +108,8 @@ button[disabled] {
 }
 
 /* Button Sizes */
-.small { width: 140px; }
+.btn-small { width: 140px; }
 
-.medium { width: 180px; }
+.btn-medium { width: 180px; }
 
-.large { width: 220px; }
+.btn-large { width: 220px; }

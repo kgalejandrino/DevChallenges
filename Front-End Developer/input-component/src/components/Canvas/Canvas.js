@@ -49,6 +49,8 @@ const Canvas = (props) => {
             case 'star':
                 setIcon('grade');
                 break;
+            default:
+                break;
         }
     }
 

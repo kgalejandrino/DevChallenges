@@ -8,7 +8,9 @@ const input = (props) => {
 
     const displayInput = props.type 
             ? <input 
-                className="Input"
+                type="text"
+                className="input"
+                id={props.type}
                 placeholder="Placeholder">
               </input> 
             : null;

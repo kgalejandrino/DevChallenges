@@ -5,11 +5,11 @@ import './ComponentStates.css';
 const ComponentStates = (props) => {
     const [selected, setSelected] = useState(1);
 
-    const showButton = (id) => {
+    const getComponent = (id) => {
         setSelected(id);
-        const story = props.list.forEach(item => {
+        const component = props.list.forEach(item => {
             if(item.id === id) {
-                if(item.type === 'left-icon' || item.type === 'right-icon') {
+                if(item.type === 'left--icon' || item.type === 'right--icon') {
                     props.posClicked(item.type);
                     props.typeClicked('icon-btn');
                 } else {
@@ -18,22 +18,22 @@ const ComponentStates = (props) => {
                 }
             }
         });
-        return story;
+        return component;
     }
 
 
     return (
         <ul className="ComponentStates">
-            {props.list.map(story =>
+            {props.list.map(component =>
                 <li 
-                    id={selected === story.id ? 'highlighted' : null}
-                    key={story.id}
-                    onClick={() => showButton(story.id)}>
+                    id={selected === component.id ? 'highlighted' : null}
+                    key={component.id}
+                    onClick={() => getComponent(component.id)}>
                     <span 
                         className="material-icons md-18 add-icon" 
-                        style={{color: selected === story.id ? '#fff' : '#f7542e'}}>bookmark_border
+                        style={{color: selected === component.id ? '#fff' : '#f7542e'}}>bookmark_border
                     </span>
-                    {story.text}
+                    {component.text}
                 </li>
                 
             )}

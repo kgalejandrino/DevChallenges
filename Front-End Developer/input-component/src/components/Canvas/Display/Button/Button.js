@@ -25,11 +25,22 @@ const button = (props) => {
         }
     }
 
+    const size = (s) => {
+        if(s === 'small') {
+            s = 'btn-small';
+        } else if(s === 'medium') {
+            s = 'btn-medium';
+        } else if(s === 'large') {
+            s = 'btn-large';
+        }
+        return s;
+    }
+
     const displayButton = 
         props.type 
             ? <button 
                 style={{...offShadow, ...boxShadow, ...borderHoverColor, ...btnStyles}}
-                className={`btn ${props.type} ${props.btnSize}`} 
+                className={`btn ${props.type} ${size(props.btnSize)}`} 
                 id={props.type} 
                 disabled={props.isDisabled}>
                     {displayIcon}
