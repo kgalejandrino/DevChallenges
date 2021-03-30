@@ -12,8 +12,8 @@ const componentsList = {
         { id: 1, type: 'btn-default', text: 'Default Button'}, 
         { id: 2, type: 'btn-outline', text: 'Outline Button' },
         { id: 3, type: 'btn-text', text: 'Text Button'},
-        { id: 4, type: 'left--icon', text: 'Left Icon Button'},
-        { id: 5, type: 'right--icon', text: 'Right Icon Button'},
+        { id: 4, type: 'btn-left--icon', text: 'Left Icon Button'},
+        { id: 5, type: 'btn-right--icon', text: 'Right Icon Button'},
         { id: 6, type: 'btn-primary', text: 'Primary Button' },
         { id: 7, type: 'btn-secondary', text: 'Secondary Button'}, 
         { id: 8, type: 'btn-danger', text: 'Danger Button' }
@@ -22,8 +22,8 @@ const componentsList = {
         { id: 1, type: 'input-default', text: 'Default Input' },
         { id: 2, type: 'input-error', text: 'Error Input' },
         { id: 3, type: 'input-validation', text: 'Validation Input' },
-        { id: 4, type: 'input-left--icon', text: 'Left-Icon Input' },
-        { id: 5, type: 'input-right--icon', text: 'Right-Icon Input' },
+        { id: 4, type: 'input-left--icon', text: 'Left Icon Input' },
+        { id: 5, type: 'input-right--icon', text: 'Right Icon Input' },
         { id: 6, type: 'input-full--width', text: 'Full Width Input' },
     ] ,
     'Grid': []

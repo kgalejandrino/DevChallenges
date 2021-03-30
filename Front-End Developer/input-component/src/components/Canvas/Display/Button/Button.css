@@ -52,24 +52,24 @@
 }
 
 /* Left-Icon Button */
-#left--icon { float: left; }
+.btn-left--icon { float: left; }
 
 /* Right-Icon Button */
-#right--icon { float: right; }
+.btn-right--icon { float: right; }
 
-.icon-btn, #btn-primary, #btn-secondary, #btn-danger {
+#btn-icon, #btn-primary, #btn-secondary, #btn-danger {
     color: #fff;
     background-color: #2962ff;
     border: none;
 }
 
-.icon-btn, #btn-primary { box-shadow: 0 0 4px #2962ff;}
+#btn-icon, #btn-primary { box-shadow: 0 0 4px #2962ff;}
 
 /* Primary Button */
 #btn-primary:hover, 
 #btn-primary:focus,
-.icon-btn:hover,
-.icon-btn:focus { 
+.btn-icon:hover,
+.btn-icon:focus { 
     background-color: #0039Cb;
     border: 4px solid #4169e1d5;
     box-shadow: 0 0 3px #4169e1d5;

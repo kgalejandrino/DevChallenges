@@ -13,7 +13,7 @@ const display = (props) => {
                             position={props.position}
                             isDisabled={props.isDisabled}
                             isShadowed={props.isShadowed}
-                            btnIcon={props.btnIcon}
+                            setIcon={props.setIcon}
                             btnSize={props.btnSize}
                             backgroundColor={props.backgroundColor}
                             text={props.text}
@@ -23,7 +23,9 @@ const display = (props) => {
                         </Button>
             case 'Inputs':
                 return <Inputs 
-                            type={props.type}   
+                            type={props.type}
+                            position={props.position}
+                            setIcon={props.setIcon}   
                        />
             default:
                 return null;

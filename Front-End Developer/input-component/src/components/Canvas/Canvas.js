@@ -63,7 +63,7 @@ const Canvas = (props) => {
                 isDisabled={disabled}
                 isShadowed={shadowed}
                 text={btnText}
-                btnIcon={icon}
+                setIcon={icon}
                 btnSize={size}
                 backgroundColor={bgColor}
                 textColor={tColor}

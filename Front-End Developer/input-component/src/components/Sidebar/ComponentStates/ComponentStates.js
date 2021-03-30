@@ -9,9 +9,12 @@ const ComponentStates = (props) => {
         setSelected(id);
         const component = props.list.forEach(item => {
             if(item.id === id) {
-                if(item.type === 'left--icon' || item.type === 'right--icon') {
+                if(item.type === 'btn-left--icon' || item.type === 'btn-right--icon') {
                     props.posClicked(item.type);
-                    props.typeClicked('icon-btn');
+                    props.typeClicked('btn-icon');
+                } else if(item.type === 'input-left--icon' || item.type === 'input-right--icon') {
+                    props.posClicked(item.type);
+                    props.typeClicked('input-icon');
                 } else {
                     props.posClicked('');
                     props.typeClicked(item.type);

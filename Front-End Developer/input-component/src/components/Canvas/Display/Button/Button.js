@@ -11,7 +11,7 @@ const button = (props) => {
         color: props.textColor,
     };
 
-    const displayIcon = props.position ? <span className="material-icons md-24" id={props.position}>{props.btnIcon}</span> : null;
+    const displayIcon = props.position ? <span className={`material-icons md-24 ${props.position}`}>{props.setIcon}</span> : null;
 
     if(props.isShadowed) { offShadow = { boxShadow: "none" } }
 
@@ -40,7 +40,7 @@ const button = (props) => {
         props.type 
             ? <button 
                 style={{...offShadow, ...boxShadow, ...borderHoverColor, ...btnStyles}}
-                className={`btn ${props.type} ${size(props.btnSize)}`} 
+                className={`btn ${size(props.btnSize)}`} 
                 id={props.type} 
                 disabled={props.isDisabled}>
                     {displayIcon}
