@@ -5,4 +5,10 @@
     border: 1px solid #828282;
     border-radius: 8px;
     width: 200px;
+    outline: none;
 }
+
+#input-default:hover { border: 1px solid #333333; }
+
+#input-default:focus { border: 1px solid #2962ff; }
+

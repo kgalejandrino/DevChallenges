@@ -5,7 +5,7 @@ import './Input.css';
 import Aux from '../../../../hoc/Auxilliary/Auxilliary';
 
 const input = (props) => {
-
+    console.log(props.type);
     const displayInput = props.type 
             ? <input 
                 type="text"
