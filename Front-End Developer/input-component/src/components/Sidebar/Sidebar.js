@@ -38,13 +38,13 @@ const Sidebar = (props) => {
         'Inputs': 'add_box',
         'Grid': 'add_box',
     });
-    let [btnStates, setBtnStates] = useState('');
+    let [componentStates, setComponentStates] = useState('');
 
     /* Toggle button states lists */
     const toggleListBtnStates = (i) => {
         Object.keys(test).forEach((list, idx) => {
             if(idx === i && listIcon[list] === 'add_box') {
-                setBtnStates(list);
+                setComponentStates(list);
                 props.typeClicked('default');
                 props.setComponent(list);
 
@@ -53,7 +53,7 @@ const Sidebar = (props) => {
                     [list]: 'remove'  
                 }));
             } else if(idx === i && listIcon[list] === 'remove'){
-                setBtnStates('');
+                setComponentStates('');
                 props.typeClicked('');
                 props.setComponent(null);
 
@@ -96,7 +96,7 @@ const Sidebar = (props) => {
                                     </span>
                                     {list} 
                                 </li> 
-                                {list === btnStates
+                                {list === componentStates
                                     ? <ComponentStates typeClicked={props.typeClicked} posClicked={props.posClicked} list={test[list]}/> 
                                     : null 
                                 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './Canvas.css';
 import Buttons from './Buttons/Buttons';
+import Inputs from './Inputs/Inputs';
 import Panel from './Panel/Panel';
 
 
@@ -58,7 +59,6 @@ const Canvas = (props) => {
                 return <Buttons 
                         type={props.type}
                         position={props.position}
-                        show={props.show}
                         isDisabled={disabled}
                         isShadowed={shadowed}
                         text={btnText}
@@ -70,7 +70,8 @@ const Canvas = (props) => {
                         hoverColor={hColor}
                         />
             default:
-                return <div></div>;
+                return <Inputs 
+                        type={props.type}/>
         }
     }
     return (

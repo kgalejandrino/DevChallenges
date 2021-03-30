@@ -6,11 +6,10 @@ import Button from './Button/Button';
 const buttons = (props) => {
     return (
         <div className="Buttons">
-            <h2>Buttons</h2>
+            <h2>Button</h2>
             <Button 
                 type={props.type}
                 position={props.position}
-                show={props.show}
                 isDisabled={props.isDisabled}
                 isShadowed={props.isShadowed}
                 btnIcon={props.btnIcon}

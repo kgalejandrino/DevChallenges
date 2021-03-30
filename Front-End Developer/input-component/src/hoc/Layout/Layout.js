@@ -13,7 +13,6 @@ class Layout extends Component {
           component: null,
           btnType: '',
           iconPosition: '',
-          showButton: false,
           slideMenu: false,
           iconMenu: 'menu'
         }
@@ -60,7 +59,6 @@ class Layout extends Component {
                 component={this.state.component} 
                 type={this.state.btnType}
                 position={this.state.iconPosition}
-                show={this.state.showButton}
               />
           </div>
           </Aux>
