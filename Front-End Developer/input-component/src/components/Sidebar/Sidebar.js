@@ -56,6 +56,7 @@ const Sidebar = (props) => {
                 /* Render default state at first selection */
                 if(componentsList[list][0] !== undefined) {
                     props.typeClicked(componentsList[list][0].type);
+                    props.posClicked('');
                 } else {
                     props.typeClicked('progress');
                 }
