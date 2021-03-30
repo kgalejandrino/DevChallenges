@@ -12,10 +12,13 @@ const ComponentStates = (props) => {
                 if(item.type === 'btn-left--icon' || item.type === 'btn-right--icon') {
                     props.posClicked(item.type);
                     props.typeClicked('btn-icon');
-                } else if(item.type === 'input-left--icon' || item.type === 'input-right--icon') {
+                } else if(item.type === 'input-left--icon') {
                     props.posClicked(item.type);
-                    props.typeClicked('input-icon');
-                }  else {
+                    props.typeClicked('input-icon-left');
+                }  else if(item.type === 'input-right--icon') {
+                    props.posClicked(item.type);
+                    props.typeClicked('input-icon-right');
+                } else {
                     props.posClicked('');
                     props.typeClicked(item.type);
                 }

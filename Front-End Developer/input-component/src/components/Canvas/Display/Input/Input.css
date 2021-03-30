@@ -24,13 +24,18 @@
 #input-error:focus { border: 1px solid #d32f2f; }
 
 /* Left-Icon Input */
-.material-icons.md-28 { font-size: 28px; }
+.material-icons.md-28 { 
+    font-size: 28px; 
+    color: #828282;
+}
 
 .input-left--icon {
     position: absolute;
     top: 14px;
-    left: -36px;
+    left: 6px;
 }
+
+#input-icon-left { padding-left: 42px; }
 
 /* Right-Icon Input */
 .input-right--icon { 
@@ -39,10 +44,7 @@
     right: 12px;
 }
 
-#input-icon {
-    color: #828282;
-    padding-left: 48px;
-}
+#input-icon-right { padding-left: 16px;}
 
 /* Validation Input */
 #helper-text {
@@ -59,5 +61,7 @@
     padding-left: 12px;
     padding-top: 12px;
     outline: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
 }
 

@@ -17,7 +17,7 @@ const panel = (props) => {
                     <tr>
                         <td><b>Text</b></td>
                         <td>
-                            <textarea class="panel-textarea" onChange={props.changeText} defaultValue="Default"></textarea>
+                            <textarea className="panel-textarea" onChange={props.changeText} defaultValue="Default"></textarea>
                         </td>
                     </tr>
                     <tr>

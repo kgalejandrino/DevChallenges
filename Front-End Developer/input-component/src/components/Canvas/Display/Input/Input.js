@@ -5,11 +5,12 @@ import './Input.css';
 import Aux from '../../../../hoc/Auxilliary/Auxilliary';
 
 const input = (props) => {
-    const displayIcon = props.position ? <span className={`material-icons md-28 ${props.position}`}id={props.type}>{props.setIcon}</span> : null;
+    const displayIcon = props.position ? <span className={`material-icons md-28 ${props.position}`}>{props.setIcon}</span> : null;
 
     const displayHelperText = props.type === 'input-validation' ? <p id="helper-text">Some interesting text</p> : null;
 
-    const displayInput = <div className="input-container">
+    const displayInput = 
+              <div className="input-container">
                 {displayIcon}
                 <input 
                   type="text"
@@ -20,7 +21,7 @@ const input = (props) => {
                 {displayHelperText}
               </div>
 
-    const displayTextArea = <textarea rows="4" cols="20"id={props.type} placeholder="Placeholder"/>
+    const displayTextArea = <textarea rows="6" cols="20"id={props.type} placeholder="Placeholder"/>
 
     return (
       <Aux>
