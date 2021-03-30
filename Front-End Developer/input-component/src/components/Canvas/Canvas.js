@@ -71,6 +71,7 @@ const Canvas = (props) => {
                 hoverColor={hColor}
             />
             <Panel 
+                component={props.component}
                 selectDisable={handleDisableSelection}
                 selectShadow={handleBoxShadowSelection}
                 changeText={handleChangeText}

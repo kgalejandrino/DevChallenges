@@ -37,6 +37,7 @@ th { color: #686868;}
 
 tr:last-child td { border-bottom: none;}
 
+/* Button Controls */
 /* Input: Text */
 .panel-textarea {
     outline: none;
