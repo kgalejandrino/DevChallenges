@@ -9,7 +9,7 @@ const display = (props) => {
         switch(render) {
             case 'Buttons':
                 return <Button 
-                            type={props.type}
+                            componentState={props.componentState}
                             position={props.position}
                             isDisabled={props.isDisabled}
                             isShadowed={props.isShadowed}
@@ -23,7 +23,7 @@ const display = (props) => {
                         </Button>
             case 'Inputs':
                 return <Inputs 
-                            type={props.type}
+                            componentState={props.componentState}
                             position={props.position}
                             setIcon={props.setIcon} 
                        />
@@ -33,7 +33,7 @@ const display = (props) => {
     }
     return (
         <div className="Display">
-            <h2>{props.component}</h2>
+            <h2>{props.componentState === 'progress' ? 'In Progress' : props.component}</h2>
             {renderComponent(props.component)}
         </div>
     )

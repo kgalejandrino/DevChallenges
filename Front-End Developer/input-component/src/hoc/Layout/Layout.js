@@ -11,7 +11,7 @@ class Layout extends Component {
     
         this.state = {
           component: null,
-          btnType: '',
+          componentState: '',
           iconPosition: '',
           slideMenu: false,
           iconMenu: 'menu'
@@ -22,7 +22,7 @@ class Layout extends Component {
       getComponent = (com) => this.setState({ component: com });
 
       /* Function: set component state default/ oultine/ text */
-      handleBtnTypeClicked = (type) => this.setState({ btnType: type });
+      handleBtnTypeClicked = (type) => this.setState({ componentState: type });
     
       /* Function: set component state w/ icon: left/right icon */
       handleIconPosClicked = (pos) => this.setState({ iconPosition: pos });
@@ -57,7 +57,7 @@ class Layout extends Component {
               />
               <Canvas
                 component={this.state.component} 
-                type={this.state.btnType}
+                componentState={this.state.componentState}
                 position={this.state.iconPosition}
               />
           </div>

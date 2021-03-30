@@ -44,14 +44,21 @@ const Sidebar = (props) => {
     const toggleListBtnStates = (i) => {
         Object.keys(componentsList).forEach((list, idx) => {
             if(idx === i && listIcon[list] === 'add_box') {
+                console.log(componentsList[list][0]);
                 setComponentStates(list);
-                props.typeClicked(componentsList[list][0].type);
                 props.setComponent(list);
 
                 setlistIcon(prevState => ({
                     ...prevState,
                     [list]: 'remove'  
                 }));
+
+                /* Render default state at first selection */
+                if(componentsList[list][0] !== undefined) {
+                    props.typeClicked(componentsList[list][0].type);
+                } else {
+                    props.typeClicked('progress');
+                }
             } else if(idx === i && listIcon[list] === 'remove'){
                 setComponentStates('');
                 props.typeClicked('');

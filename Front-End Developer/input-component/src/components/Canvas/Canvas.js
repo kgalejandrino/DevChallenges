@@ -58,7 +58,7 @@ const Canvas = (props) => {
         <div className="Canvas">
             <Display 
                 component={props.component}
-                type={props.type}
+                componentState={props.componentState}
                 position={props.position}
                 isDisabled={disabled}
                 isShadowed={shadowed}

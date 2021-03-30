@@ -37,11 +37,11 @@ const button = (props) => {
     }
 
     const displayButton = 
-        props.type 
+        props.componentState 
             ? <button 
                 style={{...offShadow, ...boxShadow, ...borderHoverColor, ...btnStyles}}
                 className={`btn ${size(props.btnSize)}`} 
-                id={props.type} 
+                id={props.componentState} 
                 disabled={props.isDisabled}>
                     {displayIcon}
                     {props.componentText}
