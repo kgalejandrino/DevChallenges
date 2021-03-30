@@ -1,16 +1,16 @@
-.Buttons { 
+.Display { 
     padding-left: 40px; 
     height: 55%;
 }
 
-.Buttons h2 {
+.Display h2 {
     margin-top: 40px;
     color: #4f4f4f;
     font-family: 'Poppins', sans-serif;
 }
 
 @media only screen and (max-width: 600px) {
-    .Buttons { 
+    .Display { 
         display: flex;
         flex-flow: column;
         align-items: center;

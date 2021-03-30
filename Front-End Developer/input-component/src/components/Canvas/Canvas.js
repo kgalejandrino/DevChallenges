@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import './Canvas.css';
-import Buttons from './Buttons/Buttons';
-import Inputs from './Inputs/Inputs';
+import Display from './Display/Display';
 import Panel from './Panel/Panel';
 
 
@@ -53,30 +52,22 @@ const Canvas = (props) => {
         }
     }
 
-    const renderComponent = (render) => {
-        switch(render) {
-            case 'Buttons':
-                return <Buttons 
-                        type={props.type}
-                        position={props.position}
-                        isDisabled={disabled}
-                        isShadowed={shadowed}
-                        text={btnText}
-                        btnIcon={icon}
-                        btnSize={size}
-                        backgroundColor={bgColor}
-                        textColor={tColor}
-                        shadowColor={sColor}
-                        hoverColor={hColor}
-                        />
-            default:
-                return <Inputs 
-                        type={props.type}/>
-        }
-    }
     return (
         <div className="Canvas">
-            {renderComponent(props.component)}
+            <Display 
+                component={props.component}
+                type={props.type}
+                position={props.position}
+                isDisabled={disabled}
+                isShadowed={shadowed}
+                text={btnText}
+                btnIcon={icon}
+                btnSize={size}
+                backgroundColor={bgColor}
+                textColor={tColor}
+                shadowColor={sColor}
+                hoverColor={hColor}
+            />
             <Panel 
                 selectDisable={handleDisableSelection}
                 selectShadow={handleBoxShadowSelection}

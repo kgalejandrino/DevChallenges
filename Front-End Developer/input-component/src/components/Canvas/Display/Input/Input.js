@@ -7,7 +7,10 @@ import Aux from '../../../../hoc/Auxilliary/Auxilliary';
 const input = (props) => {
 
     const displayInput = props.type 
-            ? <input placeholder="Placeholder"></input> 
+            ? <input 
+                className="Input"
+                placeholder="Placeholder">
+              </input> 
             : null;
 
     return <Aux>{displayInput}</Aux>
