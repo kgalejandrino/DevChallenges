@@ -1,10 +1,10 @@
-.ButtonStates { 
+.ComponentStates { 
     display: flex;
     flex-flow: column;
     width: 100%;
 }
 
-.ButtonStates li{ 
+.ComponentStates li{ 
     padding-left: 64px;
     font-size: 12px; 
     width: 100%;
@@ -17,9 +17,9 @@
 
 /* Media Queries */
 @media only screen and (max-width: 750px) {
-    .ButtonStates li{ padding-left: 56px;}
+    .ComponentStates li{ padding-left: 56px;}
 }
 
 @media only screen and (max-width: 600px) {
-    .ButtonStates li{ padding-left: 84px;}
+    .ComponentStates li{ padding-left: 84px;}
 }

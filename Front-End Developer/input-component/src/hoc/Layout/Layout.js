@@ -57,7 +57,7 @@ class Layout extends Component {
                 posClicked={this.handleIconPosClicked}
               />
               <Canvas
-                showComponent={this.state.component} 
+                component={this.state.component} 
                 type={this.state.btnType}
                 position={this.state.iconPosition}
                 show={this.state.showButton}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './Sidebar.css';
 import Aux from '../../hoc/Auxilliary/Auxilliary';
-import ButtonStates from './ButtonStates/ButtonStates';
+import ComponentStates from './ComponentStates/ComponentStates';
 
 const test = {
     'Colors': [],
@@ -31,35 +31,45 @@ const test = {
 
 const Sidebar = (props) => {
     let [listIcon, setlistIcon] = useState({
-        0: 'add_box',
-        1: 'add_box',
-        2: 'add_box',
-        3: 'add_box',
-        4: 'add_box',
-        5: 'add_box',
+        'Colors': 'add_box',
+        'Typography': 'add_box',
+        'Spaces': 'add_box',
+        'Buttons': 'add_box',
+        'Inputs': 'add_box',
+        'Grid': 'add_box',
     });
     let [btnStates, setBtnStates] = useState('');
 
     /* Toggle button states lists */
     const toggleListBtnStates = (i) => {
         Object.keys(test).forEach((list, idx) => {
-            if(idx === i && listIcon[i] === 'add_box') {
+            if(idx === i && listIcon[list] === 'add_box') {
                 setBtnStates(list);
                 props.typeClicked('default');
                 props.setComponent(list);
 
                 setlistIcon(prevState => ({
                     ...prevState,
-                    [i]: 'remove'  
+                    [list]: 'remove'  
                 }));
-            } else if(idx === i && listIcon[i] === 'remove'){
+            } else if(idx === i && listIcon[list] === 'remove'){
                 setBtnStates('');
                 props.typeClicked('');
                 props.setComponent(null);
 
                 setlistIcon(prevState => ({
                     ...prevState,
-                    [i]: 'add_box'  
+                    [list]: 'add_box'  
+                }));
+            }
+
+            /* If drop down list is currently open and user selects another component
+               it will automatically close that drop down and switch to another component,
+               so will the icons*/
+            if(idx !== i && listIcon[list] === 'remove') {
+                setlistIcon(prevState => ({
+                    ...prevState,
+                    [list]: 'add_box'  
                 }));
             }
         })
@@ -82,12 +92,12 @@ const Sidebar = (props) => {
                                     <span 
                                         onClick={() => toggleListBtnStates(idx)}
                                         className="material-icons md-18 add-icon">
-                                        {listIcon[idx]}
+                                        {listIcon[list]}
                                     </span>
                                     {list} 
                                 </li> 
                                 {list === btnStates
-                                    ? <ButtonStates typeClicked={props.typeClicked} posClicked={props.posClicked} list={test[list]}/> 
+                                    ? <ComponentStates typeClicked={props.typeClicked} posClicked={props.posClicked} list={test[list]}/> 
                                     : null 
                                 }
                             </Aux>  

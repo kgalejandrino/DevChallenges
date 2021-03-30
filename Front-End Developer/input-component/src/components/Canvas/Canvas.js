@@ -52,22 +52,30 @@ const Canvas = (props) => {
         }
     }
 
+    const renderComponent = (render) => {
+        switch(render) {
+            case 'Buttons':
+                return <Buttons 
+                        type={props.type}
+                        position={props.position}
+                        show={props.show}
+                        isDisabled={disabled}
+                        isShadowed={shadowed}
+                        text={btnText}
+                        btnIcon={icon}
+                        btnSize={size}
+                        backgroundColor={bgColor}
+                        textColor={tColor}
+                        shadowColor={sColor}
+                        hoverColor={hColor}
+                        />
+            default:
+                return <div></div>;
+        }
+    }
     return (
         <div className="Canvas">
-            <Buttons 
-                type={props.type}
-                position={props.position}
-                show={props.show}
-                isDisabled={disabled}
-                isShadowed={shadowed}
-                text={btnText}
-                btnIcon={icon}
-                btnSize={size}
-                backgroundColor={bgColor}
-                textColor={tColor}
-                shadowColor={sColor}
-                hoverColor={hColor}
-            />
+            {renderComponent(props.component)}
             <Panel 
                 selectDisable={handleDisableSelection}
                 selectShadow={handleBoxShadowSelection}
