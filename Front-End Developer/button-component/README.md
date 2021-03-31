@@ -41,18 +41,16 @@
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
-- Where can I see your demo?
 - What was your experience?
 - What have you learned/improved?
-- Your wisdom? :)
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
+- HTML
+- CSS
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
 
 ## Features
 
@@ -68,7 +66,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/kgalejandrino/DevChallenges
+
+# Change directory (Project Folder)
+$ cd DevChallenges/Front-End Developer/button-component/
 
 # Install dependencies
 $ npm install
