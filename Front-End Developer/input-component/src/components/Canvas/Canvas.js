@@ -107,22 +107,22 @@ const Canvas = (props) => {
     }));
 
     /* Controller functions: Input States */  
-    const handleInputTextColorChange = (evt) => setBtnProperties(({textColor, ...prevState}) => ({
+    const handleInputTextColorChange = (evt) => setInputProperties(({textColor, ...prevState}) => ({
         ...prevState,
         textColor: evt.target.value
     }));
 
-    const handleInputBorderColorChange = (evt) => setBtnProperties(({borderColor, ...prevState}) => ({
+    const handleInputBorderColorChange = (evt) => setInputProperties(({borderColor, ...prevState}) => ({
         ...prevState,
         borderColor: evt.target.value
     }));
 
-    const handleInputHoverColorChange = (evt) => setBtnProperties(({hoverColor, ...prevState}) => ({
+    const handleInputHoverColorChange = (evt) => setInputProperties(({hoverColor, ...prevState}) => ({
         ...prevState,
         hoverColor: evt.target.value
     }));
 
-    const handleInputFocusColorChange = (evt) => setBtnProperties(({focusColor, ...prevState}) => ({
+    const handleInputFocusColorChange = (evt) => setInputProperties(({focusColor, ...prevState}) => ({
         ...prevState,
         focusColor: evt.target.value
     }));

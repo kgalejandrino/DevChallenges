@@ -5,7 +5,6 @@ import ButtonControls from './ButtonControls/ButtonControls';
 import InputControls from './InputControls/InputControls';
 
 const panel = (props) => {
-    console.log(props.component);
     const renderControl = (component) => {
         if(component === 'Buttons') {
             return <ButtonControls 

@@ -44,7 +44,6 @@ const Sidebar = (props) => {
     const toggleListBtnStates = (i) => {
         Object.keys(componentsList).forEach((list, idx) => {
             if(idx === i && listIcon[list] === 'add_box') {
-                console.log(componentsList[list][0]);
                 setComponentStates(list);
                 props.setComponent(list);
 
