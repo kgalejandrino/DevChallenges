@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Button Component</h1>
+<h1 align="center">Input Component</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://dc-buttoncomponent.netlify.app/">
+    <a href="https://dc-inputcomponent.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/kgalejandrino/DevChallenges/tree/main/Front-End%20Developer/button-component">
+    <a href="https://github.com/kgalejandrino/DevChallenges/tree/main/Front-End%20Developer/input-component">
       Solution
     </a>
     <span> | </span>
