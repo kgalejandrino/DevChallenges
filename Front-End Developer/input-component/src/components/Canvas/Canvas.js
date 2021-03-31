@@ -6,17 +6,12 @@ import Panel from './Panel/Panel';
 
 
 const Canvas = (props) => {
-    // let [shadowed, setShadow] = useState(false);
-    // let [componentText, setComponentText] = useState('Default');
-    // let [bgColor, setBgColor] = useState('');
-    // let [tColor, setTextColor] = useState('');
-    // let [sColor, setShadowColor] = useState('');
-    // let [hColor, setHoverColor] = useState('');
     let [commonProperties, setCommonProperties]  = useState({
         'disabled': false,
         'icon': 'face',
         'size': 'small'
     });
+
     let [btnProperties, setBtnProperties] = useState({
         'btnText': 'Default',
         'textColor': '',
@@ -25,6 +20,13 @@ const Canvas = (props) => {
         'borderHoverColor': '',
         'disableShadow': false
     });
+
+    let [inputProperties, setInputProperties] = useState({
+        'textColor': '',
+        'borderColor': '',
+        'hoverColor': '',
+        'focusColor': ''
+    })
 
     /*--- Common properties between components: disable, icon, size ---*/
     /* Controller functions: sets state based on user selection*/
@@ -74,34 +76,55 @@ const Canvas = (props) => {
     }
 
     /* Controller functions: Button States */
-    const handleChangeText = (evt) => setBtnProperties(({btnText, ...prevState}) => ({
+    const hanldeBtnTextChange = (evt) => setBtnProperties(({btnText, ...prevState}) => ({
         ...prevState,
         btnText: evt.target.value
     }));
 
-    const handleTextColorSelection = (evt) => setBtnProperties(({textColor, ...prevState}) => ({
+    const handleBtnTextColorChange = (evt) => setBtnProperties(({textColor, ...prevState}) => ({
         ...prevState,
         textColor: evt.target.value
     }));
 
-    const handleBackgroundColorSelection = (evt) => setBtnProperties(({bgColor, ...prevState}) => ({
+    const handleBtnBgColorChange = (evt) => setBtnProperties(({bgColor, ...prevState}) => ({
         ...prevState,
         bgColor: evt.target.value
     }));
 
-    const handleShadowColorSelection = (evt) => setBtnProperties(({boxShadowColor, ...prevState}) => ({
+    const handleBtnShadowColorChange = (evt) => setBtnProperties(({boxShadowColor, ...prevState}) => ({
         ...prevState,
         boxShadowColor: evt.target.value
     }));
 
-    const handleHoverColorSelection = (evt) => setBtnProperties(({borderHoverColor, ...prevState}) => ({
+    const handleBtnHoverColorChange = (evt) => setBtnProperties(({borderHoverColor, ...prevState}) => ({
         ...prevState,
         borderHoverColor: evt.target.value
     }));
 
-    const handleBoxShadowSelection = () => setBtnProperties(({disableShadow, ...prevState}) => ({
+    const handleBtnBoxShadowChange = () => setBtnProperties(({disableShadow, ...prevState}) => ({
         ...prevState,
         disableShadow: !disableShadow
+    }));
+
+    /* Controller functions: Input States */  
+    const handleInputTextColorChange = (evt) => setBtnProperties(({textColor, ...prevState}) => ({
+        ...prevState,
+        textColor: evt.target.value
+    }));
+
+    const handleInputBorderColorChange = (evt) => setBtnProperties(({borderColor, ...prevState}) => ({
+        ...prevState,
+        borderColor: evt.target.value
+    }));
+
+    const handleInputHoverColorChange = (evt) => setBtnProperties(({hoverColor, ...prevState}) => ({
+        ...prevState,
+        hoverColor: evt.target.value
+    }));
+
+    const handleInputFocusColorChange = (evt) => setBtnProperties(({focusColor, ...prevState}) => ({
+        ...prevState,
+        focusColor: evt.target.value
     }));
 
     return (
@@ -114,23 +137,31 @@ const Canvas = (props) => {
                 setSize={commonProperties.size}
                 setIcon={commonProperties.icon}
                 btnText={btnProperties.btnText}
-                textColor={btnProperties.textColor}
-                bgColor={btnProperties.bgColor}
-                shadowColor={btnProperties.boxShadowColor}
-                hoverColor={btnProperties.borderHoverColor}
-                disableShadow={btnProperties.disableShadow}
+                btnTextColor={btnProperties.textColor}
+                btnBgColor={btnProperties.bgColor}
+                btnBoxShadowColor={btnProperties.boxShadowColor}
+                btnHoverColor={btnProperties.borderHoverColor}
+                btnDisableShadow={btnProperties.disableShadow}
+                inputTextColor={inputProperties.textColor}
+                inputBorderColor={inputProperties.borderColor}
+                inputHoverColor={inputProperties.hoverColor}
+                inputFocusColor={inputProperties.focusColor}
             />
             <Panel 
                 component={props.component}
                 selectDisable={handleDisableSelection}
                 selectSize={handleSizeSelection}
                 selectIcon={handleIconSelection}
-                changeText={handleChangeText}
-                selectTextColor={handleTextColorSelection}
-                selectBgColor={handleBackgroundColorSelection}
-                selectShadowColor={handleShadowColorSelection}
-                selectHoverColor={handleHoverColorSelection}
-                selectShadow={handleBoxShadowSelection}
+                btnTextChange={hanldeBtnTextChange}
+                btnTextColorChange={handleBtnTextColorChange}
+                btnBgColorChange={handleBtnBgColorChange}
+                btnShadowColorChange={handleBtnShadowColorChange}
+                btnHoverColorChange={handleBtnHoverColorChange}
+                btnShadowChange={handleBtnBoxShadowChange}
+                inputTextColorChange={handleInputTextColorChange}
+                inputBorderColorChange={handleInputBorderColorChange}
+                inputHoverColorChange={handleInputHoverColorChange}
+                inputFocusColorChange={handleInputFocusColorChange}
             />
         </div>
     )

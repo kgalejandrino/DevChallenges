@@ -10,17 +10,21 @@ const panel = (props) => {
         if(component === 'Buttons') {
             return <ButtonControls 
                 selectDisable={props.selectDisable}
-                selectShadow={props.selectShadow}
-                changeText={props.changeText}
-                selectIcon={props.selectIcon}
                 selectSize={props.selectSize}
-                selectBgColor={props.selectBgColor}
-                selectTextColor={props.selectTextColor}
-                selectShadowColor={props.selectShadowColor}
-                selectHoverColor={props.selectHoverColor}
+                selectIcon={props.selectIcon}
+                btnTextChange={props.btnTextChange}
+                btnTextColorChange={props.btnTextColorChange}
+                btnBgColorChange={props.btnBgColorChange}
+                btnShadowColorChange={props.btnShadowColorChange}
+                btnHoverColorChange={props.btnHoverColorChange}
+                btnShadowChange={props.btnShadowChange}
             />
         } else if(component === 'Inputs') {
             return <InputControls 
+                inputTextColorChange={props.inputTextColorChange}
+                inputBorderColorChange={props.inputBorderColorChange}
+                inputHoverColorChange={props.inputHoverColorChange}
+                inputFocusColorChange={props.inputFocusColorChange}
                    />
         }
     }

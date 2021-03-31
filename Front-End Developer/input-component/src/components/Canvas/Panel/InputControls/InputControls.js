@@ -14,25 +14,25 @@ const inputControls = (props) => {
                             <div className="td-boxes">
                                 <div className="box">
                                     <span>Text</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectTextColor}/>
+                                    <input type="color" defaultValue="#efefef" onChange={props.inputTextColorChange}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">
                                     <span>Border</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectBgColor}/>
+                                    <input type="color" defaultValue="#efefef" onChange={props.inputBorderColorChange}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">   
-                                    <span>Focus</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectShadowColor}/>
+                                    <span>Hover</span>
+                                    <input type="color" defaultValue="#efefef" onChange={props.inputHoverColorChange}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">
-                                    <span>Hover</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectHoverColor}/>
+                                    <span>Focus</span>
+                                    <input type="color" defaultValue="#efefef" onChange={props.inputFocusColorChange}/>
                                 </div>
                             </div>
                         </div>

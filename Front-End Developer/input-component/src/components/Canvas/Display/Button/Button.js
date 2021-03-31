@@ -7,20 +7,20 @@ import Aux from '../../../../hoc/Auxilliary/Auxilliary';
 const button = (props) => {
     let offShadow, boxShadow, borderHoverColor = null;
     const btnStyles = {
-        backgroundColor: props.bgColor,
-        color: props.textColor,
+        backgroundColor: props.btnBgColor,
+        color: props.btnTextColor,
     };
 
     const displayIcon = props.position ? <span className={`material-icons md-24 ${props.position}`}>{props.setIcon}</span> : null;
 
-    if(props.disableShadow) { offShadow = { boxShadow: "none" } }
+    if(props.btnDisableShadow) { offShadow = { boxShadow: "none" } }
 
-    if(props.shadowColor) { boxShadow = { boxShadow: `0 0 4px ${props.shadowColor}`} }
+    if(props.btnBoxShadowColor) { boxShadow = { boxShadow: `0 0 4px ${props.btnBoxShadowColor}`} }
 
-    if(props.hoverColor) { 
+    if(props.btnHoverColor) { 
         borderHoverColor = {
             ':hover': {
-                border: `4px solid ${props.hoverColor}`
+                border: `4px solid ${props.btnHoverColor}`
             } 
         }
     }

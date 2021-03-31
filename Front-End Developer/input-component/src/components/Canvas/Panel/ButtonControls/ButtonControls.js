@@ -10,7 +10,7 @@ const buttonControls = (props) => {
                 <tr>
                     <td><b>Text</b></td>
                     <td>
-                        <textarea className="panel-textarea" onChange={props.changeText} defaultValue="Default"></textarea>
+                        <textarea className="panel-textarea" onChange={props.btnTextChange} defaultValue="Default"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -20,25 +20,25 @@ const buttonControls = (props) => {
                             <div className="td-boxes">
                                 <div className="box">
                                     <span>Text</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectTextColor}/>
+                                    <input type="color" defaultValue="#efefef" onChange={props.btnTextColorChange}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">
                                     <span>Background</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectBgColor}/>
+                                    <input type="color" defaultValue="#efefef" onChange={props.btnBgColorChange}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">   
                                     <span>Shadow</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectShadowColor}/>
+                                    <input type="color" defaultValue="#efefef" onChange={props.btnShadowColorChange}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">
                                     <span>Border Hover</span>
-                                    <input type="color" defaultValue="#efefef" onChange={props.selectHoverColor}/>
+                                    <input type="color" defaultValue="#efefef" onChange={props.btnHoverColorChange}/>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@ const buttonControls = (props) => {
                 <tr>
                     <td><b>Box-shadow</b></td>
                     <td>
-                        <select onChange={props.selectShadow}>
+                        <select onChange={props.btnShadowChange}>
                                 <option>Enabled</option>
                                 <option>Disabled</option>
                         </select>

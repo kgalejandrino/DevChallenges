@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Display.css';
 import Button from './Button/Button';
-import Inputs from './Input/Input';
+import Input from './Input/Input';
 
 const display = (props) => {
     const renderComponent = (render) => {
@@ -15,17 +15,21 @@ const display = (props) => {
                             setIcon={props.setIcon}
                             setSize={props.setSize}
                             btnText={props.btnText}
-                            textColor={props.textColor}
-                            bgColor={props.bgColor}
-                            hoverColor={props.hoverColor}
-                            shadowColor={props.shadowColor}
-                            disableShadow={props.disableShadow}>{props.text}
+                            btnTextColor={props.btnTextColor}
+                            btnBgColor={props.btnBgColor}
+                            btnBoxShadowColor={props.btnBoxShadowColor}
+                            btnHoverColor={props.btnHoverColor}
+                            btnDisableShadow={props.btnDisableShadow}>{props.text}
                         </Button>
             case 'Inputs':
-                return <Inputs 
+                return <Input 
                             componentState={props.componentState}
                             position={props.position}
-                            setIcon={props.setIcon} 
+                            setIcon={props.setIcon}
+                            inputTextColor={props.inputTextColor}
+                            inputBorderColor={props.inputBorderColor}
+                            inputHoverColor={props.inputHoverColor}
+                            inputFocusColor={props.inputFocusColor} 
                        />
             default:
                 return null;

@@ -68,8 +68,8 @@
 /* Primary Button */
 #btn-primary:hover, 
 #btn-primary:focus,
-.btn-icon:hover,
-.btn-icon:focus { 
+#btn-icon:hover,
+#btn-icon:focus { 
     background-color: #0039Cb;
     border: 4px solid #4169e1d5;
     box-shadow: 0 0 3px #4169e1d5;
