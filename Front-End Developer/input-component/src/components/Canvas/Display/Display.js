@@ -26,10 +26,12 @@ const display = (props) => {
                             componentState={props.componentState}
                             position={props.position}
                             setIcon={props.setIcon}
+                            setSize={props.setSize}
                             inputTextColor={props.inputTextColor}
                             inputBorderColor={props.inputBorderColor}
                             inputHoverColor={props.inputHoverColor}
-                            inputFocusColor={props.inputFocusColor} 
+                            inputFocusColor={props.inputFocusColor}
+                            isDisabled={props.isDisabled} 
                        />
             default:
                 return null;

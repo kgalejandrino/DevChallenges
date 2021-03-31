@@ -4,7 +4,6 @@
     padding: 16px;
     border: 1px solid #828282;
     border-radius: 8px;
-    width: 210px;
     outline: none;
 }
 
@@ -15,9 +14,11 @@
 
 /* Default Input */
 #input-default:hover,
-#input-error:hover { border: 1px solid #333333; }
+#input-error:hover,
+#input-multiline:hover { border: 1px solid #333333; }
 
-#input-default:focus { border: 1px solid #2962ff; }
+#input-default:focus,
+#input-multiline:focus { border: 1px solid #2962ff; }
 
 /* Error Input */
 #input-error,
@@ -64,4 +65,20 @@
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 18px;
 }
+
+/* Disabled Input/Textarea */
+input[type="text"]:disabled,
+textarea:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Input Size */
+.input-small { width: 210px; }
+
+.input-medium { width: 250px; }
+
+.input-large { width: 290px; }
+
+
 

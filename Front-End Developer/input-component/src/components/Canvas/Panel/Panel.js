@@ -24,7 +24,10 @@ const panel = (props) => {
                 inputBorderColorChange={props.inputBorderColorChange}
                 inputHoverColorChange={props.inputHoverColorChange}
                 inputFocusColorChange={props.inputFocusColorChange}
-                   />
+                selectDisable={props.selectDisable}
+                selectIcon={props.selectIcon}
+                selectSize={props.selectSize}
+                />
         }
     }
     return (
