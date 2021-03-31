@@ -6,53 +6,103 @@ import Panel from './Panel/Panel';
 
 
 const Canvas = (props) => {
-    let [disabled, setDisabled] = useState(false);
-    let [shadowed, setShadow] = useState(false);
-    let [componentText, setComponentText] = useState('Default');
-    let [icon, setIcon] = useState('face');
-    let [size, setSize] = useState('small');
-    let [bgColor, setBgColor] = useState('');
-    let [tColor, setTextColor] = useState('');
-    let [sColor, setShadowColor] = useState('');
-    let [hColor, setHoverColor] = useState('');
+    // let [shadowed, setShadow] = useState(false);
+    // let [componentText, setComponentText] = useState('Default');
+    // let [bgColor, setBgColor] = useState('');
+    // let [tColor, setTextColor] = useState('');
+    // let [sColor, setShadowColor] = useState('');
+    // let [hColor, setHoverColor] = useState('');
+    let [commonProperties, setCommonProperties]  = useState({
+        'disabled': false,
+        'icon': 'face',
+        'size': 'small'
+    });
+    let [btnProperties, setBtnProperties] = useState({
+        'btnText': 'Default',
+        'textColor': '',
+        'bgColor': '',
+        'boxShadowColor': '',
+        'borderHoverColor': '',
+        'disableShadow': false
+    });
 
-    const handleDisableSelection = () => setDisabled(!disabled);
+    /*--- Common properties between components: disable, icon, size ---*/
+    /* Controller functions: sets state based on user selection*/
+    const handleDisableSelection = () => setCommonProperties(({disabled, ...prevState}) => ({
+        ...prevState,
+        disabled: !disabled
+    }));
 
-    const handleBoxShadowSelection = () => setShadow(!shadowed);
+    const handleSizeSelection = (evt) => setCommonProperties(prevState => ({
+        ...prevState,
+        size: evt.target.value
+    }));
 
-    const handleChangeText = (e) => setComponentText(e.target.value);
-
-    const handleSizeSelection = (e) => setSize(e.target.value);
-
-    const handleBackgroundColorSelection = (e) => setBgColor(e.target.value);
-
-    const handleTextColorSelection = (e) => setTextColor(e.target.value);
-
-    const handleShadowColorSelection = (e) => setShadowColor(e.target.value);
-
-    const handleHoverColorSelection = (e) => setHoverColor(e.target.value);
-
-    const handleIconSelection = (e) => {
-        switch(e.target.value) {
-            case 'face':
-                setIcon('face');
-                break;
+    const handleIconSelection = (evt) => {
+        switch(evt.target.value) {
             case 'heart':
-                setIcon('favorite');
+                setCommonProperties(prevState => ({
+                    ...prevState,
+                    icon: 'favorite'
+                }));
                 break;
             case 'leaf':
-                setIcon('eco');
+                setCommonProperties(prevState => ({
+                    ...prevState,
+                    icon: 'eco'
+                }));
                 break;
             case 'tool':
-                setIcon('build');
+                setCommonProperties(prevState => ({
+                    ...prevState,
+                    icon: 'build'
+                }));
                 break;
             case 'star':
-                setIcon('grade');
+                setCommonProperties(prevState => ({
+                    ...prevState,
+                    icon: 'grade'
+                }));
                 break;
             default:
+                setCommonProperties(prevState => ({
+                    ...prevState,
+                    icon: 'face'
+                }));
                 break;
         }
     }
+
+    /* Controller functions: Button States */
+    const handleChangeText = (evt) => setBtnProperties(({btnText, ...prevState}) => ({
+        ...prevState,
+        btnText: evt.target.value
+    }));
+
+    const handleTextColorSelection = (evt) => setBtnProperties(({textColor, ...prevState}) => ({
+        ...prevState,
+        textColor: evt.target.value
+    }));
+
+    const handleBackgroundColorSelection = (evt) => setBtnProperties(({bgColor, ...prevState}) => ({
+        ...prevState,
+        bgColor: evt.target.value
+    }));
+
+    const handleShadowColorSelection = (evt) => setBtnProperties(({boxShadowColor, ...prevState}) => ({
+        ...prevState,
+        boxShadowColor: evt.target.value
+    }));
+
+    const handleHoverColorSelection = (evt) => setBtnProperties(({borderHoverColor, ...prevState}) => ({
+        ...prevState,
+        borderHoverColor: evt.target.value
+    }));
+
+    const handleBoxShadowSelection = () => setBtnProperties(({disableShadow, ...prevState}) => ({
+        ...prevState,
+        disableShadow: !disableShadow
+    }));
 
     return (
         <div className="Canvas">
@@ -60,27 +110,27 @@ const Canvas = (props) => {
                 component={props.component}
                 componentState={props.componentState}
                 position={props.position}
-                isDisabled={disabled}
-                isShadowed={shadowed}
-                componentText={componentText}
-                setIcon={icon}
-                btnSize={size}
-                backgroundColor={bgColor}
-                textColor={tColor}
-                shadowColor={sColor}
-                hoverColor={hColor}
+                isDisabled={commonProperties.disabled}
+                setSize={commonProperties.size}
+                setIcon={commonProperties.icon}
+                btnText={btnProperties.btnText}
+                textColor={btnProperties.textColor}
+                bgColor={btnProperties.bgColor}
+                shadowColor={btnProperties.boxShadowColor}
+                hoverColor={btnProperties.borderHoverColor}
+                disableShadow={btnProperties.disableShadow}
             />
             <Panel 
                 component={props.component}
                 selectDisable={handleDisableSelection}
-                selectShadow={handleBoxShadowSelection}
-                changeText={handleChangeText}
-                selectIcon={handleIconSelection}
                 selectSize={handleSizeSelection}
-                selectBgColor={handleBackgroundColorSelection}
+                selectIcon={handleIconSelection}
+                changeText={handleChangeText}
                 selectTextColor={handleTextColorSelection}
+                selectBgColor={handleBackgroundColorSelection}
                 selectShadowColor={handleShadowColorSelection}
                 selectHoverColor={handleHoverColorSelection}
+                selectShadow={handleBoxShadowSelection}
             />
         </div>
     )

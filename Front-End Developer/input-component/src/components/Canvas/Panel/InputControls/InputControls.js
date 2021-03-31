@@ -19,19 +19,19 @@ const inputControls = (props) => {
                             </div>
                             <div className="td-boxes">
                                 <div className="box">
-                                    <span>Background</span>
+                                    <span>Border</span>
                                     <input type="color" defaultValue="#efefef" onChange={props.selectBgColor}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">   
-                                    <span>Shadow</span>
+                                    <span>Focus</span>
                                     <input type="color" defaultValue="#efefef" onChange={props.selectShadowColor}/>
                                 </div>
                             </div>
                             <div className="td-boxes">
                                 <div className="box">
-                                    <span>Border Hover</span>
+                                    <span>Hover</span>
                                     <input type="color" defaultValue="#efefef" onChange={props.selectHoverColor}/>
                                 </div>
                             </div>

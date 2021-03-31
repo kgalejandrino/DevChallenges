@@ -12,14 +12,14 @@ const display = (props) => {
                             componentState={props.componentState}
                             position={props.position}
                             isDisabled={props.isDisabled}
-                            isShadowed={props.isShadowed}
                             setIcon={props.setIcon}
-                            btnSize={props.btnSize}
-                            backgroundColor={props.backgroundColor}
-                            componentText={props.componentText}
+                            setSize={props.setSize}
+                            btnText={props.btnText}
                             textColor={props.textColor}
+                            bgColor={props.bgColor}
+                            hoverColor={props.hoverColor}
                             shadowColor={props.shadowColor}
-                            hoverColor={props.hoverColor}>{props.text}
+                            disableShadow={props.disableShadow}>{props.text}
                         </Button>
             case 'Inputs':
                 return <Inputs 
