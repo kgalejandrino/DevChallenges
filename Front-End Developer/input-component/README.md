@@ -39,20 +39,18 @@
 
 ![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
 - What was your experience?
 - What have you learned/improved?
-- Your wisdom? :)
+
+I'm excited about this project because I get to test myself on how good my understanding is with React. Like I said in the previous project this is just a continuation of it - adding the input component. I can only imagine how cumbersome the code would be using plain JavaScript, but with React managing state and reusing components has been easy. I think that if there was to improve based on my experience here, it would be better coding structure and taking advantage of different data structure. Sometimes when I code I wouldn't think how a component or a particular function can be reusable for later use. With that, code change is inevitable and its a waste of time during development which I think is important in the real world.  
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
+- HTML
+- CSS
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
 
 ## Features
 
@@ -68,7 +66,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/kgalejandrino/DevChallenges
+
+# Change directory (Project Folder)
+$ cd DevChallenges/Front-End Developer/button-component/
 
 # Install dependencies
 $ npm install
