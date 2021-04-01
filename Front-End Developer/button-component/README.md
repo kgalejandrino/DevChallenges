@@ -39,10 +39,13 @@
 
 ![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
+Note: Ignore not having the display update even when user selects other navigation. When I
+built this project my focus was only to get button navigation and the canvas to display different button states based on user selection from the dropdown. Visit this [repo}(https://github.com/kgalejandrino/DevChallenges/tree/main/Front-End%20Developer/input-component) for a better version of this project. 
+
 - What was your experience?
 - What have you learned/improved?
 
-On this project, I challenged myself to build more than what the project is asking. To think outside the box and test the limit of my capabilities. Instead of simply showing the button in multiple states at once or use the [Storybook](https://storybook.js.org/) tool, I decided to copy the UI of storybook and build my own version. There's more to improve on this project especially with the functionalities to make it better, but I've also decided not to change it because on the next project I will be working on top of this repository and improve it from there. I will be adding another component(Input) and from there I will build a better version of it and dynamically render components based on user's selection. Overall, I'm happy with what I've accomplish here. I've only recently learned React and to be able to build something outside of the minimum requirements feels great.   
+On this project, I challenged myself to build more than what the project is asking. To think outside the box and test the limit of my capabilities. Instead of simply showing the button in multiple states at once or use the [Storybook](https://storybook.js.org/) tool, I decided to copy the UI of storybook and build my own version. There's more to improve on this project especially with the functionalities to make it better, but I've also decided not to change it because on the next project I will be working on top of this repository and improve it from there. I will be adding another component(Input) and from there I will build a better version of it and dynamically render components based on user's selection. Overall, I'm happy with what I've accomplish here. I just recently learned React and to be able to build something outside of the minimum requirements feels great.   
 
 ### Built With
 
