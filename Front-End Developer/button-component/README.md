@@ -40,7 +40,7 @@
 ![website_demo](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/button-component/src/assets/website-demo.gif)
 
 Note: Ignore not having the display update even when user selects other navigation. When I
-built this project my focus was only to get button navigation and the canvas to display different button states based on user selection from the dropdown. Visit this [repo}(https://github.com/kgalejandrino/DevChallenges/tree/main/Front-End%20Developer/input-component) for a better version of this project. 
+built this project my focus was only to get button navigation and the canvas to display different button states based on user selection from the dropdown. Visit this [repo](https://github.com/kgalejandrino/DevChallenges/tree/main/Front-End%20Developer/input-component) for a better version of this project. 
 
 - What was your experience?
 - What have you learned/improved?
