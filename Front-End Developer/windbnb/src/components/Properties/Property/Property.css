@@ -1,0 +1,52 @@
+.property-card { 
+    margin-top: 32px;
+}
+
+.property-image {
+    width: 100%;
+    max-width: 470px;
+}
+
+.property-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    display: flex;
+}
+
+.property-detail {
+    display: flex;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.host {
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px solid #4f4f4f;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin-right: 12px;
+}
+
+.type {
+    color: #828282;
+    padding-right: 6px;
+}
+
+.rating-box { display: flex; }
+
+.rating-icon { 
+    color: #eb5757; 
+    margin-right: 6px;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+
+.property-description {
+    color: #333333;
+    font-weight: 700;
+    margin-top: 18px;
+}

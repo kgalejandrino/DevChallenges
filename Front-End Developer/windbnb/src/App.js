@@ -1,11 +1,17 @@
-import './App.css';
+import React from 'react';
 
-function App() {
+import Aux from './hoc/Auxilliary/Auxilliary';
+import Layout from './hoc/Layout/Layout';
+
+const app = () => {
   return (
-    <div className="App">
-
-    </div>
+    <Aux>
+      <Layout />
+    </Aux>
   );
 }
 
-export default App;
+export default app;
+
+
+// font-family: 'Mulish', sans-serif;

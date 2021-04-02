@@ -1,0 +1,18 @@
+.Properties {
+    margin-top: 64px;
+}
+
+.title-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-box h2 { color: #333333; }
+.title-box p { font-size: 14px;}
+
+.properties-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
