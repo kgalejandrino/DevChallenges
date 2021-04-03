@@ -8,7 +8,8 @@ const property = (props) => {
     return (
         <div className="property-card">
             <div className="property-image">
-                <img src={props.url} alt="Apartment"></img>
+                <figure style={{backgroundImage:`url('${props.url}')`}}></figure>
+                {/* <img src={props.url} alt="Apartment"></img> */}
             </div>
             <div className="property-detail">
                 <div className="type-box">

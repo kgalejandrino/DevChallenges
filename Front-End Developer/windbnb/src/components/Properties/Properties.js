@@ -37,6 +37,22 @@ const propertyList = [
         'rating': 4.85,
         'description': 'Stylist room in design district'
     },
+    {
+        'location': 'Oulu, Finland',
+        'url': 'https://images.unsplash.com/photo-1604809226867-0c54292210d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        'host': false,
+        'type': 'Private room',
+        'rating': 4.54,
+        'description': 'Modern apartment close to nature'
+    },
+    {
+        'location': 'Vaas, Finland',
+        'url': 'https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        'host': false,
+        'type': 'Entire house',
+        'rating': 4.64,
+        'description': 'House in a remote area'
+    },
 ];
 
 class Properties extends Component {
