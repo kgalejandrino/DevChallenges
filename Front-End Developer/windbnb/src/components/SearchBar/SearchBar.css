@@ -29,6 +29,8 @@
 }
 
 .btn-add--guest {
+    cursor: pointer;
+    outline: none;
     border: none;
     border-right: 1px solid #f2f2f2;
     background: none;
