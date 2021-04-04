@@ -12,11 +12,11 @@
     justify-content: center;
     border: none;
     border-right: 1px solid #f2f2f2;
-    padding-left: 18px;
     cursor: pointer;
+    padding-left: 18px;
 }
 
-.location-label {
+.label {
     font-size: 12px;
     font-weight: 700;
     padding-bottom: 4px;
@@ -33,11 +33,13 @@
     cursor: pointer;
     outline: none;
     border: none;
-    border-right: 1px solid #f2f2f2;
     background: none;
-    padding: 12px 14px;
+    width: 80px;
     color: #bdbdbd;
+    text-align: left;
 }
+
+.expandWidth { width:  40%; }
 
 /* SEARCH ICON */
 .icon-container {

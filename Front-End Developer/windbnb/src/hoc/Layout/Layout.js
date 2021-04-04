@@ -12,24 +12,41 @@ class Layout extends Component {
         super(props);
 
         this.state = {
-            dropdown: false
+            show: false
         }
     }
 
-    handleDropdownClick = () => this.setState({ dropdown: true});
+    componentDidMount = () => document.addEventListener("keydown", this.handleHideDropdownPress);
+    
+    componentWillUnmount = () => document.removeEventListener("keydown", this.handleHideDropdownPress);
+
+    handleShowDropdownClick = () => this.setState({ show: true});
+
+    handleHideDropdownClick = () => this.setState({ show: false});
+
+    handleHideDropdownPress = event => {
+        if(event.keyCode === 27) {
+            this.setState({ show: false}); 
+        }
+    }
+
+
 
     render() {
         const dropdownStyle = {flexFlow: 'column'}; 
 
         return (
             <div className="Layout">
-                { this.state.dropdown ? <Backdrop /> : null }
-                { this.state.dropdown ? <Dropdown /> : null }
-                <header style={this.state.dropdown ? dropdownStyle : null} className="header">
+                <Backdrop 
+                    show={this.state.show}
+                    clicked={this.handleHideDropdownClick}
+                />
+                { this.state.show ? <Dropdown /> : null }
+                <header style={this.state.show ? dropdownStyle : null} className="header">
                     <Logo />
                     <SearchBar
-                        dropdown={this.state.dropdown} 
-                        clickedDropdown={this.handleDropdownClick}
+                        show={this.state.show} 
+                        clicked={this.handleShowDropdownClick}
                     />
                 </header>
                 <main>
