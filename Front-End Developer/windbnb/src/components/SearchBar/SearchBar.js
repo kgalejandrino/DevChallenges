@@ -38,7 +38,10 @@ const SearchBar = (props) => {
             </button>
             <div className="icon-container">
                 <div className={props.dropdown ? 'icon-container--red': null}>
-                    <span className="material-icons md-24 search-icon">search</span>
+                    <span 
+                        className="material-icons md-24 search-icon"
+                        style={props.dropdown ? {color: '#ffffff'} : null }>search
+                    </span>
                     {props.dropdown ? <span>Search</span>: null}
                 </div>
             </div>

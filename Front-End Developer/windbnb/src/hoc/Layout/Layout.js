@@ -5,7 +5,7 @@ import Logo from '../../components/Logo/Logo';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Properties from '../../components/Properties/Properties';
 import Dropdown from '../../components/UI/Dropdown/Dropdown';
-import dropdown from '../../components/UI/Dropdown/Dropdown';
+import Backdrop from '../../components/UI/Backdrop/Backdrop';
 
 class Layout extends Component {
     constructor(props) {
@@ -16,14 +16,15 @@ class Layout extends Component {
         }
     }
 
-    handleDropdownClick = () => this.setState(prevState => ({ dropdown: !prevState.dropdown }));
+    handleDropdownClick = () => this.setState({ dropdown: true});
 
     render() {
         const dropdownStyle = {flexFlow: 'column'}; 
 
         return (
             <div className="Layout">
-                {this.state.dropdown ? <Dropdown /> : null }
+                { this.state.dropdown ? <Backdrop /> : null }
+                { this.state.dropdown ? <Dropdown /> : null }
                 <header style={this.state.dropdown ? dropdownStyle : null} className="header">
                     <Logo />
                     <SearchBar
