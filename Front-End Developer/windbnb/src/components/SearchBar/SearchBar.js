@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 
     const expandWidthContainerClick = () => {
         console.log('test');
@@ -16,14 +16,32 @@ const SearchBar = () => {
         console.log('test');
     }
 
+    const dropdownStyle= { width: '40%' };
+
     return (
         <div className="SearchBar">
-            <div className="search-container">
+            <div className="search-container" style={props.dropdown ? dropdownStyle : null }>
                 <label htmlFor="location" className="location-label">Location</label>
-                <input type="text" placeholder="Where are you going?" className="input-location" id="location" onClick={expandWidthContainerClick}></input>
+                <input 
+                    type="text" 
+                    className="input-location" 
+                    id="location"
+                    onClick={props.clickedDropdown}
+                    placeholder="Where are you going?" 
+                    autoComplete="off">
+                </input>
             </div>
-            <button className="btn-add--guest" value="" onClick={expandWidthContainerClick}>Add Guest</button>
-            <span className="material-icons md-36 search-icon">search</span>
+            <button 
+                className="btn-add--guest"
+                style={props.dropdown ? dropdownStyle : null } 
+                onClick={props.clickedDropdown}>Add Guest
+            </button>
+            <div className="icon-container">
+                <div className={props.dropdown ? 'icon-container--red': null}>
+                    <span className="material-icons md-24 search-icon">search</span>
+                    {props.dropdown ? <span>Search</span>: null}
+                </div>
+            </div>
         </div>
     )
 }
