@@ -6,6 +6,7 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import Properties from '../../components/Properties/Properties';
 import Dropdown from '../../components/UI/Dropdown/Dropdown';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
+import FilteredCity from '../../components/FilteredCity/FilteredCity';
 
 const propertyList = [
     {
@@ -65,6 +66,7 @@ class Layout extends Component {
         this.state = {
             properties: propertyList,
             show: false,
+            searchInput: '',
         }
     }
 
@@ -82,11 +84,23 @@ class Layout extends Component {
         }
     }
 
+    handleInputChange = (event) => this.setState({searchInput: event.target.value});
+
 
 
 
     render() {
         const dropdownStyle = {flexFlow: 'column'}; 
+        const uniqueCity = [];
+        this.state.properties.forEach(property => {
+                if(uniqueCity.indexOf(property.location) === -1) {
+                    uniqueCity.push(property.location);
+                }
+            });
+        
+        let filteredCity = uniqueCity.filter(city => {
+            return city.toLowerCase().indexOf(this.state.searchInput) !== -1;
+        });
 
         return (
             <div className="Layout">
@@ -100,9 +114,15 @@ class Layout extends Component {
                     <SearchBar
                         show={this.state.show} 
                         clicked={this.handleShowDropdownClick}
+                        changed={this.handleInputChange}
                         propertiesList={this.state.properties}
                     />
-                    
+                    {this.state.searchInput === '' 
+                        ? '' 
+                        : filteredCity.map(filter => {
+                            return <FilteredCity>{filter}</FilteredCity>
+                        })
+                    }
                 </header>
                 <main>
                     <Properties 

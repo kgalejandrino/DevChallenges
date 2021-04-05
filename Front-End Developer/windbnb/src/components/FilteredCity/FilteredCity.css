@@ -1,0 +1,5 @@
+.filteredCity {
+    z-index: 999;
+    display: flex;
+    flex-flow: column;
+}

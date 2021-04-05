@@ -5,29 +5,14 @@ import './SearchBar.css';
 const city = [];
 
 const SearchBar = (props) => {
-    let [input, setInput] = useState('');
     let [focus, setFocus] = useState(false);
 
     const expandWidth = props.show ? 'expandWidth' : null;
     const locationLabel = props.show ? <label htmlFor="location" className="label padding-left">Location</label> : null;
     const guestLabel = props.show ? <label htmlFor="location" className="label padding-left">Guest</label> : null;
     
-    props.propertiesList.forEach(property => {
-        if(city.indexOf(property.location) === -1) {
-            city.push(property.location);
-        }
-    });
-
-    const handleInputChange = (event) => {
-        setInput(event.target.value);
-    }
-
     const handleFocusInput = () => setFocus(true);
     const handleBlurInput = () => setFocus(false);
-
-    let filteredCity = city.filter(city => {
-        return city.toLowerCase().indexOf(input) !== -1;
-    });
 
     return (
         <div className="SearchBar">
@@ -38,7 +23,7 @@ const SearchBar = (props) => {
                         type="text" 
                         className="input-location padding-left" 
                         id="location"
-                        onChange={handleInputChange}
+                        onChange={props.changed}
                         onFocus={handleFocusInput}
                         onBlur={handleBlurInput}
                         placeholder="Where are you going?" 
