@@ -92,6 +92,7 @@ class Layout extends Component {
     render() {
         const dropdownStyle = {flexFlow: 'column'}; 
         const uniqueCity = [];
+
         this.state.properties.forEach(property => {
                 if(uniqueCity.indexOf(property.location) === -1) {
                     uniqueCity.push(property.location);
@@ -119,8 +120,8 @@ class Layout extends Component {
                     />
                     {this.state.searchInput === '' 
                         ? '' 
-                        : filteredCity.map(filter => {
-                            return <FilteredCity>{filter}</FilteredCity>
+                        : filteredCity.length === 0 ? <FilteredCity>Search Not Found</FilteredCity> : filteredCity.map((filter, index) => {
+                            return <FilteredCity key={index}>{filter}</FilteredCity>
                         })
                     }
                 </header>

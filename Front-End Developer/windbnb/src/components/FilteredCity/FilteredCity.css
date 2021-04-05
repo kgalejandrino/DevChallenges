@@ -1,5 +1,13 @@
 .filteredCity {
     z-index: 999;
+    margin-top: 12px;
+    width: 40%;
     display: flex;
-    flex-flow: column;
 }
+
+.city-name {
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+.city-icon { margin-right: 12px; }

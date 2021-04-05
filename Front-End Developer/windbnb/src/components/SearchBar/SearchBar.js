@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import './SearchBar.css';
 
-const city = [];
-
 const SearchBar = (props) => {
     let [focus, setFocus] = useState(false);
 
