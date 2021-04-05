@@ -103,6 +103,13 @@ class Layout extends Component {
             return city.toLowerCase().indexOf(this.state.searchInput) !== -1;
         });
 
+        const renderFilteredCity = filteredCity.length === 0 
+            ? <FilteredCity>Search Not Found</FilteredCity>
+            : filteredCity.map((filter, index) => {
+                return <FilteredCity key={index}>{filter}</FilteredCity>
+            })
+        ;
+        
         return (
             <div className="Layout">
                 <Backdrop 
@@ -120,9 +127,7 @@ class Layout extends Component {
                     />
                     {this.state.searchInput === '' 
                         ? '' 
-                        : filteredCity.length === 0 ? <FilteredCity>Search Not Found</FilteredCity> : filteredCity.map((filter, index) => {
-                            return <FilteredCity key={index}>{filter}</FilteredCity>
-                        })
+                        : <div className="filteredCity-container">{renderFilteredCity}</div>
                     }
                 </header>
                 <main>

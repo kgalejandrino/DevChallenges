@@ -9,3 +9,10 @@
     justify-content: space-between;
     padding-top: 40px;
 }
+
+.filteredCity-container {
+    z-index: 999;
+    position: absolute;
+    top: 120px;
+    width: 40%;
+}
