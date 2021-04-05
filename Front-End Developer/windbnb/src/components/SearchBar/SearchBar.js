@@ -23,6 +23,7 @@ const SearchBar = (props) => {
     }
 
     const handleFocusInput = () => setFocus(true);
+    const handleBlurInput = () => setFocus(false);
 
     let filteredCity = city.filter(city => {
         return city.toLowerCase().indexOf(input) !== -1;
@@ -31,7 +32,7 @@ const SearchBar = (props) => {
     return (
         <div className="SearchBar">
             <div className={`search-container ${expandWidth}`} onClick={props.clicked}>
-                <div className="border-focus">
+                <div className="border-focus" style={focus ? {border: "1px solid #000"} : null}>
                     {locationLabel}
                     <input 
                         type="text" 
@@ -39,6 +40,7 @@ const SearchBar = (props) => {
                         id="location"
                         onChange={handleInputChange}
                         onFocus={handleFocusInput}
+                        onBlur={handleBlurInput}
                         placeholder="Where are you going?" 
                         autoComplete="off">
                     </input>
