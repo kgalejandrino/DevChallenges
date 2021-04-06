@@ -8,11 +8,18 @@ const FilterGuest = (props) => {
     let [childrenValue, setChildrenValue] = useState(0);
 
     const changeAdultValue = (event) => {
-        console.log('test');
         if(event.target.innerText === '+' && adultValue < 99) {
             setAdultValue(adultValue + 1);
         } else if(event.target.innerText === '-' && adultValue > 0) {
             setAdultValue(adultValue - 1);
+        }
+    }
+
+    const changeChildrenValue = (event) => {
+        if(event.target.innerText === '+' && adultValue < 99) {
+            setChildrenValue(childrenValue + 1);
+        } else if(event.target.innerText === '-' && adultValue > 0) {
+            setChildrenValue(childrenValue - 1);
         }
     }
 
@@ -31,9 +38,9 @@ const FilterGuest = (props) => {
                 category="Children"
                 age="Ages 2-12">
                 <div className="inc-dec--btn">
-                    <button className="btn btn-dec">-</button>
+                    <button className="btn btn-dec" onClick={changeChildrenValue}>-</button>
                     <span className="value">{childrenValue}</span>
-                    <button className="btn btn-inc">+</button>
+                    <button className="btn btn-inc" onClick={changeChildrenValue}>+</button>
                 </div>
             </Guest>
         </div>
