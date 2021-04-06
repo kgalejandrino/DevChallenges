@@ -1,0 +1,31 @@
+.guest {
+    margin-top: 24px;
+}
+
+.category {
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.age {
+    color: #bdbdbd;
+}
+
+.value { 
+    padding: 0 12px; 
+    font-weight: 700;
+    font-size: 16px;
+}
+.inc-dec--btn {
+    margin-top: 18px;
+}
+
+.btn {
+    background: none;
+    border: 1px solid #828282;
+    color: #828282;
+    font-size: 24px;
+    padding: 0 8px;
+    border-radius: 6px;
+}

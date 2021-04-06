@@ -39,9 +39,8 @@
     outline: none;
     border: none;
     background: none;
-    width: 90px;
+    width: 100px;
     color: #bdbdbd;
-    text-align: left;
 }
 
 .expandWidth { width:  40%; }

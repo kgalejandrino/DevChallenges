@@ -1,12 +1,12 @@
-import './FilteredCity.css';
+import './FilterCity.css';
 
-const filteredCity = (props) => {
+const filterCity = (props) => {
     return (
-        <div className="filteredCity">
+        <div className="FilterCity">
             <span className="material-icons md-24 city-icon">place</span>
             <span className="city-name">{props.children}</span>
         </div>
     )
 }
 
-export default filteredCity;
+export default filterCity;

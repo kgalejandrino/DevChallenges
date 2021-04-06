@@ -6,7 +6,8 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import Properties from '../../components/Properties/Properties';
 import Dropdown from '../../components/UI/Dropdown/Dropdown';
 import Backdrop from '../../components/UI/Backdrop/Backdrop';
-import FilteredCity from '../../components/FilteredCity/FilteredCity';
+import FilterCity from '../../components/FilterCity/FilterCity';
+import FilterGuest from '../../components/FilterGuest/FilterGuest';
 
 const propertyList = [
     {
@@ -67,6 +68,7 @@ class Layout extends Component {
             properties: propertyList,
             show: false,
             searchInput: '',
+            addGuest: false
         }
     }
 
@@ -86,6 +88,7 @@ class Layout extends Component {
 
     handleInputChange = (event) => this.setState({searchInput: event.target.value});
 
+    handleAddGuestClick = () => this.setState({ addGuest: true });
 
 
 
@@ -104,9 +107,9 @@ class Layout extends Component {
         });
 
         const renderFilteredCity = filteredCity.length === 0 
-            ? <FilteredCity>Search Not Found</FilteredCity>
+            ? <FilterCity>Search Not Found</FilterCity>
             : filteredCity.map((filter, index) => {
-                return <FilteredCity key={index}>{filter}</FilteredCity>
+                return <FilterCity key={index}>{filter}</FilterCity>
             })
         ;
         
@@ -121,14 +124,19 @@ class Layout extends Component {
                     <Logo />
                     <SearchBar
                         show={this.state.show} 
-                        clicked={this.handleShowDropdownClick}
+                        clickedDropdown={this.handleShowDropdownClick}
                         changed={this.handleInputChange}
                         propertiesList={this.state.properties}
+                        clickedAdd={this.handleAddGuestClick}
+                        add={this.state.addGuest}
                     />
-                    {this.state.searchInput === '' 
-                        ? '' 
-                        : <div className="filteredCity-container">{renderFilteredCity}</div>
-                    }
+                    <div className="filtered-container">
+                        {this.state.searchInput === '' 
+                            ? '' 
+                            : <div className="city-container">{renderFilteredCity}</div>
+                        }
+                        {this.state.addGuest ? <FilterGuest />: null}
+                    </div>
                 </header>
                 <main>
                     <Properties 
