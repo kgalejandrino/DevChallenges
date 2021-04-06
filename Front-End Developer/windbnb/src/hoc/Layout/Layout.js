@@ -79,11 +79,14 @@ class Layout extends Component {
 
     handleHideDropdownPress = event => {
         if(event.keyCode === 27) {
-            this.setState({ show: false}); 
+            this.setState({ 
+                filterGuest: false,
+                filterSearch: false
+            }); 
         }
     }
 
-    handleInputChange = (event) => this.setState({searchInput: event.target.value});
+    handleInputChange = (event) => this.setState({searchInput: event.target.value, citySelected: false});
     
     handleShowFilterSearch = () => {
         this.setState({ 
@@ -120,7 +123,6 @@ class Layout extends Component {
     render() {
         const dropdownStyle = { flexFlow: 'column'}; 
         const uniqueCity = [];
-        const match = true; 
 
         this.state.properties.forEach(property => {
                 if(uniqueCity.indexOf(property.location) === -1) {
@@ -129,18 +131,18 @@ class Layout extends Component {
             });
         
         let filteredCity = uniqueCity.filter(city => {
-            if(this.state.searchInput) {
-                return city.toLowerCase().indexOf(this.state.searchInput) !== -1;
-            }
-            if(city.toLowerCase().indexOf(this.state.searchInput) === -1) {
-                match = false;
-            }
+            return this.state.searchInput && city.toLowerCase().indexOf(this.state.searchInput.toLowerCase()) !== -1;
         });
 
-        const renderFilteredCity = !match && !this.state.citySelected
-            ? <FilterCity>Search Not Found</FilterCity>
-            : filteredCity.map((filter, index) => {
-                return <FilterCity key={index} clicked={this.handleCitySelection}>{filter}</FilterCity>
+        console.log(this.state.searchInput);
+        console.log(filteredCity.length);
+        const renderFilteredCity = this.state.searchInput && filteredCity.length === 0
+                ? <FilterCity>Search Not Found</FilterCity>
+                : filteredCity.map((filter, index) => {
+                    return <FilterCity 
+                                key={index} 
+                                clicked={this.handleCitySelection}>{filter}
+                            </FilterCity>
             })
         ;
         
@@ -168,7 +170,7 @@ class Layout extends Component {
                         add={this.state.filterGuest}
                     />
                     <div className="filtered-container">
-                        {this.state.citySelected ? null : <div className="city-container">{renderFilteredCity}</div>}
+                        {this.state.filterSearch && !this.state.citySelected ? <div className="city-container">{renderFilteredCity}</div> : null}
                         {this.state.filterGuest ? <FilterGuest />: null}
                     </div>
                 </header>
