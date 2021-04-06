@@ -2,6 +2,7 @@
     z-index: 999;
     margin-top: 12px;
     display: flex;
+    cursor: pointer;
 }
 
 .city-name {

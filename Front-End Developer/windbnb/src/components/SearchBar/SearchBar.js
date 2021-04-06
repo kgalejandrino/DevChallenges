@@ -5,7 +5,7 @@ import './SearchBar.css';
 const SearchBar = (props) => {
     let [focus, setFocus] = useState(false);
     let input = useRef(null);
-
+    
     const expandWidth = props.showSearch || props.showGuest ? 'expandWidth' : null;
     const locationLabel = props.showSearch || props.showGuest ? <label htmlFor="location" className="label padding-left">Location</label> : null;
     const guestLabel = props.showSearch || props.showGuest ? <label htmlFor="location" className="label padding-left">Guest</label> : null;
@@ -13,7 +13,6 @@ const SearchBar = (props) => {
     const handleFocusInput = () => setFocus(true);
     const handleBlurInput = () => setFocus(false);
     
-    console.log(props.showGuest);
     return (
         <div className="SearchBar">
             <div className={`search-container ${expandWidth}`} onClick={props.filterSearch}>
@@ -28,13 +27,14 @@ const SearchBar = (props) => {
                         onBlur={handleBlurInput}
                         placeholder="Where are you going?" 
                         autoComplete="off"
-                        value={props.input ? null : ''}
+                        value={props.input}
                         ref={focus => input = focus}>
                     </input>
                 </div>
             </div>
-            <div className={`search-container ${expandWidth}`} onClick={props.filterGuest}>
-                <div className="border-focus" style={props.showGuest ? {border: "1px solid #000"} : null}>
+            <div className={`search-container ${expandWidth}`}>
+                <div className="border-focus" style={props.showGuest ? {border: "1px solid #000"} : null}
+                onClick={props.filterGuest}>
                     {guestLabel}
                     <button 
                         className="btn-add--guest">Add Guest
