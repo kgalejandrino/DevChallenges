@@ -66,19 +66,15 @@ class Layout extends Component {
 
         this.state = {
             properties: propertyList,
-            show: false,
             searchInput: '',
-            addGuest: false
+            filterGuest: false,
+            filterSearch: false,
         }
     }
 
     componentDidMount = () => document.addEventListener("keydown", this.handleHideDropdownPress);
     
     componentWillUnmount = () => document.removeEventListener("keydown", this.handleHideDropdownPress);
-
-    handleShowDropdownClick = () => this.setState({ show: true});
-
-    handleHideDropdownClick = () => this.setState({ show: false});
 
     handleHideDropdownPress = event => {
         if(event.keyCode === 27) {
@@ -87,13 +83,33 @@ class Layout extends Component {
     }
 
     handleInputChange = (event) => this.setState({searchInput: event.target.value});
+    
+    handleShowFilterSearch = () => {
+        this.setState({ 
+            filterSearch: true,
+            filterGuest: false
+        });
+    }
 
-    handleAddGuestClick = () => this.setState({ addGuest: true });
+    handleShowFilterGuest = () => {
+        this.setState({ 
+            filterGuest: true,
+            filterSearch: false,
+            searchInput: ''
+        });
+    }
+
+    handleHideDropdownClick = () => {
+        this.setState({ 
+            filterSearch: false,
+            filterGuest: false
+        });
+    }
 
 
 
     render() {
-        const dropdownStyle = {flexFlow: 'column'}; 
+        const dropdownStyle = { flexFlow: 'column'}; 
         const uniqueCity = [];
 
         this.state.properties.forEach(property => {
@@ -106,36 +122,42 @@ class Layout extends Component {
             return city.toLowerCase().indexOf(this.state.searchInput) !== -1;
         });
 
-        const renderFilteredCity = filteredCity.length === 0 
+        const renderFilteredCity = filteredCity.length === 0 && this.state.filterSearch
             ? <FilterCity>Search Not Found</FilterCity>
             : filteredCity.map((filter, index) => {
                 return <FilterCity key={index}>{filter}</FilterCity>
             })
         ;
-        
+        console.log(this.state.filterSearch);
         return (
             <div className="Layout">
                 <Backdrop 
-                    show={this.state.show}
+                    showSearch={this.state.filterSearch}
+                    showGuest={this.state.filterGuest}
                     clicked={this.handleHideDropdownClick}
                 />
-                <Dropdown show={this.state.show}/>
-                <header style={this.state.show ? dropdownStyle : null} className="header">
+                <Dropdown 
+                    showSearch={this.state.filterSearch}
+                    showGuest={this.state.filterGuest}
+                />
+                <header style={this.state.filterSearch || this.state.filterGuest? dropdownStyle : null} className="header">
                     <Logo />
                     <SearchBar
-                        show={this.state.show} 
-                        clickedDropdown={this.handleShowDropdownClick}
+                        input={this.state.searchInput}
+                        showSearch={this.state.filterSearch} 
+                        showGuest={this.state.filterGuest}
+                        filterSearch={this.handleShowFilterSearch}
+                        filterGuest={this.handleShowFilterGuest}
                         changed={this.handleInputChange}
                         propertiesList={this.state.properties}
-                        clickedAdd={this.handleAddGuestClick}
-                        add={this.state.addGuest}
+                        add={this.state.filterGuest}
                     />
                     <div className="filtered-container">
-                        {this.state.searchInput === '' 
+                        {this.state.searchInput === ''
                             ? '' 
                             : <div className="city-container">{renderFilteredCity}</div>
                         }
-                        {this.state.addGuest ? <FilterGuest />: null}
+                        {this.state.filterGuest ? <FilterGuest />: null}
                     </div>
                 </header>
                 <main>
