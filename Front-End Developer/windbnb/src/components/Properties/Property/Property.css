@@ -2,10 +2,7 @@
     margin-top: 32px;
     width: 30%;
 }
-
-.property-image {
-   width: 100%;
-}
+.property-image { width: 100%; }
 
 figure {
     background-size: cover;
@@ -15,14 +12,6 @@ figure {
     width: 100%;
     height: 250px;
 }
-
-/* .property-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    border-radius: 12px;
-    display: flex;
-} */
 
 .property-detail {
     display: flex;

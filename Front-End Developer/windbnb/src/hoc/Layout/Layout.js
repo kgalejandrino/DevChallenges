@@ -73,7 +73,8 @@ class Layout extends Component {
             filterSearch: false,
             citySelected: false,
             adultGuestVal: 0,
-            childGuestVal: 0
+            childGuestVal: 0,
+            searchLocation: ''
         }
     }
 
@@ -97,7 +98,8 @@ class Layout extends Component {
         this.setState({ 
             filterSearch: true,
             filterDrawer: true,
-            filterGuest: false
+            filterGuest: false,
+            searchClicked: false
         });
     }
 
@@ -119,13 +121,6 @@ class Layout extends Component {
 
     getGuestTotal = total => {
         if(total > 0) {
-            // if(this.state.guestInput === 'Add') {
-            //     this.setState({ guestInput: total})
-            // } else {
-            //     this.setState(prevState => ({
-            //         guestInput: prevState.guestInput + total
-            //     }));
-            // }
             this.setState({ guestInput: total})
         }
     }
@@ -135,6 +130,10 @@ class Layout extends Component {
             locationInput: event.currentTarget.innerText,
             citySelected: true
         })
+    }
+
+    handleSearchLocation = (loc) => {
+        this.setState({ searchLocation: loc })
     }
 
 
@@ -178,6 +177,7 @@ class Layout extends Component {
                         location={this.state.locationInput}
                         guest={this.state.guestInput}
                         showDrawer={this.state.filterDrawer}
+                        hideDrawer={this.handleHideFilterDrawer}
                         showSearch={this.state.filterSearch} 
                         showGuest={this.state.filterGuest}
                         filterSearch={this.handleShowFilterSearch}
@@ -185,6 +185,8 @@ class Layout extends Component {
                         changed={this.handleInputChange}
                         propertiesList={this.state.properties}
                         add={this.state.filterGuest}
+                        locationSelected={this.state.citySelected}
+                        searchedLocation={this.handleSearchLocation}
                     />
                     <div className="filtered-container">
                         {this.state.filterSearch && !this.state.citySelected ? <div className="city-container">{renderFilteredCity}</div> : null}
@@ -204,6 +206,7 @@ class Layout extends Component {
                 <main>
                     <Properties 
                         propertiesList={this.state.properties}
+                        location={this.state.searchLocation}
                     />
                 </main>
             </div>

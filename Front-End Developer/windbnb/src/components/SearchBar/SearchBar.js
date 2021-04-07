@@ -10,12 +10,25 @@ const SearchBar = (props) => {
     const locationLabel = props.showDrawer ? <label htmlFor="location" className="label padding-left">Location</label> : null;
     const guestLabel = props.showDrawer ? <label htmlFor="location" className="label padding-left">Guest</label> : null;
     
-    const handleFocusInput = () => setFocus(true);
+    const handleFocusInput = () => {
+        setFocus(true);
+        input.focus();
+    }
+
     const handleBlurInput = () => setFocus(false);
+
+    const handleSearchClick = () => {
+        if(props.locationSelected) {
+            props.searchedLocation(props.location);
+            props.hideDrawer(false);
+        } else {
+            input.focus();
+        }
+    }
     
     return (
         <div className="SearchBar">
-            <div className={`search-container ${expandWidth}`} onClick={() => {input.focus()}}>
+            <div className={`search-container ${expandWidth}`} onClick={handleFocusInput}>
                 <div className="border-focus" style={focus ? {border: "1px solid #000"} : null} onClick={props.filterSearch}>
                     {locationLabel}
                     <input 
@@ -41,12 +54,12 @@ const SearchBar = (props) => {
                 </div>
             </div>
             <div className="icon-container">
-                <div className={props.showDrawer ? 'icon-container--red': null}>
+                <div className={props.showDrawer ? 'icon-container--red': null} onClick={handleSearchClick}>
                     <span 
                         className="material-icons md-24 search-icon"
                         style={props.showDrawer ? {color: '#ffffff'} : null }>search
                     </span>
-                    {props.showDrawer ? <span>Search</span>: null}
+                    {props.showDrawer ? <span className="search-text">Search</span>: null}
                 </div>
             </div>
         </div>

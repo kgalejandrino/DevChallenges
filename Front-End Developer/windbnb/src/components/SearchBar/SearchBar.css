@@ -71,3 +71,8 @@
     color: #eb5757;
     cursor: pointer;
 }
+
+.search-text {
+    padding-left: 8px;
+    cursor: pointer;
+}

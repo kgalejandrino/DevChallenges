@@ -15,7 +15,8 @@ const properties = (props) => {
                 </div>
                 <div className="properties-box">
                     {props.propertiesList.map((key, index) => {
-                        return <Property 
+                        if((key.location === props.location)) {
+                            return <Property 
                             key={index}
                             url={key.url}
                             host={key.host}
@@ -23,6 +24,7 @@ const properties = (props) => {
                             rating={key.rating}
                             description={key.description}
                         />
+                        }
                     })}
                 </div>
             </div>
