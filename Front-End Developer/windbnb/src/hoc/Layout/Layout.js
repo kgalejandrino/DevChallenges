@@ -72,6 +72,8 @@ class Layout extends Component {
             filterGuest: false,
             filterSearch: false,
             citySelected: false,
+            adultGuestVal: 0,
+            childGuestVal: 0
         }
     }
 
@@ -109,10 +111,21 @@ class Layout extends Component {
         if(!this.state.citySelected) this.setState({ locationInput: ''})
     }
 
+    setAdultValue = (val) => this.setState({ adultGuestVal: val});
+
+    setChildrenValue = (val) => this.setState({ childGuestVal: val});
+
     handleHideFilterGuest = (hide) => { this.setState({ filterGuest: hide }); }
 
     getGuestTotal = total => {
         if(total > 0) {
+            // if(this.state.guestInput === 'Add') {
+            //     this.setState({ guestInput: total})
+            // } else {
+            //     this.setState(prevState => ({
+            //         guestInput: prevState.guestInput + total
+            //     }));
+            // }
             this.setState({ guestInput: total})
         }
     }
@@ -175,7 +188,17 @@ class Layout extends Component {
                     />
                     <div className="filtered-container">
                         {this.state.filterSearch && !this.state.citySelected ? <div className="city-container">{renderFilteredCity}</div> : null}
-                        {this.state.filterGuest ? <FilterGuest hideGuest={this.handleHideFilterGuest} total={this.getGuestTotal}/>: null}
+                        {this.state.filterGuest ? 
+                            <FilterGuest 
+                                hideGuest={this.handleHideFilterGuest} 
+                                total={this.getGuestTotal}
+                                adultVal={this.state.adultGuestVal}
+                                childVal={this.state.childGuestVal}
+                                getAdultValue={this.setAdultValue}
+                                getChildrenValue={this.setChildrenValue}
+                            />
+                            : null
+                        }
                     </div>
                 </header>
                 <main>

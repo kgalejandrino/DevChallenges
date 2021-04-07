@@ -19,6 +19,7 @@
     justify-content: center;
     border-radius: 12px;
     width: 100%;
+    font-family: 'Mulish', sans-serif;
 }
 
 .label {
@@ -26,6 +27,7 @@
     font-weight: 700;
     padding-bottom: 4px;
     cursor: pointer;
+    width: 100px;
 }
 
 .input-location {
@@ -34,11 +36,8 @@
     font-size: 14px;
 }
 
-.btn-add--guest {
+.add-guest {
     cursor: pointer;
-    outline: none;
-    border: none;
-    background: none;
     width: 100px;
     color: #bdbdbd;
 }

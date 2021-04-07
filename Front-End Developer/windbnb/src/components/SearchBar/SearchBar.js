@@ -15,8 +15,8 @@ const SearchBar = (props) => {
     
     return (
         <div className="SearchBar">
-            <div className={`search-container ${expandWidth}`} onClick={props.filterSearch}>
-                <div className="border-focus" style={focus ? {border: "1px solid #000"} : null} onClick={() => {input.focus()}}>
+            <div className={`search-container ${expandWidth}`} onClick={() => {input.focus()}}>
+                <div className="border-focus" style={focus ? {border: "1px solid #000"} : null} onClick={props.filterSearch}>
                     {locationLabel}
                     <input 
                         type="text" 
@@ -33,12 +33,11 @@ const SearchBar = (props) => {
                 </div>
             </div>
             <div className={`search-container ${expandWidth}`}>
-                <div className="border-focus" style={props.showGuest ? {border: "1px solid #000"} : null}
-                onClick={props.filterGuest}>
+                <div className="border-focus" style={props.showGuest ? {border: "1px solid #000"} : null} onClick={props.filterGuest}>
                     {guestLabel}
-                    <button 
-                        className="btn-add--guest">{props.guest} Guest
-                    </button>
+                    <span 
+                        className="add-guest padding-left">{props.guest} Guest
+                    </span>
                 </div>
             </div>
             <div className="icon-container">

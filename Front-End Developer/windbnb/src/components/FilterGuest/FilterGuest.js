@@ -4,14 +4,17 @@ import './FilterGuest.css';
 import Guest from './Guest/Guest';
 
 const FilterGuest = (props) => {
-    let [adultValue, setAdultValue] = useState(0);
-    let [childrenValue, setChildrenValue] = useState(0);
+    let [adultValue, setAdultValue] = useState(props.adultVal);
+    let [childrenValue, setChildrenValue] = useState(props.childVal);
     const ref = useRef(null);
 
     const handleClickOutside = (event) => {
         if(ref.current && !ref.current.contains(event.target)) {
+            event.preventDefault();
             props.hideGuest(false);
             props.total(adultValue + childrenValue);
+            props.getAdultValue(adultValue);
+            props.getChildrenValue(childrenValue);
         }
     }
 
@@ -31,9 +34,9 @@ const FilterGuest = (props) => {
     }
 
     const changeChildrenValue = (event) => {
-        if(event.target.innerText === '+' && adultValue < 99) {
+        if(event.target.innerText === '+' && childrenValue < 99) {
             setChildrenValue(childrenValue + 1);
-        } else if(event.target.innerText === '-' && adultValue > 0) {
+        } else if(event.target.innerText === '-' && childrenValue > 0) {
             setChildrenValue(childrenValue - 1);
         }
     }
