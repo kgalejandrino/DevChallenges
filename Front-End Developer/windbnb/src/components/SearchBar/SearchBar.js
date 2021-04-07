@@ -6,9 +6,9 @@ const SearchBar = (props) => {
     let [focus, setFocus] = useState(false);
     let input = useRef(null);
     
-    const expandWidth = props.showSearch || props.showGuest ? 'expandWidth' : null;
-    const locationLabel = props.showSearch || props.showGuest ? <label htmlFor="location" className="label padding-left">Location</label> : null;
-    const guestLabel = props.showSearch || props.showGuest ? <label htmlFor="location" className="label padding-left">Guest</label> : null;
+    const expandWidth = props.showDrawer ? 'expandWidth' : null;
+    const locationLabel = props.showDrawer ? <label htmlFor="location" className="label padding-left">Location</label> : null;
+    const guestLabel = props.showDrawer ? <label htmlFor="location" className="label padding-left">Guest</label> : null;
     
     const handleFocusInput = () => setFocus(true);
     const handleBlurInput = () => setFocus(false);
@@ -27,7 +27,7 @@ const SearchBar = (props) => {
                         onBlur={handleBlurInput}
                         placeholder="Where are you going?" 
                         autoComplete="off"
-                        value={props.input}
+                        value={props.location}
                         ref={focus => input = focus}>
                     </input>
                 </div>
@@ -37,17 +37,17 @@ const SearchBar = (props) => {
                 onClick={props.filterGuest}>
                     {guestLabel}
                     <button 
-                        className="btn-add--guest">Add Guest
+                        className="btn-add--guest">{props.guest} Guest
                     </button>
                 </div>
             </div>
             <div className="icon-container">
-                <div className={props.showSearch || props.showGuest ? 'icon-container--red': null}>
+                <div className={props.showDrawer ? 'icon-container--red': null}>
                     <span 
                         className="material-icons md-24 search-icon"
-                        style={props.showSearch || props.showGuest ? {color: '#ffffff'} : null }>search
+                        style={props.showDrawer ? {color: '#ffffff'} : null }>search
                     </span>
-                    {props.showSearch || props.showGuest ? <span>Search</span>: null}
+                    {props.showDrawer ? <span>Search</span>: null}
                 </div>
             </div>
         </div>

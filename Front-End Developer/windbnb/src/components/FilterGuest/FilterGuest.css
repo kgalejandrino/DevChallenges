@@ -1,5 +1,6 @@
 .FilterGuest {
     z-index: 999;
-    width: 40%;
+    /* width: 40%; */
     margin-left: 41%;
+    border: 1px solid black;
 }

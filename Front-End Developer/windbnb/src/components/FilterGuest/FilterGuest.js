@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import './FilterGuest.css';
 import Guest from './Guest/Guest';
@@ -6,6 +6,21 @@ import Guest from './Guest/Guest';
 const FilterGuest = (props) => {
     let [adultValue, setAdultValue] = useState(0);
     let [childrenValue, setChildrenValue] = useState(0);
+    const ref = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if(ref.current && !ref.current.contains(event.target)) {
+            props.hideGuest(false);
+            props.total(adultValue + childrenValue);
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside, true);
+        return () => {
+            document.removeEventListener('click', handleClickOutside, true);
+        };
+    });
 
     const changeAdultValue = (event) => {
         if(event.target.innerText === '+' && adultValue < 99) {
@@ -24,7 +39,7 @@ const FilterGuest = (props) => {
     }
 
     return (
-        <div className="FilterGuest">
+        <div className="FilterGuest" ref={ref}>
             <Guest 
                 category="Adults"
                 age="Ages 13 or above">

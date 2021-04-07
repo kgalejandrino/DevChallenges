@@ -66,7 +66,9 @@ class Layout extends Component {
 
         this.state = {
             properties: propertyList,
-            searchInput: '',
+            filterDrawer: false,
+            locationInput: '',
+            guestInput: 'Add',
             filterGuest: false,
             filterSearch: false,
             citySelected: false,
@@ -80,17 +82,19 @@ class Layout extends Component {
     handleHideDropdownPress = event => {
         if(event.keyCode === 27) {
             this.setState({ 
-                filterGuest: false,
-                filterSearch: false
+                filterDrawer: false
             }); 
         }
     }
 
-    handleInputChange = (event) => this.setState({searchInput: event.target.value, citySelected: false});
+    handleInputChange = (event) => this.setState({locationInput: event.target.value, citySelected: false});
+    
+    handleHideFilterDrawer = () => this.setState({ filterDrawer: false });
     
     handleShowFilterSearch = () => {
         this.setState({ 
             filterSearch: true,
+            filterDrawer: true,
             filterGuest: false
         });
     }
@@ -98,22 +102,24 @@ class Layout extends Component {
     handleShowFilterGuest = () => {
         this.setState({ 
             filterGuest: true,
+            filterDrawer: true,
             filterSearch: false,
         });
 
-        if(!this.state.citySelected) this.setState({ searchInput: ''})
+        if(!this.state.citySelected) this.setState({ locationInput: ''})
     }
 
-    handleHideDropdownClick = () => {
-        this.setState({ 
-            filterSearch: false,
-            filterGuest: false
-        });
+    handleHideFilterGuest = (hide) => { this.setState({ filterGuest: hide }); }
+
+    getGuestTotal = total => {
+        if(total > 0) {
+            this.setState({ guestInput: total})
+        }
     }
 
     handleCitySelection = (event) => {
         this.setState({
-            searchInput: event.currentTarget.innerText,
+            locationInput: event.currentTarget.innerText,
             citySelected: true
         })
     }
@@ -131,12 +137,10 @@ class Layout extends Component {
             });
         
         let filteredCity = uniqueCity.filter(city => {
-            return this.state.searchInput && city.toLowerCase().indexOf(this.state.searchInput.toLowerCase()) !== -1;
+            return this.state.locationInput && city.toLowerCase().indexOf(this.state.locationInput.toLowerCase()) !== -1;
         });
 
-        console.log(this.state.searchInput);
-        console.log(filteredCity.length);
-        const renderFilteredCity = this.state.searchInput && filteredCity.length === 0
+        const renderFilteredCity = this.state.locationInput && filteredCity.length === 0
                 ? <FilterCity>Search Not Found</FilterCity>
                 : filteredCity.map((filter, index) => {
                     return <FilterCity 
@@ -149,18 +153,18 @@ class Layout extends Component {
         return (
             <div className="Layout">
                 <Backdrop 
-                    showSearch={this.state.filterSearch}
-                    showGuest={this.state.filterGuest}
-                    clicked={this.handleHideDropdownClick}
+                    showDrawer={this.state.filterDrawer}
+                    clicked={this.handleHideFilterDrawer}
                 />
                 <Dropdown 
-                    showSearch={this.state.filterSearch}
-                    showGuest={this.state.filterGuest}
+                    showDrawer={this.state.filterDrawer}
                 />
-                <header style={this.state.filterSearch || this.state.filterGuest? dropdownStyle : null} className="header">
+                <header style={this.state.filterDrawer ? dropdownStyle : null} className="header">
                     <Logo />
                     <SearchBar
-                        input={this.state.searchInput}
+                        location={this.state.locationInput}
+                        guest={this.state.guestInput}
+                        showDrawer={this.state.filterDrawer}
                         showSearch={this.state.filterSearch} 
                         showGuest={this.state.filterGuest}
                         filterSearch={this.handleShowFilterSearch}
@@ -171,7 +175,7 @@ class Layout extends Component {
                     />
                     <div className="filtered-container">
                         {this.state.filterSearch && !this.state.citySelected ? <div className="city-container">{renderFilteredCity}</div> : null}
-                        {this.state.filterGuest ? <FilterGuest />: null}
+                        {this.state.filterGuest ? <FilterGuest hideGuest={this.handleHideFilterGuest} total={this.getGuestTotal}/>: null}
                     </div>
                 </header>
                 <main>
