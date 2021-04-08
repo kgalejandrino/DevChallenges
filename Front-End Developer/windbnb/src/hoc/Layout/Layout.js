@@ -64,6 +64,96 @@ const propertyList = [
         'rating': 4.64,
         'description': 'House in a remote area'
     },
+    {
+        'location': 'Turku, Finland',
+        'guest': 2,
+        'url': 'https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        'host': false,
+        'type': '1 Bedroom apartment',
+        'rating': 4.22,
+        'description': 'Apartment by the city'
+    },
+    {
+        'location': 'Turku, Finland',
+        'guest': 2,
+        'url': 'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80',
+        'host': false,
+        'type': 'Private room',
+        'rating': 3.90,
+        'description': 'Outside City'
+    },
+    {
+        'location': 'Turku, Finland',
+        'guest': 4,
+        'url': 'https://images.unsplash.com/photo-1554995207-c18c203602cb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        'host': false,
+        'type': 'Entire house',
+        'rating': 4.80,
+        'description': 'Best location closed to the beach'
+    },
+    {
+        'location': 'Oulu, Finland',
+        'guest': 2,
+        'url': 'https://images.unsplash.com/photo-1590725121839-892b458a74fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+        'host': false,
+        'type': 'Cabin at Wild Forest',
+        'rating': 4.40,
+        'description': 'Modern interior design'
+    },
+    {
+        'location': 'Oulu, Finland',
+        'guest': 4,
+        'url': 'https://images.unsplash.com/photo-1591774017832-02c686dedd32?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+        'host': false,
+        'type': 'Tiny house',
+        'rating': 4.10,
+        'description': 'Peaceful retreat house'
+    },
+    {
+        'location': 'Oulu, Finland',
+        'guest': 2,
+        'url': 'https://images.unsplash.com/photo-1590490359683-658d3d23f972?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80',
+        'host': false,
+        'type': 'Luxurious 1 bedroom',
+        'rating': 4.92,
+        'description': 'Perfect view of the city'
+    },
+    {
+        'location': 'Vaasa, Finland',
+        'guest': 2,
+        'url': 'https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80',
+        'host': false,
+        'type': 'Cozy private room',
+        'rating': 4.92,
+        'description': 'Clean and quiet room'
+    },
+    {
+        'location': 'Vaasa, Finland',
+        'guest': 2,
+        'url': 'https://images.unsplash.com/photo-1530629013299-6cb10d168419?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80',
+        'host': false,
+        'type': 'Entire apartment',
+        'rating': 4.92,
+        'description': 'Complete package (minutes away from town)'
+    },
+    {
+        'location': 'Vaasa, Finland',
+        'guest': 4,
+        'url': 'https://images.unsplash.com/photo-1616593969747-4797dc75033e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80',
+        'host': false,
+        'type': 'Vacation house with private entrance',
+        'rating': 4.92,
+        'description': 'Cozy balcony for morning coffee'
+    },
+    {
+        'location': 'Vaasa, Finland',
+        'guest': 6,
+        'url': 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        'host': false,
+        'type': 'Beautiful house',
+        'rating': 4.92,
+        'description': 'Perfect getaway at Vaasa'
+    },
 ];
 
 class Layout extends Component {
