@@ -20,6 +20,7 @@ const SearchBar = (props) => {
     const handleSearchClick = () => {
         if(props.locationSelected) {
             props.searchedLocation(props.location);
+            props.searchedGuestNo(props.guest);
             props.hideDrawer(false);
         } else {
             input.focus();

@@ -12,6 +12,7 @@ import FilterGuest from '../../components/FilterGuest/FilterGuest';
 const propertyList = [
     {
         'location': 'Helsinki, Finland',
+        'guest': 2,
         'url': 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80',
         'host': true,
         'type': 'Entire apartment. 2 beds',
@@ -20,6 +21,7 @@ const propertyList = [
     },
     {
         'location': 'Helsinki, Finland',
+        'guest': 2,
         'url': 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80',
         'host': false,
         'type': 'Private room',
@@ -27,7 +29,8 @@ const propertyList = [
         'description': 'Cozy, peaceful and private room with...'
     },
     {
-        'location': 'Turku, Finland',
+        'location': 'Helsinki, Finland',
+        'guest': 6,
         'url': 'https://images.unsplash.com/photo-1603111691889-364c9fc6d066?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
         'host': false,
         'type': 'Entire house',
@@ -35,7 +38,8 @@ const propertyList = [
         'description': 'Modern House'
     },
     {
-        'location': 'Turku, Finland',
+        'location': 'Helsinki, Finland',
+        'guest': 2,
         'url': 'https://images.unsplash.com/photo-1615298681607-14ec66115339?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80',
         'host': true,
         'type': 'Entire apartment. 2 beds',
@@ -43,7 +47,8 @@ const propertyList = [
         'description': 'Stylist room in design district'
     },
     {
-        'location': 'Oulu, Finland',
+        'location': 'Helsinki, Finland',
+        'guest': 3,
         'url': 'https://images.unsplash.com/photo-1604809226867-0c54292210d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
         'host': false,
         'type': 'Private room',
@@ -51,7 +56,8 @@ const propertyList = [
         'description': 'Modern apartment close to nature'
     },
     {
-        'location': 'Vaas, Finland',
+        'location': 'Helsinki, Finland',
+        'guest': 8,
         'url': 'https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
         'host': false,
         'type': 'Entire house',
@@ -74,7 +80,8 @@ class Layout extends Component {
             citySelected: false,
             adultGuestVal: 0,
             childGuestVal: 0,
-            searchLocation: ''
+            searchLocation: '',
+            searchGuestNo: ''
         }
     }
 
@@ -136,7 +143,9 @@ class Layout extends Component {
         this.setState({ searchLocation: loc })
     }
 
-
+    handleGuestNumber = (val) => {
+        this.setState({ searchGuestNo: val })
+    }
 
     render() {
         const dropdownStyle = { flexFlow: 'column'}; 
@@ -162,6 +171,7 @@ class Layout extends Component {
             })
         ;
         
+        console.log(this.state.searchGuestNo);
         return (
             <div className="Layout">
                 <Backdrop 
@@ -187,6 +197,7 @@ class Layout extends Component {
                         add={this.state.filterGuest}
                         locationSelected={this.state.citySelected}
                         searchedLocation={this.handleSearchLocation}
+                        searchedGuestNo={this.handleGuestNumber}
                     />
                     <div className="filtered-container">
                         {this.state.filterSearch && !this.state.citySelected ? <div className="city-container">{renderFilteredCity}</div> : null}
@@ -207,6 +218,7 @@ class Layout extends Component {
                     <Properties 
                         propertiesList={this.state.properties}
                         location={this.state.searchLocation}
+                        guest={this.state.searchGuestNo}
                     />
                 </main>
             </div>

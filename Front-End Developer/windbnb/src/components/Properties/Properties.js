@@ -6,10 +6,13 @@ import Property from './Property/Property';
 
 const properties = (props) => {
     const properties = props.propertiesList.filter(key => key.location === props.location);
-    let cardStyle = '';
+    const propertiesWithGuest = props.propertiesList.filter(key => key.location === props.location && key.guest >= props.guest);
+    let boxStyle = {};
+    let cardStyle = {};
 
     if(properties.length < 3) {
-        cardStyle = { justifyContent: 'flex-start' }
+        boxStyle = { justifyContent: 'flex-start' }
+        cardStyle = { marginRight: '76px'}
     }
 
     return (
@@ -19,9 +22,10 @@ const properties = (props) => {
                     <h2>Stays in {props.location ? props.location : 'Finland'}</h2>
                     <p>12+ stays</p>
                 </div>
-                <div className="properties-box" style={cardStyle}>
-                    {properties.map((key, index) => {
-                        return <Property 
+                <div className="properties-box" style={boxStyle}>
+                    {props.guest === 'Add'
+                        ? properties.map((key, index) => {
+                            return <Property 
                                     key={index}
                                     url={key.url}
                                     host={key.host}
@@ -29,7 +33,18 @@ const properties = (props) => {
                                     rating={key.rating}
                                     description={key.description}
                                 />
-                    })}
+                        })
+                        : propertiesWithGuest.map((key, index) => {
+                            return <Property 
+                                        key={index}
+                                        url={key.url}
+                                        host={key.host}
+                                        type={key.type}
+                                        rating={key.rating}
+                                        description={key.description}
+                                    />
+                        })
+                    }
                 </div>
             </div>
         </Aux>
