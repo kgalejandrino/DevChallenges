@@ -1,7 +1,9 @@
 .property-card { 
     margin-top: 32px;
+    margin-right: 72px;
     width: 30%;
 }
+
 .property-image { width: 100%; }
 
 figure {
