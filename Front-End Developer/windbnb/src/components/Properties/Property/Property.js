@@ -5,11 +5,11 @@ import './Property.css';
 const property = (props) => {
     const host = props.host ? <span className="host">Super Host</span> : null;
 
+
     return (
-        <div className="property-card">
+        <div className="property-card" style={props.length < 3 ? {marginRight: "80px"}: null}>
             <div className="property-image">
                 <figure style={{backgroundImage:`url('${props.url}')`}}></figure>
-                {/* <img src={props.url} alt="Apartment"></img> */}
             </div>
             <div className="property-detail">
                 <div className="type-box">

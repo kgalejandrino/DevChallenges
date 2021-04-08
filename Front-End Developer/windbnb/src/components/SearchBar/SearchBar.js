@@ -24,13 +24,14 @@ const SearchBar = (props) => {
             props.hideDrawer(false);
         } else {
             input.focus();
+            props.showFilterLoc(true);
         }
     }
     
     return (
         <div className="SearchBar">
             <div className={`search-container ${expandWidth}`} onClick={handleFocusInput}>
-                <div className="border-focus" style={focus ? {border: "1px solid #000"} : null} onClick={props.filterSearch}>
+                <div className="border-focus" style={focus ? {border: "1px solid #000"} : null} onClick={props.filterLocation}>
                     {locationLabel}
                     <input 
                         type="text" 

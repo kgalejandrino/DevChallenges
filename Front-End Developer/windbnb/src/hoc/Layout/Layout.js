@@ -76,7 +76,7 @@ class Layout extends Component {
             locationInput: '',
             guestInput: 'Add',
             filterGuest: false,
-            filterSearch: false,
+            filterLocation: false,
             citySelected: false,
             adultGuestVal: 0,
             childGuestVal: 0,
@@ -101,30 +101,32 @@ class Layout extends Component {
     
     handleHideFilterDrawer = () => this.setState({ filterDrawer: false });
     
-    handleShowFilterSearch = () => {
+    handleShowFilterLocation = () => {
         this.setState({ 
-            filterSearch: true,
+            filterLocation: true,
             filterDrawer: true,
             filterGuest: false,
             searchClicked: false
         });
     }
 
+    setShowFilterLocation = (bool) => this.setState({ filterLocation: bool });
+
     handleShowFilterGuest = () => {
         this.setState({ 
             filterGuest: true,
             filterDrawer: true,
-            filterSearch: false,
+            filterLocation: false,
         });
 
         if(!this.state.citySelected) this.setState({ locationInput: ''})
     }
 
+    handleHideFilterGuest = (hide) => { this.setState({ filterGuest: hide }); }
+    
     setAdultValue = (val) => this.setState({ adultGuestVal: val});
 
     setChildrenValue = (val) => this.setState({ childGuestVal: val});
-
-    handleHideFilterGuest = (hide) => { this.setState({ filterGuest: hide }); }
 
     getGuestTotal = total => {
         if(total > 0) {
@@ -171,7 +173,6 @@ class Layout extends Component {
             })
         ;
         
-        console.log(this.state.searchGuestNo);
         return (
             <div className="Layout">
                 <Backdrop 
@@ -188,9 +189,8 @@ class Layout extends Component {
                         guest={this.state.guestInput}
                         showDrawer={this.state.filterDrawer}
                         hideDrawer={this.handleHideFilterDrawer}
-                        showSearch={this.state.filterSearch} 
                         showGuest={this.state.filterGuest}
-                        filterSearch={this.handleShowFilterSearch}
+                        filterLocation={this.handleShowFilterLocation}
                         filterGuest={this.handleShowFilterGuest}
                         changed={this.handleInputChange}
                         propertiesList={this.state.properties}
@@ -198,9 +198,10 @@ class Layout extends Component {
                         locationSelected={this.state.citySelected}
                         searchedLocation={this.handleSearchLocation}
                         searchedGuestNo={this.handleGuestNumber}
+                        showFilterLoc={this.setShowFilterLocation}
                     />
                     <div className="filtered-container">
-                        {this.state.filterSearch && !this.state.citySelected ? <div className="city-container">{renderFilteredCity}</div> : null}
+                        {this.state.filterLocation && !this.state.citySelected ? <div className="city-container">{renderFilteredCity}</div> : null}
                         {this.state.filterGuest ? 
                             <FilterGuest 
                                 hideGuest={this.handleHideFilterGuest} 
@@ -219,6 +220,7 @@ class Layout extends Component {
                         propertiesList={this.state.properties}
                         location={this.state.searchLocation}
                         guest={this.state.searchGuestNo}
+                        selected={this.state.citySelected}
                     />
                 </main>
             </div>
