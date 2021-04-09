@@ -7,3 +7,9 @@
     z-index: 999;
     background-color: #fff;
 }
+
+@media only screen and (max-width: 770px) {
+    .dropdown {
+        height: 650px;
+    }
+}

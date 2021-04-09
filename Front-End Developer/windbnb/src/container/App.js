@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Radium, { StyleRoot } from 'radium';
 
 import './App.css';
 import Backdrop from '../components/UI/Backdrop/Backdrop';
@@ -280,7 +281,8 @@ class App extends Component {
       ;
       
       return (
-          <div className="App">
+          <StyleRoot>
+              <div className="App">
               <Backdrop 
                   showDrawer={this.state.filterDrawer}
                   clicked={this.handleHideFilterDrawer}
@@ -332,8 +334,9 @@ class App extends Component {
                   />
               </main>
           </div>
+          </StyleRoot>
       )
   }
 }
 
-export default App;
+export default Radium(App);
