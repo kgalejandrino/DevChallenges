@@ -11,14 +11,21 @@ figure {
     background-repeat: no-repeat;
     border-radius: 12px;
     width: 100%;
-    height: 250px;
+    height: 270px;
 }
 
 .property-detail {
     display: flex;
-    margin: 12px 0;
+    margin: 18px 0;
     justify-content: space-between;
     align-items: center;
+}
+
+.first-box { width: 30%; }
+
+.second-box {
+    display: flex;
+    justify-content: space-between;
 }
 
 .host {
@@ -27,7 +34,6 @@ figure {
     border: 1px solid #4f4f4f;
     padding: 4px 8px;
     border-radius: 12px;
-    margin-right: 12px;
 }
 
 .type {
@@ -48,4 +54,29 @@ figure {
     color: #333333;
     font-weight: 700;
     margin-top: 18px;
+}
+
+@media only screen and (max-width: 1430px) {
+    .first-box { width: 35%;}
+}
+
+@media only screen and (max-width: 1325px) {
+    .property-card { width: 45% };
+}
+
+@media only screen and (max-width: 905px) {
+    .property-card { 
+        width: 100%; 
+        margin-top: 48px;
+    }
+
+    figure { height: 300px; }
+}
+
+@media only screen and (max-width: 410px) {
+    .property-detail { flex-wrap: wrap; }
+    
+    .first-box { width: 100%; }
+
+    .second-box { margin-top: 18px; width: 100% !important;}
 }

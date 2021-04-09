@@ -16,5 +16,10 @@
     justify-content: space-between;
 }
 
+@media only screen and (max-width: 410px) {
+    .title-box { flex-direction: column; }
+
+    .title-box p { margin-top: 12px; }
+}
 
 

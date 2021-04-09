@@ -3,7 +3,7 @@ import React from 'react';
 import './Property.css';
 
 const property = (props) => {
-    const host = props.host ? <span className="host">Super Host</span> : null;
+    const host = props.host ? <div className="first-box"><span className="host">Super Host</span></div> : null;
 
 
     return (
@@ -12,13 +12,13 @@ const property = (props) => {
                 <figure style={{backgroundImage:`url('${props.url}')`}}></figure>
             </div>
             <div className="property-detail">
-                <div className="type-box">
-                    {host}
+                {host}
+                <div className="second-box" style={props.host ? { width: "70%"} : { width: "100%"}}>
                     <span className="type">{props.type}</span>
-                </div>
-                <div className="rating-box">
-                    <span className="material-icons md-18 rating-icon">star</span>
-                    <span className="rating">{props.rating}</span>
+                    <div className="rating-box">
+                        <span className="material-icons md-18 rating-icon">star</span>
+                        <span className="rating">{props.rating}</span>
+                    </div>
                 </div>
             </div>
             <p className="property-description">{props.description}</p>
