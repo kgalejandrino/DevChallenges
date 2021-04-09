@@ -21,3 +21,14 @@
 }
 
 .city-container { width: 40%;}
+
+.edit-text { 
+    z-index: 999; 
+    font-weight: 700;
+    position: absolute;
+}
+
+
+@media only screen and (max-width: 770px) {
+    .header { flex-direction: column; } 
+}

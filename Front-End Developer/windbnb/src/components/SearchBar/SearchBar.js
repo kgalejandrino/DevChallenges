@@ -32,7 +32,8 @@ const SearchBar = (props) => {
         searchBar: {
             '@media (max-width: 770px)': {
                 flexFlow: "column",
-                height: "auto"
+                height: "auto",
+                width: "100%"
             }   
         },
         searchContainer: { 

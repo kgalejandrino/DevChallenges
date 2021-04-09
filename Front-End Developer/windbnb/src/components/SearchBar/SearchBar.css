@@ -34,7 +34,9 @@
     outline: none;
     border: none;
     font-size: 14px;
-    width: 300px;
+    width: 100%;
+    max-width: 150px;
+    display: flex;
 }
 
 .add-guest {
@@ -76,4 +78,25 @@
 .search-text {
     padding-left: 8px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 770px) {
+    .SearchBar { 
+        width: 80%;
+        margin: 24px auto 0 auto;
+    }
+
+    .search-container { width: 40%;}
+}
+
+@media only screen and (max-width: 480px) {
+    .SearchBar { 
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .search-container:nth-of-type(1) { width: 50%;}
+    .search-container:nth-of-type(2) { width: 35%;}
+    .padding-left { padding-left: 12px;}
 }

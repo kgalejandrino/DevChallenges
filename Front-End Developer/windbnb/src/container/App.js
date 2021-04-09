@@ -259,6 +259,7 @@ class App extends Component {
   render() {
       const dropdownStyle = { flexFlow: 'column'}; 
       const uniqueCity = [];
+      let editSearchText = '';
 
       this.state.properties.forEach(property => {
               if(uniqueCity.indexOf(property.location) === -1) {
@@ -284,7 +285,7 @@ class App extends Component {
       const styles = {
         filteredContainer: {
             '@media (max-width: 770px)': {
-                top: "180px"
+                top: "200px"
             }   
         },
         cityContainer: {
@@ -292,6 +293,12 @@ class App extends Component {
                 width: "100%"
             }   
         }
+      }
+
+      const mql = window.matchMedia('(max-width: 770px)');
+
+      if(mql.matches) {
+          editSearchText = <span className="edit-text">Edit your search</span>
       }
 
       return (
@@ -305,6 +312,7 @@ class App extends Component {
               />
               <header style={this.state.filterDrawer ? dropdownStyle : null} className="header">
                   <Logo />
+                  {this.state.filterDrawer ? editSearchText : null}
                   <SearchBar
                       propertiesList={this.state.properties}
                       changed={this.handleInputChange}
