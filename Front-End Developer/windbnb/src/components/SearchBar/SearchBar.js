@@ -19,19 +19,19 @@ const SearchBar = (props) => {
 
     const handleSearchClick = () => {
         if(props.locationSelected) {
-            props.searchedLocation(props.location);
-            props.searchedGuestNo(props.guest);
+            props.searchedLocation(props.locationInput);
+            props.searchedGuestNo(props.guestInput);
             props.hideDrawer(false);
         } else {
             input.focus();
-            props.showFilterLoc(true);
+            props.setFilterLocation(true);
         }
     }
     
     return (
         <div className="SearchBar">
             <div className={`search-container ${expandWidth}`} onClick={handleFocusInput}>
-                <div className="border-focus" style={focus ? {border: "1px solid #000"} : null} onClick={props.filterLocation}>
+                <div className="border-focus" style={focus ? {border: "1px solid #000"} : null} onClick={props.showFilterLocation}>
                     {locationLabel}
                     <input 
                         type="text" 
@@ -42,16 +42,16 @@ const SearchBar = (props) => {
                         onBlur={handleBlurInput}
                         placeholder="Where are you going?" 
                         autoComplete="off"
-                        value={props.location}
+                        value={props.locationInput}
                         ref={focus => input = focus}>
                     </input>
                 </div>
             </div>
             <div className={`search-container ${expandWidth}`}>
-                <div className="border-focus" style={props.showGuest ? {border: "1px solid #000"} : null} onClick={props.filterGuest}>
+                <div className="border-focus" style={props.filterGuest ? {border: "1px solid #000"} : null} onClick={props.showFilterGuest}>
                     {guestLabel}
                     <span 
-                        className="add-guest padding-left">{props.guest} Guest
+                        className="add-guest padding-left">{props.guestInput} Guest
                     </span>
                 </div>
             </div>

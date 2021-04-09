@@ -11,7 +11,7 @@ const FilterGuest = (props) => {
     const handleClickOutside = (event) => {
         if(ref.current && !ref.current.contains(event.target)) {
             event.preventDefault();
-            props.hideGuest(false);
+            props.hideFilterGuest(false);
             props.total(adultValue + childrenValue);
             props.getAdultValue(adultValue);
             props.getChildrenValue(childrenValue);

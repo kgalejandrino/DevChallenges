@@ -1,4 +1,4 @@
-.Layout {
+.App {
     width: 90%;
     max-width: 1510px;
     margin: 0 auto;
@@ -11,11 +11,13 @@
 }
 
 .filtered-container {
+    width: 90%;
+    max-width: 1510px;
+    margin: 0 auto;
     position: absolute; 
     top: 120px;
-    width: 79%;
     z-index: 999;
     display: flex;
 }
 
-.city-container { width: 45%;}
+.city-container { width: 40%;}

@@ -8,12 +8,14 @@ const properties = (props) => {
     const properties = props.propertiesList.filter(key => key.location === props.location);
     const propertiesWithGuest = props.propertiesList.filter(key => key.location === props.location && key.guest >= props.guest);
 
-    const totalStays = props.guest === 'Add' ? <p>{properties.length}+ stays</p> : <p>{propertiesWithGuest.length}+ stays</p>;
+    const totalStays = props.guest === 'Add' 
+        ? <Aux><h2>Stays in {props.location}</h2><p>{properties.length}+ stays</p></Aux> 
+        : <Aux><h2>Stays in {props.location}</h2><p>{propertiesWithGuest.length}+ stays</p></Aux>;
+        
     return (
         <Aux>
             <div className="Properties">
                 <div className="title-box">
-                    <h2>Stays in {props.location ? props.location : 'Finland'}</h2>
                     {props.selected ? totalStays : null}
                 </div>
                 {props.guest === 'Add'
