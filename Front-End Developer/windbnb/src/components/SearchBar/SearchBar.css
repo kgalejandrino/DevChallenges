@@ -77,27 +77,3 @@
     padding-left: 8px;
     cursor: pointer;
 }
-
-@media only screen and (max-width: 770px) {
-    /* .SearchBar { 
-        flex-flow: column;
-        height: auto;
-    }
-
-    .search-container { 
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #f2f2f2;
-        padding: 8px;
-    }
-
-    .border-focus { padding: 4px;
-    }
-
-    .icon-container {
-        width: 100%;
-        position: absolute;
-        left: 0;
-        bottom: 340px;
-    } */
-}

@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './container/App';
+import { StyleRoot } from 'radium';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StyleRoot>
+      <App />
+    </StyleRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );

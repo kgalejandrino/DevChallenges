@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium';
+import Radium from 'radium';
 
 import './App.css';
 import Backdrop from '../components/UI/Backdrop/Backdrop';
@@ -275,13 +275,26 @@ class App extends Component {
               : filteredCity.map((filter, index) => {
                   return <FilterCity 
                               key={index} 
-                              clicked={this.setLocationSelection}>{filter}
+                              clicked={this.setLocationSelection}
+                              showDrawer={this.state.filterDrawer}>{filter}
                           </FilterCity>
           })
       ;
       
+      const styles = {
+        filteredContainer: {
+            '@media (max-width: 770px)': {
+                top: "180px"
+            }   
+        },
+        cityContainer: {
+            '@media (max-width: 770px)': {
+                width: "100%"
+            }   
+        }
+      }
+
       return (
-          <StyleRoot>
               <div className="App">
               <Backdrop 
                   showDrawer={this.state.filterDrawer}
@@ -307,9 +320,9 @@ class App extends Component {
                       searchedGuestNo={this.setSearchedGuestNo}
                       setFilterLocation={this.setFilterLocation}
                   />
-                  <div className="filtered-container">
+                  <div className="filtered-container" style={this.state.filterDrawer ? styles.filteredContainer : null}>
                       {this.state.filterLocation && !this.state.locationSelected 
-                        ? <div className="city-container">{renderFilteredCity}</div> 
+                        ? <div className="city-container" style={this.state.filterDrawer ? styles.cityContainer : null}>{renderFilteredCity}</div> 
                         : null
                       }
                       {this.state.filterGuest ? 
@@ -320,6 +333,7 @@ class App extends Component {
                               childVal={this.state.childGuestVal}
                               getAdultValue={this.setAdultValue}
                               getChildrenValue={this.setChildrenValue}
+                              showDrawer={this.state.filterDrawer}
                           />
                           : null
                       }
@@ -334,7 +348,6 @@ class App extends Component {
                   />
               </main>
           </div>
-          </StyleRoot>
       )
   }
 }

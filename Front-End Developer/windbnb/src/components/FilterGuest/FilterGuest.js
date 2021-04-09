@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Radium from 'radium';
 
 import './FilterGuest.css';
 import Guest from './Guest/Guest';
@@ -41,8 +42,17 @@ const FilterGuest = (props) => {
         }
     }
 
+    const styles = {
+        filterGuest: {
+            '@media (max-width: 770px)': {
+                marginLeft: "0",
+                paddingLeft: "18px"
+            }   
+        }
+      }
+
     return (
-        <div className="FilterGuest" ref={ref}>
+        <div className="FilterGuest" ref={ref} style={props.showDrawer ? styles.filterGuest : null}>
             <Guest 
                 category="Adults"
                 age="Ages 13 or above">
@@ -65,4 +75,4 @@ const FilterGuest = (props) => {
     )
 }
 
-export default FilterGuest;
+export default Radium(FilterGuest);
