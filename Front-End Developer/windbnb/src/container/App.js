@@ -9,7 +9,7 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import FilterCity from '../components/FilterCity/FilterCity';
 import FilterGuest from '../components/FilterGuest/FilterGuest';
 import Properties from '../components/Properties/Properties';
-
+import Footer from '../components/Footer/Footer';
 
 const propertyList = [
   {
@@ -177,132 +177,128 @@ class App extends Component {
       }
   }
 
-  componentDidMount = () => document.addEventListener("keydown", this.handleHideDrawerPress);
-  
-  componentWillUnmount = () => document.removeEventListener("keydown", this.handleHideDrawerPress);
+    componentDidMount = () => document.addEventListener("keydown", this.handleHideDrawerPress);
+    
+    componentWillUnmount = () => document.removeEventListener("keydown", this.handleHideDrawerPress);
 
-  /* Hide Filter Drawer on 'ESC' press OR on click outside drawer container */
-  handleHideDrawerPress = event => {
-      if(event.keyCode === 27) {
-          this.setState({ 
-              filterDrawer: false,
-              filterGuest: false,
-              filterLocation: false
-          }); 
-      }
-  }
-
-  handleHideFilterDrawer = () => {
-        this.setState({ 
-            filterDrawer: false,
-            filterGuest: false,
-            filterLocation: false
-        });
-  }
-
-  /* Handles Input change */
-  handleInputChange = (event) => {
-      this.setState({
-          locationInput: event.target.value, 
-          locationSelected: false
-      });
-  }
-
-  /* Shows filter location on click */
-  handleShowFilterLocation = () => {
-      this.setState({ 
-          filterLocation: true,
-          filterDrawer: true,
-          filterGuest: false,
-          searchClicked: false
-      });
-  }
-
-  setFilterLocation = (bool) => this.setState({ filterLocation: bool });
-
-  /* Show filter guest number on click */
-  handleShowFilterGuest = () => {
-      this.setState({ 
-          filterGuest: true,
-          filterDrawer: true,
-          filterLocation: false,
-      });
-
-      if(!this.state.locationSelected) this.setState({ locationInput: ''})
-  }
-
-  setHideFilterGuest = (hide) => { this.setState({ filterGuest: hide }); }
-  
-  /* Setter: number of guest (children/adult) */
-  setAdultValue = (val) => this.setState({ adultGuestVal: val});
-
-  setChildrenValue = (val) => this.setState({ childGuestVal: val});
-
-  getGuestTotal = total => {
-      if(total > 0) {
-          this.setState({ guestInput: total})
-      }
-  }
-
-  /* Setter: location selected or location/guest number user wants to searched */
-  setLocationSelection = (event) => {
-      this.setState({
-          locationInput: event.currentTarget.innerText,
-          locationSelected: true
-      })
-  }
-
-  setSearchedLocation = (loc) => this.setState({ searchLocation: loc });
-
-  setSearchedGuestNo = (val) => this.setState({ searchGuestNo: val });
-
-  render() {
-      const dropdownStyle = { flexFlow: 'column'}; 
-      const uniqueCity = [];
-      let editSearchText = '';
-
-      this.state.properties.forEach(property => {
-              if(uniqueCity.indexOf(property.location) === -1) {
-                  uniqueCity.push(property.location);
-              }
-          });
-      
-      let filteredCity = uniqueCity.filter(city => {
-          return this.state.locationInput && city.toLowerCase().indexOf(this.state.locationInput.toLowerCase()) !== -1;
-      });
-
-      const renderFilteredCity = this.state.locationInput && filteredCity.length === 0
-              ? <FilterCity>Search Not Found</FilterCity>
-              : filteredCity.map((filter, index) => {
-                  return <FilterCity 
-                              key={index} 
-                              clicked={this.setLocationSelection}
-                              showDrawer={this.state.filterDrawer}>{filter}
-                          </FilterCity>
-          })
-      ;
-      
-      const styles = {
-        filteredContainer: {
-            '@media (max-width: 770px)': {
-                top: "200px"
-            }   
-        },
-        cityContainer: {
-            '@media (max-width: 770px)': {
-                width: "100%"
-            }   
+    /* Hide Filter Drawer on 'ESC' press OR on click outside drawer container */
+    handleHideDrawerPress = event => {
+        if(event.keyCode === 27) {
+            this.setState({ 
+                filterDrawer: false,
+                filterGuest: false,
+                filterLocation: false
+            }); 
         }
-      }
+    }
 
-      const mql = window.matchMedia('(max-width: 770px)');
+    handleHideFilterDrawer = () => {
+            this.setState({ 
+                filterDrawer: false,
+                filterGuest: false,
+                filterLocation: false
+            });
+    }
 
-      if(mql.matches) {
-          editSearchText = <span className="edit-text">Edit your search</span>
-      }
+    /* Handles Input change */
+    handleInputChange = (event) => {
+        this.setState({
+            locationInput: event.target.value, 
+            locationSelected: false
+        });
+    }
+
+    /* Shows filter location on click */
+    handleShowFilterLocation = () => {
+        this.setState({ 
+            filterLocation: true,
+            filterDrawer: true,
+            filterGuest: false,
+            searchClicked: false
+        });
+    }
+
+    setFilterLocation = (bool) => this.setState({ filterLocation: bool });
+
+    /* Show filter guest number on click */
+    handleShowFilterGuest = () => {
+        this.setState({ 
+            filterGuest: true,
+            filterDrawer: true,
+            filterLocation: false,
+        });
+
+        if(!this.state.locationSelected) this.setState({ locationInput: ''})
+    }
+
+    setHideFilterGuest = (hide) => { this.setState({ filterGuest: hide }); }
+    
+    /* Setter: number of guest (children/adult) */
+    setAdultValue = (val) => this.setState({ adultGuestVal: val});
+
+    setChildrenValue = (val) => this.setState({ childGuestVal: val});
+
+    getGuestTotal = total => {
+        if(total > 0) {
+            this.setState({ guestInput: total})
+        }
+    }
+
+    /* Setter: location selected or location/guest number user wants to searched */
+    setLocationSelection = (event) => {
+        this.setState({
+            locationInput: event.currentTarget.innerText,
+            locationSelected: true
+        })
+    }
+
+    setSearchedLocation = (loc) => this.setState({ searchLocation: loc });
+
+    setSearchedGuestNo = (val) => this.setState({ searchGuestNo: val });
+
+    render() {
+        const dropdownStyle = { flexFlow: 'column'}; 
+        const uniqueCity = [];
+        let editSearchText = null;
+
+        this.state.properties.forEach(property => {
+                if(uniqueCity.indexOf(property.location) === -1) {
+                    uniqueCity.push(property.location);
+                }
+            });
+        
+        let filteredCity = uniqueCity.filter(city => {
+            return this.state.locationInput && city.toLowerCase().indexOf(this.state.locationInput.toLowerCase()) !== -1;
+        });
+
+        const renderFilteredCity = this.state.locationInput && filteredCity.length === 0
+                ? <FilterCity>Search Not Found</FilterCity>
+                : filteredCity.map((filter, index) => {
+                    return <FilterCity 
+                                key={index} 
+                                clicked={this.setLocationSelection}
+                                showDrawer={this.state.filterDrawer}>{filter}
+                            </FilterCity>
+            });
+        
+        const styles = {
+            filteredContainer: {
+                '@media (max-width: 770px)': {
+                    top: "200px"
+                }   
+            },
+            cityContainer: {
+                '@media (max-width: 770px)': {
+                    width: "100%"
+                }   
+            }
+        }
+
+        const mql = window.matchMedia('(max-width: 770px)');
+        if(mql.matches) editSearchText = <span className="edit-text">Edit your search</span>;
 
       return (
-              <div className="App">
+        <div className="App">
               <Backdrop 
                   showDrawer={this.state.filterDrawer}
                   clicked={this.handleHideFilterDrawer}
@@ -355,7 +351,8 @@ class App extends Component {
                       selected={this.state.locationSelected}
                   />
               </main>
-          </div>
+              <Footer />
+        </div>
       )
   }
 }
