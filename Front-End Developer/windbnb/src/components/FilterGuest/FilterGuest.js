@@ -13,12 +13,14 @@ const FilterGuest = (props) => {
         if(ref.current && !ref.current.contains(event.target)) {
             event.preventDefault();
             props.hideFilterGuest(false);
-            props.total(adultValue + childrenValue);
+            props.total((adultValue + childrenValue));
             props.getAdultValue(adultValue);
             props.getChildrenValue(childrenValue);
         }
     }
-
+    // console.log(adultValue);
+    // console.log(childrenValue);
+    console.log(adultValue+childrenValue);
     useEffect(() => {
         document.addEventListener('click', handleClickOutside, true);
         return () => {

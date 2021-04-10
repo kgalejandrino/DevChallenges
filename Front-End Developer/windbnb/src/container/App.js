@@ -241,6 +241,8 @@ class App extends Component {
     getGuestTotal = total => {
         if(total > 0) {
             this.setState({ guestInput: total})
+        } else if(total === 0) {
+            this.setState({ guestInput: 'Add'})
         }
     }
 
