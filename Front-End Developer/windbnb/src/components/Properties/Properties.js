@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 
 import './Properties.css';
 import Aux from '../../hoc/Auxilliary/Auxilliary';
@@ -12,6 +13,15 @@ const properties = (props) => {
         ? <Aux><h2>Stays in {props.location}</h2><p>{properties.length}+ stays</p></Aux> 
         : <Aux><h2>Stays in {props.location}</h2><p>{propertiesWithGuest.length}+ stays</p></Aux>;
         
+    const styles = {
+        propertiesBox: {
+            justifyContent: "flex-start",
+            '@media (max-width: 1325px)': {
+                justifyContent: "space-between"
+            }   
+        },
+    }
+
     return (
         <Aux>
             <div className="Properties">
@@ -19,7 +29,7 @@ const properties = (props) => {
                     {props.selected ? totalStays : null}
                 </div>
                 {props.guest === 'Add'
-                    ? <div className="properties-box" style={properties.length < 3 ? {justifyContent: "flex-start"} : null}>
+                    ? <div className="properties-box" style={properties.length < 3 ? styles.propertiesBox : null}>
                         {properties.map((key, index) => {
                         return <Property 
                                 key={index}
@@ -32,7 +42,7 @@ const properties = (props) => {
                             />
                         })}
                     </div>
-                    : <div className="properties-box" style={propertiesWithGuest.length < 3 ? {justifyContent: "flex-start"} : null}>
+                    : <div className="properties-box" style={propertiesWithGuest.length < 3 ? styles.propertiesBox : null}>
                         {propertiesWithGuest.map((key, index) => {
                         return <Property 
                                     key={index}
@@ -51,4 +61,4 @@ const properties = (props) => {
     )
 }
 
-export default properties;
+export default Radium(properties);

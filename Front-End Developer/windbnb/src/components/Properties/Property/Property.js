@@ -1,13 +1,22 @@
 import React from 'react';
+import Radium from 'radium';
 
 import './Property.css';
 
 const property = (props) => {
     const host = props.host ? <div className="first-box"><span className="host">Super Host</span></div> : null;
 
+    const styles = {
+        propertyCard: {
+            marginRight: "80px",
+            '@media (max-width: 1325px)': {
+                marginRight: "0"
+            }   
+        }
+    }
 
     return (
-        <div className="property-card" style={props.length < 3 ? {marginRight: "80px"}: null}>
+        <div className="property-card" style={props.length < 3 ? styles.propertyCard: null}>
             <div className="property-image">
                 <figure style={{backgroundImage:`url('${props.url}')`}}></figure>
             </div>
@@ -26,4 +35,4 @@ const property = (props) => {
     )
 }
 
-export default property;
+export default Radium(property);
