@@ -66,7 +66,7 @@ const SearchBar = (props) => {
                         onChange={props.changed}
                         onFocus={handleFocusInput}
                         onBlur={handleBlurInput}
-                        placeholder="Where are you going?" 
+                        placeholder="Add location" 
                         autoComplete="off"
                         value={props.locationInput}
                         ref={focus => input = focus}>
