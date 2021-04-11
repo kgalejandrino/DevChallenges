@@ -13,10 +13,11 @@ body {
 
 /* APP */
 .App {
-    max-width: 850px;
+    max-width: 810px;
     width: 90%;
     margin: 0 auto;
     height: 100vh;
+    /* border: 1px solid red; */
 }
 
 h1 {

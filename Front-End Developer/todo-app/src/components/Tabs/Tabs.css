@@ -1,12 +1,18 @@
-.Tabs {
-    width: 80%;
-    margin: 0 auto;
-}
+.Tabs { position: relative; }
 
 .ul-tabs {
     display: flex;
     justify-content: space-around;
-    border-bottom: 2px solid #bdbdbd;
     font-size: 14px;
+    /* border: 1px solid black; */
     padding: 18px;
+}
+
+.underline {
+    border-top: 2px solid #bdbdbd;
+    position: absolute; 
+    height: 2px;
+    width: 100%;
+    max-width: 850px;
+    bottom: 20px;
 }

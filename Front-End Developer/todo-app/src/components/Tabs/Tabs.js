@@ -17,6 +17,7 @@ const tabs = () => {
                     })
                 }
             </ul>
+            <div className="underline"></div>
         </div>
     )
 }
