@@ -1,0 +1,12 @@
+.Tabs {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ul-tabs {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #bdbdbd;
+    font-size: 14px;
+    padding: 18px;
+}
