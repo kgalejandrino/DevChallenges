@@ -13,9 +13,5 @@
 .label-checkbox {
     padding-top: 2px;
     color: #000;
-}
-
-.strikethrough {
-    text-decoration: line-through;
-    color: #333;
+    font-weight: 600;
 }
