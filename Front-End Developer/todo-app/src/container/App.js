@@ -11,7 +11,7 @@ class App extends Component {
           <h1>#todo</h1>
           <Tabs />
           <AddTask />
-          <TaskList />
+          {/* <TaskList /> */}
       </div>
     );
   }
