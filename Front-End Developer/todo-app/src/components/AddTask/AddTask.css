@@ -5,7 +5,7 @@
     justify-content: space-between;
 }
 
-.input-task {
+.task-input {
     width: 80%;
     border: 1px solid #bdbdbd;
     border-radius: 12px;
@@ -13,7 +13,7 @@
     color: #828282;
 }
 
-.btn-task {
+.add-btn {
     width: 15%;
     border: none;
     outline: none;

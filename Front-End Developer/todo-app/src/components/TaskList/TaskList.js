@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './TaskList.css';
+
 const taskList = () => {
     return (
-        <div>
-            <input type="checkbox"></input>
-            <label>Do coding challenges</label>
+        <div className="TaskList">
+            <input type="checkbox" id="task" className="list-checkbox"></input>
+            <label for="task" className="label-checkbox">Do coding challenges</label>
         </div>
     )
 }

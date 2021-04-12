@@ -5,8 +5,8 @@ import './AddTask.css';
 const addTask = () => {
     return (
         <div className="AddTask">
-            <input className="input-task" type="text" placeholder="add details"></input>
-            <button className="btn-task">Add</button>
+            <input className="task-input" type="text" placeholder="add details"></input>
+            <button className="add-btn">Add</button>
         </div>
     )
 }
