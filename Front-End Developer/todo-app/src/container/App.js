@@ -15,7 +15,21 @@ class App extends Component {
     }
   }
 
+  componentDidMount = () => document.addEventListener("keydown", this.handleAddPress);
+  componentWillUnmount = () => document.removeEventListener("keydown", this.handleAddPress);
+  
   handleInputChange = (event) => this.setState({ input: event.target.value });
+
+  handleAddPress = event => {
+    if(event.keyCode === 13) {
+      if(this.state.input) {
+        this.setState(prevState => ({
+            task: [...prevState.task, this.state.input]
+        }))
+      }
+      this.setState({ input: ''})
+    }
+  }
 
   handleAddClick = () => {
     if(this.state.input) {
