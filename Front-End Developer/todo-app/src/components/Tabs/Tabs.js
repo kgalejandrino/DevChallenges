@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Tabs.css';
-import Tab from './Tab/Tab';
+// import Tab from './Tab/Tab';
 
-const tabs = () => {
-    const list = ['All', 'Active', 'Completed'];
+const Tabs = () => {
+    const list = [
+        {'id': 0, 'tab': 'All' },
+        {'id': 1, 'tab': 'Active' },
+        {'id': 2, 'tab': 'Completed' }
+    ];
+    let [activeTab, setActiveTab] = useState(0);
+
+    const getIndex = (idx) => {
+        setActiveTab(idx);
+    }
 
     return (
         <div className="Tabs">
             <ul className="ul-tabs">
-                {list.map((nav, index) => {
-                    return <Tab
-                            key={index}>
-                            {nav}    
-                    </Tab>
+                {list.map(list => {
+                    return <li
+                                className={list.id === activeTab && 'active'}
+                                key={list.id}
+                                onClick={() => getIndex(list.id)} >
+                                {list.tab}   
+                            </li>
                     })
                 }
             </ul>
@@ -22,4 +33,4 @@ const tabs = () => {
     )
 }
 
-export default tabs;
+export default Tabs;

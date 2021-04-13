@@ -7,7 +7,7 @@
 }
 
 
-.li-tab:hover:after {
+.active {
     content: "";
     position: absolute;
     border-top: 4px solid #2F80ED;
