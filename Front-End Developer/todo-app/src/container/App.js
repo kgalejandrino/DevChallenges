@@ -10,13 +10,13 @@ class App extends Component {
 
     this.state = {
       input: '',
-      addTask: false,
-      task: []
+      task: [],
+      activeTab: ''
     }
   }
 
   componentDidMount = () => document.addEventListener("keydown", this.handleAddPress);
-  componentWillUnmount = () => document.removeEventListener("keydown", this.handleAddPress);
+  componentWillUnmount = () => document.addEventListener("keydown", this.handleAddPress);
   
   handleInputChange = (event) => this.setState({ input: event.target.value });
 
@@ -40,11 +40,16 @@ class App extends Component {
     this.setState({ input: ''})
   }
 
+  getActiveTab = (tab) => this.setState({ activeTab: tab})
+
   render() {
+    console.log(this.state.activeTab);
     return (
       <div className="App">
           <h1>#todo</h1>
-          <Tabs />
+          <Tabs 
+            active={this.getActiveTab}
+          />
           <AddTask 
             input={this.handleInputChange}
             clicked={this.handleAddClick}
