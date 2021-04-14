@@ -55,6 +55,8 @@ class App extends Component {
     let renderedTask = this.state.task ? [...this.state.task] : null;
 
     if(this.state.activeTab === 'Active') {
+      renderedTask = renderedTask.filter(task => !task.completed)
+    } else if(this.state.activeTab === 'Completed') {
       renderedTask = renderedTask.filter(task => task.completed)
     }
 

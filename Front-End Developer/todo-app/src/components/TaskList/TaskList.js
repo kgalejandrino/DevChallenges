@@ -12,6 +12,7 @@ const TaskList = (props) => {
                     type="checkbox" 
                     id="task"
                     className="list-checkbox"
+                    checked={list.completed}
                     onChange={(e) => props.changed(e, index)}>
                 </input>
                 <label 
