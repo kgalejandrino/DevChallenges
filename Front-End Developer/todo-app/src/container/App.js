@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       input: '',
       task: [],
-      activeTab: ''
+      activeTab: 'All'
     }
   }
 
@@ -52,6 +52,13 @@ class App extends Component {
 
   render() {
     console.log(this.state.activeTab);
+    let renderedTask = this.state.task ? [...this.state.task] : null;
+
+    if(this.state.activeTab === 'Active') {
+      renderedTask = renderedTask.filter(task => task.completed)
+    }
+
+    console.log(renderedTask);
     return (
       <div className="App">
           <h1>#todo</h1>
@@ -64,7 +71,7 @@ class App extends Component {
             task={this.state.input}
           />
           <TaskList 
-            task={this.state.task}
+            task={renderedTask}
             changed={this.handleCheckedChange}
           />          
       </div>

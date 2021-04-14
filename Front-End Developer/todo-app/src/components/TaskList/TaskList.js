@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './TaskList.css';
 
 const TaskList = (props) => {
-
     const completedStyle = { textDecoration: "line-through" };
 
     return (
