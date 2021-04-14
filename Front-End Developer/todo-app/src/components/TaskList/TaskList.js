@@ -3,28 +3,25 @@ import React, { useState } from 'react';
 import './TaskList.css';
 
 const TaskList = (props) => {
-    let [check, setCheck] = useState(false);
-    const handleCheckboxClick = () => setCheck(true);
 
-    const strikethrough = { 
-        textDecoration: "line-through",
-        color: "#333"
-    }
+    const completedStyle = { textDecoration: "line-through" };
 
     return (
-        <div className="TaskList">
-            <input 
-                type="checkbox" 
-                id="task" 
-                className="list-checkbox"
-                onClick={handleCheckboxClick}>
-            </input>
-            <label 
-                htmlFor="task" 
-                className="label-checkbox"
-                style={check ? strikethrough : null}>{props.children}
-            </label>
-        </div>
+        props.task.map((list, index) => {
+            return <div className="TaskList" key={index}>
+                <input 
+                    type="checkbox" 
+                    id="task"
+                    className="list-checkbox"
+                    onChange={(e) => props.changed(e, index)}>
+                </input>
+                <label 
+                    htmlFor="task" 
+                    className="label-checkbox"
+                    style={list.completed ? completedStyle : null}>{list.task}
+                </label>
+            </div>
+        })
     )
 }
 

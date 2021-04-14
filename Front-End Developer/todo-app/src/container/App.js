@@ -24,7 +24,7 @@ class App extends Component {
     if(event.keyCode === 13) {
       if(this.state.input) {
         this.setState(prevState => ({
-            task: [...prevState.task, this.state.input]
+          task: [...prevState.task, { task: this.state.input, completed: false} ]
         }))
       }
       this.setState({ input: ''})
@@ -34,13 +34,21 @@ class App extends Component {
   handleAddClick = () => {
     if(this.state.input) {
       this.setState(prevState => ({
-          task: [...prevState.task, this.state.input]
+          task: [...prevState.task, { task: this.state.input, completed: false} ]
       }))
     }
     this.setState({ input: ''})
   }
 
-  getActiveTab = (tab) => this.setState({ activeTab: tab})
+  getActiveTab = (tab) => this.setState({ activeTab: tab});
+
+  handleCheckedChange = (event, i) => {
+    let temp = [...this.state.task];
+
+    temp[i].completed = event.target.checked;
+
+    this.setState({ todo: temp })
+  }
 
   render() {
     console.log(this.state.activeTab);
@@ -55,10 +63,10 @@ class App extends Component {
             clicked={this.handleAddClick}
             task={this.state.input}
           />
-          {this.state.task.map((task, index) => {
-              return <TaskList key={index}>{task}</TaskList>
-            })
-          }
+          <TaskList 
+            task={this.state.task}
+            changed={this.handleCheckedChange}
+          />          
       </div>
     );
   }
