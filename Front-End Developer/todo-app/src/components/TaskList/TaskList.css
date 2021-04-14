@@ -1,7 +1,10 @@
 .TaskList {
     margin-top: 18px;
     display: flex;
+    justify-content: space-between;
 }
+
+.TaskList div { display: flex;}
 
 .list-checkbox {
     width: 22px;
