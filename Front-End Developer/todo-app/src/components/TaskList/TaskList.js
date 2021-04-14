@@ -23,7 +23,7 @@ const TaskList = (props) => {
                     </label>
                 </div>
                 <div>
-                    {props.tab === 'Completed' ? <span class="material-icons md-24">delete_outline</span> : null }
+                    {props.tab === 'Completed' ? <span class="material-icons md-24 icon-delete">delete_outline</span> : null }
                 </div>
             </div>
         })

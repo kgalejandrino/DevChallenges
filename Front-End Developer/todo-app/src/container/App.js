@@ -3,6 +3,7 @@ import './App.css';
 import Tabs from '../components/Tabs/Tabs';
 import AddTask from '../components/AddTask/AddTask';
 import TaskList from '../components/TaskList/TaskList';
+import DeleteButton from '../components/DeleteButton/DeleteButton';
 
 class App extends Component {
   constructor(props) {
@@ -74,7 +75,11 @@ class App extends Component {
             task={renderedTask}
             changed={this.handleCheckedChange}
             tab={this.state.activeTab}
-          />          
+          /> 
+          {this.state.activeTab === 'Completed' 
+            ? <DeleteButton />            
+            : null
+          }
       </div>
     );
   }

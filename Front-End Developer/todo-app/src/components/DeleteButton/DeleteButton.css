@@ -1,0 +1,21 @@
+.DeleteButton {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+.btn-delete {
+    outline: none;
+    border: none;
+    background: #eb5757;
+    border-radius: 4px;
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.material-icons.md-16 { 
+    font-size: 16px; 
+    margin-right: 4px;
+}
