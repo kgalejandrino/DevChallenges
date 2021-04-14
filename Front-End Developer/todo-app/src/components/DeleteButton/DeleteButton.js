@@ -2,9 +2,9 @@ import './DeleteButton.css';
 
 const deletButton = (props) => {
     return (
-        <div className="DeleteButton">
+        <div className="DeleteButton" onClick={props.deleted}>
             <button className="btn-delete">
-                <span class="material-icons md-16">delete_outline</span>delete all
+                <span className="material-icons md-16">delete_outline</span>delete all
             </button>
         </div>
     )

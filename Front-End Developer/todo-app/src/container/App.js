@@ -57,6 +57,8 @@ class App extends Component {
     this.setState({ task: temp });
   }
 
+  handleDeleteAllTask = () => this.setState({ task: []})
+
   render() {
     let renderedTask = this.state.task ? [...this.state.task] : null;
 
@@ -85,7 +87,7 @@ class App extends Component {
             deleted={this.handleDeleteTaskClicked}
           /> 
           {this.state.activeTab === 'Completed' 
-            ? <DeleteButton />            
+            ? <DeleteButton deleted={this.handleDeleteAllTask} />            
             : null
           }
       </div>
