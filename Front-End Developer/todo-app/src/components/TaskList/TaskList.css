@@ -19,4 +19,7 @@
     font-weight: 600;
 }
 
-.icon-delete { color: #bdbdbd;}
+.icon-delete { 
+    color: #bdbdbd;
+    cursor: pointer;
+}

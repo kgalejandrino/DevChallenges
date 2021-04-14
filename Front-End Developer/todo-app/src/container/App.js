@@ -51,6 +51,12 @@ class App extends Component {
     this.setState({ todo: temp })
   }
 
+  handleDeleteTaskClicked = (i) => {
+    let temp = [...this.state.task];
+    temp.splice(i, 1);
+    this.setState({ task: temp });
+  }
+
   render() {
     let renderedTask = this.state.task ? [...this.state.task] : null;
 
@@ -60,6 +66,7 @@ class App extends Component {
       renderedTask = renderedTask.filter(task => task.completed)
     }
 
+    console.log(this.state.task);
     return (
       <div className="App">
           <h1>#todo</h1>
@@ -75,6 +82,7 @@ class App extends Component {
             task={renderedTask}
             changed={this.handleCheckedChange}
             tab={this.state.activeTab}
+            deleted={this.handleDeleteTaskClicked}
           /> 
           {this.state.activeTab === 'Completed' 
             ? <DeleteButton />            
