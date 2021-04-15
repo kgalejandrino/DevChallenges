@@ -16,12 +16,15 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => document.addEventListener("keydown", this.handleAddPress);
-  componentWillUnmount = () => document.addEventListener("keydown", this.handleAddPress);
+  componentDidMount = () => { 
+    document.addEventListener("keydown", this.handleAddTaskPress);
+  }
+
+  componentWillUnmount = () => document.addEventListener("keydown", this.handleAddTaskPress);
   
   handleInputChange = (event) => this.setState({ input: event.target.value });
 
-  handleAddPress = event => {
+  handleAddTaskPress = event => {
     if(event.keyCode === 13) {
       if(this.state.input) {
         this.setState(prevState => ({
@@ -32,12 +35,13 @@ class App extends Component {
     }
   }
 
-  handleAddClick = () => {
+  handleAddTaskClick = () => {
     if(this.state.input) {
       this.setState(prevState => ({
           task: [...prevState.task, { task: this.state.input, completed: false} ]
       }))
     }
+    
     this.setState({ input: ''})
   }
 
@@ -59,6 +63,8 @@ class App extends Component {
 
   handleDeleteAllTask = () => this.setState({ task: []})
 
+  getLocalStoredTask = (data) => this.setState({ task : data })
+
   render() {
     let renderedTask = this.state.task ? [...this.state.task] : null;
 
@@ -67,8 +73,7 @@ class App extends Component {
     } else if(this.state.activeTab === 'Completed') {
       renderedTask = renderedTask.filter(task => task.completed)
     }
-
-    console.log(this.state.task);
+    
     return (
       <div className="App">
           <h1>#todo</h1>
@@ -77,14 +82,15 @@ class App extends Component {
           />
           <AddTask 
             input={this.handleInputChange}
-            clicked={this.handleAddClick}
+            clicked={this.handleAddTaskClick}
             task={this.state.input}
           />
           <TaskList 
             task={renderedTask}
             changed={this.handleCheckedChange}
-            tab={this.state.activeTab}
             deleted={this.handleDeleteTaskClicked}
+            tab={this.state.activeTab}
+            getStoredTask={this.getLocalStoredTask}
           /> 
           {this.state.activeTab === 'Completed' 
             ? <DeleteButton deleted={this.handleDeleteAllTask} />            

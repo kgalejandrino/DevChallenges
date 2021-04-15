@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './TaskList.css';
 
 const TaskList = (props) => {
+    let [task, setTask] = useState([]);
     const completedStyle = { textDecoration: "line-through" };
 
+    useEffect(() => {
+        setTask(props.task);
+    }, [props.task]);
+
+    useEffect(() => {
+        const saveTask = localStorage.getItem("task");
+        if(saveTask) {
+            props.getStoredTask(JSON.parse(saveTask));
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("task", JSON.stringify(task));
+    })
+    
+    console.log(task);
     return (
-        props.task.map((list, index) => {
+        task.map((list, index) => {
             return <div className="TaskList" key={index}>
                 <div>
                     <input 
