@@ -25,3 +25,25 @@
     box-shadow: 0px 2px 6px #7fb1f366;
     color: #fff;
 }
+
+@media only screen and (max-width: 650px) {
+    .task-input { width: 70%;}
+
+    .add-btn { width: 25%;}
+}
+
+@media only screen and (max-width: 390px) {
+    .AddTask { 
+        flex-direction: column;
+        height: auto;
+    }
+
+    .task-input, .add-btn  { height: 50px; }
+
+    .task-input { width: 100%; }
+
+    .add-btn { 
+        width: 100%;
+        margin-top: 12px;
+    }
+}

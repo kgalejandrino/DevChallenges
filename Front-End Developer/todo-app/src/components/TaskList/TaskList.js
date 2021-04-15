@@ -7,8 +7,16 @@ const TaskList = (props) => {
     const { getStoredTask } = props;
     
     useEffect(() => {
-        setTask(props.task);
-    }, [props.task]);
+        setTask(props.task); 
+        let filter = props.task;
+        if(props.tab === 'Active') {
+            filter = filter.filter(task => !task.completed);
+            setTask(filter);
+        } else if(props.tab === 'Completed') {
+            filter = filter.filter(task => task.completed);
+            setTask(filter);
+        } 
+    }, [props.tab, props.task ]);
 
     useEffect(() => {
         const saveTask = localStorage.getItem("task");
@@ -23,16 +31,9 @@ const TaskList = (props) => {
     
     const completedStyle = { textDecoration: "line-through" };
     
-    let renderedTask = task ? [...task] : null;
-
-    if(props.tab === 'Active') {
-      renderedTask = renderedTask.filter(task => !task.completed)
-    } else if(props.tab === 'Completed') {
-      renderedTask = renderedTask.filter(task => task.completed)
-    }
-
+    console.log(task);
     return (
-        renderedTask.map((list, index) => {
+        task.map((list, index) => {
             return <div className="TaskList" key={index}>
                 <div>
                     <input 
@@ -40,7 +41,7 @@ const TaskList = (props) => {
                         id="task"
                         className="list-checkbox"
                         checked={list.completed}
-                        onChange={(e) => props.changed(e, index)}>
+                        onChange={(e) => props.changed(e, list.id)}>
                     </input>
                     <label 
                         htmlFor="task" 

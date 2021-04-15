@@ -12,7 +12,9 @@ class App extends Component {
     this.state = {
       input: '',
       task: [],
-      activeTab: 'All'
+      uniqueID: 0,
+      activeTab: 'All',
+      filteredTask: []
     }
   }
 
@@ -36,9 +38,11 @@ class App extends Component {
   }
 
   handleAddTaskClick = () => {
+    this.setState(prevState => ({ uniqueID: prevState.uniqueID + 1}));
+
     if(this.state.input) {
       this.setState(prevState => ({
-          task: [...prevState.task, { task: this.state.input, completed: false} ]
+          task: [...prevState.task, { id: this.state.uniqueID, task: this.state.input, completed: false} ]
       }))
     }
     
@@ -47,12 +51,16 @@ class App extends Component {
 
   getActiveTab = (tab) => this.setState({ activeTab: tab});
 
-  handleCheckedChange = (event, i) => {
+  handleCheckedChange = (event, id) => {
     let temp = [...this.state.task];
 
-    temp[i].completed = event.target.checked;
-
-    this.setState({ todo: temp })
+    temp.forEach((data) => {
+      if(data.id === id) {
+        data.completed = event.target.checked;
+      }
+    })
+    
+    this.setState({ task: temp });
   }
 
   handleDeleteTaskClicked = (i) => {
@@ -65,7 +73,9 @@ class App extends Component {
 
   getLocalStoredTask = (data) => this.setState({ task : data })
 
-  render() {   
+  getFilteredTask = (data) => this.setState({ filteredTask: data })
+
+  render() { 
     return (
       <div className="App">
           <h1>#todo</h1>
@@ -83,6 +93,7 @@ class App extends Component {
             deleted={this.handleDeleteTaskClicked}
             tab={this.state.activeTab}
             getStoredTask={this.getLocalStoredTask}
+            getFilteredTask={this.getFilteredTask}
           /> 
           {this.state.activeTab === 'Completed' 
             ? <DeleteButton deleted={this.handleDeleteAllTask} />            
