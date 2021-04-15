@@ -4,8 +4,8 @@ import './TaskList.css';
 
 const TaskList = (props) => {
     let [task, setTask] = useState([]);
-    const completedStyle = { textDecoration: "line-through" };
-
+    const { getStoredTask } = props;
+    
     useEffect(() => {
         setTask(props.task);
     }, [props.task]);
@@ -13,17 +13,26 @@ const TaskList = (props) => {
     useEffect(() => {
         const saveTask = localStorage.getItem("task");
         if(saveTask) {
-            props.getStoredTask(JSON.parse(saveTask));
+            getStoredTask(JSON.parse(saveTask));
         }
-    }, [])
+    }, [getStoredTask])
 
     useEffect(() => {
         localStorage.setItem("task", JSON.stringify(task));
     })
     
-    console.log(task);
+    const completedStyle = { textDecoration: "line-through" };
+    
+    let renderedTask = task ? [...task] : null;
+
+    if(props.tab === 'Active') {
+      renderedTask = renderedTask.filter(task => !task.completed)
+    } else if(props.tab === 'Completed') {
+      renderedTask = renderedTask.filter(task => task.completed)
+    }
+
     return (
-        task.map((list, index) => {
+        renderedTask.map((list, index) => {
             return <div className="TaskList" key={index}>
                 <div>
                     <input 
