@@ -28,9 +28,10 @@ class App extends Component {
 
   handleAddTaskPress = event => {
     if(event.keyCode === 13) {
+      this.setState(prevState => ({ uniqueID: prevState.uniqueID + 1}));
       if(this.state.input) {
         this.setState(prevState => ({
-          task: [...prevState.task, { task: this.state.input, completed: false} ]
+          task: [...prevState.task, { id: this.state.uniqueID, task: this.state.input, completed: false} ]
         }))
       }
       this.setState({ input: ''})
@@ -63,15 +64,33 @@ class App extends Component {
     this.setState({ task: temp });
   }
 
-  handleDeleteTaskClicked = (i) => {
+  handleDeleteTaskClicked = (id) => {
     let temp = [...this.state.task];
-    temp.splice(i, 1);
+    let index = 0;
+    temp.forEach((data, i) => {
+      if(data.id === id) {
+        index = i;
+      }
+    })
+    temp.splice(index, 1);
     this.setState({ task: temp });
   }
 
-  handleDeleteAllTask = () => this.setState({ task: []})
+  handleDeleteAllTask = () => {
+    let temp = [...this.state.task];
 
-  getLocalStoredTask = (data) => this.setState({ task : data })
+    temp = temp.filter(task => !task.completed)
+
+    this.setState({ task: temp })
+  }
+
+  getLocalStoredTask = (data) => {
+    let length = data.length - 1;
+    this.setState({ 
+      task: data,  
+      uniqueID: data.length ? data[length].id : 0
+    })
+  }
 
   getFilteredTask = (data) => this.setState({ filteredTask: data })
 

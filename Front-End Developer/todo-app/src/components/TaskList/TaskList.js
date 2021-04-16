@@ -26,12 +26,11 @@ const TaskList = (props) => {
     }, [getStoredTask])
 
     useEffect(() => {
-        localStorage.setItem("task", JSON.stringify(task));
+        localStorage.setItem("task", JSON.stringify(props.task));
     })
     
     const completedStyle = { textDecoration: "line-through" };
     
-    console.log(task);
     return (
         task.map((list, index) => {
             return <div className="TaskList" key={index}>
