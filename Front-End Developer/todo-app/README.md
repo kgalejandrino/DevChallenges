@@ -37,10 +37,12 @@
 
 ## Overview
 
-![screenshot](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/windbnb/src/assets/desktop_screenshot.png?raw=true)
+![website_gif](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/todo-app/src/assets/todo.gif?raw=true)
 
 - What was your experience?
 - What have you learned/improved?
+
+In this project, I learned how to store data in local storage. User stories were pretty straight forward until I came across with the issue of keeping track of the state wether which tab are you on. Took me some time to figure it out but it was a good experience to get a better understanding of lifecycle components and the works of React behind the scene while I'm trying to debug the issues. 
 
 
 ### Built With

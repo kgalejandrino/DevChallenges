@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import Tabs from '../components/Tabs/Tabs';
 import AddTask from '../components/AddTask/AddTask';
@@ -13,14 +14,11 @@ class App extends Component {
       input: '',
       task: [],
       uniqueID: 0,
-      activeTab: 'All',
-      filteredTask: []
+      activeTab: 'All'
     }
   }
 
-  componentDidMount = () => { 
-    document.addEventListener("keydown", this.handleAddTaskPress);
-  }
+  componentDidMount = () => document.addEventListener("keydown", this.handleAddTaskPress);
 
   componentWillUnmount = () => document.addEventListener("keydown", this.handleAddTaskPress);
   
@@ -92,8 +90,6 @@ class App extends Component {
     })
   }
 
-  getFilteredTask = (data) => this.setState({ filteredTask: data })
-
   render() { 
     return (
       <div className="App">
@@ -112,12 +108,11 @@ class App extends Component {
             deleted={this.handleDeleteTaskClicked}
             tab={this.state.activeTab}
             getStoredTask={this.getLocalStoredTask}
-            getFilteredTask={this.getFilteredTask}
           /> 
-          {this.state.activeTab === 'Completed' 
-            ? <DeleteButton deleted={this.handleDeleteAllTask} />            
-            : null
-          }
+         <DeleteButton 
+            deleted={this.handleDeleteAllTask}
+            tab={this.state.activeTab}
+        />            
       </div>
     );
   }
