@@ -24,10 +24,14 @@ class App extends Component {
     }
 
     fetchRandomQuote = () => {
-      this.setState({ loading: true })
+      this.setState({ 
+        loading: true,
+        renderMultipleQuotes: false
+      })
+
       axios.get(`https://quote-garden.herokuapp.com/api/v3/quotes/random`)
       .then(response => {
-        console.log(response.data.data[0]);
+        // console.log(response.data.data[0]);
         const data = response.data.data[0];
         this.setState({ 
           data: data,
@@ -48,6 +52,7 @@ class App extends Component {
       axios.get(`https://quote-garden.herokuapp.com/api/v3/quotes/random?author=${author}&count=3`)
       .then(response => {
         const data = response.data.data;
+        console.log(data);
         this.setState({ 
           multipleQuotes: [...data],
           loading: false 
@@ -61,7 +66,17 @@ class App extends Component {
   render() {
     let { data, multipleQuotes } = this.state;
     let render = null;
-    let quote = (
+ 
+    if(this.state.renderMultipleQuotes) {
+      render = multipleQuotes.map((data, index) => {
+        return <Quote 
+                  key={index} 
+                  text={data.quoteText}
+                  render={this.state.renderMultipleQuotes} 
+                />
+      })
+    } else {
+      render =
         <Aux>
           <Quote 
             text={data.quoteText}
@@ -72,23 +87,9 @@ class App extends Component {
             clicked={this.fetchListofQuotes}
           />
         </Aux>
-    );
-
-    let quotes = multipleQuotes.map((data, index) => {
-      return <Quote 
-                key={index} 
-                text={data.quoteText}
-                render={this.state.renderMultipleQuotes} 
-              />
-    })
-
-    if(this.state.loading) { quote = <Spinner /> }
-
-    if(this.state.renderMultipleQuotes) {
-      render = quotes;
-    } else {
-      render = quote;
     }
+
+    if(this.state.loading) { render = <Spinner /> }
 
     console.log(this.state.multipleQuotes);
     return (
