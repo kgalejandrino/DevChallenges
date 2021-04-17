@@ -1,0 +1,11 @@
+.Quote {
+    width: 50%;
+    margin: 140px auto 0 auto;
+}
+
+.Quote p {
+    font-size: 32px;
+    border-left: 8px solid #F7DF94;
+    padding: 8px 0 8px 82px;
+    font-weight: 500;
+}
