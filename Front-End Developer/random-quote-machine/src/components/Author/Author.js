@@ -2,15 +2,15 @@ import React from 'react';
 
 import './Author.css';
 
-const author = () => {
+const author = (props) => {
     return (
         <div className="Author">
             <div className="author-container">
-                <p className="name">Bill Gates</p>
-                <p className="genre">business</p>
+                <p className="name">{props.author}</p>
+                <p className="genre">{props.genre}</p>
             </div>
             <div>
-            <span class="material-icons">arrow_right_alt</span>
+            <span className="material-icons icon-arrow">arrow_right_alt</span>
             </div>
         </div>
     )
