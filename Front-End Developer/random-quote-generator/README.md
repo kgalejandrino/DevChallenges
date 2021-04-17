@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://dc-windbnb.netlify.app/">
+    <a href="https://dc-randomquotegenerator.netlify.app/">
       Demo
     </a>
     <span> | </span>
