@@ -6,7 +6,10 @@ const quote = (props) => {
     let quoteStyle = {};
 
     if(props.render) {
-        quoteStyle = { marginTop: "80px" }
+        quoteStyle = { 
+            marginTop: "80px",
+            marginBottom: "64px" 
+        }
     }
 
     return (

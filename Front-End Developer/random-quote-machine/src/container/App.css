@@ -12,7 +12,7 @@ html {
     max-width: 1250px;
     width: 90%;
     margin: 0 auto;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .random-container {
@@ -29,3 +29,13 @@ html {
 }
 
 .icon-random {cursor: pointer;}
+
+.icon-back {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-left: 480px;
+    color: #F7DF94;
+}
+
+.material-icons.md-48 { font-size: 48px; }

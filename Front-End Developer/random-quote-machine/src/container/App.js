@@ -63,6 +63,8 @@ class App extends Component {
       })
     }
 
+    backToSingleQuoteClicked = () => this.setState({ renderMultipleQuotes: false })
+
   render() {
     let { data, multipleQuotes } = this.state;
     let render = null;
@@ -99,6 +101,13 @@ class App extends Component {
           <span className="material-icons icon-random" onClick={this.fetchRandomQuote}>autorenew</span>
         </div>
           { render }
+          { this.state.renderMultipleQuotes && !this.state.loading
+            ? <span 
+                class="material-icons md-48 icon-back"
+                onClick={this.backToSingleQuoteClicked}>keyboard_backspace
+                </span>
+            : null
+          }
       </div>
     )
   }

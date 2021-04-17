@@ -1,6 +1,7 @@
 .Quote {
     width: 50%;
     margin: 140px auto 64px auto;
+    animation: opacity 1.5s;
 }
 
 .Quote p {
@@ -9,3 +10,10 @@
     padding: 8px 0 8px 82px;
     font-weight: 500;
 }
+
+@keyframes opacity {
+    0% { opacity: 0; }
+    100% { opacity: 1 ;}
+}
+  
+

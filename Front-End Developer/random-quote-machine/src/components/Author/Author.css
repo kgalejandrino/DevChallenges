@@ -6,6 +6,7 @@
     padding: 36px 24px;
     display: flex;
     justify-content: space-between;
+    animation: opacity 1.2s;
 }
 
 .name {
@@ -20,4 +21,9 @@
 
 .icon-arrow {
     cursor: pointer;
+}
+
+@keyframes opacity {
+    0% { opacity: 0; }
+    100% { opacity: 1 ;}
 }
