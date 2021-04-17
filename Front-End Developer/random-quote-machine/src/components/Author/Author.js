@@ -10,7 +10,10 @@ const author = (props) => {
                 <p className="genre">{props.genre}</p>
             </div>
             <div>
-            <span className="material-icons icon-arrow">arrow_right_alt</span>
+            <span 
+                className="material-icons icon-arrow"
+                onClick={props.clicked}>arrow_right_alt
+            </span>
             </div>
         </div>
     )

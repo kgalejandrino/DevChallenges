@@ -3,8 +3,14 @@ import React from 'react';
 import './Quote.css';
 
 const quote = (props) => {
+    let quoteStyle = {};
+
+    if(props.render) {
+        quoteStyle = { marginTop: "80px" }
+    }
+
     return (
-        <div className="Quote">
+        <div className="Quote" style={quoteStyle}>
             <p>"{props.text}."</p>
         </div>
     )
