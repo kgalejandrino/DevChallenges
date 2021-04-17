@@ -103,7 +103,7 @@ class App extends Component {
           { render }
           { this.state.renderMultipleQuotes && !this.state.loading
             ? <span 
-                class="material-icons md-48 icon-back"
+                className="material-icons md-48 icon-back"
                 onClick={this.backToSingleQuoteClicked}>keyboard_backspace
                 </span>
             : null

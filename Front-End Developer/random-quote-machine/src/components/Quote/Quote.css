@@ -15,5 +15,36 @@
     0% { opacity: 0; }
     100% { opacity: 1 ;}
 }
-  
 
+@media only screen and (max-width:1100px) {
+    .Quote { width: 60%; }
+}
+
+@media only screen and (max-width:870px) {
+    .Quote { width: 70%; }
+} 
+
+@media only screen and (max-width:670px) {
+    .Quote { width: 80%; }
+
+    .Quote p { 
+        font-size: 28px; 
+        padding-left: 58px;
+    }
+} 
+
+@media only screen and (max-width:570px) {
+    .Quote { width: 100%; }
+
+    .Quote p { 
+        font-size: 24px; 
+        padding-left: 36px;
+    }
+} 
+
+@media only screen and (max-width: 370px) {
+    .Quote p { 
+        font-size: 18px; 
+        padding-left: 28px;
+    }
+} 

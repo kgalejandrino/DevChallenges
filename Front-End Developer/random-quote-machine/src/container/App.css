@@ -39,3 +39,15 @@ html {
 }
 
 .material-icons.md-48 { font-size: 48px; }
+
+@media only screen and (max-width:870px) {
+    .icon-back { padding-left: 400px; }
+}
+
+@media only screen and (max-width:670px) {
+    .icon-back { padding-left: 300px; }
+}
+
+@media only screen and (max-width:370px) {
+    .icon-back { padding-left: 200px; }
+}    

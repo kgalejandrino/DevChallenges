@@ -27,3 +27,11 @@
     0% { opacity: 0; }
     100% { opacity: 1 ;}
 }
+
+@media only screen and (max-width:870px) {
+    .Author { width: 60%; }
+} 
+
+@media only screen and (max-width:570px) {
+    .Author { width: 90%; }
+} 
