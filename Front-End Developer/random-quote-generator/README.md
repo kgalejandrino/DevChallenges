@@ -37,7 +37,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/windbnb/src/assets/desktop_screenshot.png?raw=true)
+![screenshot](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/random-quote-generator/src/assets/quote-generator.gif?raw=true)
 
 - What was your experience?
 - What have you learned/improved?
