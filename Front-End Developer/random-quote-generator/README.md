@@ -42,6 +42,7 @@
 - What was your experience?
 - What have you learned/improved?
 
+I like doing this project not because of its simplicity but because I get to work with API. I've never work with a lot of projects where I'd have to use an API and this is one is a good practice. At first, I struggled with how I should be able to fetch the data I needed in this project and one important lesson learned on this is the importance of reading the documentation. To take advantage of the params available and use them to fetch specific data need in the project.  
 
 ### Built With
 
@@ -66,7 +67,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 $ git clone https://github.com/kgalejandrino/DevChallenges
 
 # Change directory (Project Folder)
-$ cd DevChallenges/Front-End Developer/random-quote-machine/
+$ cd DevChallenges/Front-End Developer/random-quote-generator/
 
 # Install dependencies
 $ npm install
@@ -80,7 +81,7 @@ $ npm start
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
 
 - [Material Icon](https://google.github.io/material-design-icons/)
-- [Radium](https://formidable.com/open-source/radium/)
+- [CSS Spinners](https://projects.lukehaas.me/css-loaders/)
 
 ## Contact
 
