@@ -15,8 +15,8 @@ const Region = (props) => {
 
     const styles = {
         li: {
-            border: "2px solid #F9A826",
-            backgroundColor: "#F9A826",
+            border: "2px solid #60BF88",
+            backgroundColor: "#60BF88",
             color: "#fff"
         }
     }
@@ -26,11 +26,17 @@ const Region = (props) => {
             <h3>Select Region</h3>
             <ul>
                 {data.map((name, idx) => {
-                    return <li 
+                    return <div 
                                 key={idx} 
+                                className="list-card"
                                 style={index === idx ? styles.li : null}
-                                onClick={() => getRegionSelected(idx)}>{name}
-                            </li>
+                                onClick={() => getRegionSelected(idx)}>
+                            <li>{name}</li>
+                            {index === idx 
+                                    ? <span className="material-icons">check_circle_outline</span>
+                                    : null
+                            }
+                            </div>
                 })}
             </ul>
         </div>
