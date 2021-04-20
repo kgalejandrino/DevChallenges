@@ -7,4 +7,14 @@
 
 html {
   font-family: 'Poppins', sans-serif;
+  background: url(https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/country-quiz/src/assets/background.png?raw=true) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
