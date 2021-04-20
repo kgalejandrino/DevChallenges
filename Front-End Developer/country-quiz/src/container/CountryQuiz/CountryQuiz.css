@@ -49,3 +49,24 @@ h2 {
     right: 0;
     top: -28px;
 }
+
+/* BUTTONS */
+.btn-container {
+    display: flex;
+    justify-content: flex-end;  
+}
+.btn {
+   border-radius: 12px;
+   padding: 16px;
+   color: #fff;
+   font-size: 16px;
+   font-weight: 700;
+}
+
+.btn-next {
+    border: none;
+    width: 100px;
+    background: #F9A826;
+    box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+    margin-bottom: 8px;
+}

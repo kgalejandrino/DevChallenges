@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import CountryQuiz from './components/CountryQuiz/CountryQuiz';
+import CountryQuiz from './container/CountryQuiz/CountryQuiz';
 
 class App extends Component {
   render() {

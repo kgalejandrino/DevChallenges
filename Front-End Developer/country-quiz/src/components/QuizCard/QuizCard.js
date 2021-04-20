@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 
-import './Region.css';
+import './QuizCard.css';
 
-const data = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
+const region = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
+const category = ['Capital', 'Flag'];
 
-const Region = (props) => {
-    let [regionName, setRegionName] = useState('');
+const QuizCard = (props) => {
     let [index, setIndex] = useState(-1);
+    let [categorySelected, setCategorySelected] = useState(false);
     
     const getRegionSelected = (i) => {
-        setRegionName(data[i]);
         setIndex(i);
+        props.answerClicked(true);
     }
 
     const styles = {
@@ -22,10 +23,10 @@ const Region = (props) => {
     }
 
     return (
-        <div className="Region">
-            <h3>Select Region</h3>
+        <div className="QuizCard">
+            <h3>Select {categorySelected ? 'Region' : 'Category'}</h3>
             <ul>
-                {data.map((name, idx) => {
+                {region.map((name, idx) => {
                     return <div 
                                 key={idx} 
                                 className="list-card"
@@ -43,4 +44,4 @@ const Region = (props) => {
     )
 }
 
-export default Region;
+export default QuizCard;
