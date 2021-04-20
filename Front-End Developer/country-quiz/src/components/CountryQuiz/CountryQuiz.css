@@ -18,13 +18,19 @@ h2 {
     list-style-type: none;
 }
 
-.quiz-card ul li{
+.quiz-card ul li {
     margin-top: 18px;
     border: 2px solid rgba(98, 103, 208, 0.702);
-    padding: 8px;
+    padding: 8px 12px;
     border-radius: 12px;
     color: #6066D0;
     cursor: pointer;
+}
+
+.quiz-card ul li:hover {
+    border: 2px solid #F9A826;
+    background-color: #F9A826;
+    color: #fff;
 }
 
 .img-quiz {

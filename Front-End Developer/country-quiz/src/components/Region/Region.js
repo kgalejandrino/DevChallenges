@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Region.css';
 
-const names = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
+const data = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
 
-const region = () => {
+const Region = (props) => {
+    let [regionName, setRegionName] = useState('');
+    let [index, setIndex] = useState(-1);
+    
+    const getRegionSelected = (i) => {
+        setRegionName(data[i]);
+        setIndex(i);
+    }
+
+    const styles = {
+        li: {
+            border: "2px solid #F9A826",
+            backgroundColor: "#F9A826",
+            color: "#fff"
+        }
+    }
+
     return (
         <div className="Region">
-            <h3>Select Category</h3>
+            <h3>Select Region</h3>
             <ul>
-                {names.map((name, index) => {
-                    return <li key={index}>{name}</li>
+                {data.map((name, idx) => {
+                    return <li 
+                                key={idx} 
+                                style={index === idx ? styles.li : null}
+                                onClick={() => getRegionSelected(idx)}>{name}
+                            </li>
                 })}
             </ul>
         </div>
     )
 }
 
-export default region;
+export default Region;
