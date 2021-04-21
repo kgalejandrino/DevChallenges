@@ -7,7 +7,7 @@ const category = ['Capital', 'Flag'];
 
 const QuizCard = (props) => {
     let [index, setIndex] = useState(-1);
-    let [categorySelected, setCategorySelected] = useState(false);
+    // let [categorySelected, setCategorySelected] = useState(false);
     
     const getRegionSelected = (i) => {
         setIndex(i);
@@ -22,18 +22,26 @@ const QuizCard = (props) => {
         }
     }
 
+    let renderData = [...category];
+    let categorySelected = false;
+
+    if(props.next) {
+        categorySelected = true;
+        renderData = [...region];
+    }
+
     return (
         <div className="QuizCard">
             <h3>Select {categorySelected ? 'Region' : 'Category'}</h3>
             <ul>
-                {region.map((name, idx) => {
+                {renderData.map((name, idx) => {
                     return <div 
                                 key={idx} 
                                 className="list-card"
-                                style={index === idx ? styles.li : null}
+                                style={index === idx && !props.next ? styles.li : null}
                                 onClick={() => getRegionSelected(idx)}>
                             <li>{name}</li>
-                            {index === idx 
+                            {index === idx && !props.next 
                                     ? <span className="material-icons">check_circle_outline</span>
                                     : null
                             }

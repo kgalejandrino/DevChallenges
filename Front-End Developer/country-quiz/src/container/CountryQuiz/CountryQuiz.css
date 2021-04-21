@@ -61,6 +61,8 @@ h2 {
    color: #fff;
    font-size: 16px;
    font-weight: 700;
+   cursor: pointer;
+   outline: none;
 }
 
 .btn-next {
