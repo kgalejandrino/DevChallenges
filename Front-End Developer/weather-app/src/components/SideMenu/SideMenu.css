@@ -1,0 +1,114 @@
+.SideMenu {
+    max-width: 380px;
+    height: 100%;
+    background-color: #1E213A;
+    position: relative;
+}
+
+/* Sidebox 1 */
+.side_box1 {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #E7E7EB;
+}
+
+.box1--search {
+    background: #6E707A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 8px 18px;    
+}
+
+.box1--icon {
+    background: #6E707A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.bground {
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    background-image: url("https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/weather-app/src/assets/Cloud-background.png?raw=true");
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: -90px 0;
+    opacity: 0.1;
+}
+
+/* Sidebox 2 */
+.side_box2 {
+    height: 90%;
+    color: #88869D;
+}
+
+.current_image {
+    display: flex;
+    justify-content: center;
+    margin-top: 72px;
+}
+
+.current_image img { 
+    height: auto;
+    width: 160px;
+}
+
+.current_temp {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    color: #fff;
+}
+
+.temp {
+    font-size: 120px;
+}
+
+.cur-temp--icon {
+    font-size: 14px;
+    margin-top: 80px;
+    font-weight: 700;
+}
+
+.cur-temp--type {
+    font-size: 36px;
+    color: #88869D;
+    margin-top: 75px;
+}
+
+.current_description {
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 72px;
+    color: #A09FB1;
+}
+
+.current_date {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.dot { 
+    padding: 0 12px;
+    font-size: 6px;
+    margin-top: 8px;
+}
+
+.current_location {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.cur-loc--icon { margin-bottom: 4px;}
+
+.cur-loc--name { 
+    padding-top: 4px;
+    padding-left: 6px;
+}
