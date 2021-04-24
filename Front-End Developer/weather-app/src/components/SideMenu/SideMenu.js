@@ -8,7 +8,7 @@ const sideMenu = () => {
             <div className="side_box1">
                 <div className="box1--search">Search for places</div>
                 <div className="box1--icon">
-                    <span class="material-icons">my_location</span>
+                    <span className="material-icons">my_location</span>
                 </div>
             </div>
             <div className="bground"></div>
@@ -24,11 +24,11 @@ const sideMenu = () => {
                 <div className="current_description">Shower</div>
                 <div className="current_date">
                     <span className="today">Today</span>
-                    <span class="material-icons dot">fiber_manual_record</span>
+                    <span className="material-icons dot">fiber_manual_record</span>
                     <span className="date-today">Fri, 5 Jun</span>
                 </div>
                 <div className="current_location">
-                    <span class="material-icons cur-loc--icon">location_on</span>
+                    <span className="material-icons cur-loc--icon">location_on</span>
                     <span className="cur-loc--name">Helsinki</span>
                 </div>
             </div>
