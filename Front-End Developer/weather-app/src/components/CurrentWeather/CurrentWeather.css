@@ -1,10 +1,10 @@
 /* Sidebox 1 */
 .side_box1 {
-    height: 10%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     color: #E7E7EB;
+    height: 120px;
 }
 
 .box1--search {
@@ -24,7 +24,7 @@
 
 .bground {
     position: absolute;
-    height: 90%;
+    height: 100%;
     width: 100%;
     background-image: url("https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/weather-app/src/assets/Cloud-background.png?raw=true");
     background-repeat: no-repeat;
@@ -35,7 +35,6 @@
 
 /* Sidebox 2 */
 .side_box2 {
-    height: 90%;
     color: #88869D;
 }
 

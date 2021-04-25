@@ -3,11 +3,11 @@ import React from 'react';
 import './CurrentWeather.css';
 import SideBar from '../UI/SideBar/SideBar';
 
-const currentWeather = () => {
+const currentWeather = (props) => {
     return (
         <SideBar>
             <div className="side_box1">
-                <div className="box1--search">Search for places</div>
+                <div className="box1--search" onClick={props.searched}>Search for places</div>
                 <div className="box1--icon">
                     <span className="material-icons">my_location</span>
                 </div>

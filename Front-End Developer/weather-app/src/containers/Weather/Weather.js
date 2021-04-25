@@ -3,12 +3,14 @@ import axios from 'axios';
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather'
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 class Weather extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            search: false,
             woeid: ''
         }
     }
@@ -50,10 +52,20 @@ class Weather extends Component {
         })
     }
 
+    handleSearchOpenClicked = () => this.setState({ search: true })
+
+    handleSearchClosedClicked = () => this.setState({ search: false })
+
     render() {
+
         return (
             <div className="Weather">
-                <CurrentWeather />
+                { this.state.search 
+                    ? <SearchBar searched={this.handleSearchClosedClicked}/>
+                    : <CurrentWeather 
+                        searched={this.handleSearchOpenClicked}
+                      />
+                }
             </div>
         )
     }
