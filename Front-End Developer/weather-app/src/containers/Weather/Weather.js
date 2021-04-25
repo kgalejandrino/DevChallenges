@@ -60,12 +60,13 @@ class Weather extends Component {
 
         return (
             <div className="Weather">
-                { this.state.search 
-                    ? <SearchBar searched={this.handleSearchClosedClicked}/>
-                    : <CurrentWeather 
-                        searched={this.handleSearchOpenClicked}
-                      />
+                { this.state.search
+                    ? <SearchBar searched={this.handleSearchClosedClicked} search={this.state.search}/> 
+                    : null
                 }
+                <CurrentWeather 
+                    searched={this.handleSearchOpenClicked}
+                />
             </div>
         )
     }

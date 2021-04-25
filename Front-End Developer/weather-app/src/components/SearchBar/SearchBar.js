@@ -5,7 +5,7 @@ import SideBar from '../UI/SideBar/SideBar';
 
 const searchBar = (props) => {
     return (
-        <SideBar>
+        <SideBar search={props.search}>
             <span class="material-icons close-icon" onClick={props.searched}>close</span>
             <div className="SearchBar">
                 <div className="search-box">
