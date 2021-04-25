@@ -1,10 +1,11 @@
 import React from 'react';
 
-import './SideMenu.css';
+import './CurrentWeather.css';
+import SideBar from '../UI/SideBar/SideBar';
 
-const sideMenu = () => {
+const currentWeather = () => {
     return (
-        <div className="SideMenu">
+        <SideBar>
             <div className="side_box1">
                 <div className="box1--search">Search for places</div>
                 <div className="box1--icon">
@@ -32,8 +33,8 @@ const sideMenu = () => {
                     <span className="cur-loc--name">Helsinki</span>
                 </div>
             </div>
-        </div>
+        </SideBar>
     )
 }
 
-export default sideMenu;
+export default currentWeather;

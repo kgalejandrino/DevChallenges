@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './Weather.css';
-import SideMenu from '../../components/SideMenu/SideMenu';
+import CurrentWeather from '../../components/CurrentWeather/CurrentWeather'
 
 class Weather extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            woeid: ''
+        }
+    }
 
     componentDidMount() {
         const getLocation = () => new Promise ((resolve, reject) => {
@@ -34,7 +41,9 @@ class Weather extends Component {
     fetchDataWithLongLat = (lat, long) => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`)
         .then(response => {
-            console.log(response.data)
+            console.log(response.data[0])
+            const data = response.data[0];
+            this.setState({ woeid: data.woeid })
         })
         .catch(error => {
             console.log(error)
@@ -44,7 +53,7 @@ class Weather extends Component {
     render() {
         return (
             <div className="Weather">
-                <SideMenu />
+                <CurrentWeather />
             </div>
         )
     }
