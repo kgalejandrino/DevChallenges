@@ -4,6 +4,7 @@ import axios from 'axios';
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather'
 import SearchBar from '../../components/SearchBar/SearchBar';
+import { getCurrentPosition } from '../../Utils/Utils';
 
 class Weather extends Component {
     constructor(props) {
@@ -11,41 +12,37 @@ class Weather extends Component {
 
         this.state = {
             search: false,
-            woeid: ''
+            woeid: '',
+            data: [],
+            location: 'Helsinki'
         }
     }
 
     componentDidMount() {
-        const getLocation = () => new Promise ((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(pos => {
-                const location = {
-                    lat: pos.coords.latitude.toFixed(2),
-                    long: pos.coords.longitude.toFixed(2)
-                };
-                resolve(location);
-            },
-            error => reject(error)
-            );
+        const fetchCoordinates = async () => {
+            try {
+                const { coords } = await getCurrentPosition();
+                const { latitude, longitude } = coords;
+                this.fetchDataWithLongLat(latitude.toFixed(2), longitude.toFixed(2));
+            } catch (error) {
+                console.error(error);
             }
-        );
-        getLocation()
-        .then(location => {
-            let long = location.long;
-            let lat = location.lat;
-            console.log(long, lat);
-            this.fetchDataWithLongLat(lat, long);
-        })
-        .catch(error => {
-            console.log(error);
-        });
+        };
+
+        fetchCoordinates();
     }
 
     fetchDataWithLongLat = (lat, long) => {
         axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`)
         .then(response => {
-            console.log(response.data[0])
             const data = response.data[0];
-            this.setState({ woeid: data.woeid })
+            return axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${data.woeid}/`)
+        })
+        .then(response => {
+            this.setState({ 
+                data: response.data.consolidated_weather,
+                location: response.data.title
+            })
         })
         .catch(error => {
             console.log(error)
@@ -57,7 +54,7 @@ class Weather extends Component {
     handleSearchClosedClicked = () => this.setState({ search: false })
 
     render() {
-
+        console.log(this.state.data[0]);
         return (
             <div className="Weather">
                 { this.state.search
@@ -66,6 +63,8 @@ class Weather extends Component {
                 }
                 <CurrentWeather 
                     searched={this.handleSearchOpenClicked}
+                    weather={this.state.data[0]}
+                    location={this.state.location}
                 />
             </div>
         )
