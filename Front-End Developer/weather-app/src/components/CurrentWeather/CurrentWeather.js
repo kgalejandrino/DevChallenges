@@ -2,19 +2,21 @@ import React from 'react';
 
 import './CurrentWeather.css';
 import SideBar from '../UI/SideBar/SideBar';
-import { weatherState } from '../../Utils/Utils';
+import { weatherState, formatDate } from '../../Utils/Utils';
 
 const currentWeather = (props) => {
     let init = {
         "img": 's',
         "temp": 15,
-        "state": 'Shower'
+        "state": 'Shower',
+        "date": 'Fri, 5 Jun'
     }
 
     if(props.weather) {
         init.img = props.weather.weather_state_abbr;
         init.temp = Math.floor(props.weather.the_temp);
         init.state = props.weather.weather_state_name;
+        init.date = props.weather.applicable_date;
     }
 
     return (
@@ -39,7 +41,7 @@ const currentWeather = (props) => {
                 <div className="current_date">
                     <span className="today">Today</span>
                     <span className="material-icons dot">fiber_manual_record</span>
-                    <span className="date-today">Fri, 5 Jun</span>
+                    <span className="date-today">{formatDate(init.date)}</span>
                 </div>
                 <div className="current_location">
                     <span className="material-icons cur-loc--icon">location_on</span>
