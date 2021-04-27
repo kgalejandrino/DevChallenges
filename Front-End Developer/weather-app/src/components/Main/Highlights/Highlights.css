@@ -1,0 +1,21 @@
+.Highlights {
+    margin-top: 64px;
+    color: #E7E7EB;
+}
+
+.highlight_cards {
+    margin-top: 36px;
+}
+
+/* WIND STATUS */
+.card-direction { margin-top: 24px;}
+
+.icon-wind {
+    background-color: #ffffff4d;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.direction { text-transform: uppercase; }

@@ -2,7 +2,7 @@
     color: #E7E7EB;
     background-color: #1E213A;
     padding: 18px;
-    width: 170px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +12,7 @@
 .weekly-state-img {
     height: auto;
     width: 90px;
+    margin-top: 12px;
 }
 
 .icon-scale {

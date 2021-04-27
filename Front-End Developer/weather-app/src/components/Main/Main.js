@@ -3,6 +3,7 @@ import React from 'react';
 import './Main.css';
 import TempScale from './TempScale/TempScale';
 import WeeklyWeather from './WeeklyWeather/WeeklyWeather';
+import Highlights from './Highlights/Highlights';
 import { formatDate } from '../../Utils/Utils';
 
 const main = (props) => {
@@ -26,6 +27,7 @@ const main = (props) => {
                                /> 
                     })}
                 </div>
+                <Highlights highlights={props.highlights}/>
             </div>
         </div>
     )

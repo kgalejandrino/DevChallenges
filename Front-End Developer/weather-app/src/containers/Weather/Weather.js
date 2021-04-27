@@ -56,7 +56,6 @@ class Weather extends Component {
     handleSearchClosedClicked = () => this.setState({ search: false })
 
     render() {
-        // console.log(this.state.data[0]);
         return (
             <div className="Weather">
                 { this.state.search
@@ -70,6 +69,7 @@ class Weather extends Component {
                 />
                 <Main 
                     data={this.state.data}
+                    highlights={this.state.data[0]}
                 />
             </div>
         )
