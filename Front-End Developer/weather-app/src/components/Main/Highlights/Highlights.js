@@ -44,6 +44,11 @@ const highlights = (props) => {
                     unit={'miles'}
                     value={data.visibility ? data.visibility.toFixed(1).toString().replace('.', ',') : ''}
                 />
+                <Highlight 
+                    title={'Air Pressure'}
+                    unit={'mb'}
+                    value={Math.floor(data.air_pressure)}
+                />
             </div>
         </div>
     )
