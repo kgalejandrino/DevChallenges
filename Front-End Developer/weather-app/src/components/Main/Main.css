@@ -1,5 +1,19 @@
 .Main {
     border: 1px solid #fff;
     width: 100%;
-    margin: 36px 120px;
+}
+
+.main-wrapper {
+    border: 1px solid #fff;
+    max-width: 1150px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 48px;
+}
+
+.weekly {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 48px;
 }

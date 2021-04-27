@@ -68,7 +68,9 @@ class Weather extends Component {
                     weather={this.state.data[0]}
                     location={this.state.location}
                 />
-                <Main />
+                <Main 
+                    data={this.state.data}
+                />
             </div>
         )
     }

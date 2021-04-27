@@ -1,12 +1,13 @@
 import React from 'react';
 
 import './WeeklyWeather.css';
+import { weatherState } from '../../../Utils/Utils';
 
 const weeklyWeather = props => {
     return (
         <div className="WeeklyWeather">
-            <p>Tomorrow</p>
-            <img src="https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/weather-app/src/assets/Sleet.png?raw=true" alt="Weather State Photo" className="weekly-state-img"></img>
+            <p>{props.date}</p>
+            <img src={weatherState[props.state]} alt="Weather State" className="weekly-state-img"></img>
             <div className="min-max_box">
                 <div className="max-temp">
                     <span>16</span>
