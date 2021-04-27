@@ -1,0 +1,32 @@
+.TempScale {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.scale_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E7E7EB;
+    background-color: #585676;
+    padding: 10px 12px;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.active {
+    color: #110E3C;
+    background-color: #E7E7EB;
+}
+
+.scale_box:nth-child(1) { margin-right: 12px;}
+
+.icon-scale {
+    font-size: 8px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.temp-scale {
+    font-size: 20px;
+}

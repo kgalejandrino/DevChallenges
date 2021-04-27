@@ -4,6 +4,7 @@ import axios from 'axios';
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather'
 import SearchBar from '../../components/SearchBar/SearchBar';
+import Main from '../../components/Main/Main';
 import { getCurrentPosition } from '../../Utils/Utils';
 
 class Weather extends Component {
@@ -39,6 +40,7 @@ class Weather extends Component {
             return axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${data.woeid}/`)
         })
         .then(response => {
+            console.log(response.data);
             this.setState({ 
                 data: response.data.consolidated_weather,
                 location: response.data.title
@@ -54,7 +56,7 @@ class Weather extends Component {
     handleSearchClosedClicked = () => this.setState({ search: false })
 
     render() {
-        console.log(this.state.data[0]);
+        // console.log(this.state.data[0]);
         return (
             <div className="Weather">
                 { this.state.search
@@ -66,6 +68,7 @@ class Weather extends Component {
                     weather={this.state.data[0]}
                     location={this.state.location}
                 />
+                <Main />
             </div>
         )
     }

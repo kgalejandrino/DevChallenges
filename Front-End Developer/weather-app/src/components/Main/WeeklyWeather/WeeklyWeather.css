@@ -1,0 +1,21 @@
+.WeeklyWeather {
+    color: #E7E7EB;
+    background-color: #1E213A;
+    padding: 18px 0;
+    max-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weekly-state-img {
+    height: auto;
+    width: 70px;
+}
+
+.min-max_box {
+    display: flex;
+    margin-top: 32px;
+}
+
+.max-temp { margin-right: 18px;}
