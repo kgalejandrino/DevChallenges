@@ -34,10 +34,10 @@ class Weather extends Component {
     }
 
     fetchDataWithLongLat = (lat, long) => {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`)
+        axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`)
         .then(response => {
             const data = response.data[0];
-            return axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${data.woeid}/`)
+            return axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/${data.woeid}/`)
         })
         .then(response => {
             console.log(response.data);
