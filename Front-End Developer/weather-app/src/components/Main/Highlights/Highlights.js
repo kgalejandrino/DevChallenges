@@ -23,6 +23,22 @@ const highlights = (props) => {
                     <span className="direction">{data.wind_direction_compass}</span>
                 </div>
                 </Highlight>
+                <Highlight
+                    title={'Humidity'}
+                    unit={'%'}
+                    value={data.humidity}>
+                    <div className="card-humidity">
+                        <div className="humidity-percentage">
+                            <span>0</span>
+                            <span>50</span>
+                            <span>100</span>
+                        </div>
+                        <div className="humidity-bar bar">
+                            <div className="bar-percentage bar" style={{ width: `${data.humidity}px`}}></div>
+                        </div>
+                        <div className="percentage-sign">%</div>
+                    </div>
+                </Highlight>
             </div>
         </div>
     )

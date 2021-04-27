@@ -5,6 +5,8 @@
 
 .highlight_cards {
     margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* WIND STATUS */
@@ -19,3 +21,33 @@
 }
 
 .direction { text-transform: uppercase; }
+
+/* HUMIDITY */
+.card-humidity { 
+    /* border: 1px solid red; */
+    margin-top: 12px;
+    width: 260px;
+}
+
+.humidity-percentage {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.humidity-bar {
+    background-color: #E7E7EB;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.bar-percentage {
+    background-color: #FFEC65;
+}
+
+.bar {
+    border-radius: 8px; 
+    height: 8px;
+}
+
+.percentage-sign { float: right;}
