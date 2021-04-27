@@ -39,6 +39,11 @@ const highlights = (props) => {
                         <div className="percentage-sign">%</div>
                     </div>
                 </Highlight>
+                <Highlight 
+                    title={'Visibility'}
+                    unit={'miles'}
+                    value={data.visibility ? data.visibility.toFixed(1).toString().replace('.', ',') : ''}
+                />
             </div>
         </div>
     )

@@ -1,16 +1,17 @@
 .Highlights {
-    margin-top: 64px;
+    margin-top: 56px;
     color: #E7E7EB;
 }
 
 .highlight_cards {
-    margin-top: 36px;
+    /* margin-top: 36px; */
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* WIND STATUS */
-.card-direction { margin-top: 24px;}
+.card-direction { margin-top: 24px; }
 
 .icon-wind {
     background-color: #ffffff4d;
