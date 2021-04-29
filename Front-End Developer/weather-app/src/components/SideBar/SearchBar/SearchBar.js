@@ -1,12 +1,11 @@
 import React from 'react';
 
 import './SearchBar.css';
-import SideBar from '../UI/SideBar/SideBar';
 
 const searchBar = (props) => {
     return (
-        <SideBar search={props.search}>
-            <span className="material-icons close-icon" onClick={props.searched}>close</span>
+        <div style={props.search ? { animation: "slide .1s"} : null}>
+            <span className="material-icons close-icon" onClick={props.closed}>close</span>
             <div className="SearchBar">
                 <div className="search-box">
                     <span className="material-icons search-icon">search</span>
@@ -14,7 +13,7 @@ const searchBar = (props) => {
                 </div>
                 <button className="btn-search">Search</button>
             </div>
-        </SideBar>
+        </div>
     )
 }
 

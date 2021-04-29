@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './Weather.css';
-import CurrentWeather from '../../components/CurrentWeather/CurrentWeather'
-import SearchBar from '../../components/SearchBar/SearchBar';
+import Sidebar from '../../components/SideBar/Sidebar';
 import Main from '../../components/Main/Main';
 import { getCurrentPosition } from '../../Utils/Utils';
 
@@ -13,13 +12,24 @@ class Weather extends Component {
 
         this.state = {
             search: false,
-            woeid: '',
             data: [],
             location: 'Helsinki'
         }
     }
 
     componentDidMount() {
+        /* Init data to render */
+        axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/565346/`)
+        .then(response => {
+            this.setState({ 
+                data: response.data.consolidated_weather,
+                location: response.data.title
+            })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
         const fetchCoordinates = async () => {
             try {
                 const { coords } = await getCurrentPosition();
@@ -58,14 +68,12 @@ class Weather extends Component {
     render() {
         return (
             <div className="Weather">
-                { this.state.search
-                    ? <SearchBar searched={this.handleSearchClosedClicked} search={this.state.search}/> 
-                    : null
-                }
-                <CurrentWeather 
-                    searched={this.handleSearchOpenClicked}
-                    weather={this.state.data[0]}
+                <Sidebar 
+                    clicked={this.handleSearchOpenClicked}
+                    closed={this.handleSearchClosedClicked}
+                    data={this.state.data[0]}
                     location={this.state.location}
+                    search={this.state.search}
                 />
                 <Main 
                     data={this.state.data}

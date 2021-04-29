@@ -1,10 +1,16 @@
+.CurrentWeather {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 /* Sidebox 1 */
 .side_box1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
     color: #E7E7EB;
-    height: 120px;
+    height: 12%;
 }
 
 .box1--search {
@@ -24,7 +30,7 @@
 
 .bground {
     position: absolute;
-    /* height: 100%; */
+    height: 88%;
     width: 100%;
     background-image: url("https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/weather-app/src/assets/Cloud-background.png?raw=true");
     background-repeat: no-repeat;
@@ -36,6 +42,8 @@
 /* Sidebox 2 */
 .side_box2 {
     color: #88869D;
+    height: 88%;
+    position: relative;
 }
 
 .current_image {
@@ -52,7 +60,7 @@
 .current_temp {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 140px;
     color: #fff;
 }
 
