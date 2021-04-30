@@ -13,7 +13,9 @@ class Weather extends Component {
         this.state = {
             search: false,
             data: [],
-            location: 'Helsinki'
+            location: 'Helsinki',
+            input: '',
+            searchedLocation: []
         }
     }
 
@@ -65,15 +67,32 @@ class Weather extends Component {
 
     handleSearchClosedClicked = () => this.setState({ search: false })
 
+    handleInputChange = (event) => this.setState({ input: event.target.value }) 
+
+    handleSearchedClicked = () => {
+        // console.log(this.state.input);
+        axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=${this.state.input}`)
+        .then(response => {
+            // console.log(response.data);
+            this.setState({ searchedLocation: [...response.data]});
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
     render() {
+        console.log(this.state.searchedLocation);
         return (
             <div className="Weather">
                 <Sidebar 
                     clicked={this.handleSearchOpenClicked}
                     closed={this.handleSearchClosedClicked}
+                    searched={this.handleSearchedClicked}
                     data={this.state.data[0]}
                     location={this.state.location}
                     search={this.state.search}
+                    changed={this.handleInputChange}
                 />
                 <Main 
                     data={this.state.data}

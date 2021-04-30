@@ -8,7 +8,12 @@ const sideBar = (props) => {
     return (
         <div className="Sidebar">
                 { props.search
-                    ? <SearchBar closed={props.closed} search={props.search}/> 
+                    ? <SearchBar 
+                        search={props.search}
+                        searched={props.searched}
+                        closed={props.closed} 
+                        changed={props.changed}
+                      /> 
                     : <CurrentWeather 
                         clicked={props.clicked}
                         data={props.data}

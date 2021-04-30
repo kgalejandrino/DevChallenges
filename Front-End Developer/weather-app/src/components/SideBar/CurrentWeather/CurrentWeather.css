@@ -5,7 +5,7 @@
 }
 
 /* Sidebox 1 */
-.side_box1 {
+.cur_box1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -40,7 +40,7 @@
 }
 
 /* Sidebox 2 */
-.side_box2 {
+.cur_box2 {
     color: #88869D;
     height: 88%;
     position: relative;

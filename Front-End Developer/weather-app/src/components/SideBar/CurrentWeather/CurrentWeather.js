@@ -10,13 +10,13 @@ const currentWeather = (props) => {
 
     return (
         <div className="CurrentWeather">
-            <div className="side_box1">
+            <div className="cur_box1">
                 <div className="box1--search" onClick={props.clicked}>Search for places</div>
                 <div className="box1--icon">
                     <span className="material-icons">my_location</span>
                 </div>
             </div>
-            <div className="side_box2">
+            <div className="cur_box2">
                 <div className="bground"></div>
                 <div className="current_image">
                     <img src={weatherState[data.weather_state_abbr]} alt="Shower"></img>

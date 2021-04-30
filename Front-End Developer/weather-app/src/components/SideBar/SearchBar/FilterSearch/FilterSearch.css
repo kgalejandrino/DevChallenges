@@ -1,0 +1,17 @@
+.FilterSearch {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin: 24px auto;
+    padding: 18px 12px;
+}
+
+.FilterSearch:hover { border: 1px solid #616475; }
+
+.filter-location { 
+    color:#E7E7EB; 
+}
+
+.filter-icon { 
+    color: #616475; 
+}

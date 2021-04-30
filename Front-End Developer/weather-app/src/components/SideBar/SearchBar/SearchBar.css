@@ -1,33 +1,37 @@
 .SearchBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    clear: right;
+    height: 100%;
 }
 
+.search_box { }
+
 .close-icon {
-    font-size: 32px;
+    font-size: 28px;
     color: #E7E7EB;
-    padding-right: 30px;
+    padding-right: 32px;
     padding-top: 24px;
-    float: right;
     cursor: pointer;
+    float: right;
 }
 
 .material-icons.md-24 { font-size: 24px; }
 
-.search-box { position: relative; }
+.search { 
+    position: relative; 
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    clear: right;
+}
 
 .search-input {
+    outline: none;
     background: none;
     border: 1px solid #E7E7EB;
     color: #616475;
     height: 40px;
-    width: 210px;
+    width: 250px;
     margin-right: 8px;
     font-size: 14px;
-    font-weight: 700;
     padding-left: 48px;
 }
 
