@@ -1,12 +1,19 @@
 import React from 'react';
 
 import './CurrentWeather.css';
-import { weatherState, formatDate } from '../../../Utils/Utils';
+import { weatherState, formatDate, convertToFarenheight } from '../../../Utils/Utils';
 
 const currentWeather = (props) => {
     let data = {}
-
     if(props.data) { data = props.data }
+
+    let temp = Math.floor(data.the_temp).toString();
+
+    if(props.tempScale === 'farenheight') {
+        temp = convertToFarenheight(Math.floor(data.the_temp).toString());
+    } else if(props.tempScale === 'celsius') {
+        temp = Math.floor(data.the_temp).toString();
+    }
 
     return (
         <div className="CurrentWeather">
@@ -22,7 +29,7 @@ const currentWeather = (props) => {
                     <img src={weatherState[data.weather_state_abbr]} alt="Shower"></img>
                 </div>
                 <div className="current_temp">
-                    <span className="temp">{Math.floor(data.the_temp).toString()}</span>
+                    <span className="temp">{temp}</span>
                     <span className="material-icons cur-temp--icon">radio_button_unchecked</span>
                     <span className="cur-temp--type">C</span>
                 </div>

@@ -21,6 +21,7 @@ const sideBar = (props) => {
                         clicked={props.clicked}
                         data={props.data}
                         location={props.location}
+                        tempScale={props.tempScale}
                       />
                 }
         </div>

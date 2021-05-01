@@ -35,7 +35,7 @@ export const formatDate = (d) => {
 
 /* Functionality to get convert celcius to farenheight */
 export const convertToFarenheight = (temp) => {
-    return (temp - 32) * (5/9);
+    return Math.floor((temp * 1.8) + 32);
 }
 
 

@@ -15,7 +15,9 @@ const main = (props) => {
     return (
         <div className="Main">
             <div className="main-wrapper">
-                <TempScale />
+                <TempScale 
+                    getScale={props.getScale}
+                />
                 <div className="weekly">
                     {weekly.map((data, index) => {
                         return <WeeklyWeather 

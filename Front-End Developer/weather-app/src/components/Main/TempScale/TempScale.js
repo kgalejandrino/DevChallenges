@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 
 import './TempScale.css';
 
-const TempScale = () => {
+const TempScale = (props) => {
     let [celsius, setCelsius] = useState(true);
 
-    const activeCelsiusScale = () => setCelsius(true);
-    const activeFarenheightScale = () => setCelsius(false);
-
+    const activeCelsiusScale = () => {
+        setCelsius(true);
+        props.getScale(true)
+    }
+    const activeFarenheightScale = () => {
+        setCelsius(false);
+        props.getScale(false);
+    }    
+    
     return (
         <div className="TempScale">
             <div className={celsius ? 'scale_box active' : 'scale_box'} onClick={activeCelsiusScale}>

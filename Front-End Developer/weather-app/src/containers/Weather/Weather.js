@@ -16,7 +16,8 @@ class Weather extends Component {
             location: 'Helsinki',
             input: '',
             filteredSearch: [],
-            woeid: 565346
+            woeid: 565346,
+            activeScale: 'celsius'
         }
     }
 
@@ -89,6 +90,14 @@ class Weather extends Component {
         this.fetchDatawithWoeid(id);
     }
 
+    handleGetTempScale = (scale) => {
+        if(scale) {
+            this.setState({ activeScale: 'celsius' })
+        } else {
+            this.setState({ activeScale: 'farenheight' })
+        }
+    }
+
     render() {
         console.log(this.state.filteredSearch);
         return (
@@ -104,10 +113,12 @@ class Weather extends Component {
                     changed={this.handleInputChange}
                     filtered={this.state.filteredSearch}
                     getWeather={this.handleGetWeather}
+                    tempScale={this.state.activeScale}
                 />
                 <Main 
                     data={this.state.data}
                     highlights={this.state.data[0]}
+                    getScale={this.handleGetTempScale}
                 />
             </div>
         )
