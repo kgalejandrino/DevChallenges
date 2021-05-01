@@ -33,6 +33,10 @@ export const formatDate = (d) => {
     return `${dayArr[day]}, ${date} ${monthArr[month]}`
 }
 
+/* Functionality to get convert celcius to farenheight */
+export const convertToFarenheight = (temp) => {
+    return (temp - 32) * (5/9);
+}
 
 
 

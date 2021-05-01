@@ -11,7 +11,7 @@ const main = (props) => {
     if(props.data) {
         weekly = props.data.slice(1);
     }
-    // console.log(weekly);
+
     return (
         <div className="Main">
             <div className="main-wrapper">

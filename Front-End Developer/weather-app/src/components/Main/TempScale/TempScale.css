@@ -1,6 +1,7 @@
 .TempScale {
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 .scale_box {
