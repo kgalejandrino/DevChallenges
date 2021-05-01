@@ -2,16 +2,18 @@
     display: flex;
     justify-content: space-between;
     width: 350px;
-    margin: 24px auto;
+    margin: 36px auto;
     padding: 18px 12px;
 }
 
 .FilterSearch:hover { border: 1px solid #616475; }
 
 .filter-location { 
-    color:#E7E7EB; 
+    color:#E7E7EB;
+    display: flex;
+    align-items: center;
 }
 
 .filter-icon { 
-    color: #616475; 
+    color: #616475;
 }

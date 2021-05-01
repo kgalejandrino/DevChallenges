@@ -13,6 +13,7 @@ const sideBar = (props) => {
                         searched={props.searched}
                         closed={props.closed} 
                         changed={props.changed}
+                        filtered={props.filtered}
                       /> 
                     : <CurrentWeather 
                         clicked={props.clicked}
