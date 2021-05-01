@@ -15,6 +15,7 @@ const sideBar = (props) => {
                         changed={props.changed}
                         filtered={props.filtered}
                         input={props.input}
+                        getWeather={props.getWeather}
                       /> 
                     : <CurrentWeather 
                         clicked={props.clicked}

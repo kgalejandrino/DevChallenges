@@ -4,6 +4,7 @@
     width: 350px;
     margin: 36px auto;
     padding: 18px 12px;
+    cursor: pointer;
 }
 
 .FilterSearch:hover { border: 1px solid #616475; }

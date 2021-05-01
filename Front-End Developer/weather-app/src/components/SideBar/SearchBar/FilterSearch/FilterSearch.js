@@ -10,7 +10,7 @@ const FilterSearch = (props) => {
     }
 
     return (
-        <div className="FilterSearch" onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOver}>
+        <div className="FilterSearch" onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOver} onClick={() => props.getWeather(props.id)}>
                 <span className="filter-location">{props.location}</span>
                 {hover
                     ? <span className="material-icons filter-icon">navigate_next</span> 

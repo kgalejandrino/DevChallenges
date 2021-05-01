@@ -15,13 +15,14 @@ class Weather extends Component {
             data: [],
             location: 'Helsinki',
             input: '',
-            filteredSearch: []
+            filteredSearch: [],
+            woeid: 565346
         }
     }
 
     componentDidMount() {
         /* Init data to render */
-        axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/565346/`)
+        axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/${this.state.woeid}/`)
         .then(response => {
             this.setState({ 
                 data: response.data.consolidated_weather,
@@ -49,8 +50,12 @@ class Weather extends Component {
         axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`)
         .then(response => {
             const data = response.data[0];
-            return axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/${data.woeid}/`)
+            return this.fetchDatawithWoeid(data.woeid);
         })
+    }
+
+    fetchDatawithWoeid = (id) => {
+        axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/${id}/`)
         .then(response => {
             console.log(response.data);
             this.setState({ 
@@ -79,8 +84,13 @@ class Weather extends Component {
         })
     }
 
+    handleGetWeather = (id) => {
+        this.setState({ search: false })
+        this.fetchDatawithWoeid(id);
+    }
+
     render() {
-        // console.log(this.state.filteredSearch);
+        console.log(this.state.filteredSearch);
         return (
             <div className="Weather">
                 <Sidebar 
@@ -93,6 +103,7 @@ class Weather extends Component {
                     search={this.state.search}
                     changed={this.handleInputChange}
                     filtered={this.state.filteredSearch}
+                    getWeather={this.handleGetWeather}
                 />
                 <Main 
                     data={this.state.data}
