@@ -16,7 +16,8 @@ const searchBar = (props) => {
                             type="text" 
                             className="search-input" 
                             placeholder="search location"
-                            onChange={props.changed}>
+                            onChange={props.changed}
+                            value={props.input}>
                         </input>
                     </div>
                     <button className="btn-search" onClick={props.searched}>Search</button>
@@ -24,7 +25,7 @@ const searchBar = (props) => {
             </div>
             <div className="filter_box">
                 { props.filtered 
-                    ? props.filtered.map(loc => <FilterSearch location={loc.title}/>)
+                    ? props.filtered.map((loc, index) => <FilterSearch key={index} location={loc.title}/>)
                     : null
                 }
             </div>

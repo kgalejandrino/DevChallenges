@@ -14,11 +14,11 @@ const highlights = (props) => {
                 <Highlight 
                     title={'Wind Status'} 
                     unit={'mph'}
-                    value={Math.floor(data.wind_speed)}>
+                    value={Math.floor(data.wind_speed).toString()}>
                 <div className="card-direction">
                     <span 
                         className="material-icons icon-wind"
-                        style={{ transform: `rotate(${Math.floor(data.wind_direction)}deg)`}}>navigation
+                        style={{ transform: `rotate(${Math.floor(data.wind_direction).toString()}deg)`}}>navigation
                     </span>
                     <span className="direction">{data.wind_direction_compass}</span>
                 </div>
@@ -47,7 +47,7 @@ const highlights = (props) => {
                 <Highlight 
                     title={'Air Pressure'}
                     unit={'mb'}
-                    value={Math.floor(data.air_pressure)}
+                    value={Math.floor(data.air_pressure).toString()}
                 />
             </div>
         </div>

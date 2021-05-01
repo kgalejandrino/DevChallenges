@@ -22,7 +22,7 @@ const currentWeather = (props) => {
                     <img src={weatherState[data.weather_state_abbr]} alt="Shower"></img>
                 </div>
                 <div className="current_temp">
-                    <span className="temp">{Math.floor(data.the_temp)}</span>
+                    <span className="temp">{Math.floor(data.the_temp).toString()}</span>
                     <span className="material-icons cur-temp--icon">radio_button_unchecked</span>
                     <span className="cur-temp--type">C</span>
                 </div>

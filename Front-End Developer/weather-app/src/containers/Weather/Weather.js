@@ -87,6 +87,7 @@ class Weather extends Component {
                     clicked={this.handleSearchOpenClicked}
                     closed={this.handleSearchClosedClicked}
                     searched={this.handleSearchedClicked}
+                    input={this.state.input}
                     data={this.state.data[0]}
                     location={this.state.location}
                     search={this.state.search}
