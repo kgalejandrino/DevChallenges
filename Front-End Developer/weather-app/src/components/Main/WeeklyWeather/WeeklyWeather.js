@@ -6,13 +6,12 @@ import { weatherState, convertToFarenheight } from '../../../Utils/Utils';
 const weeklyWeather = props => {
     let max = Math.floor(props.max).toString();
     let min = Math.floor(props.min).toString();
+    let scale = 'C';
 
     if(props.tempScale === 'farenheight') {
         max = convertToFarenheight(Math.floor(props.max).toString());
         min = convertToFarenheight(Math.floor(props.min).toString());
-    } else if(props.tempScale === 'celsius') {
-        max = Math.floor(props.max).toString();
-        min = Math.floor(props.min).toString()
+        scale = 'F';
     }
 
     return (
@@ -23,12 +22,12 @@ const weeklyWeather = props => {
                 <div className="max-temp">
                     <span>{max}</span>
                     <span className="material-icons icon-scale">radio_button_unchecked</span>
-                    <span>C</span>
+                    <span>{scale}</span>
                 </div>
                 <div className="min-temp">
                     <span>{min}</span>
                     <span className="material-icons icon-scale">radio_button_unchecked</span>
-                    <span>C</span>
+                    <span>{scale}</span>
                 </div>
             </div>
         </div>

@@ -34,17 +34,27 @@ class Weather extends Component {
             console.log(error)
         })
 
-        const fetchCoordinates = async () => {
-            try {
-                const { coords } = await getCurrentPosition();
-                const { latitude, longitude } = coords;
-                this.fetchDataWithLongLat(latitude.toFixed(2), longitude.toFixed(2));
-            } catch (error) {
-                console.error(error);
-            }
-        };
+        // const fetchCoordinates = async () => {
+        //     try {
+        //         const { coords } = await getCurrentPosition();
+        //         const { latitude, longitude } = coords;
+        //         this.fetchDataWithLongLat(latitude.toFixed(2), longitude.toFixed(2));
+        //     } catch (error) {
+        //         console.error(error);
+        //     }
+        // };
 
-        fetchCoordinates();
+        this.fetchCoordinates();
+    }
+
+    fetchCoordinates = async () => {
+        try {
+            const { coords } = await getCurrentPosition();
+            const { latitude, longitude } = coords;
+            this.fetchDataWithLongLat(latitude.toFixed(2), longitude.toFixed(2));
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     fetchDataWithLongLat = (lat, long) => {

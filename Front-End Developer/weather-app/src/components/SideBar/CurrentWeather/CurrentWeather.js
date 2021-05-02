@@ -8,12 +8,12 @@ const currentWeather = (props) => {
     if(props.data) { data = props.data }
 
     let temp = Math.floor(data.the_temp).toString();
+    let scale = 'C';
 
     if(props.tempScale === 'farenheight') {
         temp = convertToFarenheight(Math.floor(data.the_temp).toString());
-    } else if(props.tempScale === 'celsius') {
-        temp = Math.floor(data.the_temp).toString();
-    }
+        scale = 'F'
+    } 
 
     return (
         <div className="CurrentWeather">
@@ -31,7 +31,7 @@ const currentWeather = (props) => {
                 <div className="current_temp">
                     <span className="temp">{temp}</span>
                     <span className="material-icons cur-temp--icon">radio_button_unchecked</span>
-                    <span className="cur-temp--type">C</span>
+                    <span className="cur-temp--type">{scale}</span>
                 </div>
                 <div className="current_description">{data.weather_state_name}</div>
                 <div className="current_date">
