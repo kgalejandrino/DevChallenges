@@ -26,6 +26,7 @@ const main = (props) => {
                                     state={data.weather_state_abbr}
                                     max={data.max_temp} 
                                     min={data.min_temp}
+                                    tempScale={props.tempScale}
                                /> 
                     })}
                 </div>

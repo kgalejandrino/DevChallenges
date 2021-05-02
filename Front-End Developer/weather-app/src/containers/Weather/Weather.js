@@ -119,6 +119,7 @@ class Weather extends Component {
                     data={this.state.data}
                     highlights={this.state.data[0]}
                     getScale={this.handleGetTempScale}
+                    tempScale={this.state.activeScale}
                 />
             </div>
         )
