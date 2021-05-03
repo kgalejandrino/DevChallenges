@@ -42,6 +42,7 @@
 - What was your experience?
 - What have you learned/improved?
 
+My experience was great building this project because I felt like I have improved and I'm happy about it. Just like I mentioned before, and up until now I still struggled at the early stage of the development thinking of how to provide a better coding structure. I just think that my code and states can be minimize and I hoping that I will improved in that area in my future projects. 
 
 ### Built With
 
@@ -81,9 +82,9 @@ $ npm start
 
 - [Material Icon](https://google.github.io/material-design-icons/)
 - [Metaweather API](https://www.metaweather.com/api/)
+- [Radium](https://formidable.com/open-source/radium/)
 
 ## Contact
-
 
 - Website (In Progress)
 - GitHub [@kgalejandrino](https://github.com/kgalejandrino)

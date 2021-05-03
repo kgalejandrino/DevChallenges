@@ -32,6 +32,7 @@ class Weather extends Component {
             })
         })
         .catch(error => {
+            alert(error);
             console.log(error)
         })
 
@@ -44,6 +45,7 @@ class Weather extends Component {
             const { latitude, longitude } = coords;
             this.fetchDataWithLongLat(latitude.toFixed(2), longitude.toFixed(2));
         } catch (error) {
+            alert(error);
             console.error(error);
         }
     }
@@ -65,6 +67,7 @@ class Weather extends Component {
             })
         })
         .catch(error => {
+            alert(error);
             console.log(error)
         })
     }
@@ -88,6 +91,7 @@ class Weather extends Component {
             }
         })
         .catch(error => {
+            alert(error);
             console.log(error)
         })
     }
@@ -108,7 +112,6 @@ class Weather extends Component {
     handleRequestCurLocation = () => { this.fetchCoordinates() }
 
     render() {
-        // console.log(this.state.filteredSearch);
         return (
             <div className="Weather">
                 <Sidebar 

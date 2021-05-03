@@ -4,7 +4,6 @@ import './SearchBar.css';
 import FilterSearch from './FilterSearch/FilterSearch';
 
 const searchBar = (props) => {
-    // console.log(props.error)
     return (
         <div className="SearchBar" style={props.search ? { animation: "slide .1s"} : null}>
             <div className="search_box">
