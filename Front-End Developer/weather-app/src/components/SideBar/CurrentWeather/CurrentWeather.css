@@ -119,6 +119,27 @@
     .cur_box1 { margin-top: 24px; }
 
     .cur_box2 { margin-bottom: 24px; }
+}
 
+@media (max-height: 920px) {
+    .current_image img { width: 140px; } 
+
+    .current_temp { margin-top: 80px; }
+    
+    .temp { font-size: 90px; }
+    
+    .cur-temp--icon {
+        font-size: 8px;
+        margin-top: 60px;
+    }
+    
+    .cur-temp--type {
+        font-size: 28px;
+        margin-top: 55px;
+    }
+    
+    .current_description { margin-top: 32px; }
+    
+    .current_date { margin-top: 40px; }
 }
 
