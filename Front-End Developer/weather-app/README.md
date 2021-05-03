@@ -37,7 +37,7 @@
 
 ## Overview
 
-![website_gif](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/todo-app/src/assets/todo.gif?raw=true)
+![website_gif](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/weather-app/src/assets/websiteGIF.gif)
 
 - What was your experience?
 - What have you learned/improved?
