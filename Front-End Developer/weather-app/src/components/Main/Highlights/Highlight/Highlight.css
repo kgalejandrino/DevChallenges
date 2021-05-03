@@ -16,3 +16,11 @@
 .unit {
     font-size: 32px;
 }
+
+@media only screen and (max-width: 1100px) {
+    .highlight { width: 100%;}
+}
+
+@media only screen and (max-width: 350px) {
+    .value { font-size: 64px; }
+}

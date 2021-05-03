@@ -19,7 +19,7 @@ const currentWeather = (props) => {
         <div className="CurrentWeather">
             <div className="cur_box1">
                 <div className="box1--search" onClick={props.clicked}>Search for places</div>
-                <div className="box1--icon">
+                <div className="box1--icon" onClick={props.request}>
                     <span className="material-icons">my_location</span>
                 </div>
             </div>

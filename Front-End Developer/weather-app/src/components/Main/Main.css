@@ -1,10 +1,9 @@
-.Main {
-    /* border: 1px solid #fff; */
-    width: 100%;
+.Main { 
+    width: 100%; 
+    overflow-y: auto;
 }
 
 .main-wrapper {
-    /* border: 1px solid #fff; */
     max-width: 1050px;
     width: 90%;
     margin: 0 auto;
@@ -12,8 +11,32 @@
 }
 
 .weekly {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     margin-top: 48px;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 84px;
+    margin-bottom: 18px;
+    color: #A09FB1;
+    font-size: 14px;
+}
+
+footer a {
+    color: inherit;
+    font-weight: 700;
+    padding: 0 8px;
+}
+
+@media only screen and (max-width: 1350px) {
+    footer { margin-top: 64px;}
+}
+
+@media only screen and (max-width: 1350px) {
+    footer { font-size: 12px; }
 }

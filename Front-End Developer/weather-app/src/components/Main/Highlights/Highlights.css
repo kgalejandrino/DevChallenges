@@ -4,7 +4,6 @@
 }
 
 .highlight_cards {
-    /* margin-top: 36px; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -25,7 +24,6 @@
 
 /* HUMIDITY */
 .card-humidity { 
-    /* border: 1px solid red; */
     margin-top: 12px;
     width: 260px;
 }
@@ -52,3 +50,13 @@
 }
 
 .percentage-sign { float: right;}
+
+@media only screen and (max-width: 1100px) {
+    .highlight_cards { flex-direction: column;}
+}
+
+@media only screen and (max-width: 350px) {
+    .card-humidity { width: 240px; }
+}
+
+

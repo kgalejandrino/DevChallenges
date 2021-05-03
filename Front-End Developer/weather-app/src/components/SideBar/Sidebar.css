@@ -1,6 +1,12 @@
 .Sidebar {
     width: 100%;
-    max-width: 420px;
-    height: 100%;
+    max-width: 380px;
+    height: 100vh;
     background-color: #1E213A;
+}
+
+@media only screen and (max-width: 750px) {
+    .Sidebar { 
+        max-width: 100%; 
+    }
 }

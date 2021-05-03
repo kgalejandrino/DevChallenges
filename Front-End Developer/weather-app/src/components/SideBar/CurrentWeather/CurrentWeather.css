@@ -8,7 +8,7 @@
 .cur_box1 {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: #E7E7EB;
     height: 12%;
 }
@@ -18,6 +18,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 8px 18px;
     cursor: pointer;  
+    margin-left: 24px;
 }
 
 .box1--icon {
@@ -26,6 +27,8 @@
     display: flex;
     padding: 8px;
     border-radius: 50%;
+    cursor: pointer;
+    margin-right: 24px;
 }
 
 .bground {
@@ -64,9 +67,7 @@
     color: #fff;
 }
 
-.temp {
-    font-size: 120px;
-}
+.temp { font-size: 120px; }
 
 .cur-temp--icon {
     font-size: 14px;
@@ -113,3 +114,11 @@
     padding-top: 4px;
     padding-left: 6px;
 }
+
+@media only screen and (max-width: 750px) {
+    .cur_box1 { margin-top: 24px; }
+
+    .cur_box2 { margin-bottom: 24px; }
+
+}
+

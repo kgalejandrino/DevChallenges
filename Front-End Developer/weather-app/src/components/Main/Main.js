@@ -32,6 +32,11 @@ const main = (props) => {
                 </div>
                 <Highlights highlights={props.highlights}/>
             </div>
+            <footer>
+                <span>created by</span>
+                <a href="https://github.com/kgalejandrino">Kevin Alejandrino</a>
+                <span>- devChallenges.io</span>
+            </footer>
         </div>
     )
 }

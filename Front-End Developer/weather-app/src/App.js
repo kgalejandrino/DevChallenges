@@ -1,13 +1,16 @@
 import './App.css';
 import Weather from './containers/Weather/Weather';
+import Radium, { StyleRoot } from 'radium'
 
 function App() {
   return (
-    <div className="App">
-      <Weather />
-    </div>
+    <StyleRoot>
+      <div className="App">
+        <Weather />
+      </div>
+    </StyleRoot>
   );
 }
 
-export default App;
+export default Radium(App);
 
