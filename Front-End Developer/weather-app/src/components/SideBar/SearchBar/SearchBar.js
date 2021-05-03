@@ -4,6 +4,7 @@ import './SearchBar.css';
 import FilterSearch from './FilterSearch/FilterSearch';
 
 const searchBar = (props) => {
+    // console.log(props.error)
     return (
         <div className="SearchBar" style={props.search ? { animation: "slide .1s"} : null}>
             <div className="search_box">
@@ -21,11 +22,11 @@ const searchBar = (props) => {
                 </div>
             </div>
             <div className="filter_box">
-                { props.filtered 
-                    ? props.filtered.map((loc, index) => {
+                { props.error
+                    ? <div className="error">Search Not Found. Please Enter a valid city.</div>
+                    : props.filtered.map((loc, index) => {
                         return <FilterSearch key={index} location={loc.title} id={loc.woeid}getWeather={props.getWeather}/>
                     })
-                    : null
                 }
             </div>
         </div>

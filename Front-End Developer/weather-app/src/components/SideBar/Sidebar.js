@@ -26,6 +26,7 @@ const sideBar = (props) => {
                         filtered={props.filtered}
                         input={props.input}
                         getWeather={props.getWeather}
+                        error={props.error}
                       /> 
                     : <CurrentWeather 
                         clicked={props.clicked}

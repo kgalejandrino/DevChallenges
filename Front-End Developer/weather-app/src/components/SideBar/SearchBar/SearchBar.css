@@ -54,6 +54,13 @@
     cursor: pointer;
 }
 
+.error {
+    color: #616475;
+    margin-top: 12px;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
 @keyframes slide {
     0% {
         width: 0;

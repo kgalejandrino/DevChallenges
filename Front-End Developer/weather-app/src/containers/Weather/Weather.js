@@ -15,9 +15,10 @@ class Weather extends Component {
             data: [],
             location: 'Helsinki',
             input: '',
-            filteredSearch: [],
             woeid: 565346,
-            activeScale: 'celsius'
+            activeScale: 'celsius',
+            filteredSearch: [],
+            error: false,
         }
     }
 
@@ -58,7 +59,6 @@ class Weather extends Component {
     fetchDatawithWoeid = (id) => {
         axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/${id}/`)
         .then(response => {
-            // console.log(response.data);
             this.setState({ 
                 data: response.data.consolidated_weather,
                 location: response.data.title
@@ -78,7 +78,14 @@ class Weather extends Component {
     handleSearchedClicked = () => {
         axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=${this.state.input}`)
         .then(response => {
-            this.setState({ filteredSearch: [...response.data]});
+            if(response.data.length) {
+                this.setState({ 
+                    filteredSearch: [...response.data],
+                    error: false
+                });
+            } else {
+                this.setState({ error: true });
+            }
         })
         .catch(error => {
             console.log(error)
@@ -114,6 +121,7 @@ class Weather extends Component {
                     search={this.state.search}
                     changed={this.handleInputChange}
                     filtered={this.state.filteredSearch}
+                    error={this.state.error}
                     getWeather={this.handleGetWeather}
                     tempScale={this.state.activeScale}
                     request={this.handleRequestCurLocation}
