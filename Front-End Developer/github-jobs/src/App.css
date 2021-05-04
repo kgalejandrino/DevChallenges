@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
-html {
+body {
     background-color: #F6F7FB;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid black;
+    height: 100vh;
+    width: 90%;
+    max-width: 1950px;
+    margin: 0 auto;
 }
