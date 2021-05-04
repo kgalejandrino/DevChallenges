@@ -1,6 +1,68 @@
 .Search {
-    border: 1px solid red;
-    height: 130px; 
+    height: 160px; 
     border-radius: 8px;
     margin: 28px 0;
+    background: url("https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/github-jobs/src/assets/backgroundImg.png?raw=true");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-container {
+    width: 1100px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-container {
+    /* border: 1px solid red; */
+    position: relative;
+    margin-left: 18px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    color: #B9BDCF;
+}
+
+::placeholder { 
+    font-family: 'Roboto', sans-serif;
+    color: #B9BDCF;
+}
+
+.icon-search {
+    position: absolute;
+    font-size: 22px;
+}
+
+.input {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding-left: 28px;
+    color: #B9BDCF;
+    /* font-size: 14px; */
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+    /* border: 1px solid red; */
+}
+
+.btn { border-radius: 4px;}
+
+.btn-search {
+    border: none;
+    height: 40px;
+    width: 160px;
+    background-color: #1E86FF;
+    color: #fff;
+    font-size: 16px;
 }
