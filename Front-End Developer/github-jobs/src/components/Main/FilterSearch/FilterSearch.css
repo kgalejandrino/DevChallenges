@@ -1,6 +1,5 @@
 .FilterSearch {
-    width: 30%;
-    /* font-weight: 700; */
+    width: 28%;
 }
 
 .checkbox_container { 
@@ -31,7 +30,10 @@
     margin-bottom: 12px;
 }
 
-.loc-input_container { position: relative; }
+.loc-input_container { 
+    position: relative; 
+    padding-bottom: 12px;
+}
 
 .icon-location {
     position: absolute;

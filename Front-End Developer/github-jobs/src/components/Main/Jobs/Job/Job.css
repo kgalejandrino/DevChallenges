@@ -1,0 +1,57 @@
+.Job {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.job-left--box { display: flex;}
+
+.job-right--box {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 12px;
+    padding-bottom: 18px;
+    color: #B9BDCF;
+    font-size: 14px;
+}
+
+.logo_container {
+    width: 120px;
+    margin: 12px;
+}
+
+.logo_container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.company-name, .job-type { font-size: 14px; }
+
+.company-name, .job-type, .job-title { margin-top: 8px;}
+
+.job-title { font-size: 22px;}
+
+.job-type {
+    border: 1px solid #334680;
+    border-radius: 4px;
+    width: 80px;
+    text-align: center;
+    padding: 4px;
+}
+
+.city_container, .time_container { 
+    display: flex;
+    align-items: center;
+}
+
+.city_container { margin-right: 18px; }
+
+.city-icon, .time-icon { 
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+
+

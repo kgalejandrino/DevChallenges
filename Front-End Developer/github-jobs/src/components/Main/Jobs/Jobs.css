@@ -1,3 +1,6 @@
 .Jobs {
     width: 70%;
+    height: 120px;
+    box-shadow: 0px 2px 4px #0000000d;
+    background-color: #fff;
 }
