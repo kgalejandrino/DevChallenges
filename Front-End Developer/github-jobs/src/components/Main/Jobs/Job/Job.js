@@ -7,7 +7,10 @@ const job = (props) => {
         <div className="Job">
             <div className="job-left--box">
                 <div className="logo_container">
-                    <img src={props.logo} alt="company-logo"></img>
+                    {props.logo
+                        ? <img src={props.logo} alt="company-logo"></img>
+                        : <div class="not-found">not found</div>
+                    }
                 </div>
                 <div className="info_container">
                     <p className="company-name">{props.name}</p>
