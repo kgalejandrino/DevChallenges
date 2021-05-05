@@ -4,11 +4,13 @@ import './Main.css';
 import FilterSearch from './FilterSearch/FilterSearch';
 import Jobs from './Jobs/Jobs';
 
-const main = () => {
+const main = (props) => {
     return (
         <div className="Main">
             <FilterSearch />
-            <Jobs />
+            <Jobs 
+                data={props.data}
+            />
         </div>
     )
 }
