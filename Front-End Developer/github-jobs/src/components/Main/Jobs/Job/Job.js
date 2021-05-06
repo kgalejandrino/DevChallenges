@@ -9,7 +9,7 @@ const job = (props) => {
                 <div className="logo_container">
                     {props.logo
                         ? <img src={props.logo} alt="company-logo"></img>
-                        : <div class="not-found">not found</div>
+                        : <div className="not-found">not found</div>
                     }
                 </div>
                 <div className="info_container">

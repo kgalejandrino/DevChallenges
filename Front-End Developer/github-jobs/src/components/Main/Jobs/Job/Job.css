@@ -2,7 +2,7 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: space-between;
-    height: 120px;
+    height: 140px;
     box-shadow: 0px 2px 4px #0000000d;
     background-color: #fff;
     margin-bottom: 24px;
@@ -44,15 +44,16 @@
 
 
 .info_container { 
-    width: 500px;
+    width: 540px;
     margin-left: 12px;
+    /* border: 1px solid red; */
 }
 
 .company-name, .job-type { font-size: 14px; }
 
-.company-name, .job-type, .job-title { margin-top: 8px;}
+.company-name, .job-type, .job-title { margin-top: 12px;}
 
-.job-title { font-size: 22px;}
+.job-title { font-size: 20px;}
 
 .job-type {
     border: 1px solid #334680;
