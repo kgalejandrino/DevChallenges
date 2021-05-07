@@ -52,7 +52,7 @@ class JobSearch extends Component {
     }
 
     render() {
-        // console.log(this.state.data);
+        console.log(this.state.data);
         // console.log(this.state.description);
         return(
             <div className="JobSearch">

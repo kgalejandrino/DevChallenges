@@ -6,7 +6,7 @@ import Job from './Job/Job';
 const jobs = (props) => {
     return(
         <div className="Jobs">
-            { props.data
+            { props.data.length
                 ?  props.data.map((data, index) => {
                     return <Job 
                                 key={index}
@@ -17,8 +17,8 @@ const jobs = (props) => {
                                 location={data.location}
                                 date={data.created_at}
                            />
-                })
-                : null
+                    })
+                : <div className="no-jobs">No jobs found</div>
             }
         </div>
     )

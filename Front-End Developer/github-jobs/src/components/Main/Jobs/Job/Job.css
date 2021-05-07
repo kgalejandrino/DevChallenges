@@ -8,12 +8,17 @@
     margin-bottom: 24px;
 }
 
-.job-left--box { display: flex;}
+.job-left--box { 
+    display: flex;     
+    width: 70%;
+}
 
 .job-right--box {
+    width: 30%;
     display: flex;
+    justify-content: space-around;
     align-items: flex-end;
-    margin-right: 12px;
+    padding-right: 12px;
     padding-bottom: 18px;
     color: #B9BDCF;
     font-size: 14px;
@@ -23,6 +28,7 @@
     padding: 10px;
     max-width: 120px;
     width: 100%;
+    /* border: 1px solid red; */
 }
 
 .logo_container img {
@@ -46,7 +52,6 @@
 .info_container { 
     width: 540px;
     margin-left: 12px;
-    /* border: 1px solid red; */
 }
 
 .company-name, .job-type { font-size: 14px; }

@@ -1,8 +1,11 @@
 import React from 'react';
 
 import './Job.css';
+import {calculateDate} from '../../../../utils/Utils';
 
 const job = (props) => {
+    const time = calculateDate(props.date);
+
     return(
         <div className="Job">
             <div className="job-left--box">
@@ -25,7 +28,7 @@ const job = (props) => {
                 </div>
                 <div className="time_container">
                     <span className="material-icons time-icon">schedule</span>
-                    <span>5 days ago</span>
+                    <span>{time}</span>
                 </div>
             </div>
         </div>
