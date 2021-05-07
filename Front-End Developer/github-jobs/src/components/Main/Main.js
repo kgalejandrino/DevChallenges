@@ -3,6 +3,7 @@ import React from 'react';
 import './Main.css';
 import FilterSearch from './FilterSearch/FilterSearch';
 import Jobs from './Jobs/Jobs';
+import Pagination from '../Pagination/Pagination';
 
 const main = (props) => {
     return (
@@ -12,9 +13,16 @@ const main = (props) => {
                 locationChanged={props.locationChanged}
                 fullTimeChanged={props.fullTimeChanged}
             />
-            <Jobs 
-                data={props.data}
-            />
+            <div className="jobs-container">
+                <Jobs 
+                    data={props.data}
+                />
+                <Pagination 
+                    jobsPerPage={props.jobsPerPage}
+                    totalPosts={props.totalPosts}
+                    paginate={props.paginate}
+                />
+            </div>
         </div>
     )
 }

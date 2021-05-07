@@ -14,6 +14,8 @@ class JobSearch extends Component {
             location: 'california',
             description: '',
             fullTime: false,
+            currentPage: 1,
+            jobsPerPage: 5
         }
     }
 
@@ -51,9 +53,15 @@ class JobSearch extends Component {
         this.fetchDataFromInput();
     }
 
+    handlePaginationClick = (pageNo) => this.setState({ currentPage: pageNo })
+
     render() {
         console.log(this.state.data);
-        // console.log(this.state.description);
+        const { data, location, currentPage, jobsPerPage } = this.state;
+        const indexOfLastJob = currentPage * jobsPerPage;
+        const indexOfFirstJob = indexOfLastJob - jobsPerPage; 
+        const currentJobs = data.slice(indexOfFirstJob, indexOfLastJob);
+
         return(
             <div className="JobSearch">
                 <div className="title"><b>Github</b> Jobs</div>
@@ -62,10 +70,13 @@ class JobSearch extends Component {
                     searched={this.handleSearchClicked}
                 />
                 <Main 
-                    data={this.state.data}
-                    location={this.state.location}
+                    data={currentJobs}
+                    location={location}
                     locationChanged={this.handleInputLocationChange}
                     fullTimeChanged={this.handleInputFullTimeChange}
+                    jobsPerPage={jobsPerPage}
+                    totalPosts={data.length}
+                    paginate={this.handlePaginationClick}
                 />
             </div>
         )

@@ -1,0 +1,25 @@
+.Pagination {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+}
+
+.Pagination ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.Pagination ul li {
+    border: 1px solid #B7BCCE;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-left: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Pagination ul li a {
+    text-decoration: none;
+    color: #B7BCCE;
+}
