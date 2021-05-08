@@ -14,7 +14,7 @@
 .Pagination ul li {
     border: 1px solid #B7BCCE;
     border-radius: 4px;
-    padding: 8px 14px;
+    padding: 6px 14px;
     margin-left: 12px;
     font-size: 14px;
     cursor: pointer;
@@ -33,4 +33,8 @@
 .active { 
     background-color: #1E86FF;
     color: #fff;
+}
+
+.disabled {
+    pointer-events: none;
 }

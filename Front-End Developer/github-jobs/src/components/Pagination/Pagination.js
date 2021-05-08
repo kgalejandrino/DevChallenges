@@ -2,23 +2,50 @@ import React from 'react';
 
 import './Pagination.css';
 
-const Pagination = ({jobsPerPage, totalPosts, currentPage, paginate}) => {
+const Pagination = (props) => {
     const pageNumbers = [];
 
-    for(let i = 1; i <= Math.ceil(totalPosts/ jobsPerPage); i++) {
+    for(let i = 1; i <= Math.ceil(props.totalPosts/ props.jobsPerPage); i++) {
         pageNumbers.push(i);
+    }
+
+    const renderPageNumbers = pageNumbers.map(num => {
+        if(num < props.maxPage + 1 && num > props.minPage) {
+            return (
+                <li 
+                    key={num} 
+                    className={props.currentPage === num ? 'active': null} 
+                    onClick={() => props.paginate(num)}>
+                    {num}
+                </li>
+            );
+        } else {
+            return null;
+        }
+    });
+
+    let pageIncrementBtn = null;
+    if(pageNumbers.length > props.maxPage) {
+        pageIncrementBtn = <li>&hellip;</li>
+    }
+
+    let pageDecrementBtn = null;
+    if(props.minPage >= 1) {
+        pageDecrementBtn = <li>&hellip;</li>
     }
 
     return (
         <div className="Pagination">
             <ul>
-                <li><span className="material-icons icon-navigate">navigate_before</span></li>
-                {pageNumbers.map(num => (
-                    <li key={num} className={currentPage === num ? 'active': null} onClick={() => paginate(num)}>
-                        {num}
-                    </li>
-                ))}
-                <li><span className="material-icons icon-navigate">navigate_next</span></li>
+                <li onClick={props.prevPage} className={props.currentPage === pageNumbers[0] ? 'disabled' : null}>
+                    <span className="material-icons">navigate_before</span>
+                </li>
+                {pageDecrementBtn}
+                {renderPageNumbers}
+                {pageIncrementBtn}
+                <li onClick={props.nextPage} className={props.currentPage === pageNumbers.length ? 'disabled' : null}>
+                    <span className="material-icons">navigate_next</span>
+                </li>
             </ul>
         </div>
     );

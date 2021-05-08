@@ -21,7 +21,11 @@ const main = (props) => {
                     jobsPerPage={props.jobsPerPage}
                     totalPosts={props.totalPosts}
                     paginate={props.paginate}
+                    maxPage={props.maxPage}
+                    minPage={props.minPage}
                     currentPage={props.currentPage}
+                    nextPage={props.nextPage}
+                    prevPage={props.prevPage}
                 />
             </div>
         </div>

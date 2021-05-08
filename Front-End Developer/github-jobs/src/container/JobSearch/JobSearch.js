@@ -15,7 +15,9 @@ class JobSearch extends Component {
             description: '',
             fullTime: false,
             currentPage: 1,
-            jobsPerPage: 5
+            jobsPerPage: 5,
+            maxPageNumberLimit: 5,
+            minPageNumberLimit: 0
         }
     }
 
@@ -56,9 +58,33 @@ class JobSearch extends Component {
 
     handlePaginationClick = (pageNo) => this.setState({ currentPage: pageNo })
 
+    handleNextPageClick = () => {
+        const { currentPage, maxPageNumberLimit, jobsPerPage } = this.state;
+        this.setState(prevState => ({ currentPage: prevState.currentPage + 1}))
+
+        if(currentPage + 1 > maxPageNumberLimit) {
+            this.setState(prevState => ({ 
+                maxPageNumberLimit: prevState.maxPageNumberLimit + jobsPerPage,
+                minPageNumberLimit: prevState.minPageNumberLimit + jobsPerPage
+            }))
+        }
+    }
+
+    handlePrevPageClick = () => {
+        const { currentPage,  jobsPerPage } = this.state;
+        this.setState(prevState => ({ currentPage: prevState.currentPage - 1}))
+
+        if((currentPage - 1) % jobsPerPage === 0) {
+            this.setState(prevState => ({ 
+                maxPageNumberLimit: prevState.maxPageNumberLimit - jobsPerPage,
+                minPageNumberLimit: prevState.minPageNumberLimit - jobsPerPage
+            }))
+        }
+    }
+
     render() {
         console.log(this.state.data);
-        const { data, location, currentPage, jobsPerPage } = this.state;
+        const { data, location, currentPage, jobsPerPage, maxPageNumberLimit, minPageNumberLimit } = this.state;
         const indexOfLastJob = currentPage * jobsPerPage;
         const indexOfFirstJob = indexOfLastJob - jobsPerPage; 
         const currentJobs = data.slice(indexOfFirstJob, indexOfLastJob);
@@ -78,7 +104,11 @@ class JobSearch extends Component {
                     jobsPerPage={jobsPerPage}
                     totalPosts={data.length}
                     currentPage={currentPage}
+                    maxPage={maxPageNumberLimit}
+                    minPage={minPageNumberLimit}
                     paginate={this.handlePaginationClick}
+                    nextPage={this.handleNextPageClick}
+                    prevPage={this.handlePrevPageClick}
                 />
             </div>
         )
