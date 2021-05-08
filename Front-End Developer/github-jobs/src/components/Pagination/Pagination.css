@@ -8,18 +8,29 @@
 .Pagination ul {
     display: flex;
     list-style-type: none;
+    color: #B7BCCE;
 }
 
 .Pagination ul li {
     border: 1px solid #B7BCCE;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 8px 14px;
     margin-left: 12px;
     font-size: 14px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-.Pagination ul li a {
-    text-decoration: none;
-    color: #B7BCCE;
+.Pagination ul li:first-child, 
+.Pagination ul li:last-child { padding: 0 6px;}
+
+.Pagination ul li:hover {
+    border: 1px solid #1E86FF;
+    color: #1E86FF;
+}
+
+.active { 
+    background-color: #1E86FF;
+    color: #fff;
 }

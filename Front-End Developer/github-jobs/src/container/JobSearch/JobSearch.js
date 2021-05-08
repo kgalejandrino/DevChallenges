@@ -51,6 +51,7 @@ class JobSearch extends Component {
         const { location, description, fullTime } = this.state;
         console.log(location, description, fullTime);
         this.fetchDataFromInput();
+        this.setState({ currentPage: 1 })
     }
 
     handlePaginationClick = (pageNo) => this.setState({ currentPage: pageNo })
@@ -76,6 +77,7 @@ class JobSearch extends Component {
                     fullTimeChanged={this.handleInputFullTimeChange}
                     jobsPerPage={jobsPerPage}
                     totalPosts={data.length}
+                    currentPage={currentPage}
                     paginate={this.handlePaginationClick}
                 />
             </div>
