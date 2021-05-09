@@ -16,15 +16,21 @@ class JobSearch extends Component {
             fullTime: false,
             currentPage: 1,
             jobsPerPage: 5,
+            loading: false,
             maxPageNumberLimit: 5,
             minPageNumberLimit: 0
         }
     }
 
     componentDidMount() {
+        this.setState({ loading: true });
+
         axios.get(`https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json?location=${this.state.location}&page=1`)
         .then(response => {
-            this.setState({ data: response.data })
+            this.setState({ 
+                data: response.data,
+                loading: false 
+            })
         })
         .catch(error => {
             console.log(error);
@@ -40,9 +46,14 @@ class JobSearch extends Component {
     fetchDataFromInput = () => {
         const { location, description, fullTime } = this.state;
 
+        this.setState({ loading: true });
+
         axios.get(`https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json?location=${location}&description=${description}&full_time=${fullTime}&page=1`)
         .then(response => {
-            this.setState({ data: response.data })
+            this.setState({ 
+                data: response.data ,
+                loading: false
+            })
         })
         .catch(error => {
             console.log(error);
@@ -109,6 +120,7 @@ class JobSearch extends Component {
                     paginate={this.handlePaginationClick}
                     nextPage={this.handleNextPageClick}
                     prevPage={this.handlePrevPageClick}
+                    loading={this.state.loading}
                 />
             </div>
         )

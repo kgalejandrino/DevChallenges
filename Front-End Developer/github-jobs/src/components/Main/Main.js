@@ -4,6 +4,7 @@ import './Main.css';
 import FilterSearch from './FilterSearch/FilterSearch';
 import Jobs from './Jobs/Jobs';
 import Pagination from '../Pagination/Pagination';
+import Aux from '../../hoc/Auxiliary';
 
 const main = (props) => {
     return (
@@ -14,19 +15,24 @@ const main = (props) => {
                 fullTimeChanged={props.fullTimeChanged}
             />
             <div className="jobs-container">
-                <Jobs 
-                    data={props.data}
-                />
-                <Pagination 
-                    jobsPerPage={props.jobsPerPage}
-                    totalPosts={props.totalPosts}
-                    paginate={props.paginate}
-                    maxPage={props.maxPage}
-                    minPage={props.minPage}
-                    currentPage={props.currentPage}
-                    nextPage={props.nextPage}
-                    prevPage={props.prevPage}
-                />
+                { props.loading
+                    ? <div class="loader">Loading...</div>
+                    : <Aux>
+                         <Jobs 
+                            data={props.data}
+                        />
+                        <Pagination 
+                            jobsPerPage={props.jobsPerPage}
+                            totalPosts={props.totalPosts}
+                            paginate={props.paginate}
+                            maxPage={props.maxPage}
+                            minPage={props.minPage}
+                            currentPage={props.currentPage}
+                            nextPage={props.nextPage}
+                            prevPage={props.prevPage}
+                        />
+                    </Aux>
+                }   
             </div>
         </div>
     )
