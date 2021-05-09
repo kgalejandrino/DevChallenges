@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './JobSearch.css';
+import Aux from '../../hoc/Auxiliary';
 import Search from '../../components/Search/Search';
 import Main from '../../components/Main/Main';
+import JobDetails from '../../components/JobDetails/JobDetails';
 
 class JobSearch extends Component {
     constructor(props) {
@@ -18,7 +20,8 @@ class JobSearch extends Component {
             jobsPerPage: 5,
             loading: false,
             maxPageNumberLimit: 5,
-            minPageNumberLimit: 0
+            minPageNumberLimit: 0,
+            jobClicked: false
         }
     }
 
@@ -93,16 +96,16 @@ class JobSearch extends Component {
         }
     }
 
+    handleJobClicked = () => this.setState({ jobClicked: true });
+
     render() {
         console.log(this.state.data);
-        const { data, location, currentPage, jobsPerPage, maxPageNumberLimit, minPageNumberLimit } = this.state;
+        const { data, location, currentPage, jobsPerPage, maxPageNumberLimit, minPageNumberLimit, jobClicked } = this.state;
         const indexOfLastJob = currentPage * jobsPerPage;
         const indexOfFirstJob = indexOfLastJob - jobsPerPage; 
         const currentJobs = data.slice(indexOfFirstJob, indexOfLastJob);
 
-        return(
-            <div className="JobSearch">
-                <div className="title"><b>Github</b> Jobs</div>
+        const renderMain = <Aux>
                 <Search 
                     descriptionChanged={this.handleInputDescriptionChange}
                     searched={this.handleSearchClicked}
@@ -121,7 +124,17 @@ class JobSearch extends Component {
                     nextPage={this.handleNextPageClick}
                     prevPage={this.handlePrevPageClick}
                     loading={this.state.loading}
+                    jobClicked={this.handleJobClicked}
                 />
+            </Aux>
+        return(
+            <div className="JobSearch">
+                <div className="title"><b>Github</b> Jobs</div>
+                { jobClicked
+                    ? <JobDetails />
+                    : renderMain
+                }
+    
             </div>
         )
     }

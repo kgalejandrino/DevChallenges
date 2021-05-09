@@ -18,7 +18,7 @@ const job = (props) => {
                 <div className="info_container">
                     <p className="company-name">{props.name}</p>
                     <p className="job-title">{props.title}</p>
-                    <p className="job-type">{props.type ? props.type : null}</p>
+                    <p className="type job-type">{props.type ? props.type : null}</p>
                 </div>
             </div>
             <div className="job-right--box">

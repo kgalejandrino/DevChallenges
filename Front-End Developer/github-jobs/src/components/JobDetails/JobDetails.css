@@ -1,0 +1,36 @@
+.JobDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+/* LEFT DETAILS */
+.left_details {
+    width: 20%;
+}
+
+.back-to-box {
+    color: #1E86FF;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+.icon-back { 
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+.how-box--title {
+    text-transform: uppercase;
+    color: #B9BDCF;
+    margin-bottom: 12px;
+}
+
+.how-box--text { font-size: 12px; }
+
+.right_details {
+    width: 75%;
+    border: 1px solid black;
+}

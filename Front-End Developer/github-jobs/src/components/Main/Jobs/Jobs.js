@@ -5,7 +5,7 @@ import Job from './Job/Job';
 
 const jobs = (props) => {
     return(
-        <div className="Jobs">
+        <div className="Jobs" onClick={props.jobClicked}>
             { props.data.length
                 ?  props.data.map((data, index) => {
                     return <Job 

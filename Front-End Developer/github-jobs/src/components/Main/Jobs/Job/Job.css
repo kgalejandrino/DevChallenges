@@ -54,13 +54,13 @@
     margin-left: 12px;
 }
 
-.company-name, .job-type { font-size: 14px; }
+.company-name, .type { font-size: 14px; }
 
 .company-name, .job-type, .job-title { margin-top: 12px;}
 
 .job-title { font-size: 20px;}
 
-.job-type {
+.type {
     border: 1px solid #334680;
     border-radius: 4px;
     width: 80px;

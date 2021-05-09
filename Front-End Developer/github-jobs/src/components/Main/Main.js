@@ -16,9 +16,10 @@ const main = (props) => {
             />
             <div className="jobs-container">
                 { props.loading
-                    ? <div class="loader">Loading...</div>
+                    ? <div className="loader">Loading...</div>
                     : <Aux>
-                         <Jobs 
+                         <Jobs
+                            jobClicked={props.jobClicked} 
                             data={props.data}
                         />
                         <Pagination 
