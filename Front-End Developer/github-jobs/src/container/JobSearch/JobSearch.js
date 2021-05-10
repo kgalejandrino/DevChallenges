@@ -39,6 +39,19 @@ class JobSearch extends Component {
         .catch(error => {
             console.log(error);
         })
+
+        document.addEventListener("keydown", this.handleSearchedPress);
+    }
+
+    componentWillUnmount = () => document.addEventListener("keydown", this.handleSearchedPress);
+
+    handleSearchedPress = (event) => {
+        if(event.keyCode === 13) {
+            const { location, description, fullTime } = this.state;
+            console.log(location, description, fullTime);
+            this.fetchDataFromInput();
+            this.setState({ currentPage: 1 })
+        }
     }
 
     handleInputDescriptionChange = (event) => this.setState({ description: event.target.value })
