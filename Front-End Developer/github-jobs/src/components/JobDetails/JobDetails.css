@@ -35,6 +35,11 @@
 
 .how-box--text { font-size: 12px; }
 
+.how-link {
+    padding: 0 4px;
+    color: #1E86FF;
+}
+
 .right_details {
     width: 85%;
     /* border: 1px solid black; */

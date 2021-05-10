@@ -4,6 +4,10 @@ import './JobDetails.css';
 import Description from './Description/Description';
 
 const jobDetails = (props) => {
+    console.log(props.data.how);
+    let how = props.data.how;
+    how = how.match('"(.*)"');
+
     return (
         <div className="JobDetails">
             <div className="left_details">
@@ -13,7 +17,12 @@ const jobDetails = (props) => {
                 </div>
                 <div className="how-box">
                     <p className="how-box--title">How to apply</p>
-                    <p className="how-box--text">Apply at</p>
+                    <div className="how-box--text">
+                        <span>Visit the 
+                            <a href={how[1]} className="how-link">link</a> 
+                            to apply.
+                        </span>
+                    </div>
                 </div>
             </div>
             <div className="right_details">
