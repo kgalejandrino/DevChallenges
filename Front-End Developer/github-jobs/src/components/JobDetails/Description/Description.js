@@ -25,10 +25,12 @@ const description = (props) => {
                 <div className="box3-name--loc">
                     <p className="des-name">{props.data.name}</p>
                     <div className="time-date">
-                        <span className="material-icons city-icon">public</span>
+                        <span className="material-icons city-icon" style={{ fontSize: "18px"}}>public</span>
                         <span>{props.data.location}</span>
                     </div>
                 </div>
+            </div>
+            <div className="description" dangerouslySetInnerHTML={{__html: props.data.description}}>
             </div>
         </Aux>
     )

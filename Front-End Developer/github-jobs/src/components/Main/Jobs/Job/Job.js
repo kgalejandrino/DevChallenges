@@ -12,7 +12,8 @@ const job = (props) => {
         title: props.title,
         type: props.type,
         location: props.location,
-        date: props.date
+        date: props.date,
+        description: props.description
     }
 
     return(

@@ -16,6 +16,7 @@ const jobs = (props) => {
                                 type={data.type}
                                 location={data.location}
                                 date={data.created_at}
+                                description={data.description}
                                 jobClicked={props.jobClicked}
                            />
                     })

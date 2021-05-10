@@ -5,7 +5,7 @@
 
 .des-title { 
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .des-type { margin-left: 18px; }
@@ -14,9 +14,10 @@
 
 .time-date {
     display: flex;
+    align-items: center;
     color: #B9BDCF;
-    font-size: 14px;
-    margin-top: 6px;
+    font-size: 12px;
+    margin-top: 8px;
 }
 
 .des_box3 {
@@ -50,5 +51,16 @@
     text-align: center;
 }
 
-.des-name { font-weight: 700; }
+.des-name { font-weight: 500; }
+
+/* DESCRIPTION */
+.description p {
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.description ul{
+    margin-left: 32px;
+    margin-bottom: 12px;
+}
 

@@ -2,11 +2,13 @@
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* LEFT DETAILS */
 .left_details {
-    width: 20%;
+    width: 15%;
+    /* border: 1px solid red; */
 }
 
 .back-to-box {
@@ -27,11 +29,13 @@
     text-transform: uppercase;
     color: #B9BDCF;
     margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .how-box--text { font-size: 12px; }
 
 .right_details {
-    width: 75%;
-    border: 1px solid black;
+    width: 85%;
+    /* border: 1px solid black; */
 }
