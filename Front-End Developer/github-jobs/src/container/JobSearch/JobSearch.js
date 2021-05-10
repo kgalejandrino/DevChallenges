@@ -47,10 +47,12 @@ class JobSearch extends Component {
 
     handleSearchedPress = (event) => {
         if(event.keyCode === 13) {
-            const { location, description, fullTime } = this.state;
-            console.log(location, description, fullTime);
             this.fetchDataFromInput();
-            this.setState({ currentPage: 1 })
+            this.setState({ 
+                currentPage: 1,
+                maxPageNumberLimit: 5,
+                minPageNumberLimit: 0
+            })
         }
     }
 
@@ -71,6 +73,9 @@ class JobSearch extends Component {
                 data: response.data ,
                 loading: false
             })
+            if(response.status === 503) {
+                console.log('503');
+            }
         })
         .catch(error => {
             console.log(error);
@@ -78,10 +83,12 @@ class JobSearch extends Component {
     }
 
     handleSearchClicked = () => {
-        const { location, description, fullTime } = this.state;
-        console.log(location, description, fullTime);
         this.fetchDataFromInput();
-        this.setState({ currentPage: 1 })
+        this.setState({ 
+            currentPage: 1,
+            maxPageNumberLimit: 5,
+            minPageNumberLimit: 0
+        })
     }
 
     handlePaginationClick = (pageNo) => this.setState({ currentPage: pageNo })

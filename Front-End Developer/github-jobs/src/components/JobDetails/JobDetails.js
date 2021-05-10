@@ -4,7 +4,6 @@ import './JobDetails.css';
 import Description from './Description/Description';
 
 const jobDetails = (props) => {
-    console.log(props.data.how);
     let how = props.data.how;
     how = how.match('"(.*)"');
 
