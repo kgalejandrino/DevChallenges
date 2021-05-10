@@ -8,7 +8,7 @@ const jobDetails = (props) => {
         <div className="JobDetails">
             <div className="left_details">
                 <div className="back-to-box">
-                    <span className="material-icons icon-back">keyboard_backspace</span>
+                    <span className="material-icons icon-back" onClick={props.backToSearch}>keyboard_backspace</span>
                     <span>Back to Search</span>
                 </div>
                 <div className="how-box">

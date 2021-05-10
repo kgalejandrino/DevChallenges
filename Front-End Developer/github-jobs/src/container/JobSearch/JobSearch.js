@@ -98,6 +98,8 @@ class JobSearch extends Component {
 
     handleJobClicked = () => this.setState({ jobClicked: true });
 
+    handleBackToSearchClicked = () => this.setState({ jobClicked: false });
+
     render() {
         console.log(this.state.data);
         const { data, location, currentPage, jobsPerPage, maxPageNumberLimit, minPageNumberLimit, jobClicked } = this.state;
@@ -131,7 +133,9 @@ class JobSearch extends Component {
             <div className="JobSearch">
                 <div className="title"><b>Github</b> Jobs</div>
                 { jobClicked
-                    ? <JobDetails />
+                    ? <JobDetails 
+                        backToSearch={this.handleBackToSearchClicked}  
+                      />
                     : renderMain
                 }
     
