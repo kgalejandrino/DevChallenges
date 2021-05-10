@@ -21,7 +21,8 @@ class JobSearch extends Component {
             loading: false,
             maxPageNumberLimit: 5,
             minPageNumberLimit: 0,
-            jobClicked: false
+            jobClicked: false,
+            dataClicked: {}
         }
     }
 
@@ -96,7 +97,12 @@ class JobSearch extends Component {
         }
     }
 
-    handleJobClicked = () => this.setState({ jobClicked: true });
+    handleJobClicked = (data) => {
+        this.setState({ 
+            jobClicked: true,
+            dataClicked: data
+        });
+    }
 
     handleBackToSearchClicked = () => this.setState({ jobClicked: false });
 
@@ -134,7 +140,8 @@ class JobSearch extends Component {
                 <div className="title"><b>Github</b> Jobs</div>
                 { jobClicked
                     ? <JobDetails 
-                        backToSearch={this.handleBackToSearchClicked}  
+                        backToSearch={this.handleBackToSearchClicked}
+                        data={this.state.dataClicked}  
                       />
                     : renderMain
                 }

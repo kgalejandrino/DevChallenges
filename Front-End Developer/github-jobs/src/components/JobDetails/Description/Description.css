@@ -10,7 +10,9 @@
 
 .des-type { margin-left: 18px; }
 
-.des_box2 {
+/* .des_box2 { margin-top: 6px; } */
+
+.time-date {
     display: flex;
     color: #B9BDCF;
     font-size: 14px;
@@ -19,10 +21,19 @@
 
 .des_box3 {
     margin: 24px 0;
+    display: flex;
 }
+
+.box3-name--loc {
+    display: flex;
+    flex-direction: column;
+}
+
 .des-logo {
-    max-width: 80px;
+    max-width: 60px;
     width: 100%;
+    margin-right: 8px;
+    /* border: 1px solid black; */
 }
 
 .des-logo img {
@@ -31,3 +42,13 @@
     object-fit: contain;
     border-radius: 4px;
 }
+
+.des-not-found {
+    font-size: 10px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.des-name { font-weight: 700; }
+

@@ -5,7 +5,7 @@ import Job from './Job/Job';
 
 const jobs = (props) => {
     return(
-        <div className="Jobs" onClick={props.jobClicked}>
+        <div className="Jobs">
             { props.data.length
                 ?  props.data.map((data, index) => {
                     return <Job 
@@ -16,6 +16,7 @@ const jobs = (props) => {
                                 type={data.type}
                                 location={data.location}
                                 date={data.created_at}
+                                jobClicked={props.jobClicked}
                            />
                     })
                 : <div className="no-jobs">No jobs found</div>

@@ -17,7 +17,9 @@ const jobDetails = (props) => {
                 </div>
             </div>
             <div className="right_details">
-                <Description />
+                <Description 
+                    data={props.data}
+                />
             </div>
         </div>
     )

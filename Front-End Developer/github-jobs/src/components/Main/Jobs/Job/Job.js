@@ -4,10 +4,19 @@ import './Job.css';
 import {calculateDate} from '../../../../utils/Utils';
 
 const job = (props) => {
-    const time = calculateDate(props.date);
+    const date = calculateDate(props.date);
+
+    const data = {
+        logo: props.logo,
+        name: props.name,
+        title: props.title,
+        type: props.type,
+        location: props.location,
+        date: props.date
+    }
 
     return(
-        <div className="Job">
+        <div className="Job" onClick={() => props.jobClicked(data)}>
             <div className="job-left--box">
                 <div className="logo_container">
                     {props.logo
@@ -28,7 +37,7 @@ const job = (props) => {
                 </div>
                 <div className="time_container">
                     <span className="material-icons time-icon">schedule</span>
-                    <span>{time}</span>
+                    <span>{date}</span>
                 </div>
             </div>
         </div>
