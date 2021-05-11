@@ -3,9 +3,7 @@
     justify-content: space-between;
 }
 
-.jobs-container {
-    width: 70%;
-}
+.jobs-container { width: 70%; }
 
 /* SPINNER */
 .loader {
@@ -71,4 +69,16 @@
       transform: rotate(360deg);
     }
   }
+  
+@media only screen and (max-width: 1050px) {
+  .Main {
+    flex-direction: column;
+  }
+  
+  .jobs-container { 
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
   

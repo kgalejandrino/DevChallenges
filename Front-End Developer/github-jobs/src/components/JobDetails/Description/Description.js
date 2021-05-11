@@ -5,7 +5,7 @@ import { calculateDate } from '../../../utils/Utils';
 import Aux from '../../../hoc/Auxiliary';
 
 const description = (props) => {
-    const link = <div className="description" dangerouslySetInnerHTML={{__html: props.data.description}}></div>
+
 
     return(
         <Aux>

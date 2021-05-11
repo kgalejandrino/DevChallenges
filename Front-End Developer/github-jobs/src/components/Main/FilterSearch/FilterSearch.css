@@ -61,4 +61,8 @@
     margin-top: 12px;
 }
 
+@media only screen and (max-width: 1050px) {
+    .FilterSearch { width: 100%;}
+}
+
 

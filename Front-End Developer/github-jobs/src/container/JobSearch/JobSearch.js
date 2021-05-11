@@ -45,6 +45,43 @@ class JobSearch extends Component {
 
     componentWillUnmount = () => document.addEventListener("keydown", this.handleSearchedPress);
 
+    fetchDataFromInput = () => {
+        const { location, description, fullTime } = this.state;
+
+        this.setState({ loading: true });
+
+        axios.get(`https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json?location=${location}&description=${description}&full_time=${fullTime}&page=1`)
+        .then(response => {
+            this.setState({ 
+                data: response.data ,
+                loading: false
+            })
+        })
+        .catch(error => {
+                // Error 😨
+        if (error.response) {
+            /*
+            * The request was made and the server responded with a
+            * status code that falls out of the range of 2xx
+            */
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+        } else if (error.request) {
+            /*
+            * The request was made but no response was received, `error.request`
+            * is an instance of XMLHttpRequest in the browser and an instance
+            * of http.ClientRequest in Node.js
+            */
+            console.log(error.request);
+        } else {
+            // Something happened in setting up the request and triggered an Error
+            console.log('Error', error.message);
+        }
+        console.log(error);
+        })
+    }
+    
     handleSearchedPress = (event) => {
         if(event.keyCode === 13) {
             this.fetchDataFromInput();
@@ -61,26 +98,6 @@ class JobSearch extends Component {
     handleInputLocationChange = (event) => this.setState({ location: event.target.value })
 
     handleInputFullTimeChange = (event) => this.setState({fullTime: event.target.checked})
-    
-    fetchDataFromInput = () => {
-        const { location, description, fullTime } = this.state;
-
-        this.setState({ loading: true });
-
-        axios.get(`https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json?location=${location}&description=${description}&full_time=${fullTime}&page=1`)
-        .then(response => {
-            this.setState({ 
-                data: response.data ,
-                loading: false
-            })
-            if(response.status === 503) {
-                console.log('503');
-            }
-        })
-        .catch(error => {
-            console.log(error);
-        })
-    }
 
     handleSearchClicked = () => {
         this.fetchDataFromInput();
