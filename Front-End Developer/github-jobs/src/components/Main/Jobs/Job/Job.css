@@ -85,7 +85,7 @@
 }
 
 @media only screen and (max-width: 550px) {
-    .Job { height: 170px;}
+    .Job { height: 160px;}
     
     .job_details { width: 70%; }
 
@@ -94,6 +94,8 @@
     }
 
     .job-title { font-size: 16px;}
+
+    .not-found { height: 140px; }
 }
 
 @media only screen and (max-width: 480px) {
@@ -111,17 +113,12 @@
         padding-right: 0;
         align-items: flex-start;
     }
+
+    .not-found { height: 155px; padding: 0 4px; }
 }
 
 @media only screen and (max-width: 400px) {
-    .logo_container {
-        display: flex;
-        align-items: center;
-    }
-
-    .not-found {
-        text-align: center;
-    }
+    .not-found { text-align: center; }
 }
 
 

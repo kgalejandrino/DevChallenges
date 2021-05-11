@@ -24,14 +24,14 @@ const Pagination = (props) => {
         }
     });
 
-    let pageIncrementBtn = null;
-    if(pageNumbers.length > props.maxPage) {
-        pageIncrementBtn = <li style={{ border: "none", padding: "0"}}>&hellip;</li>
-    }
-
     let pageDecrementBtn = null;
     if(props.minPage >= 1) {
-        pageDecrementBtn = <li style={{ border: "none", padding: "0"}}>&hellip;</li>
+        pageDecrementBtn = <li style={{ border: "none", padding: "0"}} onClick={props.prevPage}>&hellip;</li>
+    }
+    
+    let pageIncrementBtn = null;
+    if(pageNumbers.length > props.maxPage) {
+        pageIncrementBtn = <li style={{ border: "none", padding: "0"}} onClick={props.nextPage}>&hellip;</li>
     }
 
     return (

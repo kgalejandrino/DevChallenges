@@ -6,10 +6,7 @@
 }
 
 /* LEFT DETAILS */
-.left_details {
-    width: 15%;
-    /* border: 1px solid red; */
-}
+.left_details { width: 15%; }
 
 .back-to-box {
     color: #1E86FF;
@@ -40,6 +37,27 @@
     color: #1E86FF;
 }
 
-.right_details {
-    width: 85%;
+.right_details { width: 85%; }
+
+@media only screen and (max-width: 1100px) {
+    .left_details { width: 20%; }
+
+    .right_details { width: 80%; }
+}
+
+@media only screen and (max-width: 820px) {
+    .left_details { width: 30%; }
+
+    .right_details { width: 70%; }
+}
+
+@media only screen and (max-width: 550px) {
+    .JobDetails { flex-direction: column; }
+
+    .left_details { 
+        width: 100%; 
+        margin-bottom: 48px;
+    }
+
+    .right_details { width: 100%; }
 }
