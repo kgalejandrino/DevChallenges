@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Radium, { StyleRoot } from 'radium';
 import axios from 'axios';
 
 import './JobSearch.css';
@@ -173,19 +174,20 @@ class JobSearch extends Component {
                 />
             </Aux>
         return(
-            <div className="JobSearch">
-                <div className="title"><b>Github</b> Jobs</div>
-                { jobClicked
-                    ? <JobDetails 
-                        backToSearch={this.handleBackToSearchClicked}
-                        data={this.state.dataClicked}  
-                      />
-                    : renderMain
-                }
-    
-            </div>
+            <StyleRoot>
+                <div className="JobSearch">
+                    <div className="title"><b>Github</b> Jobs</div>
+                    { jobClicked
+                        ? <JobDetails 
+                            backToSearch={this.handleBackToSearchClicked}
+                            data={this.state.dataClicked}  
+                        />
+                        : renderMain
+                    }
+                </div>
+            </StyleRoot>
         )
     }
 }
 
-export default JobSearch;
+export default Radium(JobSearch);
