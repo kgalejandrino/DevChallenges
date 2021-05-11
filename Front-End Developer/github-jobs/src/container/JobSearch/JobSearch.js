@@ -20,7 +20,7 @@ class JobSearch extends Component {
             currentPage: 1,
             jobsPerPage: 5,
             loading: false,
-            maxPageNumberLimit: 5,
+            maxPageNumberLimit: 3,
             minPageNumberLimit: 0,
             jobClicked: false,
             dataClicked: {}
@@ -59,27 +59,7 @@ class JobSearch extends Component {
             })
         })
         .catch(error => {
-                // Error 😨
-        if (error.response) {
-            /*
-            * The request was made and the server responded with a
-            * status code that falls out of the range of 2xx
-            */
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
-        } else if (error.request) {
-            /*
-            * The request was made but no response was received, `error.request`
-            * is an instance of XMLHttpRequest in the browser and an instance
-            * of http.ClientRequest in Node.js
-            */
-            console.log(error.request);
-        } else {
-            // Something happened in setting up the request and triggered an Error
-            console.log('Error', error.message);
-        }
-        console.log(error);
+            console.log(error);
         })
     }
     
@@ -88,7 +68,7 @@ class JobSearch extends Component {
             this.fetchDataFromInput();
             this.setState({ 
                 currentPage: 1,
-                maxPageNumberLimit: 5,
+                maxPageNumberLimit: 3,
                 minPageNumberLimit: 0
             })
         }
@@ -104,7 +84,7 @@ class JobSearch extends Component {
         this.fetchDataFromInput();
         this.setState({ 
             currentPage: 1,
-            maxPageNumberLimit: 5,
+            maxPageNumberLimit: 3,
             minPageNumberLimit: 0
         })
     }
@@ -117,20 +97,20 @@ class JobSearch extends Component {
 
         if(currentPage + 1 > maxPageNumberLimit) {
             this.setState(prevState => ({ 
-                maxPageNumberLimit: prevState.maxPageNumberLimit + jobsPerPage,
-                minPageNumberLimit: prevState.minPageNumberLimit + jobsPerPage
+                maxPageNumberLimit: prevState.maxPageNumberLimit + 3,
+                minPageNumberLimit: prevState.minPageNumberLimit + 3
             }))
         }
     }
 
     handlePrevPageClick = () => {
-        const { currentPage,  jobsPerPage } = this.state;
+        const { currentPage } = this.state;
         this.setState(prevState => ({ currentPage: prevState.currentPage - 1}))
 
-        if((currentPage - 1) % jobsPerPage === 0) {
+        if((currentPage - 1) % 3 === 0) {
             this.setState(prevState => ({ 
-                maxPageNumberLimit: prevState.maxPageNumberLimit - jobsPerPage,
-                minPageNumberLimit: prevState.minPageNumberLimit - jobsPerPage
+                maxPageNumberLimit: prevState.maxPageNumberLimit - 3,
+                minPageNumberLimit: prevState.minPageNumberLimit - 3
             }))
         }
     }

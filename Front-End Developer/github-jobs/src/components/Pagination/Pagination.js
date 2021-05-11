@@ -26,25 +26,25 @@ const Pagination = (props) => {
 
     let pageIncrementBtn = null;
     if(pageNumbers.length > props.maxPage) {
-        pageIncrementBtn = <li>&hellip;</li>
+        pageIncrementBtn = <li style={{ border: "none", padding: "0"}}>&hellip;</li>
     }
 
     let pageDecrementBtn = null;
     if(props.minPage >= 1) {
-        pageDecrementBtn = <li>&hellip;</li>
+        pageDecrementBtn = <li style={{ border: "none", padding: "0"}}>&hellip;</li>
     }
 
     return (
         <div className="Pagination">
             <ul>
                 <li onClick={props.prevPage} className={props.currentPage === pageNumbers[0] ? 'disabled' : null}>
-                    <span className="material-icons">navigate_before</span>
+                    <span className="material-icons icon-pagination">navigate_before</span>
                 </li>
                 {pageDecrementBtn}
                 {renderPageNumbers}
                 {pageIncrementBtn}
                 <li onClick={props.nextPage} className={props.currentPage === pageNumbers.length ? 'disabled' : null}>
-                    <span className="material-icons">navigate_next</span>
+                    <span className="material-icons icon-pagination">navigate_next</span>
                 </li>
             </ul>
         </div>

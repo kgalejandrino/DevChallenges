@@ -1,5 +1,4 @@
 .Pagination {
-    /* border: 1px solid red; */
     display: flex;
     justify-content: flex-end;
     margin-bottom: 18px;
@@ -35,6 +34,15 @@
     color: #fff;
 }
 
-.disabled {
-    pointer-events: none;
+.disabled { pointer-events: none; }
+
+@media only screen and (max-width: 380px) {
+    .Pagination ul li {
+        padding: 6px 12px;
+        margin-left: 8px;
+        font-size: 12px;
+    }
+
+    .Pagination ul li:first-child, 
+    .Pagination ul li:last-child { padding: 0 2px; } 
 }
