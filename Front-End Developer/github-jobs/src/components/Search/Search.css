@@ -22,11 +22,12 @@
 
 .input-container {
     position: relative;
-    margin-left: 18px;
-    width: 500px;
+    padding-left: 18px;
+    width: 80%;
     display: flex;
     align-items: center;
     color: #B9BDCF;
+    /* border: 1px solid black; */
 }
 
 ::placeholder { 
@@ -51,8 +52,11 @@
 
 .btn-container {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    margin-right: 4px;
+    padding-right: 4px;
+    width: 20%;
+    /* border: 1px solid black; */
 }
 
 .btn { border-radius: 4px;}
@@ -65,4 +69,10 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1050px) {
+    .input-container { width: 70%; }
+
+    .btn-container { width: 30%;}
 }

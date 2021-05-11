@@ -35,7 +35,7 @@
 .job_details {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     margin-left: 12px;
 }
 
@@ -113,6 +113,16 @@
     }
 }
 
+@media only screen and (max-width: 400px) {
+    .logo_container {
+        display: flex;
+        align-items: center;
+    }
+
+    .not-found {
+        text-align: center;
+    }
+}
 
 
 
