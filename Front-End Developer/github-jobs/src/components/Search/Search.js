@@ -1,5 +1,4 @@
 import React from 'react';
-import Radium from 'radium';
 
 import './Search.css';
 
@@ -27,4 +26,4 @@ const search = (props) => {
     )
 }
 
-export default Radium(search);
+export default search;

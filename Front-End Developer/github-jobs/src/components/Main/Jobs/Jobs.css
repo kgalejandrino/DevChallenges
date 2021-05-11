@@ -1,7 +1,4 @@
-.Jobs {
-    /* width: 70%; */
-    cursor: pointer;
-}
+.Jobs { cursor: pointer; }
 
 .no-jobs {
     font-size: 22px;

@@ -1,3 +1,4 @@
+/* Function: To convert date to days ago/ months ago */
 export const calculateDate = dt => {
     const date = new Date(dt);
     const date1 = new Date();

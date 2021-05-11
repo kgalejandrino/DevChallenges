@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium';
 import axios from 'axios';
 
 import './JobSearch.css';
@@ -14,7 +13,7 @@ class JobSearch extends Component {
 
         this.state = {
             data: [],
-            location: 'california',
+            location: 'California',
             description: '',
             fullTime: false,
             currentPage: 1,
@@ -92,7 +91,7 @@ class JobSearch extends Component {
     handlePaginationClick = (pageNo) => this.setState({ currentPage: pageNo })
 
     handleNextPageClick = () => {
-        const { currentPage, maxPageNumberLimit, jobsPerPage } = this.state;
+        const { currentPage, maxPageNumberLimit } = this.state;
         this.setState(prevState => ({ currentPage: prevState.currentPage + 1}))
 
         if(currentPage + 1 > maxPageNumberLimit) {
@@ -125,7 +124,6 @@ class JobSearch extends Component {
     handleBackToSearchClicked = () => this.setState({ jobClicked: false });
 
     render() {
-        console.log(this.state.data);
         const { data, location, currentPage, jobsPerPage, maxPageNumberLimit, minPageNumberLimit, jobClicked } = this.state;
         const indexOfLastJob = currentPage * jobsPerPage;
         const indexOfFirstJob = indexOfLastJob - jobsPerPage; 
@@ -154,20 +152,18 @@ class JobSearch extends Component {
                 />
             </Aux>
         return(
-            <StyleRoot>
-                <div className="JobSearch">
-                    <div className="title"><b>Github</b> Jobs</div>
-                    { jobClicked
-                        ? <JobDetails 
-                            backToSearch={this.handleBackToSearchClicked}
-                            data={this.state.dataClicked}  
-                        />
-                        : renderMain
-                    }
-                </div>
-            </StyleRoot>
+            <div className="JobSearch">
+                <div className="title"><b>Github</b> Jobs</div>
+                { jobClicked
+                    ? <JobDetails 
+                        backToSearch={this.handleBackToSearchClicked}
+                        data={this.state.dataClicked}  
+                    />
+                    : renderMain
+                }
+            </div>
         )
     }
 }
 
-export default Radium(JobSearch);
+export default JobSearch;

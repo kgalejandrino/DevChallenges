@@ -10,5 +10,3 @@ function App() {
 }
 
 export default App;
-
-// font-family: 'Roboto', sans-serif;

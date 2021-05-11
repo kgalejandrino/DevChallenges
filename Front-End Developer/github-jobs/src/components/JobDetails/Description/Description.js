@@ -5,8 +5,6 @@ import { calculateDate } from '../../../utils/Utils';
 import Aux from '../../../hoc/Auxiliary';
 
 const description = (props) => {
-
-
     return(
         <Aux>
             <div className="des_box1">
