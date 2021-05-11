@@ -23,7 +23,7 @@
 
 .not-found {
     background-color: #F2F2F2;
-    height: 100px;
+    height: 120px;
     border-radius: 4px;
     display: flex;
     justify-content: center;
@@ -35,17 +35,16 @@
 .job_details {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
+    margin-left: 12px;
 }
 
 .info_container { 
     margin-top: 4px;
-    padding-left: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 70%;
-    /* border: 1px solid red; */
 }
 
 .company-name, .type { font-size: 14px; }
@@ -83,6 +82,35 @@
 .city-icon, .time-icon { 
     font-size: 20px;
     margin-right: 6px;
+}
+
+@media only screen and (max-width: 550px) {
+    .Job { height: 170px;}
+    
+    .job_details { width: 70%; }
+
+    .job_time--date { 
+        justify-content: flex-start;
+    }
+
+    .job-title { font-size: 16px;}
+}
+
+@media only screen and (max-width: 480px) {
+    .Job { height: 180px;}
+
+    .company-name, .type { font-size: 12px; }
+
+    .info_container { height: 60%; }
+
+    .job_time--date { height: 40%; }
+
+    .flex-end {
+        flex-direction: column;
+        justify-content: space-around;
+        padding-right: 0;
+        align-items: flex-start;
+    }
 }
 
 

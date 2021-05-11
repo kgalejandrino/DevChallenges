@@ -18,7 +18,7 @@ const job = (props) => {
     }
 
     return(
-        <div className="Job" onClick={() => props.jobClicked(data)}>
+        <div className="Job" onClick={() => props.jobClicked(data)}> 
             <div className="logo_container">
                 {props.logo
                     ? <img src={props.logo} alt="company-logo"></img>
