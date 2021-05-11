@@ -37,12 +37,12 @@
 
 ## Overview
 
-![website-demo]()
+![website-demo](https://github.com/kgalejandrino/DevChallenges/blob/main/Front-End%20Developer/github-jobs/src/assets/website.gif?raw=true)
 
 - What was your experience?
 - What have you learned/improved?
 
-
+One thing that I've learned in this project was to create a pagination. It's my first time doing it so I really struggled to come up with a solution and decided to look up for a solution and learn from it. One issue that I've also struggled with was handling the error 503 which causes for the images not to load. I've researched about it and found out that it's an issue with the server and unfortunately I couldn't catch the error on the client side which would have been great cos then I can warn the user. Anyway, I think that I did great on this one and fulfilled all user stories. 
 
 ### Built With
 
