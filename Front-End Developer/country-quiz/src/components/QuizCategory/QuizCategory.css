@@ -1,8 +1,35 @@
 .QuizCard { 
-    margin-top: 28px; 
+    margin-top: 48px; 
     margin-bottom: 12px;
+    border: 1px solid red;
 }
 
+.QuizCard h3 {
+    color: #2F527B;
+    margin: 18px 0;
+}
+
+.answer-card {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-card li {
+    margin-top: 18px;
+    border: 2px solid rgba(98, 103, 208, 0.702);
+    padding: 8px 12px;
+    border-radius: 12px;
+    color: #6066D0;
+    cursor: pointer;
+}
+
+
+.answer-card li:hover {
+    border: 2px solid #F9A826;
+    background-color: #F9A826;
+    color: #fff;
+}
 /* BUTTONS */
 .btn-container {
     display: flex;

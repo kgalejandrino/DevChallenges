@@ -14,17 +14,18 @@ h2 {
     margin-top: 12px;
 }
 
-.quiz-card ul {
+/* .quiz-card ul {
     list-style-type: none;
+    display: flex;
 }
 
 .quiz-card ul li {
-    /* margin-top: 18px;
+    margin-top: 18px;
     border: 2px solid rgba(98, 103, 208, 0.702);
     padding: 8px 12px;
     border-radius: 12px;
     color: #6066D0;
-    cursor: pointer; */
+    cursor: pointer;
 }
 
 .list-card:hover {
@@ -42,7 +43,7 @@ h2 {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-}
+} */
 
 .img-quiz {
     position: absolute;
