@@ -32,9 +32,6 @@ export const getQuestion = (arr) => {
             }
         }
     }
-    
-    // console.log(data);
-    // console.log(shuffleArray(answers));
 
     let quiz = {
         question: `${capital} is the capital of`,
@@ -42,6 +39,5 @@ export const getQuestion = (arr) => {
         correct: city
     }
     
-    console.log(quiz);
     return quiz;
 }

@@ -1,6 +1,4 @@
-import React from 'react';
-import { getQuestion } from '../../utils/Utils';
-
+import React, { useState } from 'react';
 import './QuizCategory.css';
 
 // const options = [
@@ -8,28 +6,62 @@ import './QuizCategory.css';
 //     { 'question': 'Select Region', 'answers': ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia']}
 // ];
 
-const quizCategory = (props) => {
-    const data = getQuestion(props.data);
+const QuizCategory = (props) => {
+    console.log(props.data);
+    const letters = ['A', 'B', 'C', 'D'];
+    const [index, setIndex] = useState('');
+    const [answerSelected, setAnswerSelected] = useState(false);
+    const [correct, setCorrect] = useState(false);
 
-    console.log(data.choices);
-    // const styles = {
-    //     li: {
-    //         border: "2px solid #60BF88",
-    //         backgroundColor: "#60BF88",
-    //         color: "#fff"
-    //     }
-    // }
+    const handleClickedAnswer = (answer, idx) => {
+        if(!answerSelected) {
+            setIndex(idx);
+            setAnswerSelected(true);
+            if(answer === props.data.correct) {
+                setCorrect(true);
+            }
+        }
+    }
+
+    let listStyle = {};
+    let renderIcon = null;
+
+    if(answerSelected) {
+        if(correct) {
+            renderIcon = <span className="material-icons">check_circle_outline</span>;
+            listStyle = { 
+                border: "2px solid #60BF88",
+                backgroundColor: "#60BF88",
+                color: "#fff"
+            } 
+        } else {
+            renderIcon = <span className="material-icons">cancel</span>;
+            listStyle = { 
+                border: "2px solid #EA8282",
+                backgroundColor: "#EA8282",
+                color: "#fff"
+            }
+        }
+    } 
+
+    const choices = props.data.choices.map((ans, idx) => {
+        return  <li className="list" 
+                    style={ idx === index ? listStyle : null }
+                    key={idx} 
+                    onClick={() => handleClickedAnswer(ans, idx)}>
+                <div>
+                    <span className="letters">{letters[idx]}</span>
+                    <span className="answers">{ans}</span>
+                </div>
+                { idx === index ? renderIcon : null}
+               </li>
+    })
 
     return (
         <div className="QuizCard">
-            <h3>{data.question}</h3>
+            <h3>{props.data.question}</h3>
             <ul className="answer-card">
-                {data.choices.map((item, index) => {
-                    return <li key={index}>
-                        {item}
-                    </li>
-                })}
-                {/* <span className="material-icons">check_circle_outline</span> */}
+                {choices}
             </ul>
             {/* { answerSelected 
                 ? <div className="btn-container">
@@ -41,4 +73,4 @@ const quizCategory = (props) => {
     )
 }
 
-export default quizCategory;
+export default QuizCategory;
