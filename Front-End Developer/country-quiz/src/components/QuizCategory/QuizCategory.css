@@ -34,6 +34,18 @@
 
 .letters { margin-right: 24px;}
 
+#correct {
+    border: 2px solid #60BF88;
+    background-color: #60BF88;
+    color: #fff;
+}
+
+#wrong {
+    border: 2px solid #EA8282;
+    background-color: #EA8282;
+    color: #fff;
+}
+
 /* BUTTONS */
 .btn-container {
     display: flex;

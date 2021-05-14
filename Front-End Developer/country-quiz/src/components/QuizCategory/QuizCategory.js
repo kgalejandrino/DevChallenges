@@ -25,35 +25,38 @@ const QuizCategory = (props) => {
 
     let listStyle = {};
     let renderIcon = null;
+    let choiceStatus = '';
 
     if(answerSelected) {
         if(correct) {
             renderIcon = <span className="material-icons">check_circle_outline</span>;
+            choiceStatus = "correct"
+        } else {
+            renderIcon = <span className="material-icons">cancel</span>;
+            choiceStatus = "wrong"
             listStyle = { 
                 border: "2px solid #60BF88",
                 backgroundColor: "#60BF88",
-                color: "#fff"
-            } 
-        } else {
-            renderIcon = <span className="material-icons">cancel</span>;
-            listStyle = { 
-                border: "2px solid #EA8282",
-                backgroundColor: "#EA8282",
                 color: "#fff"
             }
         }
     } 
 
     const choices = props.data.choices.map((ans, idx) => {
-        return  <li className="list" 
-                    style={ idx === index ? listStyle : null }
+        return  <li className="list"
+                    id={idx === index ? choiceStatus : null} 
                     key={idx} 
+                    style={ choiceStatus === 'wrong' && ans === props.data.correct ? listStyle : null }
                     onClick={() => handleClickedAnswer(ans, idx)}>
                 <div>
                     <span className="letters">{letters[idx]}</span>
                     <span className="answers">{ans}</span>
                 </div>
                 { idx === index ? renderIcon : null}
+                { choiceStatus === 'wrong' && ans === props.data.correct 
+                    ? <span className="material-icons">check_circle_outline</span>
+                    : null 
+                }
                </li>
     })
 
