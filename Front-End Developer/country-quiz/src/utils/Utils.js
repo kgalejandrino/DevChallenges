@@ -27,8 +27,10 @@ export const getQuestion = (arr) => {
         answers.push(city);
         
         for(let i = 0; i < 3; i++) {
-            if(generateRandom(arr).name !== city) {
-                answers.push(generateRandom(arr).name);
+            const answer = generateRandom(arr).name;
+
+            if(answer !== city && answer !== '') {
+                answers.push(answer);
             }
         }
     }

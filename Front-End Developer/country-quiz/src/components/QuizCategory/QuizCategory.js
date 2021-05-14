@@ -66,12 +66,12 @@ const QuizCategory = (props) => {
             <ul className="answer-card">
                 {choices}
             </ul>
-            {/* { answerSelected 
+            { answerSelected 
                 ? <div className="btn-container">
-                    <button className="btn btn-next" onClick={handleNextClicked}>Next</button>
+                    <button className="btn btn-next">Next</button>
                     </div>
                 : null
-            } */}
+            }
         </div>
     )
 }
