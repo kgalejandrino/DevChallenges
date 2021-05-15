@@ -1,6 +1,7 @@
+import axios from 'axios';
+
 const generateRandom = (arr) => {
     const random = Math.floor(Math.random() * arr.length);
-
     return arr[random];
 }
 
@@ -15,31 +16,51 @@ const shuffleArray = (arr) => {
     return arr;
 }
 
-export const getQuestion = (arr) => {
-    const data = generateRandom(arr);
-    let capital = '';
-    let answers = [];
-    let city = '';
+export const getQuestion = async (category, region) => {
+    const response = await axios.get('https://restcountries.eu/rest/v2/region/asia?fields=name;capital;flag');
+    const json = response.data;
+    // console.log(json);
+    const questions = [];
 
-    if(data) {
-        capital = data.capital;
-        city = data.name;
-        answers.push(city);
-        
-        for(let i = 0; i < 3; i++) {
-            const answer = generateRandom(arr).name;
+    for(let i = 0; i < 10; i++) {
+        if(category === 'Capital') {
+            let data = generateRandom(json);
+            let answers = [];
+            answers.push(data.name);
 
-            if(answer !== city && answer !== '') {
-                answers.push(answer);
+            for(let i = 0; i < 3; i++) {
+                const answer = generateRandom(json).name;
+
+                if(answer !== data.name && answer !== '') {
+                    answers.push(answer);
+                }
             }
+            const random = {
+               question: `${data.capital} is a capital of`,
+               choices: shuffleArray(answers),
+               correct: data.name
+            }
+            questions.push(random); 
+        } else if(category === 'Flag') {
+            let data = generateRandom(json);
+            let answers = [];
+            answers.push(data.name);
+
+            for(let i = 0; i < 3; i++) {
+                const answer = generateRandom(json).name;
+
+                if(answer !== data.name && answer !== '') {
+                    answers.push(answer);
+                }
+            }
+            const random = {
+               question: 'Which country does this flag belong to?',
+               choices: shuffleArray(answers),
+               correct: data.name,
+               url: data.flag
+            }
+            questions.push(random); 
         }
     }
-
-    let quiz = {
-        question: `${capital} is the capital of`,
-        choices: shuffleArray(answers),
-        correct: city
-    }
-    
-    return quiz;
+    return questions;
 }

@@ -10,35 +10,40 @@ class CountryQuiz extends Component {
         super(props);
 
         this.state = {
-            data: []
+            data: [],
+            index: 0
         }
     }
 
     componentDidMount() {
-        this.fetchData();
+        const fetchData = async () => {
+            const data = await getQuestion('Capital', '');
+            this.setState({ data: data})
+        }
+        fetchData();
     }
 
-    fetchData() {
-        axios.get(`https://restcountries.eu/rest/v2/region/asia?fields=name;capital`)
-        .then(response => {
-            this.setState({ data: response.data });
-        })
-        .catch(error => {
-            console.log(error);
-        })
+    handleIncrementIndex = () => {
+        this.setState(prevState => ({
+            index: prevState.index + 1
+        }))
     }
 
-    render() {
-        const data = getQuestion(this.state.data);
-        
+    render() {   
+        console.log(this.state.data);
         return (
             <div className="CountryQuiz">
                 <h2>Country Quiz</h2>
                 <div className="quiz-card">
                     <img src="https://raw.githubusercontent.com/kgalejandrino/DevChallenges/4350fd304d74e0a2f78f4ac99324d6f4ff29d1c8/Front-End%20Developer/country-quiz/src/assets/undraw_adventure_4hum%201.svg" alt="undraw_adventure" className="img-quiz"></img>
-                    <QuizCategory 
-                        data={data}
-                    />
+                { this.state.data.length
+                    ? <QuizCategory 
+                        data={this.state.data[this.state.index]}
+                        increment={this.handleIncrementIndex}
+                      />
+                    : null
+                }
+
                 </div>
             </div>
         )

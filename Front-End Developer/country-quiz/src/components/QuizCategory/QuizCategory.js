@@ -58,17 +58,23 @@ const QuizCategory = (props) => {
                     : null 
                 }
                </li>
-    })
+        });
+    
+    const handleNextButton = () => {
+        props.increment();
+        setAnswerSelected(false);
+        setCorrect(false);
+    }
 
     return (
-        <div className="QuizCard">
+        <div className="QuizCard" style={!props.answerSelected ? {marginBottom: "12px"} : {marginBottom: "24px"}}>
             <h3>{props.data.question}</h3>
             <ul className="answer-card">
                 {choices}
             </ul>
             { answerSelected 
                 ? <div className="btn-container">
-                    <button className="btn btn-next">Next</button>
+                    <button className="btn btn-next" onClick={handleNextButton}>Next</button>
                     </div>
                 : null
             }
