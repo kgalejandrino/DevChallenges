@@ -8,7 +8,7 @@ const QuizCategory = (props) => {
     const [index, setIndex] = useState('');
     const [answerSelected, setAnswerSelected] = useState(false);
     const [correct, setCorrect] = useState(false);
-    const [choiceStatus, setChoiceStatus] = useState('')
+    const [choiceStatus, setChoiceStatus] = useState('');
 
     let listStyle = {};
     let renderIcon = null;
@@ -21,6 +21,7 @@ const QuizCategory = (props) => {
                 if(answer === props.data.correct) {
                     setChoiceStatus('correct');
                     setCorrect(true);
+                    props.setScore();
                 } else {
                     setChoiceStatus('wrong');
                 }
@@ -73,7 +74,7 @@ const QuizCategory = (props) => {
         props.increment();
         setAnswerSelected(false);
         setCorrect(false);
-        setChoiceStatus('')
+        setChoiceStatus('');
     }
 
     return (
