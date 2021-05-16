@@ -1,39 +1,48 @@
 import React, { useState } from 'react';
-import './QuizCategory.css';
 
-// const options = [
-//     { 'question': 'Select Category', 'answers': ['Capital', 'Flag'] },
-//     { 'question': 'Select Region', 'answers': ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia']}
-// ];
+import './QuizCategory.css';
 
 const QuizCategory = (props) => {
     console.log(props.data);
-    const letters = ['A', 'B', 'C', 'D'];
+    const letters = ['A', 'B', 'C', 'D', 'E'];
     const [index, setIndex] = useState('');
     const [answerSelected, setAnswerSelected] = useState(false);
     const [correct, setCorrect] = useState(false);
-
-    const handleClickedAnswer = (answer, idx) => {
-        if(!answerSelected) {
-            setIndex(idx);
-            setAnswerSelected(true);
-            if(answer === props.data.correct) {
-                setCorrect(true);
-            }
-        }
-    }
+    const [choiceStatus, setChoiceStatus] = useState('')
 
     let listStyle = {};
     let renderIcon = null;
-    let choiceStatus = '';
+
+    const handleClickedAnswer = (answer, idx) => {
+        if(props.category && props.region) {
+            if(!answerSelected) {
+                setIndex(idx);
+                setAnswerSelected(true);
+                if(answer === props.data.correct) {
+                    setChoiceStatus('correct');
+                    setCorrect(true);
+                } else {
+                    setChoiceStatus('wrong');
+                }
+            }
+        } else {
+            if(props.index === 0) {
+                props.setCategory(answer);
+            } else if(props.index === 1) {
+                props.setRegion(answer);
+            }
+            setIndex(idx);
+            setAnswerSelected(true);
+            setCorrect(true);
+            setChoiceStatus('correct');
+        }
+    }
 
     if(answerSelected) {
         if(correct) {
             renderIcon = <span className="material-icons">check_circle_outline</span>;
-            choiceStatus = "correct"
         } else {
             renderIcon = <span className="material-icons">cancel</span>;
-            choiceStatus = "wrong"
             listStyle = { 
                 border: "2px solid #60BF88",
                 backgroundColor: "#60BF88",
@@ -64,6 +73,7 @@ const QuizCategory = (props) => {
         props.increment();
         setAnswerSelected(false);
         setCorrect(false);
+        setChoiceStatus('')
     }
 
     return (

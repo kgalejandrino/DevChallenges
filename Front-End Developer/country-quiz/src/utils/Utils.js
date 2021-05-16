@@ -16,8 +16,13 @@ const shuffleArray = (arr) => {
     return arr;
 }
 
+export const options = [
+    { 'question': 'Select Category', 'choices': ['Capital', 'Flag'] },
+    { 'question': 'Select Region', 'choices': ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia']}
+];
+
 export const getQuestion = async (category, region) => {
-    const response = await axios.get('https://restcountries.eu/rest/v2/region/asia?fields=name;capital;flag');
+    const response = await axios.get(`https://restcountries.eu/rest/v2/region/${region}?fields=name;capital;flag`);
     const json = response.data;
     // console.log(json);
     const questions = [];

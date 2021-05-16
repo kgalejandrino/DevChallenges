@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import './CountryQuiz.css';
 import QuizCategory from '../../components/QuizCategory/QuizCategory';
-import { getQuestion } from '../../utils/Utils';
+import { getQuestion, options } from '../../utils/Utils';
 
 class CountryQuiz extends Component {
     constructor(props) {
@@ -11,23 +10,37 @@ class CountryQuiz extends Component {
 
         this.state = {
             data: [],
-            index: 0
+            index: 0,
+            category: '',
+            region: ''
         }
     }
 
     componentDidMount() {
-        const fetchData = async () => {
-            const data = await getQuestion('Capital', '');
-            this.setState({ data: data})
-        }
-        fetchData();
+        this.setState({ data: options})
     }
 
     handleIncrementIndex = () => {
+        if(this.state.region && this.state.data.length === 2) {
+            this.setState({ index: -1 });
+
+            const fetchData = async () => {
+                const { category, region } = this.state;
+                const data = await getQuestion(category, region);
+                this.setState({ data: data})
+            }
+
+            fetchData();
+        }
+
         this.setState(prevState => ({
             index: prevState.index + 1
         }))
     }
+
+    setCategory = (answer) => this.setState({ category: answer}) 
+    
+    setRegion = (answer) => this.setState({ region: answer}) 
 
     render() {   
         console.log(this.state.data);
@@ -39,7 +52,12 @@ class CountryQuiz extends Component {
                 { this.state.data.length
                     ? <QuizCategory 
                         data={this.state.data[this.state.index]}
+                        category={this.state.category}
+                        region={this.state.region}
+                        index={this.state.index}
                         increment={this.handleIncrementIndex}
+                        setCategory={this.setCategory}
+                        setRegion={this.setRegion}
                       />
                     : null
                 }
