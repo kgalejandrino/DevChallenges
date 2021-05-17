@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './QuizCategory.css';
 
 const QuizCategory = (props) => {
-    console.log(props.data);
     const letters = ['A', 'B', 'C', 'D', 'E'];
     const [index, setIndex] = useState('');
     const [answerSelected, setAnswerSelected] = useState(false);
@@ -52,7 +51,14 @@ const QuizCategory = (props) => {
         }
     } 
 
-    const choices = props.data.choices.map((ans, idx) => {
+    const handleNextButton = () => {
+        props.increment();
+        setAnswerSelected(false);
+        setCorrect(false);
+        setChoiceStatus('');
+    }
+
+    const renderChoices = props.data.choices.map((ans, idx) => {
         return  <li className={answerSelected ? 'list no-hover' : 'list'}
                     id={idx === index ? choiceStatus : null} 
                     key={idx} 
@@ -69,19 +75,16 @@ const QuizCategory = (props) => {
                 }
                </li>
         });
-    
-    const handleNextButton = () => {
-        props.increment();
-        setAnswerSelected(false);
-        setCorrect(false);
-        setChoiceStatus('');
-    }
 
     return (
         <div className="QuizCard" style={!props.answerSelected ? {marginBottom: "12px"} : {marginBottom: "24px"}}>
+            { props.data.url
+                ? <img src={props.data.url} alt="flag" className="img-flag"></img>
+                : null
+            }
             <h3>{props.data.question}</h3>
             <ul className="answer-card">
-                {choices}
+                {renderChoices}
             </ul>
             { answerSelected 
                 ? <div className="btn-container">

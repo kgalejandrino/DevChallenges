@@ -45,6 +45,13 @@
 }
 
 .no-hover { pointer-events: none; }
+
+.img-flag {
+    height: auto;
+    width: 90px;
+    margin-bottom: 12px;
+}
+
 /* BUTTONS */
 .btn-container {
     display: flex;

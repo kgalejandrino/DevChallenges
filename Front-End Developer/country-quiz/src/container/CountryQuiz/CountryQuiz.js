@@ -19,9 +19,7 @@ class CountryQuiz extends Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({ data: options})
-    }
+    componentDidMount() { this.setState({ data: options}) }
 
     handleIncrementIndex = () => {
         if(this.state.region && this.state.data.length === 2) {
@@ -35,7 +33,6 @@ class CountryQuiz extends Component {
 
             fetchData();
         }
-
 
         this.setState(prevState => ({
             index: prevState.index + 1
