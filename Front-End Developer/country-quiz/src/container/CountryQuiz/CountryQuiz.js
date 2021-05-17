@@ -12,8 +12,8 @@ class CountryQuiz extends Component {
 
         this.state = {
             data: [],
-            index: 10,
-            score: 4,
+            index: 0,
+            score: 0,
             category: '',
             region: ''
         }

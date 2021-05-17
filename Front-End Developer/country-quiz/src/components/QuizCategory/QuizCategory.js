@@ -53,10 +53,10 @@ const QuizCategory = (props) => {
     } 
 
     const choices = props.data.choices.map((ans, idx) => {
-        return  <li className="list"
+        return  <li className={answerSelected ? 'list no-hover' : 'list'}
                     id={idx === index ? choiceStatus : null} 
                     key={idx} 
-                    style={ choiceStatus === 'wrong' && ans === props.data.correct ? listStyle : null }
+                    style={ choiceStatus === 'wrong' && ans === props.data.correct ? listStyle : null}
                     onClick={() => handleClickedAnswer(ans, idx)}>
                 <div>
                     <span className="letters">{letters[idx]}</span>
