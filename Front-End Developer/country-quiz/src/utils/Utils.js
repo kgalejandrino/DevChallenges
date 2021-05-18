@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const options = [
     { 'question': 'Select Category', 'choices': ['Capital', 'Flag'] },
-    { 'question': 'Select Region', 'choices': ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia']}
+    { 'question': 'Select Region', 'choices': ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']}
 ];
 
 /* Function: Generate random numbers */

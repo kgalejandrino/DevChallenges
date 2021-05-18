@@ -18,3 +18,50 @@ h2 {
     right: 0;
     top: -28px;
 }
+
+@media only screen and (max-width: 420px) {
+    h2 { 
+        margin-left: 8px; 
+        font-size: 22px;
+    }
+
+    .quiz-card { 
+        width: 340px;
+        padding: 18px 18px;
+    }
+    
+    .img-quiz {
+        width: 140px;
+        right: 10px;
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    h2 { font-size: 20px; }
+
+    .quiz-card { 
+        width: 300px; 
+        padding: 18px 14px;
+    }
+
+    .img-quiz {
+        width: 130px;
+        right: 4px;
+        top: -18px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    h2 { font-size: 18px; }
+
+    .quiz-card { 
+        width: 270px; 
+        padding: 18px 8px;
+    }
+
+    .img-quiz {
+        width: 120px;
+        right: 2px;
+        top: -10px;
+    }
+}
