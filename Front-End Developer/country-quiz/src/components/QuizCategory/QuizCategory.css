@@ -44,8 +44,6 @@
     color: #fff;
 }
 
-.no-hover { pointer-events: none; }
-
 .img-flag {
     height: auto;
     width: 90px;

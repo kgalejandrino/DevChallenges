@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './QuizCategory.css';
 
 const QuizCategory = (props) => {
+    // console.log(props.data);
     const letters = ['A', 'B', 'C', 'D', 'E'];
     const [index, setIndex] = useState('');
     const [answerSelected, setAnswerSelected] = useState(false);
@@ -13,7 +14,7 @@ const QuizCategory = (props) => {
     let renderIcon = null;
 
     const handleClickedAnswer = (answer, idx) => {
-        if(props.category && props.region) {
+        if(props.data.correct) {
             if(!answerSelected) {
                 setIndex(idx);
                 setAnswerSelected(true);
@@ -26,15 +27,15 @@ const QuizCategory = (props) => {
                 }
             }
         } else {
+            setIndex(idx);
+            setAnswerSelected(true);
+            setCorrect(true);
+            setChoiceStatus('correct');
             if(props.index === 0) {
                 props.setCategory(answer);
             } else if(props.index === 1) {
                 props.setRegion(answer);
             }
-            setIndex(idx);
-            setAnswerSelected(true);
-            setCorrect(true);
-            setChoiceStatus('correct');
         }
     }
 
@@ -59,7 +60,7 @@ const QuizCategory = (props) => {
     }
 
     const renderChoices = props.data.choices.map((ans, idx) => {
-        return  <li className={answerSelected ? 'list no-hover' : 'list'}
+        return  <li className="list"
                     id={idx === index ? choiceStatus : null} 
                     key={idx} 
                     style={ choiceStatus === 'wrong' && ans === props.data.correct ? listStyle : null}

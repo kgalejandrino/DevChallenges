@@ -48,26 +48,30 @@ class CountryQuiz extends Component {
     handleRestartClicked = () => {
         this.setState({ 
             data: options,
-            index: 0
+            index: 0,
+            score: 0,
+            category: '',
+            region: ''
         })
     }
 
     render() {   
+        console.log(this.state.data);
         const renderQuestions =  (
         <Aux>
             <img src="https://raw.githubusercontent.com/kgalejandrino/DevChallenges/4350fd304d74e0a2f78f4ac99324d6f4ff29d1c8/Front-End%20Developer/country-quiz/src/assets/undraw_adventure_4hum%201.svg" alt="undraw_adventure" className="img-quiz"></img>
             { this.state.data.length
-            ? <QuizCategory 
-                data={this.state.data[this.state.index]}
-                category={this.state.category}
-                region={this.state.region}
-                index={this.state.index}
-                increment={this.handleIncrementIndex}
-                setCategory={this.setCategory}
-                setRegion={this.setRegion}
-                setScore={this.setScore}
-            />
-            : null
+                ? <QuizCategory 
+                    data={this.state.data[this.state.index]}
+                    category={this.state.category}
+                    region={this.state.region}
+                    index={this.state.index}
+                    increment={this.handleIncrementIndex}
+                    setCategory={this.setCategory}
+                    setRegion={this.setRegion}
+                    setScore={this.setScore}
+                />
+                : null
             }
             </Aux>
         );
@@ -75,7 +79,7 @@ class CountryQuiz extends Component {
             <div className="CountryQuiz">
                 <h2>Country Quiz</h2>
                 <div className="quiz-card">
-                { this.state.index < 9
+                { this.state.index < 10
                     ? renderQuestions
                     : <Results 
                         score={this.state.score}

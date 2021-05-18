@@ -22,6 +22,16 @@ const shuffleArray = (arr) => {
     return arr;
 }
 
+
+/* Function: Format country name (e.g Macedonia (the former Yugoslav Republic of) to Macedonia) */
+const formatStr = (str) => {
+    if(str.indexOf('(') === -1) {
+        return str;
+    } else {
+        return str.substring(0, str.indexOf("("));
+    }
+}
+
 /* Function: Generate 10 random object containing (questions & choices) */
 export const getQuestion = async (category, region) => {
     const response = await axios.get(`https://restcountries.eu/rest/v2/region/${region}?fields=name;capital;flag`);
@@ -32,13 +42,13 @@ export const getQuestion = async (category, region) => {
         if(category === 'Capital') {
             let data = generateRandom(json);
             let answers = [];
-            answers.push(data.name);
+            answers.push(formatStr(data.name));
 
             for(let i = 0; i < 3; i++) {
                 const answer = generateRandom(json).name;
 
                 if(answer !== data.name && answer !== '') {
-                    answers.push(answer);
+                    answers.push(formatStr(answer));
                 }
             }
             const random = {
@@ -50,13 +60,13 @@ export const getQuestion = async (category, region) => {
         } else if(category === 'Flag') {
             let data = generateRandom(json);
             let answers = [];
-            answers.push(data.name);
+            answers.push(formatStr(data.name));
 
             for(let i = 0; i < 3; i++) {
                 const answer = generateRandom(json).name;
 
                 if(answer !== data.name && answer !== '') {
-                    answers.push(answer);
+                    answers.push(formatStr(answer));
                 }
             }
             const random = {
