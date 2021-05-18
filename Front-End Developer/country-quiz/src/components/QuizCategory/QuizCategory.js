@@ -4,7 +4,6 @@ import './QuizCategory.css';
 import Aux from '../../hoc/Auxilliary';
 
 const QuizCategory = (props) => {
-    // console.log(props.data);
     const letters = ['A', 'B', 'C', 'D', 'E'];
     const [index, setIndex] = useState('');
     const [answerSelected, setAnswerSelected] = useState(false);
@@ -66,7 +65,7 @@ const QuizCategory = (props) => {
                     key={idx} 
                     style={ choiceStatus === 'wrong' && ans === props.data.correct ? listStyle : null}
                     onClick={() => handleClickedAnswer(ans, idx)}>
-                <div>
+                <div className="choices">
                     <span className="letters">{letters[idx]}</span>
                     <span className="answers">{ans}</span>
                 </div>
@@ -96,10 +95,8 @@ const QuizCategory = (props) => {
             </ul>
             { answerSelected 
                 ? <Aux>
-                  <div className="btn-container">
                     { renderTracker }
                     <button className="btn btn-next" onClick={handleNextButton}>Next</button>
-                  </div>
                   </Aux>
                 : null
             }

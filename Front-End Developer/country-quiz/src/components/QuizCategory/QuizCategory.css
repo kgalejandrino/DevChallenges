@@ -31,7 +31,15 @@
     color: #fff;
 }
 
-.letters { margin-right: 24px;}
+.choices {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.letter { width: 5%;}
+
+.answers { width: 90%;}
 
 #correct {
     border: 2px solid #60BF88;
@@ -52,10 +60,6 @@
 }
 
 /* BUTTONS */
-.btn-container{
-    /* float: right; */
-}
-
 .btn {
    border-radius: 12px;
    padding: 16px;
