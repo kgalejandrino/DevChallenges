@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './QuizCategory.css';
+import Aux from '../../hoc/Auxilliary';
 
 const QuizCategory = (props) => {
     // console.log(props.data);
@@ -76,6 +77,12 @@ const QuizCategory = (props) => {
                 }
                </li>
         });
+    
+    const renderTracker = (
+        props.data.correct
+        ? <div className="question-tracker">{props.index + 1}/10</div>
+        : null
+    );
 
     return (
         <div className="QuizCard" style={!props.answerSelected ? {marginBottom: "12px"} : {marginBottom: "24px"}}>
@@ -88,9 +95,12 @@ const QuizCategory = (props) => {
                 {renderChoices}
             </ul>
             { answerSelected 
-                ? <div className="btn-container">
+                ? <Aux>
+                  <div className="btn-container">
+                    { renderTracker }
                     <button className="btn btn-next" onClick={handleNextButton}>Next</button>
-                    </div>
+                  </div>
+                  </Aux>
                 : null
             }
         </div>
