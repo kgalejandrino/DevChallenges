@@ -42,7 +42,7 @@
 - What was your experience?
 - What have you learned/improved?
 
-
+I think this is the most challenging project I've done in dev challenges. In fact, I skipped this one and did this last because at first I had a hard time coming up with a solution of getting random questions & 4 random choices. A project worth doing to test my javascript skills and taking advantage of methods and data structures learned from the past. 
 
 ### Built With
 
@@ -83,7 +83,7 @@ $ npm start
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
 
 - [Material Icon](https://google.github.io/material-design-icons/)
-
+- [API](https://restcountries.eu/)
 ## Contact
 
 - Website (In Progress)

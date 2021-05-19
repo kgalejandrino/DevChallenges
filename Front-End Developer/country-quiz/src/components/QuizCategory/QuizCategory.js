@@ -13,7 +13,10 @@ const QuizCategory = (props) => {
     let listStyle = {};
     let renderIcon = null;
 
+
     const handleClickedAnswer = (answer, idx) => {
+        // Checks if the data passed is for the quiz
+        // then checks if answer selected is correct/wrong
         if(props.data.correct) {
             if(!answerSelected) {
                 setIndex(idx);
@@ -26,6 +29,7 @@ const QuizCategory = (props) => {
                     setChoiceStatus('wrong');
                 }
             }
+        // else user selects the quiz type & region
         } else {
             setIndex(idx);
             setAnswerSelected(true);
