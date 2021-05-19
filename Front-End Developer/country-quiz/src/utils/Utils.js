@@ -54,7 +54,7 @@ export const getQuestion = async (category, region) => {
             const random = {
                question: `${data.capital} is a capital of`,
                choices: shuffleArray(answers),
-               correct: data.name
+               correct: formatStr(data.name)
             }
             questions.push(random); 
         } else if(category === 'Flag') {
@@ -71,7 +71,7 @@ export const getQuestion = async (category, region) => {
             const random = {
                question: 'Which country does this flag belong to?',
                choices: shuffleArray(answers),
-               correct: data.name,
+               correct: formatStr(data.name),
                url: data.flag
             }
             questions.push(random); 
