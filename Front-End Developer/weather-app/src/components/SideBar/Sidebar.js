@@ -17,25 +17,23 @@ const sideBar = (props) => {
 
     return (
         <div className="Sidebar" style={height}>
-                { props.search
-                    ? <SearchBar 
-                        search={props.search}
-                        searched={props.searched}
-                        closed={props.closed} 
-                        changed={props.changed}
-                        filtered={props.filtered}
-                        input={props.input}
-                        getWeather={props.getWeather}
-                        error={props.error}
-                      /> 
-                    : <CurrentWeather 
-                        clicked={props.clicked}
-                        data={props.data}
-                        location={props.location}
-                        tempScale={props.tempScale}
-                        request={props.request}
-                      />
-                }
+            <SearchBar 
+                search={props.search}
+                searched={props.searched}
+                closed={props.closed} 
+                changed={props.changed}
+                filtered={props.filtered}
+                input={props.input}
+                getWeather={props.getWeather}
+                error={props.error}
+            /> 
+            <CurrentWeather 
+            clicked={props.clicked}
+            data={props.data}
+            location={props.location}
+            tempScale={props.tempScale}
+            request={props.request}
+            />
         </div>
     )
 }    

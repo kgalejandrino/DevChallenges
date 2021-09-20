@@ -1,6 +1,13 @@
 .SearchBar {
-    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100vh;
     overflow-y: auto;
+    width: 380px;
+    z-index: 999;
+    background-color: #1E213A;
+    transition: all 0.5s ease;
 }
 
 .search_box {  
@@ -59,15 +66,6 @@
     margin-top: 12px;
     margin-left: 18px;
     font-size: 14px;
-}
-
-@keyframes slide {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 380px;
-    }
 }
 
 /* SCROLL BAR */

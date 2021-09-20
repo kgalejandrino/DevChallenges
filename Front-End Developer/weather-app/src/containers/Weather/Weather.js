@@ -22,6 +22,12 @@ class Weather extends Component {
         }
     }
 
+    enterSearchFunction = (event) => {
+        if(this.state.search && event.keyCode === 13) {
+            this.handleSearchedClicked();
+        }
+    }
+
     componentDidMount() {
         /* Init data to render if user does not allow to know its location*/
         axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/${this.state.woeid}/`)
@@ -37,6 +43,11 @@ class Weather extends Component {
         })
 
         this.fetchCoordinates();
+        document.addEventListener("keydown", this.enterSearchFunction, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this.enterSearchFunction, false);
     }
 
     fetchCoordinates = async () => {
@@ -74,7 +85,7 @@ class Weather extends Component {
 
     handleSearchOpenClicked = () => this.setState({ search: true })
 
-    handleSearchClosedClicked = () => this.setState({ search: false })
+    handleSearchClosedClicked = () => this.setState({  search: false })
 
     handleInputChange = (event) => this.setState({ input: event.target.value }) 
 
@@ -97,7 +108,10 @@ class Weather extends Component {
     }
 
     handleGetWeather = (id) => {
-        this.setState({ search: false })
+        this.setState({ 
+            search: false, 
+            input: ''
+        })
         this.fetchDatawithWoeid(id);
     }
 

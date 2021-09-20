@@ -35,7 +35,7 @@ const main = (props) => {
             <footer>
                 <span>created by</span>
                 <a href="https://github.com/kgalejandrino">Kevin Alejandrino</a>
-                <span>- devChallenges.io</span>
+                <span>- <a href="https://devchallenges.io/" target="_blank" rel="noreferrer">devChallenges.io</a></span>
             </footer>
         </div>
     )

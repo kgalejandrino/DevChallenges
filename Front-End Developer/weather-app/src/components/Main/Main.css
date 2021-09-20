@@ -21,7 +21,7 @@
 footer {
     display: flex;
     justify-content: center;
-    margin-top: 84px;
+    margin-top: 56px;
     margin-bottom: 18px;
     color: #A09FB1;
     font-size: 14px;
@@ -33,10 +33,6 @@ footer a {
     padding: 0 8px;
 }
 
-@media only screen and (max-width: 1350px) {
-    footer { margin-top: 64px;}
-}
-
-@media only screen and (max-width: 1350px) {
-    footer { font-size: 12px; }
+@media only screen and (max-width: 360px) {
+    footer { font-size: 12px; } 
 }

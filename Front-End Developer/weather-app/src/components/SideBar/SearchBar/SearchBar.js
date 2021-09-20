@@ -5,7 +5,7 @@ import FilterSearch from './FilterSearch/FilterSearch';
 
 const searchBar = (props) => {
     return (
-        <div className="SearchBar" style={props.search ? { animation: "slide .1s"} : null}>
+        <div className="SearchBar" style={props.search ? { transform: "translateX(0)" } : { transform: "translateX(-100%)" }} >
             <div className="search_box">
                 <span className="material-icons close-icon" onClick={props.closed}>close</span>
                 <div className="search">
@@ -24,7 +24,7 @@ const searchBar = (props) => {
                 { props.error
                     ? <div className="error">Search Not Found. Please Enter a valid city.</div>
                     : props.filtered.map((loc, index) => {
-                        return <FilterSearch key={index} location={loc.title} id={loc.woeid}getWeather={props.getWeather}/>
+                        return <FilterSearch key={index} location={loc.title} id={loc.woeid}getWeather={props.getWeather} input={props.input}/>
                     })
                 }
             </div>
