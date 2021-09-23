@@ -11,7 +11,7 @@
 }
 
 .search_box {  
-    width: 90%;
+    width: 340px;
     margin: 0 auto;
 }
 
@@ -85,4 +85,16 @@
     background: #616475;
     border-radius: 10px;
 }
+
+@media only screen and (max-width: 750px) {
+    .SearchBar { 
+        width: 100%; 
+    }
+
+    .search_box {  
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
 

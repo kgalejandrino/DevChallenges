@@ -4,6 +4,8 @@ import axios from 'axios';
 import './Weather.css';
 import Sidebar from '../../components/SideBar/Sidebar';
 import Main from '../../components/Main/Main';
+import Spinner from '../../components/UI/Spinner/Spinner';
+import Aux from '../../hoc/Auxilliary/Auxilliary';
 import { getCurrentPosition } from '../../Utils/Utils';
 
 class Weather extends Component {
@@ -19,6 +21,7 @@ class Weather extends Component {
             activeScale: 'celsius',
             filteredSearch: [],
             error: false,
+            loading: false
         }
     }
 
@@ -29,12 +32,15 @@ class Weather extends Component {
     }
 
     componentDidMount() {
+        this.setState({ loading: true })
+
         /* Init data to render if user does not allow to know its location*/
         axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/${this.state.woeid}/`)
         .then(response => {
             this.setState({ 
                 data: response.data.consolidated_weather,
-                location: response.data.title
+                location: response.data.title,
+                loading: false
             })
         })
         .catch(error => {
@@ -90,12 +96,14 @@ class Weather extends Component {
     handleInputChange = (event) => this.setState({ input: event.target.value }) 
 
     handleSearchedClicked = () => {
+        this.setState({ loading: true })
         axios.get(`https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=${this.state.input}`)
         .then(response => {
             if(response.data.length) {
                 this.setState({ 
                     filteredSearch: [...response.data],
-                    error: false
+                    error: false,
+                    loading: false
                 });
             } else {
                 this.setState({ error: true });
@@ -110,7 +118,8 @@ class Weather extends Component {
     handleGetWeather = (id) => {
         this.setState({ 
             search: false, 
-            input: ''
+            input: '',
+            filteredSearch: []
         })
         this.fetchDatawithWoeid(id);
     }
@@ -128,27 +137,32 @@ class Weather extends Component {
     render() {
         return (
             <div className="Weather">
-                <Sidebar 
-                    clicked={this.handleSearchOpenClicked}
-                    closed={this.handleSearchClosedClicked}
-                    searched={this.handleSearchedClicked}
-                    input={this.state.input}
-                    data={this.state.data[0]}
-                    location={this.state.location}
-                    search={this.state.search}
-                    changed={this.handleInputChange}
-                    filtered={this.state.filteredSearch}
-                    error={this.state.error}
-                    getWeather={this.handleGetWeather}
-                    tempScale={this.state.activeScale}
-                    request={this.handleRequestCurLocation}
-                />
-                <Main 
-                    data={this.state.data}
-                    highlights={this.state.data[0]}
-                    getScale={this.handleGetTempScale}
-                    tempScale={this.state.activeScale}
-                />
+                { this.state.loading && !this.state.data[0]
+                    ? <Spinner />
+                    : <Aux>
+                        <Sidebar 
+                            clicked={this.handleSearchOpenClicked}
+                            closed={this.handleSearchClosedClicked}
+                            searched={this.handleSearchedClicked}
+                            input={this.state.input}
+                            data={this.state.data[0]}
+                            location={this.state.location}
+                            search={this.state.search}
+                            changed={this.handleInputChange}
+                            filtered={this.state.filteredSearch}
+                            error={this.state.error}
+                            getWeather={this.handleGetWeather}
+                            tempScale={this.state.activeScale}
+                            request={this.handleRequestCurLocation}
+                        />
+                        <Main 
+                            data={this.state.data}
+                            highlights={this.state.data[0]}
+                            getScale={this.handleGetTempScale}
+                            tempScale={this.state.activeScale}
+                        />
+                    </Aux>
+                }
             </div>
         )
     }

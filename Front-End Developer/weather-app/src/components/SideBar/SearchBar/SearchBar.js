@@ -24,7 +24,13 @@ const searchBar = (props) => {
                 { props.error
                     ? <div className="error">Search Not Found. Please Enter a valid city.</div>
                     : props.filtered.map((loc, index) => {
-                        return <FilterSearch key={index} location={loc.title} id={loc.woeid}getWeather={props.getWeather} input={props.input}/>
+                        return <FilterSearch 
+                                    key={index} 
+                                    location={loc.title} 
+                                    id={loc.woeid}
+                                    getWeather={props.getWeather} 
+                                    input={props.input}
+                                />
                     })
                 }
             </div>

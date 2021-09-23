@@ -6,17 +6,16 @@ import CurrentWeather from './CurrentWeather/CurrentWeather';
 import SearchBar from './SearchBar/SearchBar';
 
 const sideBar = (props) => {
-    let height = {}
-    if(!props.search) {
-        height={
-            '@media (max-width: 750px)': {
-                height: "auto"
-            }
-        }
-    }
-
+    // let height = {}
+    // if(!props.search) {
+    //     height={
+    //         '@media (max-width: 750px)': {
+    //             height: "auto"
+    //         }
+    //     }
+    // }
     return (
-        <div className="Sidebar" style={height}>
+        <div className="Sidebar">
             <SearchBar 
                 search={props.search}
                 searched={props.searched}
@@ -28,11 +27,11 @@ const sideBar = (props) => {
                 error={props.error}
             /> 
             <CurrentWeather 
-            clicked={props.clicked}
-            data={props.data}
-            location={props.location}
-            tempScale={props.tempScale}
-            request={props.request}
+                clicked={props.clicked}
+                data={props.data}
+                location={props.location}
+                tempScale={props.tempScale}
+                request={props.request}
             />
         </div>
     )

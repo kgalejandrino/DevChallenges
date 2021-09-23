@@ -2,9 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 350px;
+    width: 340px;
     margin: 28px auto;
-    padding: 0 12px;
+    padding: 0 8px;
     height: 50px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -22,4 +22,10 @@
 
 .filter-icon { 
     color: #616475;
+}
+
+@media only screen and (max-width: 750px) {
+    .FilterSearch {
+        width: 90%;
+    }
 }

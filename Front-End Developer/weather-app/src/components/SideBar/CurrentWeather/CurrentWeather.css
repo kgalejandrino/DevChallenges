@@ -143,3 +143,22 @@
     .current_date { margin-top: 40px; }
 }
 
+@media only screen and (max-width: 360px) {
+    .current_image { margin-top: 40px; }
+
+    .current_temp { margin-top: 40px; }
+    
+    .temp { font-size: 70px; }
+    
+    .cur-temp--icon {
+        margin-top: 40px;
+    }
+    
+    .cur-temp--type {
+        font-size: 28px;
+        margin-top: 35px;
+    }
+}
+
+
+

@@ -18,11 +18,11 @@ const FilterSearch = (props) => {
             onClick={() => props.getWeather(props.id)}
             >
             <span className="filter-location">{props.location}</span>
-            {hover
-            ? <span className="material-icons filter-icon">navigate_next</span> 
-            : null
+            { hover
+                ? <span className="material-icons filter-icon">navigate_next</span> 
+                : null
             }
-        </div>
+          </div>
         : null
     )
 }
